@@ -1,6 +1,6 @@
 param(
     [string] $Architecture = "x64",
-    [string] $Version = "0.1.1",
+    [string] $Version = "0.1.5",
     [string] $Output = "build/Glowworm"
 )
 
