@@ -403,3 +403,4 @@ FodyWeavers.xsd
 
 # Others
 .env
+publish.csproj
