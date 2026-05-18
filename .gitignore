@@ -402,4 +402,4 @@ FodyWeavers.xsd
 .idea/
 
 # Others
-Drafts.md
+.env

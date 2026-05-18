@@ -74,8 +74,8 @@
                     Spacing="4">
             <TextBlock Text="{x:Bind lang:Lang.ZZZGachaInfoWindow_ZZZGachaInfoWindowGuide}" TextWrapping="Wrap" />
             <TextBlock TextWrapping="Wrap">
-                <Hyperlink NavigateUri="https://github.com/Scighost/Glowworm/tree/metadata/v1/zzz" UnderlineStyle="None">
-                    <Run Text="https://github.com/Scighost/Glowworm/tree/metadata/v1/zzz" />
+                <Hyperlink NavigateUri="https://github.com/scighost/Starward/tree/metadata/v1/zzz" UnderlineStyle="None">
+                    <Run Text="https://github.com/scighost/Starward/tree/metadata/v1/zzz" />
                 </Hyperlink>
             </TextBlock>
 

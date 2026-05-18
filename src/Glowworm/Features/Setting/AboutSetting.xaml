@@ -125,7 +125,7 @@
                 </Hyperlink>
             </TextBlock>
             <TextBlock Margin="0,8,0,0" HorizontalAlignment="Left">
-                <Hyperlink NavigateUri="https://github.com/Scighost/Starward" UnderlineStyle="None">
+                <Hyperlink NavigateUri="https://github.com/scighost/Starward" UnderlineStyle="None">
                 <Run FontWeight="Bold"
                      Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"
                      Text="{x:Bind lang:Lang.SettingPage_OriginalProject}" />

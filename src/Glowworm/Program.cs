@@ -20,6 +20,8 @@ public static class Program
     [global::System.STAThreadAttribute]
     static void Main(string[] args)
     {
+        Velopack.VelopackApp.Build().Run();
+
         AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 
         global::WinRT.ComWrappersSupport.InitializeComWrappers();

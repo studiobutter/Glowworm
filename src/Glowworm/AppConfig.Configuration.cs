@@ -2,7 +2,6 @@
 using Glowworm.Features.Database;
 using Glowworm.Features.ViewHost;
 using Glowworm.Helpers;
-using Glowworm.Setup.Core;
 using System;
 using System.Globalization;
 using System.IO;
@@ -14,6 +13,12 @@ using System.Threading.Tasks;
 using Vanara.PInvoke;
 
 namespace Glowworm;
+
+public enum InstallType
+{
+    Setup = 0,
+    Portable = 1
+}
 
 public static partial class AppConfig
 {

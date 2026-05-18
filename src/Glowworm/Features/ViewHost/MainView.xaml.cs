@@ -284,7 +284,7 @@ public sealed partial class MainView : UserControl
         try
         {
             await Task.Delay(1500);
-            Uri? proxy = HttpClient.DefaultProxy.GetProxy(new Uri("https://glowworm.scighost.com"));
+            Uri? proxy = HttpClient.DefaultProxy.GetProxy(new Uri("https://update.studiobutter.io.vn/glowworm"));
             if (proxy is not null)
             {
                 InAppToast.MainWindow?.Information("", proxy.ToString(), 5000);

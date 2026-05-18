@@ -16,6 +16,14 @@ public static partial class AppConfig
 
     #region Static Setting
 
+    /// <summary>
+    /// 0: GitHub, 1: Cloudflare
+    /// </summary>
+    public static int UpdateSource
+    {
+        get => GetValue(0);
+        set => SetValue(value);
+    }
 
     public static bool EnablePreviewRelease
     {

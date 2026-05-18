@@ -42,7 +42,7 @@ public class ReleaseVersion : IJsonOnDeserialized
 
 
     [JsonIgnore]
-    public string ReleasePage => $"https://github.com/Scighost/Glowworm/releases/tag/{Version}";
+    public string ReleasePage => $"https://github.com/studiobutter/Glowworm/releases/tag/{Version}";
 
 
     public void OnDeserialized()
@@ -53,9 +53,9 @@ public class ReleaseVersion : IJsonOnDeserialized
             if (string.IsNullOrWhiteSpace(SeparatePrefix))
             {
 #if DEV
-                prefix = $"https://glowworm-static.scighost.com/release/separate_files/dev/";
+                prefix = $"https://update.studiobutter.io.vn/glowworm/release/separate_files/dev/";
 #else
-                prefix = $"https://glowworm-static.scighost.com/release/separate_files/";
+                prefix = $"https://update.studiobutter.io.vn/glowworm/release/separate_files/";
 #endif
             }
             else

@@ -10,7 +10,7 @@ namespace Glowworm.Features.Update;
 public class LogUploadClient
 {
 
-    public static Uri DefaultBaseAddress { get; set; } = new("https://glowworm-log.scighost.com");
+    public static Uri DefaultBaseAddress { get; set; } = new("https://glowworm-log.studiobutter.io.vn");
 
 
     private readonly HttpClient _httpClient;

@@ -63,15 +63,13 @@ public sealed partial class AboutSetting : PageBase
             LatestVersion = null;
             UpdateErrorText = null;
             var release = await AppConfig.GetService<UpdateService>().GetLatestVersionAsync();
-            _ = NuGetVersion.TryParse(AppConfig.AppVersion, out var currentVersion);
-            _ = NuGetVersion.TryParse(release.Version, out var newVersion);
-            if (newVersion! > currentVersion!)
+            if (release != null)
             {
                 new UpdateWindow { NewVersion = release }.Activate();
             }
             else
             {
-                LatestVersion = release.Version;
+                LatestVersion = AppConfig.AppVersion;
             }
         }
         catch (Exception ex)

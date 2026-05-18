@@ -39,7 +39,7 @@
                               Glyph="&#xEBE7;" />
                     <TextBlock VerticalAlignment="Bottom"
                                Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"
-                               Text="{x:Bind NewVersion.Version}" />
+                               Text="{x:Bind NewVersion.TargetFullRelease.Version.ToString()}" />
                 </StackPanel>
 
                 <!--  ????  -->
@@ -48,39 +48,19 @@
                       RowSpacing="8">
                     <Grid.RowDefinitions>
                         <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
-                    <!--  ??:  -->
+                    <!--  ????  -->
                     <TextBlock Grid.Row="0"
                                Grid.Column="0"
                                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                               Text="{x:Bind lang:Lang.UpdatePage_Architecture}" />
-                    <TextBlock Grid.Row="0" Grid.Column="1">
-                        <Run Text="{x:Bind NewVersion.Architecture}" />
-                        <Run Text="-" />
-                        <Run Text="{x:Bind NewVersion.InstallType}" />
-                    </TextBlock>
-                    <!--  ????  -->
-                    <TextBlock Grid.Row="1"
-                               Grid.Column="0"
-                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                                Text="{x:Bind lang:Lang.UpdatePage_ReleaseChannel}" />
-                    <TextBlock Grid.Row="1"
+                    <TextBlock Grid.Row="0"
                                Grid.Column="1"
                                Text="{x:Bind ChannelText}" />
-                    <!--  ????:  -->
-                    <TextBlock Grid.Row="2"
-                               Grid.Column="0"
-                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                               Text="{x:Bind lang:Lang.UpdatePage_BuiltTime}" />
-                    <TextBlock Grid.Row="2"
-                               Grid.Column="1"
-                               Text="{x:Bind NewVersion.BuildTime.LocalDateTime.ToString('yyyy-MM-dd HH:mm:ss', x:Null)}" />
                 </Grid>
 
                 <!--  ????  -->
@@ -97,16 +77,6 @@
                         <HyperlinkButton Click="HyperlinkButton_Click"
                                          Content="{x:Bind lang:Lang.UpdatePage_ReleasePage}"
                                          Tag="release" />
-                        <!--  Window ???? Converter  -->
-                        <HyperlinkButton Click="HyperlinkButton_Click"
-                                         Tag="package"
-                                         Visibility="{x:Bind local:UpdateWindow.StringToVisibility(NewVersion.PackageUrl)}">
-                            <TextBlock>
-                                <Run Text="{x:Bind lang:Lang.UpdateWindow_FullPackage}" />
-                                <Run Text="" />
-                                <Run Text="(" /><Run Text="{x:Bind local:UpdateWindow.ByteLengthToString(NewVersion.PackageSize)}" /><Run Text=")" />
-                            </TextBlock>
-                        </HyperlinkButton>
                     </StackPanel>
                 </Grid>
 

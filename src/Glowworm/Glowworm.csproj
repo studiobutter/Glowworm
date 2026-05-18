@@ -57,12 +57,12 @@
 		<PackageReference Include="Vanara.PInvoke.DwmApi" Version="5.0.4" />
 		<PackageReference Include="Vanara.PInvoke.Shell32" Version="5.0.4" />
 		<Manifest Include="$(ApplicationManifest)" />
+		<PackageReference Include="Velopack" Version="0.0.1298" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\Glowworm.Core\Glowworm.Core.csproj" />
 		<ProjectReference Include="..\Glowworm.Language\Glowworm.Language.csproj" />
-		<ProjectReference Include="..\Glowworm.Setup.Core\Glowworm.Setup.Core.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
