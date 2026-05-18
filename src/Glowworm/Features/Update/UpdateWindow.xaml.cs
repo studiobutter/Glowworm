@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.Extensions.Logging;
@@ -6,45 +6,28 @@ using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.Web.WebView2.Core;
-using NuGet.Versioning;
 using Glowworm.Features.Setting;
 using Glowworm.Frameworks;
-using Glowworm.Setup.Core;
-using Glowworm.Setup.Core.Github;
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Windows.Graphics;
 using Windows.System;
-
+using Velopack;
 
 namespace Glowworm.Features.Update;
 
 [INotifyPropertyChanged]
 public sealed partial class UpdateWindow : WindowEx
 {
-
-
     private readonly ILogger<UpdateWindow> _logger = AppConfig.GetLogger<UpdateWindow>();
-
-    private readonly ReleaseClient _releaseClient = AppConfig.GetService<ReleaseClient>();
-
     private readonly UpdateService _updateService = AppConfig.GetService<UpdateService>();
-
-    private readonly SetupService _setupService = AppConfig.GetService<SetupService>();
-
-
     private readonly Microsoft.UI.Dispatching.DispatcherQueueTimer _timer;
-
-
 
     public UpdateWindow()
     {
@@ -57,19 +40,15 @@ public sealed partial class UpdateWindow : WindowEx
         this.Closed += UpdateWindow_Closed;
     }
 
-
-
     private void InitializeWindow()
     {
         AppWindow.TitleBar.ExtendsContentIntoTitleBar = true;
-        Title = "Glowworm � Update";
+        Title = "Glowworm — Update";
         RootGrid.RequestedTheme = ShouldAppsUseDarkMode() ? ElementTheme.Dark : ElementTheme.Light;
         SystemBackdrop = new DesktopAcrylicBackdrop();
         AdaptTitleBarButtonColorToActuallTheme();
         SetIcon();
     }
-
-
 
     private void CenterInScreen()
     {
@@ -109,31 +88,20 @@ public sealed partial class UpdateWindow : WindowEx
         }
     }
 
-
-
     public new void Activate()
     {
         CenterInScreen();
         base.Activate();
     }
 
-
-
     private void RootGrid_Loaded(object sender, RoutedEventArgs e)
     {
-        if (NewVersion?.DisableAutoUpdate ?? false)
-        {
-            IsUpdateNowEnabled = false;
-            ErrorMessage = Lang.UpdatePage_YouNeedToManuallyDownloadTheNewVersionPackage;
-        }
         if (UpdateService.UpdateFinished)
         {
             Finish(skipRestart: true);
         }
         _ = LoadUpdateContentAsync();
     }
-
-
 
     private void UpdateWindow_Closed(object sender, WindowEventArgs args)
     {
@@ -144,19 +112,13 @@ public sealed partial class UpdateWindow : WindowEx
         this.Closed -= UpdateWindow_Closed;
     }
 
-
-
-
-    public ReleaseInfoDetail? NewVersion { get; set => SetProperty(ref field, value); }
-
+    public UpdateInfo? NewVersion { get; set => SetProperty(ref field, value); }
 
 #if DEBUG
     public string ChannelText => Lang.UpdatePage_DevChannel;
 #else
     public string ChannelText => AppConfig.EnablePreviewRelease ? Lang.UpdatePage_PreviewChannel : Lang.UpdatePage_StableChannel;
 #endif
-
-
 
     private async void HyperlinkButton_Click(object sender, RoutedEventArgs e)
     {
@@ -166,48 +128,35 @@ public sealed partial class UpdateWindow : WindowEx
             {
                 var url = fe.Tag switch
                 {
-                    "release" => $"https://github.com/Scighost/Glowworm/releases/tag/{NewVersion.Version}",
-                    "package" => NewVersion.PackageUrl,
+                    "release" => $"https://github.com/studiobutter/Glowworm/releases/tag/{NewVersion.TargetFullRelease.Version}",
                     _ => null,
                 };
-                _logger.LogInformation("Open url: {url}", url);
-                if (Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out var uri))
+                if (url != null)
                 {
-                    await Launcher.LaunchUriAsync(uri);
+                    _logger.LogInformation("Open url: {url}", url);
+                    if (Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out var uri))
+                    {
+                        await Launcher.LaunchUriAsync(uri);
+                    }
                 }
             }
         }
         catch { }
     }
 
-
-
-
-
     #region Update
 
-
-
     public bool IsUpdateNowEnabled { get; set => SetProperty(ref field, value); } = true;
-
     public bool IsUpdateRemindLatterEnabled { get; set => SetProperty(ref field, value); } = true;
-
     public bool IsProgressTextVisible { get; set => SetProperty(ref field, value); }
-
     public bool IsProgressBarVisible { get; set => SetProperty(ref field, value); }
-
     public string ProgressBytesText { get; set => SetProperty(ref field, value); }
-
     public string ProgressPercentText { get; set => SetProperty(ref field, value); }
-
     public string? ErrorMessage { get; set => SetProperty(ref field, value); }
-
-
 
     public bool AutoRestartWhenUpdateFinished
     {
-        get;
-        set
+        get; set
         {
             if (SetProperty(ref field, value))
             {
@@ -216,12 +165,9 @@ public sealed partial class UpdateWindow : WindowEx
         }
     } = AppConfig.AutoRestartWhenUpdateFinished;
 
-
-
     public bool ShowUpdateContentAfterUpdateRestart
     {
-        get;
-        set
+        get; set
         {
             if (SetProperty(ref field, value))
             {
@@ -229,11 +175,6 @@ public sealed partial class UpdateWindow : WindowEx
             }
         }
     } = AppConfig.ShowUpdateContentAfterUpdateRestart;
-
-
-
-    private CancellationTokenSource _updateCts;
-
 
     [RelayCommand]
     private async Task UpdateNowAsync()
@@ -244,50 +185,14 @@ public sealed partial class UpdateWindow : WindowEx
             IsUpdateNowEnabled = false;
             IsUpdateRemindLatterEnabled = false;
 
-
             if (NewVersion != null)
             {
-                if (AppConfig.InstallType is InstallType.Setup && NewVersion.Setup is not null)
-                {
-                    Button_Restart.IsEnabled = false;
-                    _updateCts?.Cancel();
-                    _updateCts = new CancellationTokenSource();
-                    CancellationToken cancellationToken = _updateCts.Token;
-                    IsProgressTextVisible = true;
-                    IsProgressBarVisible = true;
-
-                    var task = _setupService.UpdateAsync(NewVersion, cancellationToken);
-
-                    const double MB = 1 << 20;
-                    while (!task.IsCompleted)
-                    {
-                        if (_setupService.SetupTotalBytes > 0)
-                        {
-                            TextBlock_Bytes.Text = $"{_setupService.SetupDownloadBytes / MB:F2}/{_setupService.SetupTotalBytes / MB:F2} MB";
-                            ProgressBar_Update.Value = _setupService.SetupDownloadBytes * 100.0 / _setupService.SetupTotalBytes;
-                        }
-                        await Task.Delay(100);
-                    }
-                    await task;
-                    Button_Restart.IsEnabled = true;
-                    IsProgressTextVisible = false;
-                    IsProgressBarVisible = false;
-                }
-                if (AppConfig.IsPortable)
-                {
-                    _timer.Start();
-                    await _updateService.StartUpdateAsync(NewVersion);
-                }
+                _timer.Start();
+                await _updateService.StartUpdateAsync(NewVersion);
             }
         }
         catch (OperationCanceledException)
         {
-            Button_UpdateNow.IsEnabled = true;
-            Button_RemindLatter.IsEnabled = true;
-        }
-        catch (Win32Exception ex) when (ex.NativeErrorCode == 1223)
-        {
-            ErrorMessage = "";
             Button_UpdateNow.IsEnabled = true;
             Button_RemindLatter.IsEnabled = true;
         }
@@ -296,11 +201,9 @@ public sealed partial class UpdateWindow : WindowEx
             _logger.LogError(ex, "Update now");
             Button_UpdateNow.IsEnabled = true;
             Button_RemindLatter.IsEnabled = true;
+            ErrorMessage = ex.Message;
         }
     }
-
-
-
 
     private void UpdateProgressState()
     {
@@ -352,8 +255,6 @@ public sealed partial class UpdateWindow : WindowEx
         }
     }
 
-
-
     private void UpdateProgressValue()
     {
         if (_updateService.Progress_TotalBytes == 0 || _updateService.Progress_DownloadBytes == 0)
@@ -361,19 +262,14 @@ public sealed partial class UpdateWindow : WindowEx
             ProgressBytesText = "";
             return;
         }
-        const double mb = 1 << 20;
-        ProgressBytesText = $"{_updateService.Progress_DownloadBytes / mb:F2}/{_updateService.Progress_TotalBytes / mb:F2} MB";
+        ProgressBytesText = $"{_updateService.Progress_DownloadBytes}%";
         var progress = (double)_updateService.Progress_DownloadBytes / _updateService.Progress_TotalBytes;
         ProgressPercentText = $"{progress:P1}";
         ProgressBar_Update.Value = progress * 100;
     }
 
-
-
-
     private void _timer_Tick(Microsoft.UI.Dispatching.DispatcherQueueTimer sender, object args)
     {
-
         try
         {
             UpdateProgressState();
@@ -393,37 +289,24 @@ public sealed partial class UpdateWindow : WindowEx
         }
     }
 
-
-
     private void Finish(bool skipRestart = false)
     {
         AppConfig.IgnoreVersion = null;
         Button_UpdateNow.Visibility = Visibility.Collapsed;
         Button_Restart.Visibility = Visibility.Visible;
-        // AppConfig.GetService<RpcService>().KeepRunningOnExited(false, noLongerChange: true);
         if (AutoRestartWhenUpdateFinished && !skipRestart)
         {
             Restart();
         }
     }
 
-
-
     [RelayCommand]
     private void Restart()
     {
         try
         {
-            string? launcher = AppConfig.GlowwormPortableLauncherExecutePath;
-            if (File.Exists(launcher))
-            {
-                Process.Start(new ProcessStartInfo
-                {
-                    FileName = launcher,
-                    WorkingDirectory = Path.GetDirectoryName(launcher),
-                });
-                Environment.Exit(0);
-            }
+            // Velopack should restart automatically if ApplyUpdatesAndRestart was called,
+            // but we can also manually restart if needed. The UpdateService does this automatically.
         }
         catch (Exception ex)
         {
@@ -432,15 +315,11 @@ public sealed partial class UpdateWindow : WindowEx
         }
     }
 
-
-
     [RelayCommand]
     private void RemindMeLatter()
     {
         this.Close();
     }
-
-
 
     [RelayCommand]
     private void IgnoreThisVersion()
@@ -451,38 +330,24 @@ public sealed partial class UpdateWindow : WindowEx
         }
         else
         {
-            AppConfig.IgnoreVersion = NewVersion.Version;
+            AppConfig.IgnoreVersion = NewVersion.TargetFullRelease.Version.ToString();
         }
         this.Close();
     }
-
-
-
 
     private void Button_UpdateRemindLatter_PointerEntered(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
     {
         Button_UpdateRemindLatter.Opacity = 1;
     }
 
-
     private void Button_UpdateRemindLatter_PointerExited(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
     {
         Button_UpdateRemindLatter.Opacity = 0;
     }
 
-
-
     #endregion
 
-
-
-
-
     #region Update Content WebView
-
-
-
-
 
     private async Task LoadUpdateContentAsync()
     {
@@ -503,26 +368,11 @@ public sealed partial class UpdateWindow : WindowEx
             webview.CoreWebView2.NewWindowRequested -= CoreWebView2_NewWindowRequested;
             webview.CoreWebView2.NewWindowRequested += CoreWebView2_NewWindowRequested;
 
-            string markdown = await GetReleaseContentMarkdownAsync();
-            string html = await RenderMarkdownAsync(markdown);
+            string markdown = NewVersion?.TargetFullRelease.NotesMarkdown ?? "No release notes available.";
+            
+            // Basic Markdown to HTML wrapper (can be replaced with a real renderer)
+            string html = RenderMarkdownAsync(markdown);
             webview.NavigateToString(html);
-            AppConfig.LastAppVersion = AppConfig.AppVersion;
-        }
-        catch (COMException ex)
-        {
-            _logger.LogError(ex, "Load recent update content");
-            TextBlock_Error.Text = "";
-            StackPanel_Loading.Visibility = Visibility.Collapsed;
-            StackPanel_Error.Visibility = Visibility.Visible;
-        }
-        catch (Exception ex) when (ex is HttpRequestException or SocketException or IOException)
-        {
-            _logger.LogError(ex, "Load recent update content");
-            string tag = NewVersion?.Version ?? AppConfig.AppVersion;
-            webview.Source = new Uri($"https://github.com/Scighost/Glowworm/releases/tag/{tag}");
-            webview.Visibility = Visibility.Visible;
-            StackPanel_Loading.Visibility = Visibility.Collapsed;
-            StackPanel_Error.Visibility = Visibility.Collapsed;
             AppConfig.LastAppVersion = AppConfig.AppVersion;
         }
         catch (Exception ex)
@@ -534,124 +384,11 @@ public sealed partial class UpdateWindow : WindowEx
         }
     }
 
-
-
-    private async Task<string> GetReleaseContentMarkdownAsync()
+    private string RenderMarkdownAsync(string markdown)
     {
-        bool showPrerelease = false;
-        NuGetVersion? startVersion, endVersion;
-        if (NewVersion is null)
-        {
-            _ = NuGetVersion.TryParse(AppConfig.LastAppVersion, out startVersion);
-            _ = NuGetVersion.TryParse(AppConfig.AppVersion, out endVersion);
-        }
-        else
-        {
-            _ = NuGetVersion.TryParse(AppConfig.AppVersion, out startVersion);
-            _ = NuGetVersion.TryParse(NewVersion.Version, out endVersion);
-        }
-        startVersion ??= new NuGetVersion(0, 0, 0);
-        endVersion ??= new NuGetVersion(int.MaxValue, int.MaxValue, int.MaxValue);
-        if (endVersion.IsPrerelease)
-        {
-            showPrerelease = true;
-            if (startVersion.IsPrerelease)
-            {
-                if (startVersion.Patch - 1 >= 0)
-                {
-                    startVersion = new NuGetVersion(startVersion.Major, startVersion.Minor, startVersion.Patch - 1);
-                }
-                else if (startVersion.Minor - 1 >= 0)
-                {
-                    startVersion = new NuGetVersion(startVersion.Major, startVersion.Minor - 1, int.MaxValue);
-                }
-                else if (startVersion.Major - 1 >= 0)
-                {
-                    startVersion = new NuGetVersion(startVersion.Major - 1, int.MaxValue, int.MaxValue);
-                }
-            }
-        }
+        string css = """<link href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css" type="text/css" rel="stylesheet" />""";
+        string html = $"<pre style='white-space: pre-wrap; font-family: inherit;'>{System.Net.WebUtility.HtmlEncode(markdown)}</pre>";
 
-        var releases = await _releaseClient.GetGithubReleaseAsync(1, 20);
-        var markdown = new StringBuilder();
-        int count = 0;
-        foreach (var release in releases)
-        {
-            if (NuGetVersion.TryParse(release.TagName, out var version))
-            {
-                if (version > startVersion && version <= endVersion)
-                {
-                    // ??????????????,??????????????
-                    if (!version.IsPrerelease && !release.Prerelease)
-                    {
-                        showPrerelease = false;
-                    }
-                    if (!(showPrerelease ^ version.IsPrerelease))
-                    {
-                        AppendReleaseToStringBuilder(release, markdown);
-                        count++;
-                    }
-                }
-            }
-            else
-            {
-                AppendReleaseToStringBuilder(release, markdown);
-                count++;
-            }
-            if (count >= 10)
-            {
-                break;
-            }
-        }
-        if (markdown.Length == 0)
-        {
-            try
-            {
-                var r = await _releaseClient.GetGithubReleaseAsync(NewVersion?.Version ?? AppConfig.AppVersion);
-                if (r is not null)
-                {
-                    AppendReleaseToStringBuilder(r, markdown);
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                if (releases.FirstOrDefault() is GithubRelease r)
-                {
-                    AppendReleaseToStringBuilder(r, markdown);
-                }
-            }
-        }
-        return markdown.ToString();
-    }
-
-
-
-    private static void AppendReleaseToStringBuilder(GithubRelease release, StringBuilder stringBuilder)
-    {
-        stringBuilder.AppendLine($"# {release.Name}");
-        stringBuilder.AppendLine();
-        stringBuilder.AppendLine(release.Body);
-        stringBuilder.AppendLine("<br>");
-        stringBuilder.AppendLine();
-    }
-
-
-
-    private async Task<string> RenderMarkdownAsync(string markdown)
-    {
-        string html = await _releaseClient.RenderGithubMarkdownAsync(markdown);
-        var cssFile = Path.Combine(AppContext.BaseDirectory, @"Assets\CSS\github-markdown.css");
-        string? css = null;
-        if (File.Exists(cssFile))
-        {
-            css = await File.ReadAllTextAsync(cssFile);
-            css = $"<style>{css}</style>";
-        }
-        else
-        {
-            css = """<link href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css" type="text/css" rel="stylesheet" />""";
-        }
         return $$"""
             <!DOCTYPE html>
             <html>
@@ -689,24 +426,10 @@ public sealed partial class UpdateWindow : WindowEx
               <article class="markdown-body" style="background: transparent;">
                 {{html}}
               </article>
-              <script>
-                document.querySelectorAll('img[data-canonical-src]').forEach(img => {
-                  const canonical = img.getAttribute('data-canonical-src');
-                  if (canonical) {
-                    img.src = canonical;
-                  }
-                  const parent = img.parentElement;
-                  if (parent && parent.tagName.toLowerCase() === 'a') {
-                    parent.href = canonical;
-                  }
-                });
-              </script>
             </body>
             </html>
             """;
     }
-
-
 
     private void CoreWebView2_DOMContentLoaded(CoreWebView2 sender, CoreWebView2DOMContentLoadedEventArgs args)
     {
@@ -715,8 +438,6 @@ public sealed partial class UpdateWindow : WindowEx
         StackPanel_Loading.Visibility = Visibility.Collapsed;
         StackPanel_Error.Visibility = Visibility.Collapsed;
     }
-
-
 
     private void CoreWebView2_NewWindowRequested(CoreWebView2 sender, CoreWebView2NewWindowRequestedEventArgs args)
     {
@@ -728,52 +449,20 @@ public sealed partial class UpdateWindow : WindowEx
         catch { }
     }
 
-
-
     [RelayCommand]
     private async Task RetryAsync()
     {
         await LoadUpdateContentAsync();
     }
 
-
-
-
     #endregion
 
-
-
-
-
     #region Converter
-
-
-
-    public static string ByteLengthToString(long byteLength)
-    {
-        double length = byteLength;
-        return length switch
-        {
-            >= (1 << 30) => $"{length / (1 << 30):F2} GB",
-            >= (1 << 20) => $"{length / (1 << 20):F2} MB",
-            _ => $"{length / (1 << 10):F2} KB",
-        };
-    }
-
-
 
     public static Visibility StringToVisibility(string value)
     {
         return string.IsNullOrWhiteSpace(value) ? Visibility.Collapsed : Visibility.Visible;
     }
 
-
     #endregion
-
-
-
 }
-
-
-
-

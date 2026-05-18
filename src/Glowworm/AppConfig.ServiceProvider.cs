@@ -10,7 +10,6 @@ using Glowworm.Features.Gacha;
 using Glowworm.Features.Gacha.UIGF;
 using Glowworm.Features.Screenshot;
 using Glowworm.Features.Update;
-using Glowworm.Setup.Core;
 using System;
 using System.IO;
 using System.Net;
@@ -41,8 +40,6 @@ public static partial class AppConfig
             sc.AddLogging(c => c.AddSerilog(Log.Logger));
             sc.AddHttpClient().ConfigureHttpClientDefaults(ConfigDefaultHttpClient);
 
-            sc.AddSingleton<SetupService>();
-
             sc.AddSingleton<GenshinGachaClient>();
             sc.AddSingleton<StarRailGachaClient>();
             sc.AddSingleton<ZZZGachaClient>();
@@ -53,7 +50,6 @@ public static partial class AppConfig
             sc.AddSingleton<GenshinBeyondGachaClient>();
             sc.AddSingleton<GenshinBeyondGachaService>();
 
-            sc.AddHttpClient<ReleaseClient>().ConfigGlowwormHttpClient();
             sc.AddTransient<UpdateService>();
 
             sc.AddSingleton<ScreenCaptureService>();

@@ -10,8 +10,6 @@
   </Folder>
   <Project Path="src/Glowworm.Core/Glowworm.Core.csproj" />
   <Project Path="src/Glowworm.Language/Glowworm.Language.csproj" />
-  <Project Path="src/Glowworm.Setup.Core/Glowworm.Setup.Core.csproj" />
-  <Project Path="src/Glowworm.Setup/Glowworm.Setup.csproj" />
   <Project Path="src/Glowworm/Glowworm.csproj">
     <Platform Solution="*|Any CPU" Project="x64" />
     <Platform Solution="*|ARM64" Project="ARM64" />
@@ -19,4 +17,5 @@
     <Platform Solution="*|x86" Project="x86" />
   </Project>
 </Solution>
+
 

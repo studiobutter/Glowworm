@@ -13,9 +13,7 @@ namespace Glowworm.Controls;
 
 public sealed partial class CachedImage : ImageEx
 {
-
-
-
+    
     public bool IsThumbnail
     {
         get { return (bool)GetValue(IsThumbnailProperty); }
