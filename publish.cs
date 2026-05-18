@@ -73,7 +73,7 @@ if (!string.IsNullOrWhiteSpace(r2Endpoint) && !string.IsNullOrWhiteSpace(r2Bucke
     foreach (var arch in targetArchitectures)
     {
         Console.WriteLine($"Uploading channel win-{arch}...");
-        var uploadArgs = $"upload s3 --endpoint {r2Endpoint} --bucket {r2Bucket} --keyId {r2AccessKey} --secret {r2Secret} --region {r2Region ?? "auto"} --prefix glowworm/{branchName} --channel win-{arch} -o {releaseDir}";
+        var uploadArgs = $"upload s3 --endpoint {r2Endpoint} --bucket {r2Bucket} --keyId {r2AccessKey} --secret {r2Secret} --prefix glowworm/{branchName} --channel win-{arch} -o {releaseDir}";
         var uploadProcess = Process.Start("vpk", uploadArgs);
         await uploadProcess.WaitForExitAsync();
 

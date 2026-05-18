@@ -118,6 +118,15 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
+        ///   ???? Update Source ????????
+        /// </summary>
+        public static string SettingPage_UpdateSource {
+            get {
+                return ResourceManager.GetString("SettingPage_UpdateSource", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   ???? Other software can use some of Glowworm&apos;s features through the URL protocol. ????????
         /// </summary>
         public static string SettingPage_URLProtocolDesc {

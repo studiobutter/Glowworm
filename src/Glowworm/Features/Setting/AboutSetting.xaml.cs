@@ -34,9 +34,22 @@ public sealed partial class AboutSetting : PageBase
             if (SetProperty(ref field, value))
             {
                 AppConfig.EnablePreviewRelease = value;
+                AppConfig.GetService<UpdateService>().ResetUpdateManager();
             }
         }
     } = AppConfig.EnablePreviewRelease;
+
+    public int UpdateSource
+    {
+        get; set
+        {
+            if (SetProperty(ref field, value))
+            {
+                AppConfig.UpdateSource = value;
+                AppConfig.GetService<UpdateService>().ResetUpdateManager();
+            }
+        }
+    } = AppConfig.UpdateSource;
 
 
     /// <summary>
