@@ -296,6 +296,9 @@
   <data name="SettingPage_Update" xml:space="preserve">
     <value>Update</value>
   </data>
+  <data name="SettingPage_UpdateSource" xml:space="preserve">
+    <value>Update Source</value>
+  </data>
   <data name="SettingPage_TestCDNAsync_NetworkError" xml:space="preserve">
     <value>Network Error</value>
   </data>

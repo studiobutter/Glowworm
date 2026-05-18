@@ -39,6 +39,15 @@
             </StackPanel>
 
 
+            <!--  Update Source Selection  -->
+            <StackPanel Margin="0,12,0,0" Spacing="4">
+                <TextBlock Text="{x:Bind lang:Lang.SettingPage_UpdateSource}" />
+                <ComboBox SelectedIndex="{x:Bind UpdateSource, Mode=TwoWay}">
+                    <ComboBoxItem Content="GitHub" />
+                    <ComboBoxItem Content="Cloudflare R2" />
+                </ComboBox>
+            </StackPanel>
+
             <!--  ?????  -->
             <ToggleSwitch Margin="0,12,0,0"
                           IsOn="{x:Bind EnablePreviewRelease, Mode=TwoWay}"

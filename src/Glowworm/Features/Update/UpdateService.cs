@@ -26,6 +26,11 @@ internal class UpdateService
         _logger = logger;
     }
 
+    public void ResetUpdateManager()
+    {
+        _updateManager = null;
+    }
+
     private void EnsureUpdateManager()
     {
         if (_updateManager != null) return;
