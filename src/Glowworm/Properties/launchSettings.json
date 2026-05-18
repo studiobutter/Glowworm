@@ -1,0 +1,8 @@
+﻿{
+  "profiles": {
+    "Glowworm": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}

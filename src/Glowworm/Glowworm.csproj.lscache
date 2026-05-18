@@ -1,0 +1,525 @@
+version=1
+
+# This file caches language service data to improve the performance of C# Dev Kit.
+# It is not intended for manual editing. It can safely be deleted and will be
+# regenerated automatically. For more information, see https://aka.ms/lscache
+#
+# To control where cache files are stored, use the following VS Code setting:
+#   "dotnet.projectsystem.cacheInProjectFolder": true
+
+[project]
+language=C#
+primary
+lastDtbSucceeded
+
+[properties]
+AssemblyName=Glowworm
+CommandLineArgsForDesignTimeEvaluation=-langversion:preview -define:DISABLE_XAML_GENERATED_MAIN
+CompilerGeneratedFilesOutputPath=
+MaxSupportedLangVersion=14.0
+ProjectAssetsFile=<PATH>obj/project.assets.json
+RootNamespace=Glowworm
+RunAnalyzers=
+RunAnalyzersDuringLiveAnalysis=
+SolutionPath=<PATH>../../Glowworm.slnx
+TargetFrameworkIdentifier=.NETCoreApp
+TargetPath=<PATH>bin/ARM64/Debug/net10.0-windows10.0.26100.0/win-arm64/Glowworm.dll
+TargetRefPath=<PATH>obj/ARM64/Debug/net10.0-windows10.0.26100.0/win-arm64/ref/Glowworm.dll
+TemporaryDependencyNodeTargetIdentifier=net10.0-windows10.0.26100.0
+
+[commandLineArguments]
+/noconfig
+/unsafe+
+/checked-
+/nowarn:1701,1702,IL2121,1701,1702,8002
+/fullpaths
+/nostdlib+
+/platform:arm64
+/errorreport:prompt
+/warn:10
+/define:DISABLE_XAML_GENERATED_MAIN;MICROSOFT_WINDOWSAPPSDK_SELFCONTAINED;MICROSOFT_WINDOWSAPPSDK_AUTOINITIALIZE_UNDOCKEDREGFREEWINRT;DEBUG;NET;NET10_0;NETCOREAPP;WINDOWS;WINDOWS10_0_26100_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NET10_0_OR_GREATER;NETCOREAPP1_0_OR_GREATER;NETCOREAPP1_1_OR_GREATER;NETCOREAPP2_0_OR_GREATER;NETCOREAPP2_1_OR_GREATER;NETCOREAPP2_2_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS10_0_26100_0_OR_GREATER;WINDOWS10_0_22621_0_OR_GREATER;WINDOWS10_0_22000_0_OR_GREATER;WINDOWS10_0_20348_0_OR_GREATER;WINDOWS10_0_19041_0_OR_GREATER;WINDOWS10_0_18362_0_OR_GREATER;WINDOWS10_0_17763_0_OR_GREATER;WINDOWS8_0_OR_GREATER;WINDOWS7_0_OR_GREATER
+/highentropyva+
+/nullable:enable
+/features:"InterceptorsNamespaces=;Microsoft.AspNetCore.Http.Generated;Microsoft.Extensions.Configuration.Binder.SourceGeneration;Microsoft.Extensions.Validation.Generated"
+/debug+
+/debug:portable
+/filealign:512
+/optimize-
+/out:obj\ARM64\Debug\net10.0-windows10.0.26100.0\win-arm64\Glowworm.dll
+/refout:obj\ARM64\Debug\net10.0-windows10.0.26100.0\win-arm64\refint\Glowworm.dll
+/subsystemversion:6.00
+/target:winexe
+/warnaserror-
+/utf8output
+/win32icon:../logo.ico
+/win32manifest:app.manifest
+/deterministic+
+/langversion:preview
+/warnaserror+:NU1605,SYSLIB0011
+
+[sourceFiles]
+<NUGET>/microsoft.windowsappsdk.foundation/1.8.260203002/include/
+ UndockedRegFreeWinRT-AutoInitializer.cs
+ WindowsAppRuntimeAutoInitializer.cs
+App.xaml.cs
+AppConfig.Common.cs
+AppConfig.Configuration.cs
+AppConfig.ServiceProvider.cs
+AppConfig.Setting.cs
+Controls/
+ CachedImage.cs
+ ColorfulTextBlock.xaml.cs
+ ColorRectChart.xaml.cs
+Converters/
+ BoolReversedConverter.cs
+ BoolToVisibilityConverter.cs
+ ByteLengthToStringConverter.cs
+ CollectionToVisibilityConverter.cs
+ ColorToSolidColorBrushConverter.cs
+ ObjectToBoolConverter.cs
+ ObjectToVisibilityConverter.cs
+ TimeSpanToStringConverter.cs
+ VisibilityToBoolConverter.cs
+ WhiteSpaceStringToVisibilityConverter.cs
+Features/Codec/
+ HDR10GammaEffect.cs
+ ImageInfo.cs
+ ImageLoader.cs
+ ImageSaver.cs
+ ImageThumbnail.cs
+ SrgbGammaEffect.cs
+ UhdrGainmapEffect.cs
+ VP9Helper.cs
+Features/Database/
+ DapperSqlMapper.cs
+ DatabaseService.cs
+Features/Gacha/
+ CloudGameGachaWindow.xaml.cs
+ DeleteGachaLogDialog.xaml.cs
+ GachaBanner.cs
+ GachaLogExportFile.cs
+ GachaLogItemEx.cs
+ GachaLogPage.xaml.cs
+ GachaLogService.cs
+ GachaLogUrl.cs
+ GachaNoUp.cs
+ GachaPityProgressBackgroundBrushConverter.cs
+ GachaStatsCard.xaml.cs
+ GachaTypeStats.cs
+ GenshinBeyondGachaPage.xaml.cs
+ GenshinBeyondGachaService.cs
+ GenshinGachaService.cs
+ RarityToGIBgConverter.cs
+ RarityToSRBgConverter.cs
+ RarityToZZZIconConverter.cs
+ StarRailGachaService.cs
+ UIGF/
+  GachaUidArchiveDisplay.cs
+  UIGF3File.cs
+  UIGF4File.cs
+  UIGF4GachaWindow.xaml.cs
+  UIGF4ImportException.cs
+  UIGFGachaService.cs
+  UIGFGenshinGachaItem.cs
+ UpdateGachaLogMessage.cs
+ ZZZGachaService.cs
+ ZZZGachaStatsCard.xaml.cs
+ ZZZGachaToolbox/
+  IconInfo.cs
+  ItemList.cs
+  ZZZGachaInfoWindow.xaml.cs
+Features/
+ GameFeatureConfig.cs
+ Screenshot/
+  ImageBatchConvertWindow.xaml.cs
+  ImageViewWindow.xaml.cs
+  ImageViewWindow2.xaml.cs
+  ScreenCaptureContext.cs
+  ScreenCaptureHelper.cs
+  ScreenCaptureInfoWindow.xaml.cs
+  ScreenCaptureItem.cs
+  ScreenCaptureService.cs
+  ScreenshotFolder.cs
+  ScreenshotFolderManageDialog.xaml.cs
+  ScreenshotHelper.cs
+  ScreenshotItem.cs
+  ScreenshotPage.xaml.cs
+  ScreenshotPage2.xaml.cs
+  ScrollViewerExtensions.cs
+  ZoomFactorPercentConverter.cs
+ Setting/
+  AboutSetting.xaml.cs
+  FileManageSetting.xaml.cs
+  GeneralSetting.xaml.cs
+  HotkeyInput.xaml.cs
+  HotkeyManager.cs
+  LanguageChangedMessage.cs
+  ScreenshotSetting.xaml.cs
+  SettingPage.xaml.cs
+  ToolboxItem.cs
+ Update/
+  LogUploadClient.cs
+  LogUploadRequestBase.cs
+  LogUploadService.cs
+  SetupService.cs
+  UpdateService.cs
+  UpdateState.cs
+  UpdateWindow.xaml.cs
+ ViewHost/
+  BlankPage.xaml.cs
+  GameTabs.xaml.cs
+  MainView.xaml.cs
+  MainViewNavigateMessage.cs
+  MainWindow.xaml.cs
+  MainWindowStateChangedMessage.cs
+  NoPermissionWindow.xaml.cs
+Frameworks/
+ PageBase.cs
+ WindowEx.cs
+GlobalUsing.cs
+Helpers/
+ AccentColorHelper.cs
+ BindConverter.cs
+ ClipboardHelper.cs
+ DriveHelper.cs
+ Enumeration/
+  EnumItemsSource.cs
+  LocalizationKeyAttribute.cs
+ FileCache.cs
+ FileDialogHelper.cs
+ FileDialogNative.cs
+ FileHashHelper.cs
+ GameDetectionService.cs
+ InAppToast.cs
+ PointerCursor.cs
+ SystemBackdropHelper.cs
+ SystemUIHelper.cs
+ TransparentBackdrop.cs
+ XamlRootExtension.cs
+obj/ARM64/Debug/net10.0-windows10.0.26100.0/win-arm64/
+ .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
+ Generated Files/CsWinRT/WinRTEventHelpers.cs
+ Glowworm.AssemblyInfo.cs
+ Glowworm.GlobalUsings.g.cs
+Program.cs
+
+[metadataReferences]
+../
+ Glowworm.Core/obj/ARM64/Debug/net10.0/ref/Glowworm.Core.dll
+ Glowworm.Language/obj/ARM64/Debug/net10.0/ref/Glowworm.Language.dll
+ Glowworm.Setup.Core/obj/ARM64/Debug/net10.0/ref/Glowworm.Setup.Core.dll
+<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.7/ref/net10.0/
+ Microsoft.CSharp.dll
+ Microsoft.VisualBasic.Core.dll
+ Microsoft.VisualBasic.dll
+ Microsoft.Win32.Primitives.dll
+ Microsoft.Win32.Registry.dll
+ mscorlib.dll
+ netstandard.dll
+ System.AppContext.dll
+ System.Buffers.dll
+ System.Collections.Concurrent.dll
+ System.Collections.dll
+ System.Collections.Immutable.dll
+ System.Collections.NonGeneric.dll
+ System.Collections.Specialized.dll
+ System.ComponentModel.Annotations.dll
+ System.ComponentModel.DataAnnotations.dll
+ System.ComponentModel.dll
+ System.ComponentModel.EventBasedAsync.dll
+ System.ComponentModel.Primitives.dll
+ System.ComponentModel.TypeConverter.dll
+ System.Configuration.dll
+ System.Console.dll
+ System.Core.dll
+ System.Data.Common.dll
+ System.Data.DataSetExtensions.dll
+ System.Data.dll
+ System.Diagnostics.Contracts.dll
+ System.Diagnostics.Debug.dll
+ System.Diagnostics.DiagnosticSource.dll
+ System.Diagnostics.FileVersionInfo.dll
+ System.Diagnostics.Process.dll
+ System.Diagnostics.StackTrace.dll
+ System.Diagnostics.TextWriterTraceListener.dll
+ System.Diagnostics.Tools.dll
+ System.Diagnostics.TraceSource.dll
+ System.Diagnostics.Tracing.dll
+ System.dll
+ System.Drawing.dll
+ System.Drawing.Primitives.dll
+ System.Dynamic.Runtime.dll
+ System.Formats.Asn1.dll
+ System.Formats.Tar.dll
+ System.Globalization.Calendars.dll
+ System.Globalization.dll
+ System.Globalization.Extensions.dll
+ System.IO.Compression.Brotli.dll
+ System.IO.Compression.dll
+ System.IO.Compression.FileSystem.dll
+ System.IO.Compression.ZipFile.dll
+ System.IO.dll
+ System.IO.FileSystem.AccessControl.dll
+ System.IO.FileSystem.dll
+ System.IO.FileSystem.DriveInfo.dll
+ System.IO.FileSystem.Primitives.dll
+ System.IO.FileSystem.Watcher.dll
+ System.IO.IsolatedStorage.dll
+ System.IO.MemoryMappedFiles.dll
+ System.IO.Pipelines.dll
+ System.IO.Pipes.AccessControl.dll
+ System.IO.Pipes.dll
+ System.IO.UnmanagedMemoryStream.dll
+ System.Linq.AsyncEnumerable.dll
+ System.Linq.dll
+ System.Linq.Expressions.dll
+ System.Linq.Parallel.dll
+ System.Linq.Queryable.dll
+ System.Memory.dll
+ System.Net.dll
+ System.Net.Http.dll
+ System.Net.Http.Json.dll
+ System.Net.HttpListener.dll
+ System.Net.Mail.dll
+ System.Net.NameResolution.dll
+ System.Net.NetworkInformation.dll
+ System.Net.Ping.dll
+ System.Net.Primitives.dll
+ System.Net.Quic.dll
+ System.Net.Requests.dll
+ System.Net.Security.dll
+ System.Net.ServerSentEvents.dll
+ System.Net.ServicePoint.dll
+ System.Net.Sockets.dll
+ System.Net.WebClient.dll
+ System.Net.WebHeaderCollection.dll
+ System.Net.WebProxy.dll
+ System.Net.WebSockets.Client.dll
+ System.Net.WebSockets.dll
+ System.Numerics.dll
+ System.Numerics.Vectors.dll
+ System.ObjectModel.dll
+ System.Reflection.DispatchProxy.dll
+ System.Reflection.dll
+ System.Reflection.Emit.dll
+ System.Reflection.Emit.ILGeneration.dll
+ System.Reflection.Emit.Lightweight.dll
+ System.Reflection.Extensions.dll
+ System.Reflection.Metadata.dll
+ System.Reflection.Primitives.dll
+ System.Reflection.TypeExtensions.dll
+ System.Resources.Reader.dll
+ System.Resources.ResourceManager.dll
+ System.Resources.Writer.dll
+ System.Runtime.CompilerServices.Unsafe.dll
+ System.Runtime.CompilerServices.VisualC.dll
+ System.Runtime.dll
+ System.Runtime.Extensions.dll
+ System.Runtime.Handles.dll
+ System.Runtime.InteropServices.dll
+ System.Runtime.InteropServices.JavaScript.dll
+ System.Runtime.InteropServices.RuntimeInformation.dll
+ System.Runtime.Intrinsics.dll
+ System.Runtime.Loader.dll
+ System.Runtime.Numerics.dll
+ System.Runtime.Serialization.dll
+ System.Runtime.Serialization.Formatters.dll
+ System.Runtime.Serialization.Json.dll
+ System.Runtime.Serialization.Primitives.dll
+ System.Runtime.Serialization.Xml.dll
+ System.Security.AccessControl.dll
+ System.Security.Claims.dll
+ System.Security.Cryptography.Algorithms.dll
+ System.Security.Cryptography.Cng.dll
+ System.Security.Cryptography.Csp.dll
+ System.Security.Cryptography.dll
+ System.Security.Cryptography.Encoding.dll
+ System.Security.Cryptography.OpenSsl.dll
+ System.Security.Cryptography.Primitives.dll
+ System.Security.Cryptography.X509Certificates.dll
+ System.Security.dll
+ System.Security.Principal.dll
+ System.Security.Principal.Windows.dll
+ System.Security.SecureString.dll
+ System.ServiceModel.Web.dll
+ System.ServiceProcess.dll
+ System.Text.Encoding.CodePages.dll
+ System.Text.Encoding.dll
+ System.Text.Encoding.Extensions.dll
+ System.Text.Encodings.Web.dll
+ System.Text.Json.dll
+ System.Text.RegularExpressions.dll
+ System.Threading.AccessControl.dll
+ System.Threading.Channels.dll
+ System.Threading.dll
+ System.Threading.Overlapped.dll
+ System.Threading.Tasks.Dataflow.dll
+ System.Threading.Tasks.dll
+ System.Threading.Tasks.Extensions.dll
+ System.Threading.Tasks.Parallel.dll
+ System.Threading.Thread.dll
+ System.Threading.ThreadPool.dll
+ System.Threading.Timer.dll
+ System.Transactions.dll
+ System.Transactions.Local.dll
+ System.ValueTuple.dll
+ System.Web.dll
+ System.Web.HttpUtility.dll
+ System.Windows.dll
+ System.Xml.dll
+ System.Xml.Linq.dll
+ System.Xml.ReaderWriter.dll
+ System.Xml.Serialization.dll
+ System.Xml.XDocument.dll
+ System.Xml.XmlDocument.dll
+ System.Xml.XmlSerializer.dll
+ System.Xml.XPath.dll
+ System.Xml.XPath.XDocument.dll
+ WindowsBase.dll
+<NUGET>/
+ communitytoolkit.common/8.2.1/lib/net6.0/CommunityToolkit.Common.dll
+ communitytoolkit.mvvm/8.4.2/lib/net8.0-windows10.0.17763/CommunityToolkit.Mvvm.dll
+ communitytoolkit.winui.animations/8.2.251219/lib/net9.0-windows10.0.19041/CommunityToolkit.WinUI.Animations.dll
+ communitytoolkit.winui.behaviors/8.2.251219/lib/net9.0-windows10.0.19041/CommunityToolkit.WinUI.Behaviors.dll
+ communitytoolkit.winui.controls.primitives/8.2.251219/lib/net9.0-windows10.0.19041/CommunityToolkit.WinUI.Controls.Primitives.dll
+ communitytoolkit.winui.controls.segmented/8.2.250402/lib/net9.0-windows10.0.19041/CommunityToolkit.WinUI.Controls.Segmented.dll
+ communitytoolkit.winui.extensions/8.2.251219/lib/net9.0-windows10.0.19041/CommunityToolkit.WinUI.Extensions.dll
+ communitytoolkit.winui.helpers/8.2.251219/lib/net9.0-windows10.0.19041/CommunityToolkit.WinUI.Helpers.dll
+ computesharp.core/3.2.0/lib/net8.0/ComputeSharp.Core.dll
+ computesharp.d2d1.winui/3.2.0/lib/net8.0-windows10.0.22621/ComputeSharp.D2D1.WinUI.dll
+ computesharp.d2d1/3.2.0/lib/net8.0/ComputeSharp.D2D1.dll
+ dapper/2.1.72/lib/net10.0/Dapper.dll
+ h.generatedicons.system.drawing/2.4.1/lib/net10.0/H.GeneratedIcons.System.Drawing.dll
+ h.inputsimulator/1.5.0/lib/net9.0/H.InputSimulator.dll
+ h.notifyicon.winui/2.4.1/lib/net10.0-windows10.0.17763/H.NotifyIcon.WinUI.dll
+ h.notifyicon/2.4.1/lib/net10.0/H.NotifyIcon.dll
+ microsoft.data.sqlite.core/10.0.7/lib/net8.0/Microsoft.Data.Sqlite.dll
+ microsoft.extensions.caching.abstractions/10.0.7/lib/net10.0/Microsoft.Extensions.Caching.Abstractions.dll
+ microsoft.extensions.caching.memory/10.0.7/lib/net10.0/Microsoft.Extensions.Caching.Memory.dll
+ microsoft.extensions.configuration.abstractions/10.0.7/lib/net10.0/Microsoft.Extensions.Configuration.Abstractions.dll
+ microsoft.extensions.configuration.binder/10.0.7/lib/net10.0/Microsoft.Extensions.Configuration.Binder.dll
+ microsoft.extensions.configuration.commandline/10.0.7/lib/net10.0/Microsoft.Extensions.Configuration.CommandLine.dll
+ microsoft.extensions.configuration.fileextensions/10.0.7/lib/net10.0/Microsoft.Extensions.Configuration.FileExtensions.dll
+ microsoft.extensions.configuration.ini/10.0.7/lib/net10.0/Microsoft.Extensions.Configuration.Ini.dll
+ microsoft.extensions.configuration/10.0.7/lib/net10.0/Microsoft.Extensions.Configuration.dll
+ microsoft.extensions.dependencyinjection.abstractions/10.0.7/lib/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+ microsoft.extensions.dependencyinjection/10.0.0/lib/net10.0/Microsoft.Extensions.DependencyInjection.dll
+ microsoft.extensions.diagnostics.abstractions/10.0.0/lib/net10.0/Microsoft.Extensions.Diagnostics.Abstractions.dll
+ microsoft.extensions.diagnostics/10.0.0/lib/net10.0/Microsoft.Extensions.Diagnostics.dll
+ microsoft.extensions.fileproviders.abstractions/10.0.7/lib/net10.0/Microsoft.Extensions.FileProviders.Abstractions.dll
+ microsoft.extensions.fileproviders.physical/10.0.7/lib/net10.0/Microsoft.Extensions.FileProviders.Physical.dll
+ microsoft.extensions.filesystemglobbing/10.0.7/lib/net10.0/Microsoft.Extensions.FileSystemGlobbing.dll
+ microsoft.extensions.http/10.0.0/lib/net10.0/Microsoft.Extensions.Http.dll
+ microsoft.extensions.logging.abstractions/10.0.7/lib/net10.0/Microsoft.Extensions.Logging.Abstractions.dll
+ microsoft.extensions.logging/10.0.0/lib/net10.0/Microsoft.Extensions.Logging.dll
+ microsoft.extensions.options.configurationextensions/10.0.0/lib/net10.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll
+ microsoft.extensions.options/10.0.7/lib/net10.0/Microsoft.Extensions.Options.dll
+ microsoft.extensions.primitives/10.0.7/lib/net10.0/Microsoft.Extensions.Primitives.dll
+ microsoft.web.webview2/1.0.3179.45/lib_manual/net8.0-windows10.0.17763.0/Microsoft.Web.WebView2.Core.Projection.dll
+ microsoft.win32.systemevents/10.0.0/lib/net10.0/Microsoft.Win32.SystemEvents.dll
+ microsoft.windows.sdk.net.ref/10.0.26100.57/lib/net8.0/
+  Microsoft.Windows.SDK.NET.dll
+  WinRT.Runtime.dll
+ microsoft.windowsappsdk.ai/1.8.47/lib/net6.0-windows10.0.17763.0/
+  Microsoft.Graphics.Imaging.Projection.dll
+  Microsoft.Windows.AI.ContentSafety.Projection.dll
+  Microsoft.Windows.AI.Foundation.Projection.dll
+  Microsoft.Windows.AI.Imaging.Projection.dll
+  Microsoft.Windows.AI.Projection.dll
+  Microsoft.Windows.AI.Text.Projection.dll
+ microsoft.windowsappsdk.foundation/1.8.260203002/lib/net6.0-windows10.0.17763.0/
+  Microsoft.Security.Authentication.OAuth.Projection.dll
+  Microsoft.Windows.ApplicationModel.Background.Projection.dll
+  Microsoft.Windows.ApplicationModel.DynamicDependency.Projection.dll
+  Microsoft.Windows.ApplicationModel.Resources.Projection.dll
+  Microsoft.Windows.ApplicationModel.WindowsAppRuntime.Projection.dll
+  Microsoft.Windows.AppLifecycle.Projection.dll
+  Microsoft.Windows.AppNotifications.Builder.Projection.dll
+  Microsoft.Windows.AppNotifications.Projection.dll
+  Microsoft.Windows.BadgeNotifications.Projection.dll
+  Microsoft.Windows.Foundation.Projection.dll
+  Microsoft.Windows.Management.Deployment.Projection.dll
+  Microsoft.Windows.Media.Capture.Projection.dll
+  Microsoft.Windows.PushNotifications.Projection.dll
+  Microsoft.Windows.Security.AccessControl.Projection.dll
+  Microsoft.Windows.Storage.Pickers.Projection.dll
+  Microsoft.Windows.Storage.Projection.dll
+  Microsoft.Windows.System.Power.Projection.dll
+  Microsoft.Windows.System.Projection.dll
+  Microsoft.WindowsAppRuntime.Bootstrap.Net.dll
+ microsoft.windowsappsdk.interactiveexperiences/1.8.260125001/lib/net6.0-windows10.0.18362.0/Microsoft.InteractiveExperiences.Projection.dll
+ microsoft.windowsappsdk.ml/1.8.2124/lib/net8.0-windows10.0.17763.0/
+  Microsoft.ML.OnnxRuntime.dll
+  Microsoft.Windows.AI.MachineLearning.Projection.dll
+ microsoft.windowsappsdk.widgets/1.8.251231004/lib/net6.0-windows10.0.17763.0/Microsoft.Windows.Widgets.Projection.dll
+ microsoft.windowsappsdk.winui/1.8.260204000/lib/net6.0-windows10.0.17763.0/Microsoft.WinUI.dll
+ microsoft.xaml.behaviors.winui.managed/3.0.0/lib/net8.0-windows10.0.17763.0/Microsoft.Xaml.Interactivity.dll
+ miniexcel/1.43.1/lib/net10.0/MiniExcel.dll
+ nuget.versioning/7.3.1/lib/net8.0/NuGet.Versioning.dll
+ polly.core/8.5.2/lib/net8.0/Polly.Core.dll
+ polly/8.5.2/lib/net6.0/Polly.dll
+ scighost.winui/0.1.0/lib/net8.0-windows10.0.19041/Scighost.WinUI.dll
+ serilog.extensions.logging/10.0.0/lib/net10.0/Serilog.Extensions.Logging.dll
+ serilog.sinks.file/7.0.0/lib/net9.0/Serilog.Sinks.File.dll
+ serilog/4.2.0/lib/net9.0/Serilog.dll
+ sqlitepclraw.bundle_e_sqlite3/2.1.11/lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll
+ sqlitepclraw.core/2.1.11/lib/netstandard2.0/SQLitePCLRaw.core.dll
+ sqlitepclraw.provider.e_sqlite3/2.1.11/lib/net6.0-windows7.0/SQLitePCLRaw.provider.e_sqlite3.dll
+ starward.codec/0.5.2/lib/net10.0-windows7.0/Starward.Codec.dll
+ starward.gameinput/0.3.1/lib/net9.0/SharpGameInput.dll
+ starward.nativelib/0.3.1/lib/net9.0-windows7.0/Starward.NativeLib.dll
+ starward.win2d/1.3.2-release.1/lib/net6.0-windows10.0.19041.0/Microsoft.Graphics.Canvas.Interop.dll
+ system.drawing.common/10.0.0/lib/net10.0/
+  System.Drawing.Common.dll
+  System.Private.Windows.Core.dll
+  System.Private.Windows.GdiPlus.dll
+ system.io.hashing/10.0.7/lib/net10.0/System.IO.Hashing.dll
+ system.numerics.tensors/9.0.0/lib/net9.0/System.Numerics.Tensors.dll
+ vanara.core/5.0.4/lib/net10.0-windows7.0/Vanara.Core.dll
+ vanara.pinvoke.comctl32/5.0.4/lib/net10.0-windows7.0/Vanara.PInvoke.ComCtl32.dll
+ vanara.pinvoke.cryptography/5.0.4/lib/net10.0-windows7.0/Vanara.PInvoke.Cryptography.dll
+ vanara.pinvoke.dwmapi/5.0.4/lib/net10.0-windows7.0/Vanara.PInvoke.DwmApi.dll
+ vanara.pinvoke.gdi32/5.0.4/lib/net10.0-windows7.0/Vanara.PInvoke.Gdi32.dll
+ vanara.pinvoke.kernel32/5.0.4/lib/net10.0-windows7.0/Vanara.PInvoke.Kernel32.dll
+ vanara.pinvoke.ole/5.0.4/lib/net10.0-windows7.0/Vanara.PInvoke.Ole.dll
+ vanara.pinvoke.rpc/5.0.4/lib/net10.0-windows7.0/Vanara.PInvoke.Rpc.dll
+ vanara.pinvoke.security/5.0.4/lib/net10.0-windows7.0/Vanara.PInvoke.Security.dll
+ vanara.pinvoke.shell32/5.0.4/lib/net10.0-windows7.0/Vanara.PInvoke.Shell32.dll
+ vanara.pinvoke.shlwapi/5.0.4/lib/net10.0-windows7.0/Vanara.PInvoke.ShlwApi.dll
+ vanara.pinvoke.user32/5.0.4/lib/net10.0-windows7.0/Vanara.PInvoke.User32.dll
+ zstdsharp.port/0.8.5/lib/net9.0/ZstdSharp.dll
+
+[analyzerReferences]
+<DOTNET>/packs/Microsoft.NETCore.App.Ref/10.0.7/analyzers/dotnet/cs/
+ Microsoft.Interop.ComInterfaceGenerator.dll
+ Microsoft.Interop.JavaScript.JSImportGenerator.dll
+ Microsoft.Interop.LibraryImportGenerator.dll
+ Microsoft.Interop.SourceGeneration.dll
+ System.Text.Json.SourceGeneration.dll
+ System.Text.RegularExpressions.Generator.dll
+<DOTNET>/sdk/10.0.203/Sdks/Microsoft.NET.Sdk/analyzers/
+ Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll
+ Microsoft.CodeAnalysis.NetAnalyzers.dll
+<NUGET>/communitytoolkit.mvvm/8.4.2/analyzers/dotnet/roslyn5.0/cs/
+ CommunityToolkit.Mvvm.CodeFixers.dll
+ CommunityToolkit.Mvvm.SourceGenerators.dll
+<NUGET>/
+ computesharp.core/3.2.0/analyzers/dotnet/cs/ComputeSharp.Core.SourceGenerators.dll
+ computesharp.d2d1.winui/3.2.0/analyzers/dotnet/cs/
+  ComputeSharp.D2D1.WinUI.CodeFixers.dll
+  ComputeSharp.D2D1.WinUI.SourceGenerators.dll
+ computesharp.d2d1/3.2.0/analyzers/dotnet/cs/
+  ComputeSharp.D2D1.CodeFixers.dll
+  ComputeSharp.D2D1.SourceGenerators.dll
+ microsoft.extensions.configuration.binder/10.0.7/analyzers/dotnet/cs/Microsoft.Extensions.Configuration.Binder.SourceGeneration.dll
+ microsoft.extensions.logging.abstractions/10.0.7/analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll
+ microsoft.extensions.options/10.0.7/analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Options.SourceGeneration.dll
+ microsoft.net.illink.tasks/10.0.7/analyzers/dotnet/cs/
+  ILLink.CodeFixProvider.dll
+  ILLink.RoslynAnalyzer.dll
+ microsoft.windows.sdk.net.ref/10.0.26100.57/analyzers/dotnet/cs/WinRT.SourceGenerator.dll
+
+[analyzerConfigFiles]
+../../.editorconfig
+<DOTNET>/sdk/10.0.203/Sdks/Microsoft.NET.Sdk/analyzers/build/config/analysislevel_10_default.globalconfig
+obj/ARM64/Debug/net10.0-windows10.0.26100.0/win-arm64/Glowworm.GeneratedMSBuildEditorConfig.editorconfig
