@@ -368,10 +368,28 @@ public sealed partial class UpdateWindow : WindowEx
             webview.CoreWebView2.NewWindowRequested -= CoreWebView2_NewWindowRequested;
             webview.CoreWebView2.NewWindowRequested += CoreWebView2_NewWindowRequested;
 
-            string markdown = NewVersion?.TargetFullRelease.NotesMarkdown ?? "No release notes available.";
+            string markdown = "No release notes available.";
+
+            if (AppConfig.UpdateSource == 1) // Cloudflare
+            {
+                try
+                {
+                    string channel = AppConfig.EnablePreviewRelease ? "preview" : "stable";
+                    using var client = new System.Net.Http.HttpClient();
+                    markdown = await client.GetStringAsync($"https://update.studiobutter.io.vn/glowworm/update/{channel}/Changelogs.md");
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Load Cloudflare release notes");
+                }
+            }
+            else // GitHub
+            {
+                markdown = NewVersion?.TargetFullRelease.NotesMarkdown ?? markdown;
+            }
             
             // Basic Markdown to HTML wrapper (can be replaced with a real renderer)
-            string html = RenderMarkdownAsync(markdown);
+            string html = await RenderMarkdownAsync(markdown);
             webview.NavigateToString(html);
             AppConfig.LastAppVersion = AppConfig.AppVersion;
         }
@@ -384,10 +402,23 @@ public sealed partial class UpdateWindow : WindowEx
         }
     }
 
-    private string RenderMarkdownAsync(string markdown)
+    private async Task<string> RenderMarkdownAsync(string markdown)
     {
         string css = """<link href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css" type="text/css" rel="stylesheet" />""";
         string html = $"<pre style='white-space: pre-wrap; font-family: inherit;'>{System.Net.WebUtility.HtmlEncode(markdown)}</pre>";
+
+        try
+        {
+            var client = AppConfig.GetService<Glowworm.Core.Metadata.MetadataClient>();
+            if (client != null)
+            {
+                html = await client.RenderGithubMarkdownAsync(markdown);
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Render Github Markdown");
+        }
 
         return $$"""
             <!DOCTYPE html>

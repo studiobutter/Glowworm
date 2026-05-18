@@ -53,6 +53,7 @@ public static partial class AppConfig
             sc.AddTransient<UpdateService>();
 
             sc.AddSingleton<ScreenCaptureService>();
+            sc.AddSingleton<Glowworm.Core.Metadata.MetadataClient>();
 
 
             _serviceProvider = sc.BuildServiceProvider();
