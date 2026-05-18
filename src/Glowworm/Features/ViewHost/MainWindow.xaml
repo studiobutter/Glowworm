@@ -11,7 +11,7 @@
              x:DefaultBindMode="OneWay"
              mc:Ignorable="d">
 
-    <Grid Background="Transparent">
+    <Grid Background="#50222222">
 
         <local:MainView x:Name="MainContentHost"
                         HorizontalContentAlignment="Stretch"
