@@ -119,7 +119,6 @@ public partial class App : Application
     {
         _gcTimer?.Stop();
         _gcTimer?.Dispose();
-        LogUploadService.Stop();
         m_MainWindow?.Close();
         Application.Current.Exit();
     }
