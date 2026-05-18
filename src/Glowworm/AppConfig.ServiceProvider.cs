@@ -54,8 +54,6 @@ public static partial class AppConfig
 
             sc.AddSingleton<ScreenCaptureService>();
 
-            sc.AddHttpClient<LogUploadClient>().ConfigGlowwormHttpClient();
-
 
             _serviceProvider = sc.BuildServiceProvider();
         }

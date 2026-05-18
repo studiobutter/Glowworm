@@ -69,7 +69,6 @@ public sealed partial class MainView : UserControl
         HotkeyManager.InitializeHotkey(this.XamlRoot.GetWindowHandle());
         _ = CheckUpdateOrShowRecentUpdateContentAsync();
         // AppConfig.GetService<RpcService>().TrySetEnviromentAsync();
-        LogUploadService.Start();
         
         // Auto detect game paths if not set
         foreach (var biz in GameBiz.AllGameBizs)
