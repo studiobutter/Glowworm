@@ -8,7 +8,7 @@ Glowworm is an open-source companion app for miHoYo/HoYoverse games taken from a
 
 The name is taken from an alterative way of saying Firefly. (Iykyk)
 
-> *Which is also taken from another existing project called [Collapse Launcher](https://collapselauncher.com) by neon-nyan
+> *Which is also taken from another existing project called [Collapse Launcher](https://collapselauncher.com) by neon-nyan*
 
 It provides the following features:
 
