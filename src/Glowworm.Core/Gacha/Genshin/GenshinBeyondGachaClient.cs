@@ -286,7 +286,7 @@ public class GenshinBeyondGachaClient
                             Id = int.Parse(item.Key),
                             Name = item.Value?["name"]?.ToString(),
                             Rank = item.Value?["rank"]?.GetValue<int>() ?? 0,
-                            Icon = $"https://static.nanoka.cc/assets/gi/{item.Value?["icon"]?.ToString()}.webp"
+                            Icon = $"https://ugc.studiobutter.io.vn/assets/{item.Value?["icon"]?.ToString()}.png"
                         };
                         standardResult.Add(info);
                         result.Add(info);
@@ -305,7 +305,7 @@ public class GenshinBeyondGachaClient
                             Id = int.Parse(item.Key),
                             Name = item.Value?["name"]?.ToString(),
                             Rank = item.Value?["rank"]?.GetValue<int>() ?? 0,
-                            Icon = $"https://static.nanoka.cc/assets/gi/{item.Value?["icon"]?.ToString()}.webp"
+                            Icon = $"https://ugc.studiobutter.io.vn/assets/{item.Value?["icon"]?.ToString()}.png"
                         };
                         limitedResult.Add(info);
                         result.Add(info);
