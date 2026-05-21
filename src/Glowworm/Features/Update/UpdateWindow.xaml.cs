@@ -128,7 +128,7 @@ public sealed partial class UpdateWindow : WindowEx
             {
                 var url = fe.Tag switch
                 {
-                    "release" => $"https://github.com/studiobutter/Glowworm/releases/tag/{NewVersion.TargetFullRelease.Version}",
+                    "release" => $"https://github.com/studiobutter/Glowworm/releases/tag/v{NewVersion.TargetFullRelease.Version}",
                     _ => null,
                 };
                 if (url != null)

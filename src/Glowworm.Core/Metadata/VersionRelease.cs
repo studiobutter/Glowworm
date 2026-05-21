@@ -42,7 +42,7 @@ public class ReleaseVersion : IJsonOnDeserialized
 
 
     [JsonIgnore]
-    public string ReleasePage => $"https://github.com/studiobutter/Glowworm/releases/tag/{Version}";
+    public string ReleasePage => $"https://github.com/studiobutter/Glowworm/releases/tag/v{Version}";
 
 
     public void OnDeserialized()
