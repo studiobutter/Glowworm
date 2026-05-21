@@ -6,9 +6,9 @@ English | [简体中文](./docs/README.zh-CN.md) | [Tiếng Việt](./docs/READM
 
 Glowworm is an open-source companion app for miHoYo/HoYoverse games taken from an existing project called [Starward](https://github.com/Scighost/Starward) by [Scighost](https://github.com/Scighost).
 
-The name is taken from an alterative way of saying Firefly. (Iykyk)
-
 > *Which is also taken from another existing project called [Collapse Launcher](https://collapselauncher.com) by neon-nyan*
+
+The name is taken from an alterative way of saying Firefly. (If you know what I mean)
 
 It provides the following features:
 
@@ -30,6 +30,10 @@ Ensure you are using the following:
   - Windows 11: Settings -> Accessibility (Windows + U) -> Visual Effects
 
 > Protip: Press the Keyboard Shortcuts to access the section faster. Windows 11, you only need to press the shortcut and you immediately land on the page
+
+> Note: The following listed things should already be installed out of the box, if not you will have to install them.
+
+Visit the [release page](https://github.com/studiobutter/Glowworm/releases) to download and install the app
 
 ## Localization
 
@@ -53,6 +57,8 @@ While your support is appreciated, I do suggest donating to the original authors
 Also thanks to the "fallens" who help with the original projects before this who was hunted by the ninjas and well... that's a story for another time.
 
 We also use provided services like Cloudflare and Velopack which helps use transision to work thing locally. You can check out our [Third-party Libraries](./docs/ThirdParty.md)
+
+Not obliged but you can also donate to [me](https://ko-fi.com/studiobutterteam)
 
 ## Screenshots
 

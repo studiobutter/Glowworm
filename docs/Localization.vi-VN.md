@@ -1,4 +1,4 @@
-[English](./Localization.md) | [简体中文](./Localization.zh-CN.md) | Tiếng Việt
+[English](Localization.md) | [简体中文](Localization.zh-CN.md) | Tiếng Việt
 
 # Dịch thuật
 
