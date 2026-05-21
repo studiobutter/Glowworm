@@ -36,7 +36,6 @@ public static partial class AppConfig
             Log.Information($"Welcome to Glowworm v{AppVersion}\r\nSystem: {Environment.OSVersion}\r\nCommand Line: {Environment.CommandLine}");
 
             var sc = new ServiceCollection();
-            sc.AddMemoryCache();
             sc.AddLogging(c => c.AddSerilog(Log.Logger));
             sc.AddHttpClient().ConfigureHttpClientDefaults(ConfigDefaultHttpClient);
 

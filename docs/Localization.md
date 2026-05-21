@@ -2,4 +2,4 @@ English | [简体中文](./Localization.zh-CN.md) | [Tiếng Việt](./Localizat
 
 # Localization
 
-Work in Progress
+Thanks for your interest in helping translate the project, we are currently preparing Crowdin as our translation service, please wait.
