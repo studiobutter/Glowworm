@@ -375,7 +375,7 @@ public sealed partial class UpdateWindow : WindowEx
                 try
                 {
                     string channel = AppConfig.EnablePreviewRelease ? "preview" : "stable";
-                    using var client = AppConfig.GetService<System.Net.Http.IHttpClientFactory>().CreateClient();
+                    var client = AppConfig.GetService<System.Net.Http.HttpClient>();
                     markdown = await client.GetStringAsync($"https://update.studiobutter.io.vn/glowworm/update/{channel}/Changelogs.md");
                 }
                 catch (Exception ex)

@@ -28,10 +28,17 @@ public class GenshinBeyondGachaClient
 
     public GenshinBeyondGachaClient(HttpClient? httpClient = null)
     {
-        _httpClient = httpClient ?? new HttpClient(new SocketsHttpHandler { AutomaticDecompression = DecompressionMethods.All })
+        if (httpClient is null)
         {
-            DefaultVersionPolicy = HttpVersionPolicy.RequestVersionOrHigher
-        };
+            _httpClient = new HttpClient(new SocketsHttpHandler { AutomaticDecompression = DecompressionMethods.All })
+            {
+                DefaultVersionPolicy = HttpVersionPolicy.RequestVersionOrHigher
+            };
+        }
+        else
+        {
+            _httpClient = httpClient;
+        }
     }
 
 

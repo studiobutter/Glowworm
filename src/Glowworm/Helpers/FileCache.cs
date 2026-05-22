@@ -18,21 +18,13 @@ internal static class FileCache
 {
 
 
-    private static readonly HttpClient _httpClient;
+    private static HttpClient? _httpClient;
 
     private static readonly ConcurrentDictionary<string, Task<string?>> _concurrentTasks;
 
 
     static FileCache()
     {
-        _httpClient = new HttpClient(new SocketsHttpHandler
-        {
-            AutomaticDecompression = DecompressionMethods.All,
-            EnableMultipleHttp2Connections = true,
-            EnableMultipleHttp3Connections = true,
-            PooledConnectionLifetime = TimeSpan.FromMinutes(5),
-        });
-        _httpClient.DefaultVersionPolicy = HttpVersionPolicy.RequestVersionOrHigher;
         _concurrentTasks = new();
     }
 
@@ -53,6 +45,24 @@ internal static class FileCache
         {
             Directory.CreateDirectory(folder);
             CacheFolder = folder;
+            // Try to get IHttpClientFactory from AppConfig and create a named client.
+            try
+            {
+                var factory = AppConfig.GetService<System.Net.Http.IHttpClientFactory>();
+                _httpClient = factory?.CreateClient("FileCache");
+            }
+            catch
+            {
+                // Fallback to a locally configured HttpClient if factory isn't available
+                _httpClient ??= new HttpClient(new SocketsHttpHandler
+                {
+                    AutomaticDecompression = DecompressionMethods.All,
+                    EnableMultipleHttp2Connections = true,
+                    EnableMultipleHttp3Connections = true,
+                    PooledConnectionLifetime = TimeSpan.FromMinutes(5),
+                }) { DefaultVersionPolicy = HttpVersionPolicy.RequestVersionOrHigher };
+            }
+
             return true;
         }
         catch (Exception ex)

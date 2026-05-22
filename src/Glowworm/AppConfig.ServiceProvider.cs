@@ -39,6 +39,19 @@ public static partial class AppConfig
             sc.AddLogging(c => c.AddSerilog(Log.Logger));
             sc.AddHttpClient().ConfigureHttpClientDefaults(ConfigDefaultHttpClient);
 
+            // Named client for FileCache with specific handler configuration
+            sc.AddHttpClient("FileCache").ConfigureHttpClient(client =>
+            {
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultVersionPolicy = HttpVersionPolicy.RequestVersionOrHigher;
+            }).ConfigurePrimaryHttpMessageHandler(() => new SocketsHttpHandler
+            {
+                AutomaticDecompression = DecompressionMethods.All,
+                EnableMultipleHttp2Connections = true,
+                EnableMultipleHttp3Connections = true,
+                PooledConnectionLifetime = TimeSpan.FromMinutes(5),
+            });
+
             sc.AddSingleton<GenshinGachaClient>();
             sc.AddSingleton<StarRailGachaClient>();
             sc.AddSingleton<ZZZGachaClient>();
@@ -49,11 +62,11 @@ public static partial class AppConfig
             sc.AddSingleton<GenshinBeyondGachaClient>();
             sc.AddSingleton<GenshinBeyondGachaService>();
 
-            sc.AddTransient<UpdateService>();
+            sc.AddSingleton<UpdateService>();
 
             sc.AddSingleton<ScreenCaptureService>();
 
-            sc.AddHttpClient<LogUploadClient>().ConfigGlowwormHttpClient();
+            sc.AddHttpClient("LogUpload").ConfigGlowwormHttpClient();
 
 
             _serviceProvider = sc.BuildServiceProvider();
