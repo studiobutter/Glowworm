@@ -402,6 +402,4 @@ FodyWeavers.xsd
 .idea/
 
 # Others
-.env
-publish.csproj
-Changelogs.md
+Drafts.md
