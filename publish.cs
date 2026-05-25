@@ -61,33 +61,23 @@ foreach (var arch in targetArchitectures)
     }
 }
 
-string? r2Endpoint = Environment.GetEnvironmentVariable("R2_S3_ENDPOINT");
-string? r2Bucket = Environment.GetEnvironmentVariable("R2_BUCKET");
-string? r2AccessKey = Environment.GetEnvironmentVariable("R2_ACCESS_KEY_ID");
-string? r2Secret = Environment.GetEnvironmentVariable("R2_SECRET_ACCESS_KEY");
-string? r2Region = Environment.GetEnvironmentVariable("R2_REGION");
+string targetPublicationDir = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "..", "Glowworm-Publication", "velopack", branchName));
 
-if (!string.IsNullOrWhiteSpace(r2Endpoint) && !string.IsNullOrWhiteSpace(r2Bucket) && !string.IsNullOrWhiteSpace(r2AccessKey) && !string.IsNullOrWhiteSpace(r2Secret))
-{
-    Console.WriteLine($"Uploading releases to Cloudflare R2 (Prefix: glowworm/{branchName})...");
-    foreach (var arch in targetArchitectures)
-    {
-        Console.WriteLine($"Uploading channel win-{arch}...");
-        var uploadArgs = $"upload s3 --endpoint {r2Endpoint} --bucket {r2Bucket} --keyId {r2AccessKey} --secret {r2Secret} --prefix glowworm/{branchName} --channel win-{arch} -o {releaseDir}";
-        var uploadProcess = Process.Start("vpk", uploadArgs);
-        await uploadProcess.WaitForExitAsync();
+Console.WriteLine($"Copying release artifacts to {targetPublicationDir}...");
 
-        if (uploadProcess.ExitCode != 0)
-        {
-            Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine($"Warning: vpk upload s3 exited with code {uploadProcess.ExitCode} for channel win-{arch}");
-            Console.ResetColor();
-        }
-    }
-}
-else
+if (!Directory.Exists(targetPublicationDir))
 {
-    Console.WriteLine("Skipping R2 upload (Missing one or more R2 environment variables).");
+    Directory.CreateDirectory(targetPublicationDir);
 }
+
+foreach (var file in Directory.GetFiles(releaseDir))
+{
+    string fileName = Path.GetFileName(file);
+    string destFile = Path.Combine(targetPublicationDir, fileName);
+    File.Copy(file, destFile, true);
+    Console.WriteLine($"Copied: {fileName}");
+}
+
+Console.WriteLine("Update publication complete.");
 
 return 0;

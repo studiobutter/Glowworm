@@ -19,6 +19,7 @@ using System.Threading.Tasks;
 using Windows.Graphics;
 using Windows.System;
 using Velopack;
+using Markdig;
 
 namespace Glowworm.Features.Update;
 
@@ -128,7 +129,7 @@ public sealed partial class UpdateWindow : WindowEx
             {
                 var url = fe.Tag switch
                 {
-                    "release" => $"https://github.com/studiobutter/Glowworm/releases/tag/{NewVersion.TargetFullRelease.Version}",
+                    "release" => $"https://github.com/studiobutter/Glowworm/releases/tag/v{NewVersion.TargetFullRelease.Version}",
                     _ => null,
                 };
                 if (url != null)
@@ -368,10 +369,28 @@ public sealed partial class UpdateWindow : WindowEx
             webview.CoreWebView2.NewWindowRequested -= CoreWebView2_NewWindowRequested;
             webview.CoreWebView2.NewWindowRequested += CoreWebView2_NewWindowRequested;
 
-            string markdown = NewVersion?.TargetFullRelease.NotesMarkdown ?? "No release notes available.";
+            string markdown = "No release notes available.";
+
+            try
+            {
+                string channel = AppConfig.EnablePreviewRelease ? "preview" : "stable";
+                var client = AppConfig.GetService<System.Net.Http.HttpClient>();
+                if (AppConfig.UpdateSource == 1) // Cloudflare
+                {
+                    markdown = await client.GetStringAsync($"https://update.studiobutter.io.vn/glowworm/changelogs-{channel}.md");
+                }
+                else // GitHub
+                {
+                    markdown = await client.GetStringAsync($"https://raw.githubusercontent.com/studiobutter/Glowworm-Publication/refs/heads/main/changelogs-{channel}.md");
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Load release notes");
+            }
             
             // Basic Markdown to HTML wrapper (can be replaced with a real renderer)
-            string html = RenderMarkdownAsync(markdown);
+            string html = await RenderMarkdownAsync(markdown);
             webview.NavigateToString(html);
             AppConfig.LastAppVersion = AppConfig.AppVersion;
         }
@@ -384,12 +403,14 @@ public sealed partial class UpdateWindow : WindowEx
         }
     }
 
-    private string RenderMarkdownAsync(string markdown)
+    private Task<string> RenderMarkdownAsync(string markdown)
     {
         string css = """<link href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css" type="text/css" rel="stylesheet" />""";
-        string html = $"<pre style='white-space: pre-wrap; font-family: inherit;'>{System.Net.WebUtility.HtmlEncode(markdown)}</pre>";
+        
+        var pipeline = new Markdig.MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
+        string html = Markdig.Markdown.ToHtml(markdown, pipeline);
 
-        return $$"""
+        return Task.FromResult($$"""
             <!DOCTYPE html>
             <html>
             <head>
@@ -428,7 +449,7 @@ public sealed partial class UpdateWindow : WindowEx
               </article>
             </body>
             </html>
-            """;
+            """);
     }
 
     private void CoreWebView2_DOMContentLoaded(CoreWebView2 sender, CoreWebView2DOMContentLoadedEventArgs args)

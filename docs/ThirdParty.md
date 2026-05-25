@@ -1,16 +1,21 @@
 During the development of this project, we have benefited from several outstanding open-source projects. We would like to express our sincere gratitude to the developers and communities behind these projects!
 
 -  [Community Toolkit](https://github.com/CommunityToolkit)
+-  [ComputeSharp](https://github.com/Sergio0694/ComputeSharp)
+-  [CsWinRT](https://github.com/microsoft/CsWinRT)
 -  [Dapper](https://github.com/DapperLib/Dapper)
 -  [GitHub Markdown CSS](https://github.com/sindresorhus/github-markdown-css)
--  [grpc-dotnet](https://github.com/grpc/grpc-dotnet)
-
--  [H.NotifyIcon](https://github.com/HavenDV/H.NotifyIcon)
+-  [Microsoft.Data.Sqlite](https://github.com/dotnet/efcore)
+-  [Microsoft.Extensions](https://github.com/dotnet/runtime)
 -  [MiniExcel](https://github.com/mini-software/MiniExcel)
--  [Polly](https://github.com/App-vNext/Polly)
+-  [NuGet.Versioning](https://github.com/NuGet/NuGet.Client)
 -  [Serilog](https://github.com/serilog/serilog)
 -  [SharpSevenZip](https://github.com/JeremyAnsel/SharpSevenZip)
+-  [Scighost.WinUI](https://github.com/Scighost/Scighost.WinUI)
+-  [Starward](https://github.com/Scighost/Starward)
 -  [Vanara PInvoke](https://github.com/dahall/Vanara)
+-  [Velopack](https://github.com/velopack/velopack)
+-  [WebView2](https://developer.microsoft.com/en-us/microsoft-edge/webview2/)
+-  [Win2D](https://github.com/microsoft/Win2D)
 -  [WindowsAppSDK](https://github.com/microsoft/WindowsAppSDK)
 -  [ZstdSharp](https://github.com/oleg-st/ZstdSharp)
-
