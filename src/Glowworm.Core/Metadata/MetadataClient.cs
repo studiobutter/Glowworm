@@ -81,41 +81,7 @@ public class MetadataClient
 
 
 
-    public async Task<ReleaseVersion> GetVersionAsync(bool isPrerelease, Architecture architecture, CancellationToken cancellationToken = default)
-    {
-#if DEV
-        isPrerelease = true;
-#endif
-        var name = (isPrerelease, architecture) switch
-        {
-            (false, Architecture.X64) => "version_stable_x64.json",
-            (true, Architecture.X64) => "version_preview_x64.json",
-            (false, Architecture.Arm64) => "version_stable_arm64.json",
-            (true, Architecture.Arm64) => "version_preview_arm64.json",
-            _ => throw new PlatformNotSupportedException($"{architecture} is not supported."),
-        };
-        var url = GetUrl(name);
-        return await CommonGetAsync<ReleaseVersion>(url, cancellationToken);
-    }
 
-
-
-    public async Task<ReleaseVersion> GetReleaseAsync(bool isPrerelease, Architecture architecture, CancellationToken cancellationToken = default)
-    {
-#if DEV
-        isPrerelease = true;
-#endif
-        var name = (isPrerelease, architecture) switch
-        {
-            (false, Architecture.X64) => "release_stable_x64.json",
-            (true, Architecture.X64) => "release_preview_x64.json",
-            (false, Architecture.Arm64) => "release_stable_arm64.json",
-            (true, Architecture.Arm64) => "release_preview_arm64.json",
-            _ => throw new PlatformNotSupportedException($"{architecture} is not supported."),
-        };
-        var url = GetUrl(name);
-        return await CommonGetAsync<ReleaseVersion>(url, cancellationToken);
-    }
 
 
 

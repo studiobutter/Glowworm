@@ -39,12 +39,13 @@ internal class UpdateService
         
         if (AppConfig.UpdateSource == 1) // Cloudflare
         {
-            string url = $"https://update.studiobutter.io.vn/glowworm/{channel}";
+            string url = $"https://update.studiobutter.io.vn/glowworm/velopack/{channel}";
             _updateManager = new UpdateManager(new SimpleWebSource(url));
         }
         else // GitHub
         {
-            _updateManager = new UpdateManager(new GithubSource("https://github.com/studiobutter/Glowworm", null, AppConfig.EnablePreviewRelease));
+            string url = $"https://raw.githubusercontent.com/studiobutter/Glowworm-Publication/refs/heads/main/velopack/{channel}";
+            _updateManager = new UpdateManager(new SimpleWebSource(url));
         }
     }
 

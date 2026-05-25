@@ -370,22 +370,22 @@ public sealed partial class UpdateWindow : WindowEx
 
             string markdown = "No release notes available.";
 
-            if (AppConfig.UpdateSource == 1) // Cloudflare
+            try
             {
-                try
+                string channel = AppConfig.EnablePreviewRelease ? "preview" : "stable";
+                var client = AppConfig.GetService<System.Net.Http.HttpClient>();
+                if (AppConfig.UpdateSource == 1) // Cloudflare
                 {
-                    string channel = AppConfig.EnablePreviewRelease ? "preview" : "stable";
-                    var client = AppConfig.GetService<System.Net.Http.HttpClient>();
-                    markdown = await client.GetStringAsync($"https://update.studiobutter.io.vn/glowworm/update/{channel}/Changelogs.md");
+                    markdown = await client.GetStringAsync($"https://update.studiobutter.io.vn/glowworm/changelogs-{channel}.md");
                 }
-                catch (Exception ex)
+                else // GitHub
                 {
-                    _logger.LogError(ex, "Load Cloudflare release notes");
+                    markdown = await client.GetStringAsync($"https://raw.githubusercontent.com/studiobutter/Glowworm-Publication/refs/heads/main/changelogs-{channel}.md");
                 }
             }
-            else // GitHub
+            catch (Exception ex)
             {
-                markdown = NewVersion?.TargetFullRelease.NotesMarkdown ?? markdown;
+                _logger.LogError(ex, "Load release notes");
             }
             
             // Basic Markdown to HTML wrapper (can be replaced with a real renderer)
