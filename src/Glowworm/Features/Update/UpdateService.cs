@@ -44,7 +44,7 @@ internal class UpdateService
         }
         else // GitHub
         {
-            string url = $"https://raw.githubusercontent.com/studiobutter/Glowworm-Publication/refs/heads/main/velopack/{channel}";
+            string url = $"https://github.com/studiobutter/Glowworm-Publication/raw/main/velopack/{channel}";
             _updateManager = new UpdateManager(new SimpleWebSource(url));
         }
     }
