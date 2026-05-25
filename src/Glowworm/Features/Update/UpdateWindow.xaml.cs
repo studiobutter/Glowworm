@@ -19,6 +19,7 @@ using System.Threading.Tasks;
 using Windows.Graphics;
 using Windows.System;
 using Velopack;
+using Markdig;
 
 namespace Glowworm.Features.Update;
 
@@ -402,25 +403,14 @@ public sealed partial class UpdateWindow : WindowEx
         }
     }
 
-    private async Task<string> RenderMarkdownAsync(string markdown)
+    private Task<string> RenderMarkdownAsync(string markdown)
     {
         string css = """<link href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.8.1/github-markdown.min.css" type="text/css" rel="stylesheet" />""";
-        string html = $"<pre style='white-space: pre-wrap; font-family: inherit;'>{System.Net.WebUtility.HtmlEncode(markdown)}</pre>";
+        
+        var pipeline = new Markdig.MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
+        string html = Markdig.Markdown.ToHtml(markdown, pipeline);
 
-        try
-        {
-            var client = AppConfig.GetService<Glowworm.Core.Metadata.MetadataClient>();
-            if (client != null)
-            {
-                html = await client.RenderGithubMarkdownAsync(markdown);
-            }
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Render Github Markdown");
-        }
-
-        return $$"""
+        return Task.FromResult($$"""
             <!DOCTYPE html>
             <html>
             <head>
@@ -459,7 +449,7 @@ public sealed partial class UpdateWindow : WindowEx
               </article>
             </body>
             </html>
-            """;
+            """);
     }
 
     private void CoreWebView2_DOMContentLoaded(CoreWebView2 sender, CoreWebView2DOMContentLoadedEventArgs args)
