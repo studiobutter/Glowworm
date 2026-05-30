@@ -22,7 +22,6 @@
           Unloaded="RootGrid_Unloaded">
         <Grid.Resources>
             <local:ZoomFactorPercentConverter x:Key="ZoomFactorPercentConverter" />
-            <FontFamily x:Key="PhotoFluentIcons">ms-appx:///Assets/Font/PhotosIcons.ttf#Photos Fluent Icons</FontFamily>
             <x:Boolean x:Key="False">False</x:Boolean>
         </Grid.Resources>
 
@@ -64,8 +63,7 @@
                     Click="Button_EditImage_Click"
                     Style="{ThemeResource AccentButtonStyle}">
                 <StackPanel Orientation="Horizontal" Spacing="8">
-                    <FontIcon FontFamily="{ThemeResource PhotoFluentIcons}"
-                              FontSize="16"
+                    <FontIcon FontSize="16"
                               Glyph="&#xE70F;"
                               IsTextScaleFactorEnabled="False" />
                     <TextBlock VerticalAlignment="Center"
@@ -358,10 +356,9 @@
                     Spacing="12"
                     Visibility="Collapsed">
             <FontIcon HorizontalAlignment="Center"
-                      FontFamily="{ThemeResource PhotoFluentIcons}"
                       FontSize="40"
                       Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                      Glyph="&#xF86A;"
+                      Glyph="&#xE783;"
                       IsTextScaleFactorEnabled="False" />
             <TextBlock HorizontalAlignment="Center"
                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
@@ -503,16 +500,14 @@
                           Style="{ThemeResource DateTimePickerFlyoutButtonStyle}"
                           ToolTipService.ToolTip="{x:Bind lang:Lang.ImageViewWindow2_ShowGallery}">
                 <Grid>
-                    <FontIcon FontFamily="{ThemeResource PhotoFluentIcons}"
-                              FontSize="16"
+                    <FontIcon FontSize="16"
                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                               Glyph="&#xE8B9;"
                               IsTextScaleFactorEnabled="False"
                               Visibility="{x:Bind local:ImageViewWindow2.ObjectToVisibilityReversed(ToggleButton_ShowGallery.IsChecked)}" />
-                    <FontIcon FontFamily="{ThemeResource PhotoFluentIcons}"
-                              FontSize="16"
+                    <FontIcon FontSize="16"
                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                              Glyph="&#xEABF;"
+                              Glyph="&#xE91B;"
                               IsTextScaleFactorEnabled="False"
                               Visibility="{x:Bind ToggleButton_ShowGallery.IsChecked}" />
                 </Grid>
