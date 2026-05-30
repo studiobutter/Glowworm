@@ -209,4 +209,23 @@ public sealed partial class BeyondProfilePicturePage : PageBase
             }
         }
     }
+
+    private async void Grid_ImageItem_DragStarting(UIElement sender, DragStartingEventArgs args)
+    {
+        try
+        {
+            if (sender is FrameworkElement grid && grid.DataContext is ScreenshotItem item)
+            {
+                var deferral = args.GetDeferral();
+                args.AllowedOperations = DataPackageOperation.Copy;
+                var file = await StorageFile.GetFileFromPathAsync(item.FilePath);
+                args.Data.SetStorageItems([file], true);
+                deferral.Complete();
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Drag image starting");
+        }
+    }
 }
