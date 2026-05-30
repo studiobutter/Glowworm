@@ -66,7 +66,7 @@
                 <StackPanel Orientation="Horizontal" Spacing="8">
                     <FontIcon FontFamily="{ThemeResource PhotoFluentIcons}"
                               FontSize="16"
-                              Glyph="&#xEF77;"
+                              Glyph="&#xE70F;"
                               IsTextScaleFactorEnabled="False" />
                     <TextBlock VerticalAlignment="Center"
                                FontSize="12"
@@ -506,7 +506,7 @@
                     <FontIcon FontFamily="{ThemeResource PhotoFluentIcons}"
                               FontSize="16"
                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                              Glyph="&#xEAB5;"
+                              Glyph="&#xE8B9;"
                               IsTextScaleFactorEnabled="False"
                               Visibility="{x:Bind local:ImageViewWindow2.ObjectToVisibilityReversed(ToggleButton_ShowGallery.IsChecked)}" />
                     <FontIcon FontFamily="{ThemeResource PhotoFluentIcons}"

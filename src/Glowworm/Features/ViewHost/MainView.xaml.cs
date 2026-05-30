@@ -127,6 +127,7 @@ public sealed partial class MainView : UserControl
         NavigationViewItem_Screenshot.Visibility = CurrentGameFeatureConfig.SupportedPages.Contains(nameof(ScreenshotPage)).ToVisibility();
         NavigationViewItem_GachaLog.Visibility = CurrentGameFeatureConfig.SupportedPages.Contains(nameof(GachaLogPage)).ToVisibility();
         NavigationViewItem_GenshinBeyondGacha.Visibility = CurrentGameFeatureConfig.SupportedPages.Contains(nameof(GenshinBeyondGachaPage)).ToVisibility();
+        NavigationViewItem_BeyondProfilePicture.Visibility = CurrentGameFeatureConfig.SupportedPages.Contains(nameof(BeyondProfilePicturePage)).ToVisibility();
 
         if (CurrentGameId is null)
         {
@@ -161,6 +162,7 @@ public sealed partial class MainView : UserControl
                         nameof(ScreenshotPage) => typeof(ScreenshotPage),
                         nameof(GachaLogPage) => typeof(GachaLogPage),
                         nameof(GenshinBeyondGachaPage) => typeof(GenshinBeyondGachaPage),
+                        nameof(BeyondProfilePicturePage) => typeof(BeyondProfilePicturePage),
                         _ => null,
                     };
                     NavigateTo(type);
