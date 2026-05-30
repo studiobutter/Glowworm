@@ -266,8 +266,8 @@ public class GenshinBeyondGachaClient
         try
         {
             lang = LanguageUtil.FilterLanguage(lang ?? System.Globalization.CultureInfo.CurrentUICulture.Name).ToLower();
-            string standardDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Glowworm", "standard");
-            string limitedDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Glowworm", "limited");
+            string standardDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Glowworm", "beyond", "standard");
+            string limitedDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Glowworm", "beyond", "limited");
             Directory.CreateDirectory(standardDir);
             Directory.CreateDirectory(limitedDir);
             string standardSavePath = Path.Combine(standardDir, $"{lang}.json");
