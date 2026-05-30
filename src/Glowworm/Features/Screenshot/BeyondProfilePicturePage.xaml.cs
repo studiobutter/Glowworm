@@ -2,6 +2,7 @@ using CommunityToolkit.Mvvm.Input;
 using Microsoft.Extensions.Logging;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media.Imaging;
 using Microsoft.UI.Xaml.Navigation;
 using Glowworm.Core;
 using Glowworm.Frameworks;
@@ -30,6 +31,7 @@ public sealed partial class BeyondProfilePicturePage : PageBase
     public BeyondProfilePicturePage()
     {
         this.InitializeComponent();
+        Image_Emoji.Source = new BitmapImage(AppConfig.EmojiPaimon);
         _backupFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Glowworm", "BeyondProfilePictures");
         Directory.CreateDirectory(_backupFolder);
     }

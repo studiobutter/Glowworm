@@ -39,6 +39,9 @@
                     VerticalAlignment="Center"
                     Spacing="16"
                     Visibility="Collapsed">
+            <Image Name="Image_Emoji"
+                   Width="160"
+                   Height="160" />
             <TextBlock HorizontalAlignment="Center"
                        FontSize="16"
                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
