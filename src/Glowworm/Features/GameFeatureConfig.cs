@@ -64,6 +64,7 @@ internal partial class GameFeatureConfig
             nameof(ScreenshotPage),
             nameof(GachaLogPage),
             nameof(GenshinBeyondGachaPage),
+            nameof(BeyondProfilePicturePage),
         ],
     };
 
@@ -75,6 +76,7 @@ internal partial class GameFeatureConfig
             nameof(ScreenshotPage),
             nameof(GachaLogPage),
             nameof(GenshinBeyondGachaPage),
+            nameof(BeyondProfilePicturePage),
         ],
     };
 
@@ -86,6 +88,7 @@ internal partial class GameFeatureConfig
             nameof(ScreenshotPage),
             nameof(GachaLogPage),
             nameof(GenshinBeyondGachaPage),
+            nameof(BeyondProfilePicturePage),
         ],
     };
 

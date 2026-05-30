@@ -80,6 +80,19 @@
                         </Border>
                     </NavigationViewItem.Content>
                 </NavigationViewItem>
+                <!-- Miliastra Profile Pictures -->
+                <NavigationViewItem Name="NavigationViewItem_BeyondProfilePicture"
+                                    Tag="BeyondProfilePicturePage"
+                                    ToolTipService.ToolTip="{x:Bind lang:Lang.BeyondProfilePicturePage_MiliastraProfilePictures}">
+                    <NavigationViewItem.Icon>
+                        <FontIcon Glyph="&#xE77B;" />
+                    </NavigationViewItem.Icon>
+                    <NavigationViewItem.Content>
+                        <Border Height="40">
+                            <TextBlock VerticalAlignment="Center" Text="{x:Bind lang:Lang.BeyondProfilePicturePage_MiliastraProfilePictures}" />
+                        </Border>
+                    </NavigationViewItem.Content>
+                </NavigationViewItem>
             </NavigationView.MenuItems>
 
             <Frame Name="MainView_Frame" Margin="0,0,0,0" />

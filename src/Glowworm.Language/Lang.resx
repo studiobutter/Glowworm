@@ -1083,4 +1083,28 @@
   <data name="MainView_WelcomeContent" xml:space="preserve">
     <value>Welcome to Glowworm! We will now check your available games.</value>
   </data>
+  <data name="BeyondProfilePicturePage_MiliastraProfilePictures" xml:space="preserve">
+    <value>Miliastra Profile Pictures</value>
+  </data>
+  <data name="BeyondProfilePicturePage_NoImage" xml:space="preserve">
+    <value>No image found</value>
+  </data>
+  <data name="BeyondProfilePicturePage_GetProfilePictures" xml:space="preserve">
+    <value>Get Profile Pictures</value>
+  </data>
+  <data name="BeyondProfilePicturePage_SaveAs" xml:space="preserve">
+    <value>Save As</value>
+  </data>
+  <data name="BeyondProfilePicturePage_SetAsProfilePicture" xml:space="preserve">
+    <value>Set as Profile Picture</value>
+  </data>
+  <data name="BeyondProfilePicturePage_SetProfilePictureConfirmTitle" xml:space="preserve">
+    <value>Set Profile Picture</value>
+  </data>
+  <data name="BeyondProfilePicturePage_SetProfilePictureConfirmContent" xml:space="preserve">
+    <value>Are you sure you want to set this as your Windows account picture? If you are using a Microsoft Account, changing this will also update your Microsoft Account profile picture.</value>
+  </data>
+  <data name="BeyondProfilePicturePage_FolderNotFound" xml:space="preserve">
+    <value>Cannot get Profile Pictures, ensure you have taken on in-game and save it before getting the pictures</value>
+  </data>
 </root>

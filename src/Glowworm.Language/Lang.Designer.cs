@@ -1076,5 +1076,30 @@ namespace Glowworm.Language {
                 return ResourceManager.GetString("GachaLogPage_ViaCloudGameWeb", resourceCulture);
             }
         }
+        
+        public static string BeyondProfilePicturePage_MiliastraProfilePictures {
+            get { return ResourceManager.GetString("BeyondProfilePicturePage_MiliastraProfilePictures", resourceCulture); }
+        }
+        public static string BeyondProfilePicturePage_NoImage {
+            get { return ResourceManager.GetString("BeyondProfilePicturePage_NoImage", resourceCulture); }
+        }
+        public static string BeyondProfilePicturePage_GetProfilePictures {
+            get { return ResourceManager.GetString("BeyondProfilePicturePage_GetProfilePictures", resourceCulture); }
+        }
+        public static string BeyondProfilePicturePage_SaveAs {
+            get { return ResourceManager.GetString("BeyondProfilePicturePage_SaveAs", resourceCulture); }
+        }
+        public static string BeyondProfilePicturePage_SetAsProfilePicture {
+            get { return ResourceManager.GetString("BeyondProfilePicturePage_SetAsProfilePicture", resourceCulture); }
+        }
+        public static string BeyondProfilePicturePage_SetProfilePictureConfirmTitle {
+            get { return ResourceManager.GetString("BeyondProfilePicturePage_SetProfilePictureConfirmTitle", resourceCulture); }
+        }
+        public static string BeyondProfilePicturePage_SetProfilePictureConfirmContent {
+            get { return ResourceManager.GetString("BeyondProfilePicturePage_SetProfilePictureConfirmContent", resourceCulture); }
+        }
+        public static string BeyondProfilePicturePage_FolderNotFound {
+            get { return ResourceManager.GetString("BeyondProfilePicturePage_FolderNotFound", resourceCulture); }
+        }
     }
 }
