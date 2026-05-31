@@ -16,7 +16,6 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Storage;
 using Windows.Storage.Pickers;
-using Windows.System.UserProfile;
 
 namespace Glowworm.Features.Screenshot;
 
@@ -168,46 +167,6 @@ public sealed partial class BeyondProfilePicturePage : PageBase
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Save As image");
-            }
-        }
-    }
-
-    private async void Button_SetAsProfilePicture_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)
-    {
-        e.Handled = true;
-        if (sender is Button button && button.DataContext is ScreenshotItem item)
-        {
-            try
-            {
-                var dialog = new ContentDialog
-                {
-                    Title = Lang.BeyondProfilePicturePage_SetProfilePictureConfirmTitle,
-                    Content = Lang.BeyondProfilePicturePage_SetProfilePictureConfirmContent,
-                    PrimaryButtonText = Lang.Common_Confirm,
-                    CloseButtonText = Lang.Common_Cancel,
-                    XamlRoot = this.XamlRoot,
-                    DefaultButton = ContentDialogButton.Primary
-                };
-                
-                var result = await dialog.ShowAsync();
-                if (result == ContentDialogResult.Primary)
-                {
-                    var file = await StorageFile.GetFileFromPathAsync(item.FilePath);
-                    var success = await UserInformation.SetAccountPictureAsync(file);
-                    if (success == SetAccountPictureResult.Success)
-                    {
-                        InAppToast.MainWindow?.Success(Lang.Common_Success);
-                    }
-                    else
-                    {
-                        InAppToast.MainWindow?.Error(Lang.Common_Failed);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Set Profile Picture");
-                InAppToast.MainWindow?.Error(Lang.Common_Failed);
             }
         }
     }
