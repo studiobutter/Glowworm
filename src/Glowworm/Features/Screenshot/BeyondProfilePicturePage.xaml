@@ -76,7 +76,8 @@
                                             VerticalAlignment="Center"
                                             Background="{ThemeResource ControlAltFillColorTertiaryBrush}"
                                             Source="{x:Bind FilePath}"
-                                            Stretch="UniformToFill" />
+                                            Stretch="UniformToFill"
+                                            CornerRadius="30"/>
                             
                             <StackPanel Name="StackPanel_Actions"
                                         Orientation="Horizontal"
