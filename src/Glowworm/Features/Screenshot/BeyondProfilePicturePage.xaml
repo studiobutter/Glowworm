@@ -76,7 +76,8 @@
                                             VerticalAlignment="Center"
                                             Background="{ThemeResource ControlAltFillColorTertiaryBrush}"
                                             Source="{x:Bind FilePath}"
-                                            Stretch="UniformToFill" />
+                                            Stretch="UniformToFill"
+                                            CornerRadius="30"/>
                             
                             <StackPanel Name="StackPanel_Actions"
                                         Orientation="Horizontal"
@@ -104,15 +105,6 @@
                                         Style="{ThemeResource DateTimePickerFlyoutButtonStyle}"
                                         Tapped="Button_SaveAs_Tapped">
                                     <FontIcon FontSize="16" Glyph="&#xE792;" Foreground="White" />
-                                </Button>
-                                <Button Name="Button_SetAsProfilePicture"
-                                        Height="28"
-                                        MinWidth="32"
-                                        Padding="0"
-                                        ToolTipService.ToolTip="{x:Bind lang:Lang.BeyondProfilePicturePage_SetAsProfilePicture}"
-                                        Style="{ThemeResource DateTimePickerFlyoutButtonStyle}"
-                                        Tapped="Button_SetAsProfilePicture_Tapped">
-                                    <FontIcon FontSize="16" Glyph="&#xE77B;" Foreground="White" />
                                 </Button>
                             </StackPanel>
                             <Grid.Resources>
