@@ -1,0 +1,21 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Glowworm.Language -> C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm.Language\bin\Debug\net10.0\Glowworm.Language.dll
+C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm.Core\Gacha\Genshin\GenshinBeyondGachaClient.cs(294,36): warning CS8601: Possible null reference assignment. [C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm.Core\Glowworm.Core.csproj]
+C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm.Core\Gacha\Genshin\GenshinBeyondGachaClient.cs(313,36): warning CS8601: Possible null reference assignment. [C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm.Core\Glowworm.Core.csproj]
+C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm.Core\GameRegistryHelper.cs(48,20): warning CA1416: This call site is reachable on all platforms. 'Registry.GetValue(string, string?, object?)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm.Core\Glowworm.Core.csproj]
+  Glowworm.Core -> C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm.Core\bin\Debug\net10.0\Glowworm.Core.dll
+C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm\Helpers\FileCache.cs(156,36): warning CS8602: Dereference of a possibly null reference. [C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm\Glowworm.csproj]
+  0 IID calculations/fetches patched
+  Glowworm -> C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm\bin\Debug\net10.0-windows10.0.26100.0\win-x64\Glowworm.dll
+
+Build succeeded.
+
+C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm.Core\Gacha\Genshin\GenshinBeyondGachaClient.cs(294,36): warning CS8601: Possible null reference assignment. [C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm.Core\Glowworm.Core.csproj]
+C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm.Core\Gacha\Genshin\GenshinBeyondGachaClient.cs(313,36): warning CS8601: Possible null reference assignment. [C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm.Core\Glowworm.Core.csproj]
+C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm.Core\GameRegistryHelper.cs(48,20): warning CA1416: This call site is reachable on all platforms. 'Registry.GetValue(string, string?, object?)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm.Core\Glowworm.Core.csproj]
+C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm\Helpers\FileCache.cs(156,36): warning CS8602: Dereference of a possibly null reference. [C:\Users\Khang\Personal\Development\Glowworm\src\Glowworm\Glowworm.csproj]
+    4 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:09.63

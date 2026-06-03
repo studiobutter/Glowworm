@@ -29,8 +29,8 @@ public record struct GameBiz
     public const string hk4e_google = "hk4e_google";
     public const string hk4e_epic = "hk4e_epic";
 
-    //public const string clgm_cn = "clgm_cn";
-    //public const string clgm_global = "clgm_global";
+    public const string clgm_cn = "clgm_cn";
+    public const string clgm_global = "clgm_global";
 
 
     public const string hkrpg = "hkrpg";
@@ -45,6 +45,9 @@ public record struct GameBiz
     public const string nap_global = "nap_global";
     public const string nap_bilibili = "nap_bilibili";
     public const string nap_epic = "nap_epic";
+    public const string nap_cloud = "nap_cloud";
+    public const string nap_cloud_cn = "nap_cloud_cn";
+    public const string nap_cloud_global = "nap_cloud_global";
 
 
     public const string None = "";
@@ -58,8 +61,8 @@ public record struct GameBiz
         hk4e_bilibili,
         hk4e_google,
         hk4e_epic,
-        //clgm_cn,
-        //clgm_global,
+        clgm_cn,
+        clgm_global,
         hkrpg_cn,
         hkrpg_global,
         hkrpg_bilibili,
@@ -68,6 +71,9 @@ public record struct GameBiz
         nap_global,
         nap_bilibili,
         nap_epic,
+        nap_cloud,
+        nap_cloud_cn,
+        nap_cloud_global,
     }.AsReadOnly();
 
 
@@ -91,17 +97,17 @@ public record struct GameBiz
     public bool IsKnown() => Value switch
     {
         hk4e_cn or hk4e_global or hk4e_bilibili or hk4e_google or hk4e_epic => true,
-        //clgm_cn or clgm_global => true,
+        clgm_cn or clgm_global => true,
         hkrpg_cn or hkrpg_global or hkrpg_bilibili or hkrpg_epic => true,
-        nap_cn or nap_global or nap_bilibili or nap_epic => true,
+        nap_cn or nap_global or nap_bilibili or nap_epic or nap_cloud or nap_cloud_cn or nap_cloud_global => true,
         _ => false,
     };
 
 
-    public bool IsChinaServer() => Server is "cn";
+    public bool IsChinaServer() => Server is "cn" || Value is clgm_cn or nap_cloud_cn;
 
 
-    public bool IsGlobalServer() => Server is "global";
+    public bool IsGlobalServer() => Server is "global" || Value is clgm_global or nap_cloud_global;
 
 
     public bool IsBilibili() => Server is "bilibili";
@@ -110,10 +116,14 @@ public record struct GameBiz
 
 
 
-    public GameBiz ToGame() => Game;
+    public GameBiz ToGame() => Game switch
+    {
+        "clgm" => hk4e,
+        _ => Game,
+    };
 
 
-    public string ToGameName() => Game switch
+    public string ToGameName() => ToGame().Value switch
     {
         hk4e => CoreLang.Game_GenshinImpact,
         hkrpg => CoreLang.Game_HonkaiStarRail,
@@ -129,7 +139,13 @@ public record struct GameBiz
         "bilibili" => CoreLang.GameServer_Bilibili,
         "google" => "Google Play",
         "epic" => "Epic Games",
-        _ => "",
+        "cloud" => "Cloud",
+        _ => Value switch
+        {
+            clgm_cn or nap_cloud_cn => CoreLang.GameServer_ChinaCloud,
+            clgm_global or nap_cloud_global => CoreLang.GameServer_GlobalCloud,
+            _ => "",
+        },
     };
 
 

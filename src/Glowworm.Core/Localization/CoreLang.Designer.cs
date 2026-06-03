@@ -376,6 +376,15 @@ namespace Glowworm.Core.Localization {
         }
         
         /// <summary>
+        ///   ???? Global Cloud ????????
+        /// </summary>
+        public static string GameServer_GlobalCloud {
+            get {
+                return ResourceManager.GetString("GameServer_GlobalCloud", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   ???? Japan ????????
         /// </summary>
         public static string GameServer_Japan {

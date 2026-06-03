@@ -33,7 +33,88 @@ internal class RunningGame
 
 internal class RunningGameService
 {
-    public static RunningGame? GetLatestActiveGame() => null;
+    public static RunningGame? GetLatestActiveGame()
+    {
+        nint hwnd = (nint)User32.GetForegroundWindow();
+        if (hwnd == 0) return null;
+
+
+
+        User32.GetWindowThreadProcessId(hwnd, out uint pid);
+        if (pid == 0) return null;
+
+        try
+        {
+            var process = System.Diagnostics.Process.GetProcessById((int)pid);
+            string name = process.ProcessName;
+            GameBiz biz = name switch
+            {
+                "GenshinImpact" => GameBiz.hk4e_global,
+                "YuanShen" => GameBiz.hk4e_cn,
+                "Genshin Impact Cloud" => GameBiz.clgm_global,
+                "Genshin Impact Cloud Game" => GameBiz.clgm_cn,
+                "StarRail" => GetStarRailBiz(hwnd),
+                "ZenlessZoneZero" => GetNapBiz(hwnd),
+                "Zenless Zone Zero Cloud" => GetNapCloudBiz(hwnd),
+                _ => GameBiz.None,
+            };
+
+            if (biz != GameBiz.None)
+            {
+                return new RunningGame
+                {
+                    WindowHandle = hwnd,
+                    Process = process,
+                    GameBiz = biz,
+                };
+            }
+        }
+        catch { }
+
+        return null;
+    }
+
+
+    private static GameBiz GetStarRailBiz(nint hwnd)
+    {
+        int count = User32.GetWindowTextLength(hwnd);
+        if (count > 0)
+        {
+            var sb = new StringBuilder(count + 1);
+            User32.GetWindowText(hwnd, sb, count + 1);
+            string title = sb.ToString();
+            if (title.Contains("崩坏：星穹铁道")) return GameBiz.hkrpg_cn;
+        }
+        return GameBiz.hkrpg_global;
+    }
+
+
+    private static GameBiz GetNapBiz(nint hwnd)
+    {
+        int count = User32.GetWindowTextLength(hwnd);
+        if (count > 0)
+        {
+            var sb = new StringBuilder(count + 1);
+            User32.GetWindowText(hwnd, sb, count + 1);
+            string title = sb.ToString();
+            if (title.Contains("绝区零")) return GameBiz.nap_cn;
+        }
+        return GameBiz.nap_global;
+    }
+
+
+    private static GameBiz GetNapCloudBiz(nint hwnd)
+    {
+        int count = User32.GetWindowTextLength(hwnd);
+        if (count > 0)
+        {
+            var sb = new StringBuilder(count + 1);
+            User32.GetWindowText(hwnd, sb, count + 1);
+            string title = sb.ToString();
+            if (title.Contains("绝区零")) return GameBiz.nap_cloud_cn;
+        }
+        return GameBiz.nap_cloud_global;
+    }
 }
 
 internal class ScreenCaptureService
@@ -291,14 +372,21 @@ internal class ScreenCaptureService
         return await Task.Run(async () =>
         {
             string screenshotFolder;
+            string subFolder = runningGame.GameBiz.ToGame().Value switch
+            {
+                GameBiz.hk4e => "GenshinImpact",
+                GameBiz.hkrpg => "StarRail",
+                GameBiz.nap => "ZZZ",
+                _ => runningGame.Process.ProcessName,
+            };
             string? targetFolder = AppConfig.ScreenshotFolder;
             if (Directory.Exists(targetFolder))
             {
-                screenshotFolder = Path.GetFullPath(Path.Join(targetFolder, runningGame.Process.ProcessName));
+                screenshotFolder = Path.GetFullPath(Path.Join(targetFolder, subFolder));
             }
             else
             {
-                screenshotFolder = Path.GetFullPath(Path.Join(AppConfig.UserDataFolder, "Screenshots", runningGame.Process.ProcessName));
+                screenshotFolder = Path.GetFullPath(Path.Join(AppConfig.UserDataFolder, "Screenshots", subFolder));
             }
             Directory.CreateDirectory(screenshotFolder);
 
