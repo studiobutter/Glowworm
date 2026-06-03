@@ -836,6 +836,9 @@ namespace Glowworm.Language {
 
 
         public static string SettingPage_General { get { return ResourceManager.GetString("SettingPage_General", resourceCulture); } }
+
+        public static string SettingPage_RunInSystemTray { get { return ResourceManager.GetString("SettingPage_RunInSystemTray", resourceCulture); } }
+
         public static string SettingPage_ForABetterExperiencePleaseEnableTheFollowingFeaturesInSystemSettings { get { return ResourceManager.GetString("SettingPage_ForABetterExperiencePleaseEnableTheFollowingFeaturesInSystemSettings", resourceCulture); } }
         public static string Common_WebView2ComponentInitializationFailed { get { return ResourceManager.GetString("Common_WebView2ComponentInitializationFailed", resourceCulture); } }
         public static string Common_Error { get { return ResourceManager.GetString("Common_Error", resourceCulture); } }

@@ -150,6 +150,12 @@ public static partial class AppConfig
         set => SetValue(value);
     }
 
+    public static bool RunInSystemTray
+    {
+        get => GetValue(true);
+        set => SetValue(value);
+    }
+
 
 
     /// <summary>

@@ -634,6 +634,9 @@
     <value>General</value>
     <comment>General Setting</comment>
   </data>
+  <data name="SettingPage_RunInSystemTray" xml:space="preserve">
+    <value>Run in System Tray</value>
+  </data>
   <data name="SettingPage_ForABetterExperiencePleaseEnableTheFollowingFeaturesInSystemSettings" xml:space="preserve">
     <value>For a better experience, please enable the following features in system settings.</value>
   </data>

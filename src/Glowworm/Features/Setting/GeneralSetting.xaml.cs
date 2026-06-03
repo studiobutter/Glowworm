@@ -28,6 +28,7 @@ public sealed partial class GeneralSetting : PageBase
     {
         InitializeLanguageSelector();
         ToggleSwitch_Transparency.IsOn = AppConfig.EnableTransparency;
+        ToggleSwitch_RunInSystemTray.IsOn = AppConfig.RunInSystemTray;
     }
 
 
@@ -124,6 +125,16 @@ public sealed partial class GeneralSetting : PageBase
         {
             AppConfig.EnableTransparency = toggleSwitch.IsOn;
             AppConfig.SaveConfiguration();
+        }
+    }
+
+    private void ToggleSwitch_RunInSystemTray_Toggled(object sender, RoutedEventArgs e)
+    {
+        if (sender is ToggleSwitch toggleSwitch && _languageInitialized)
+        {
+            AppConfig.RunInSystemTray = toggleSwitch.IsOn;
+            AppConfig.SaveConfiguration();
+            App.Current.UpdateTrayIcon();
         }
     }
 

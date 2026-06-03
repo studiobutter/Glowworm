@@ -26,6 +26,9 @@ public sealed partial class MainWindow : WindowEx
 
     public static new MainWindow Current { get; private set; }
 
+    private const uint TrayCallbackMessage = (uint)User32.WindowMessage.WM_APP + 1u;
+    private const int TrayMenuOpenId = 1001;
+    private const int TrayMenuExitId = 1002;
 
     private readonly SystemBackdropHelper _backdropHelper;
 
@@ -71,7 +74,8 @@ public sealed partial class MainWindow : WindowEx
     {
         width = width <= 0 ? null : width;
         height = height <= 0 ? null : height;
-        User32.GetCursorPos(out POINT point);
+        POINT point;
+        GetCursorPos(out point);
         DisplayArea display = DisplayArea.GetFromPoint(new PointInt32(point.X, point.Y), DisplayAreaFallback.Nearest);
         double scale = UIScale;
         int w = (int)((width * scale) ?? AppWindow.Size.Width);
@@ -95,22 +99,19 @@ public sealed partial class MainWindow : WindowEx
 
 
 
-    private async void AppWindow_Closing(AppWindow sender, AppWindowClosingEventArgs args)
+    private void AppWindow_Closing(AppWindow sender, AppWindowClosingEventArgs args)
     {
-        args.Cancel = true;
-        try
+        if (App.Current is App app && app.IsExiting)
         {
-            HotkeyManager.UnregisterHotkey(WindowHandle, HotkeyManager.ScreenshotCapture.Id);
-            AppInstance.GetCurrent().UnregisterKey();
-            WTSUnRegisterSessionNotification(WindowHandle);
-            RemoveSubclass();
-            _backdropHelper?.ResetBackdrop();
-            Task backupTask = Task.Run(DatabaseService.AutoBackupToAppDataLocal);
-            Task timeTask = Task.Delay(2000);
-            await Task.WhenAny(backupTask, timeTask);
+            return;
         }
-        catch { }
-        finally
+
+        if (AppConfig.RunInSystemTray)
+        {
+            args.Cancel = true;
+            Hide();
+        }
+        else
         {
             App.Current.Exit();
         }
@@ -190,6 +191,39 @@ public sealed partial class MainWindow : WindowEx
                 }
             }
         }
+        else if (uMsg == TrayCallbackMessage)
+        {
+            // Shell may send different mouse messages for tray interactions depending on OS.
+            int msg = (int)lParam & 0xFFFF;
+            if (msg == (int)User32.WindowMessage.WM_LBUTTONDBLCLK || msg == (int)User32.WindowMessage.WM_LBUTTONUP)
+            {
+                App.Current.EnsureMainWindow();
+                return IntPtr.Zero;
+            }
+            if (msg == (int)User32.WindowMessage.WM_RBUTTONUP || msg == (int)User32.WindowMessage.WM_CONTEXTMENU)
+            {
+                try
+                {
+                    ShowTrayContextMenu();
+                }
+                catch { }
+                return IntPtr.Zero;
+            }
+        }
+        else if (uMsg == (uint)User32.WindowMessage.WM_COMMAND)
+        {
+            int commandId = (int)wParam & 0xFFFF;
+            if (commandId == TrayMenuOpenId)
+            {
+                App.Current.EnsureMainWindow();
+                return IntPtr.Zero;
+            }
+            if (commandId == TrayMenuExitId)
+            {
+                App.Current.Exit();
+                return IntPtr.Zero;
+            }
+        }
         else if (uMsg == (uint)User32.WindowMessage.WM_HOTKEY)
         {
             if (wParam == 44444)
@@ -205,7 +239,79 @@ public sealed partial class MainWindow : WindowEx
         return base.WindowSubclassProc(hWnd, uMsg, wParam, lParam, uIdSubclass, dwRefData);
     }
 
+    private void ShowTrayContextMenu()
+    {
+        IntPtr menu = CreatePopupMenu();
+        if (menu == IntPtr.Zero)
+        {
+            return;
+        }
 
+        try
+        {
+            AppendMenu(menu, MF_STRING, new UIntPtr(TrayMenuOpenId), "Open");
+            AppendMenu(menu, MF_STRING, new UIntPtr(TrayMenuExitId), "Exit");
+            POINT point;
+            GetCursorPos(out point);
+            SetForegroundWindow(WindowHandle);
+            int commandId = TrackPopupMenuEx(menu, TPM_LEFTALIGN | TPM_RIGHTBUTTON | TPM_RETURNCMD | TPM_NONOTIFY, point.X, point.Y, WindowHandle, IntPtr.Zero);
+            if (commandId == TrayMenuOpenId)
+            {
+                App.Current.EnsureMainWindow();
+            }
+            else if (commandId == TrayMenuExitId)
+            {
+                App.Current.Exit();
+            }
+            PostMessage(WindowHandle, WM_NULL, IntPtr.Zero, IntPtr.Zero);
+        }
+        finally
+        {
+            DestroyMenu(menu);
+        }
+    }
+
+
+
+    [DllImport("user32.dll", SetLastError = true)]
+    private static extern IntPtr CreatePopupMenu();
+
+    [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode, EntryPoint = "AppendMenuW")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool AppendMenu(IntPtr hMenu, uint uFlags, UIntPtr uIDNewItem, string lpNewItem);
+
+    [DllImport("user32.dll", SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool DestroyMenu(IntPtr hMenu);
+
+    private const uint MF_STRING = 0x00000000;
+    private const uint TPM_LEFTALIGN = 0x00000000;
+    private const uint TPM_RIGHTBUTTON = 0x0002;
+    private const uint TPM_RETURNCMD = 0x0100;
+    private const uint TPM_NONOTIFY = 0x0080;
+    private const uint WM_NULL = 0x0000;
+
+    [DllImport("user32.dll", SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool GetCursorPos(out POINT lpPoint);
+
+    [DllImport("user32.dll", SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool SetForegroundWindow(IntPtr hWnd);
+
+    [DllImport("user32.dll", SetLastError = true)]
+    private static extern int TrackPopupMenuEx(IntPtr hMenu, uint uFlags, int x, int y, IntPtr hWnd, IntPtr lptpm);
+
+    [DllImport("user32.dll", SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool PostMessage(IntPtr hWnd, uint Msg, IntPtr wParam, IntPtr lParam);
+
+    [StructLayout(LayoutKind.Sequential)]
+    private struct POINT
+    {
+        public int X;
+        public int Y;
+    }
 
     [LibraryImport("wtsapi32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]

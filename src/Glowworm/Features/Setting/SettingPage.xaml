@@ -46,10 +46,10 @@
                         <FontIcon Glyph="&#xE946;" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <!--  ??  -->
-                <NavigationViewItem Content="{x:Bind lang:Lang.SettingPage_Language}" Tag="GeneralSetting">
+                <!--  General  -->
+                <NavigationViewItem Content="{x:Bind lang:Lang.SettingPage_General}" Tag="GeneralSetting">
                     <NavigationViewItem.Icon>
-                        <FontIcon Glyph="&#xE81E;" />
+                        <FontIcon Glyph="&#xE775;" />
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <!--  ????  -->

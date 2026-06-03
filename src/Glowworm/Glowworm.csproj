@@ -56,6 +56,17 @@
 		<PackageReference Include="Velopack" Version="0.0.1298" />
 	</ItemGroup>
 
+	<ItemGroup Condition="'$(IncludePresentationReferences)' == 'true'">
+		<Reference Include="PresentationCore">
+			<HintPath>$(ProgramFiles)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\10.0.8\ref\net10.0\PresentationCore.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+		<Reference Include="PresentationFramework">
+			<HintPath>$(ProgramFiles)\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\10.0.8\ref\net10.0\PresentationFramework.dll</HintPath>
+			<Private>false</Private>
+		</Reference>
+	</ItemGroup>
+
 	<ItemGroup>
 		<ProjectReference Include="..\Glowworm.Core\Glowworm.Core.csproj" />
 		<ProjectReference Include="..\Glowworm.Language\Glowworm.Language.csproj" />

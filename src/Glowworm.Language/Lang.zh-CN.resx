@@ -387,6 +387,7 @@
   <data name="SettingPage_Language" xml:space="preserve">
     <value>语言</value>
   </data>
+
   <data name="SettingPage_FollowSystem" xml:space="preserve">
     <value>跟随系统</value>
   </data>
@@ -651,6 +652,9 @@
   <data name="SettingPage_General" xml:space="preserve">
     <value>常规</value>
     <comment>General Setting</comment>
+  </data>
+  <data name="SettingPage_RunInSystemTray" xml:space="preserve">
+    <value>在系统托盘运行</value>
   </data>
   <data name="SettingPage_ForABetterExperiencePleaseEnableTheFollowingFeaturesInSystemSettings" xml:space="preserve">
     <value>为了更好的体验，建议在系统设置中启用以下功能。</value>

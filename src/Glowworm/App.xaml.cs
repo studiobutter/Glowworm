@@ -8,9 +8,11 @@ using System;
 using System.Collections;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
+using Vanara.PInvoke;
 
 
 namespace Glowworm;
@@ -21,6 +23,14 @@ public partial class App : Application
     private readonly DispatcherQueue _uiDispatcherQueue;
 
     private readonly Timer _gcTimer = new(TimeSpan.FromSeconds(60));
+
+    private bool _trayIconAdded;
+    private bool _isExiting;
+
+    private const uint TrayIconId = 1;
+    private const uint TrayIconCallbackMessage = (uint)User32.WindowMessage.WM_APP + 1u;
+
+    public bool IsExiting => _isExiting;
 
     public static new App Current => (App)Application.Current;
 
@@ -76,6 +86,31 @@ public partial class App : Application
         
         m_MainWindow = new MainWindow();
         m_MainWindow.Activate();
+        if (AppConfig.RunInSystemTray)
+        {
+            InitializeTrayIcon(m_MainWindow.WindowHandle);
+        }
+    }
+
+    private void InitializeTrayIcon(IntPtr hwnd)
+    {
+        _uiDispatcherQueue.TryEnqueue(() =>
+        {
+            var nid = new NOTIFYICONDATA
+            {
+                cbSize = (uint)Marshal.SizeOf<NOTIFYICONDATA>(),
+                hWnd = hwnd,
+                uID = TrayIconId,
+                uFlags = NIF_MESSAGE | NIF_ICON | NIF_TIP,
+                uCallbackMessage = TrayIconCallbackMessage,
+                hIcon = LoadIcon(IntPtr.Zero, new IntPtr(IDI_APPLICATION)),
+                szTip = "Glowworm",
+            };
+
+            _trayIconAdded = Shell_NotifyIcon(NIM_ADD, ref nid);
+            nid.uTimeoutOrVersion = 4;
+            Shell_NotifyIcon(NIM_SETVERSION, ref nid);
+        });
     }
 
 
@@ -92,6 +127,24 @@ public partial class App : Application
         m_MainWindow.Show();
     }
 
+
+    public void UpdateTrayIcon()
+    {
+        if (AppConfig.RunInSystemTray)
+        {
+            if (!_trayIconAdded && m_MainWindow != null)
+            {
+                InitializeTrayIcon(m_MainWindow.WindowHandle);
+            }
+        }
+        else
+        {
+            if (_trayIconAdded)
+            {
+                RemoveTrayIcon();
+            }
+        }
+    }
 
 
     private void AppInstance_Activated(object? sender, AppActivationArguments e)
@@ -117,11 +170,73 @@ public partial class App : Application
 
     public new void Exit()
     {
+        if (_isExiting)
+        {
+            return;
+        }
+
+        _isExiting = true;
         _gcTimer?.Stop();
         _gcTimer?.Dispose();
+        RemoveTrayIcon();
         m_MainWindow?.Close();
-        Application.Current.Exit();
+        base.Exit();
     }
+
+    private void RemoveTrayIcon()
+    {
+        if (!_trayIconAdded || m_MainWindow is null)
+        {
+            return;
+        }
+
+        var nid = new NOTIFYICONDATA
+        {
+            cbSize = (uint)Marshal.SizeOf<NOTIFYICONDATA>(),
+            hWnd = m_MainWindow.WindowHandle,
+            uID = TrayIconId,
+        };
+        Shell_NotifyIcon(NIM_DELETE, ref nid);
+        _trayIconAdded = false;
+    }
+
+    [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode, EntryPoint = "LoadIconW")]
+    private static extern IntPtr LoadIcon(IntPtr hInstance, IntPtr lpIconName);
+
+    [DllImport("shell32.dll", SetLastError = true, CharSet = CharSet.Unicode, EntryPoint = "Shell_NotifyIconW")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool Shell_NotifyIcon(uint dwMessage, ref NOTIFYICONDATA lpData);
+
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+    private struct NOTIFYICONDATA
+    {
+        public uint cbSize;
+        public IntPtr hWnd;
+        public uint uID;
+        public uint uFlags;
+        public uint uCallbackMessage;
+        public IntPtr hIcon;
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 128)]
+        public string szTip;
+        public uint dwState;
+        public uint dwStateMask;
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 256)]
+        public string szInfo;
+        public uint uTimeoutOrVersion;
+        [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 64)]
+        public string szInfoTitle;
+        public uint dwInfoFlags;
+        public Guid guidItem;
+        public IntPtr hBalloonIcon;
+    }
+
+    private const uint NIF_MESSAGE = 0x00000001;
+    private const uint NIF_ICON = 0x00000002;
+    private const uint NIF_TIP = 0x00000004;
+    private const uint NIM_ADD = 0x00000000;
+    private const uint NIM_DELETE = 0x00000002;
+    private const uint NIM_SETVERSION = 0x00000004;
+    private const int IDI_APPLICATION = 0x7F00;
 
 
 
