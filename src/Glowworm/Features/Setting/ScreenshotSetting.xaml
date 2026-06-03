@@ -171,13 +171,6 @@
                        Text="{x:Bind lang:Lang.ScreenshotSetting_ScreenshotFetureDescAndLimit}"
                        TextWrapping="Wrap" />
 
-            <!--  ??????  -->
-            <TextBlock Margin="0,6,0,0"
-                       FontSize="12"
-                       Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                       Text="{x:Bind lang:Lang.ScreenshotSetting_ScreenshotWithGamepadSuggestion}"
-                       TextWrapping="Wrap" />
-
         </StackPanel>
     </ScrollViewer>
 
