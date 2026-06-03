@@ -31,7 +31,9 @@ var gitProcess = Process.Start(new ProcessStartInfo("git", "branch --show-curren
 await gitProcess.WaitForExitAsync();
 string branchName = gitProcess.StandardOutput.ReadToEnd().Trim();
 
-string releaseDir = "publish/Releases";
+string releaseDir = Path.Combine("publish", "Releases", branchName);
+Directory.CreateDirectory(releaseDir);
+
 
 foreach (var arch in targetArchitectures)
 {
