@@ -26,6 +26,7 @@ public partial class App : Application
 
     private bool _trayIconAdded;
     private bool _isExiting;
+    private IntPtr _hTrayIcon;
 
     private const uint TrayIconId = 1;
     private const uint TrayIconCallbackMessage = (uint)User32.WindowMessage.WM_APP + 1u;
@@ -96,6 +97,10 @@ public partial class App : Application
     {
         _uiDispatcherQueue.TryEnqueue(() =>
         {
+            if (_hTrayIcon == IntPtr.Zero)
+            {
+                _hTrayIcon = LoadImage(IntPtr.Zero, Path.Combine(AppContext.BaseDirectory, "logo.ico"), IMAGE_ICON, 0, 0, LR_LOADFROMFILE | LR_DEFAULTSIZE);
+            }
             var nid = new NOTIFYICONDATA
             {
                 cbSize = (uint)Marshal.SizeOf<NOTIFYICONDATA>(),
@@ -103,7 +108,7 @@ public partial class App : Application
                 uID = TrayIconId,
                 uFlags = NIF_MESSAGE | NIF_ICON | NIF_TIP,
                 uCallbackMessage = TrayIconCallbackMessage,
-                hIcon = LoadIcon(IntPtr.Zero, new IntPtr(IDI_APPLICATION)),
+                hIcon = _hTrayIcon,
                 szTip = "Glowworm",
             };
 
@@ -179,6 +184,11 @@ public partial class App : Application
         _gcTimer?.Stop();
         _gcTimer?.Dispose();
         RemoveTrayIcon();
+        if (_hTrayIcon != IntPtr.Zero)
+        {
+            DestroyIcon(_hTrayIcon);
+            _hTrayIcon = IntPtr.Zero;
+        }
         m_MainWindow?.Close();
         base.Exit();
     }
@@ -202,6 +212,12 @@ public partial class App : Application
 
     [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode, EntryPoint = "LoadIconW")]
     private static extern IntPtr LoadIcon(IntPtr hInstance, IntPtr lpIconName);
+
+    [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode, EntryPoint = "LoadImageW")]
+    private static extern IntPtr LoadImage(IntPtr hInst, string name, uint type, int cx, int cy, uint fuLoad);
+
+    [DllImport("user32.dll", SetLastError = true)]
+    private static extern bool DestroyIcon(IntPtr hIcon);
 
     [DllImport("shell32.dll", SetLastError = true, CharSet = CharSet.Unicode, EntryPoint = "Shell_NotifyIconW")]
     [return: MarshalAs(UnmanagedType.Bool)]
@@ -237,6 +253,9 @@ public partial class App : Application
     private const uint NIM_DELETE = 0x00000002;
     private const uint NIM_SETVERSION = 0x00000004;
     private const int IDI_APPLICATION = 0x7F00;
+    private const uint IMAGE_ICON = 1;
+    private const uint LR_LOADFROMFILE = 0x00000010;
+    private const uint LR_DEFAULTSIZE = 0x00000040;
 
 
 
