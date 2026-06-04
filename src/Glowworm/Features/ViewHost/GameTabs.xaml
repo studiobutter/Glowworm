@@ -25,7 +25,7 @@
                             Style="{ThemeResource DefaultButtonStyle}">
                         <StackPanel Orientation="Horizontal" Spacing="12">
                             <Image Source="{x:Bind Icon}" Width="16" Height="16"/>
-                            <TextBlock Text="{x:Bind Name}" VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Bind SelectedRegionName, Mode=OneWay}" VerticalAlignment="Center"/>
                             <DropDownButton x:Name="Button_SwitchRegion" 
                                             Width="24" 
                                             Height="24" 
