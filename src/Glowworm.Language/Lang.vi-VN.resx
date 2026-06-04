@@ -1,1024 +1,1083 @@
-<?xml version="1.0" encoding="utf-8"?>
-<root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <data name="GachaStatsCard_Pity" xml:space="preserve">
-    <value>�?m b?o</value>
-  </data>
-  <data name="GachaStatsCard_Average" xml:space="preserve">
-    <value>Trung b�nh</value>
-  </data>
-  <data name="GachaStatsCard_Stats" xml:space="preserve">
-    <value>Ch? s?</value>
-  </data>
-  <data name="Common_Cancel" xml:space="preserve">
-    <value>Hu?</value>
-  </data>
-  <data name="Common_Confirm" xml:space="preserve">
-    <value>�?ng �</value>
-  </data>
-  <data name="GachaLogPage_NoGachaRecords" xml:space="preserve">
-    <value>Kh�ng c� b?n ghi gacha</value>
-  </data>
-  <data name="GachaLogPage_UpdateRecords" xml:space="preserve">
-    <value>C?p nh?t b?n ghi</value>
-  </data>
-  <data name="GachaLogPage_UpdateSavedURL" xml:space="preserve">
-    <value>C?p nh?t (URL d� luu)</value>
-  </data>
-  <data name="GachaLogPage_UpdateAll" xml:space="preserve">
-    <value>C?p nh?t (t?t c?)</value>
-  </data>
-  <data name="GachaLogPage_InputURL" xml:space="preserve">
-    <value>Nh?p URL</value>
-  </data>
-  <data name="Common_Setting" xml:space="preserve">
-    <value>C�i d?t</value>
-  </data>
-  <data name="GachaLogPage_OtherSettings" xml:space="preserve">
-    <value>C�i d?t kh�c</value>
-  </data>
-  <data name="GachaLogPage_CopyURL" xml:space="preserve">
-    <value>Sao ch�p URL</value>
-  </data>
-  <data name="GachaLogPage_AuthkeyTimeoutAlwaysOccurs" xml:space="preserve">
-    <value>Authkey Timeout lu�n x?y ra?</value>
-  </data>
-  <data name="GachaLogPage_ClearURLCacheFiles" xml:space="preserve">
-    <value>D?n t?p tin cache URL</value>
-  </data>
-  <data name="GachaLogPage_ExportAs" xml:space="preserve">
-    <value>Xu?t nhu</value>
-  </data>
-  <data name="GachaLogPage_ImportFromJson" xml:space="preserve">
-    <value>Nh?p t? file JSON</value>
-  </data>
-  <data name="GachaLogPage_DeleteRecords" xml:space="preserve">
-    <value>Xo� c�c b?n ghi</value>
-  </data>
-  <data name="GachaLogPage_Language" xml:space="preserve">
-    <value>Ng�n ng?</value>
-  </data>
-  <data name="GachaLogPage_CannotFindSavedURLOfUid" xml:space="preserve">
-    <value>Kh�ng th? t�m th?y URL d� luu c?a UID {0}.</value>
-    <comment>{0} = {uid}</comment>
-  </data>
-  <data name="GachaLogPage_GameNotInstalled" xml:space="preserve">
-    <value>Tr� choi chua du?c c�i d?t</value>
-  </data>
-  <data name="GachaLogPage_CannotFindURL" xml:space="preserve">
-    <value>Kh�ng th? t�m th?y URL, vui l�ng h�y m? trang b?n ghi l?ch s? gacha ? trong tr� choi.</value>
-  </data>
-  <data name="GachaLogPage_OperationCanceled" xml:space="preserve">
-    <value>Thao t�c b? hu?</value>
-  </data>
-  <data name="GachaLogPage_PleaseOpenTheGachaRecordsPageInGameAndTryAgain" xml:space="preserve">
-    <value>Vui l�ng h�y m? trang b?n ghi gacha ? trong tr� choi v� th? l?i.</value>
-  </data>
-  <data name="Common_Warning" xml:space="preserve">
-    <value>C?nh b�o</value>
-  </data>
-  <data name="Common_Delete" xml:space="preserve">
-    <value>Xo�</value>
-  </data>
-  <data name="GachaLogPage_DeletedGachaRecordsOfUid" xml:space="preserve">
-    <value>�� xo� {0} b?n ghi gacha c?a UID {1}.</value>
-    <comment>{0} = {count} ,  {1} = {uid}</comment>
-  </data>
-  <data name="GachaLogPage_DeleteGachaRecordsWarning" xml:space="preserve">
-    <value>T?t c? b?n ghi gacha c?a UID {0} s? b? xo�, b?n s? kh�ng th? ho�n t�c h�nh d?ng n�y.</value>
-    <comment>{0} = {uid}</comment>
-  </data>
-  <data name="GachaLogService_WishRecords" xml:space="preserve">
-    <value>B?n ghi C?u Nguy?n</value>
-  </data>
-  <data name="GachaLogService_WarpRecords" xml:space="preserve">
-    <value>B?n ghi Bu?c Nh?y</value>
-  </data>
-  <data name="GachaLogService_GettingUid" xml:space="preserve">
-    <value>�ang thu th?p UID</value>
-  </data>
-  <data name="GachaLogService_ThisAccountHasNoGachaRecordsInTheLast6Months" xml:space="preserve">
-    <value>T�i kho?n n�y kh�ng c� b?n ghi gacha trong 6 th�ng g?n nh?t.</value>
-  </data>
-  <data name="GachaLogService_GetGachaResult" xml:space="preserve">
-    <value>�� t�m du?c {0} b?n ghi, d� th�m {1} b?n ghi.</value>
-    <comment>{0} = {getCount} ,  {1} = {addCount}</comment>
-  </data>
-  <data name="GenshinGachaService_ImportWishRecordsSuccessfully" xml:space="preserve">
-    <value>Nh?p {0} b?n ghi c?u nguy?n th�nh c�ng.</value>
-  </data>
-  <data name="StarRailGachaService_ImportWarpRecordsSuccessfully" xml:space="preserve">
-    <value>Nh?p {0} b?n ghi bu?c nh?y th�nh c�ng.</value>
-  </data>
-  <data name="UpdateService_CannotUpdateAutomatically" xml:space="preserve">
-    <value>Kh�ng th? c?p nh?t t? d?ng</value>
-  </data>
-  <data name="Common_Apply" xml:space="preserve">
-    <value>�p d?ng</value>
-  </data>
-  <data name="Common_Refresh" xml:space="preserve">
-    <value>L�m m?i</value>
-  </data>
-  <data name="Common_Save" xml:space="preserve">
-    <value>Luu</value>
-  </data>
-  <data name="Common_Select" xml:space="preserve">
-    <value>Ch?n</value>
-  </data>
-  <data name="Common_Start" xml:space="preserve">
-    <value>B?t d?u</value>
-  </data>
-  <data name="Common_Continue" xml:space="preserve">
-    <value>Ti?p t?c</value>
-  </data>
-  <data name="MainPage_HowToSwitchGameRegion" xml:space="preserve">
-    <value>L�m th? n�o d? chuy?n d?i v�ng?</value>
-  </data>
-  <data name="MainPage_ClickTheRightMouseButtonOnTheGameIconOnTheLeft" xml:space="preserve">
-    <value>Nh?n chu?t ph?i tr�n bi?u tu?ng tr� choi ? b�n tr�i.</value>
-  </data>
-  <data name="MainPage_Launcer" xml:space="preserve">
-    <value>Tr�nh kh?i ch?y</value>
-  </data>
-  <data name="MainPage_GameScreenshot" xml:space="preserve">
-    <value>?nh ch?p m�n h�nh</value>
-  </data>
-  <data name="ScreenshotPage_GameScreenshot" xml:space="preserve">
-    <value>?nh ch?p m�n h�nh</value>
-  </data>
-  <data name="ScreenshotPage_OpenFolder" xml:space="preserve">
-    <value>M? thu m?c</value>
-  </data>
-  <data name="SettingPage_Log" xml:space="preserve">
-    <value>Nh?t k�</value>
-  </data>
-  <data name="SettingPage_ShowConsole" xml:space="preserve">
-    <value>Hi?n B?ng di?u khi?n</value>
-  </data>
-  <data name="SettingPage_AppSettings" xml:space="preserve">
-    <value>C�i d?t ?ng d?ng</value>
-  </data>
-  <data name="SettingPage_EffectiveAtNextStartup" xml:space="preserve">
-    <value>Hi?u qu? ? l?n kh?i d?ng ti?p theo</value>
-  </data>
-  <data name="SettingPage_OpenLogFolder" xml:space="preserve">
-    <value>M? thu m?c nh?t k�</value>
-  </data>
-  <data name="SettingPage_WindowsSize" xml:space="preserve">
-    <value>K�ch c? c?a s?</value>
-  </data>
-  <data name="SettingPage_CheckForUpdate" xml:space="preserve">
-    <value>Ki?m tra c?p nh?t</value>
-  </data>
-  <data name="SettingPage_CurrentVersion" xml:space="preserve">
-    <value>Phi�n b?n hi?n t?i:</value>
-  </data>
-  <data name="SettingPage_JoinPreviewReleaseChannel" xml:space="preserve">
-    <value>Tham gia k�nh ph�t h�nh xem tru?c</value>
-  </data>
-  <data name="SettingPage_OpenDataFolder" xml:space="preserve">
-    <value>M? thu m?c d? li?u</value>
-  </data>
-  <data name="SettingPage_ReselectDataFolder" xml:space="preserve">
-    <value>Ch?n l?i thu m?c d? li?u</value>
-  </data>
-  <data name="SettingPage_DeleteAllSettings" xml:space="preserve">
-    <value>Xo� t?t c? c�i d?t</value>
-  </data>
-  <data name="SettingPage_ClearCachedFiles" xml:space="preserve">
-    <value>Xo� t?p tin cache</value>
-  </data>
-  <data name="SettingPage_About" xml:space="preserve">
-    <value>V? ch�ng t�i</value>
-  </data>
-  <data name="SettingPage_ProjectHomepage" xml:space="preserve">
-    <value>Trang ch?</value>
-  </data>
-  <data name="SettingPage_ReportIssue" xml:space="preserve">
-    <value>B�o l?i</value>
-  </data>
-  <data name="SettingPage_ReleaseHistory" xml:space="preserve">
-    <value>Lịch sử phát hành</value>
-  </data>
-  <data name="SettingPage_OriginalProject" xml:space="preserve">
-    <value>Dự án gốc</value>
-  </data>
-  <data name="SettingPage_ThisIsALogo" xml:space="preserve">
-    <value>��y l� Logo</value>
-  </data>
-  <data name="SettingPage_Update" xml:space="preserve">
-    <value>C?p nh?t</value>
-  </data>
-  <data name="SettingPage_TestCDNAsync_NetworkError" xml:space="preserve">
-    <value>L?i m?ng</value>
-  </data>
-  <data name="SettingPage_TheCurrentLocationOfTheDataFolderIs" xml:space="preserve">
-    <value>V? tr� hi?n t?i c?a thu m?c ch?a d? li?u l�:</value>
-  </data>
-  <data name="SettingPage_WouldLikeToReselectDataFolder" xml:space="preserve">
-    <value>B?n c� mu?n ch?n l?i? (b?n c?n chuy?n d? li?u th? c�ng tru?c khi ch?n)</value>
-  </data>
-  <data name="Common_Yes" xml:space="preserve">
-    <value>C�</value>
-  </data>
-  <data name="SettingPage_AfterDeletingTheSoftwareWillBeRestartedAutomatically" xml:space="preserve">
-    <value>Sau khi xo�, ?ng d?ng s? t? d?ng du?c kh?i d?ng l?i.</value>
-  </data>
-  <data name="UpdatePage_NewVersion" xml:space="preserve">
-    <value>Phi�n b?n m?i!</value>
-  </data>
-  <data name="UpdatePage_Links" xml:space="preserve">
-    <value>�u?ng d?n:</value>
-  </data>
-  <data name="UpdatePage_BuiltTime" xml:space="preserve">
-    <value>Th?i gian x�y d?ng:</value>
-  </data>
-  <data name="UpdatePage_ReleaseChannel" xml:space="preserve">
-    <value>K�nh ph�t h�nh:</value>
-  </data>
-  <data name="UpdatePage_Architecture" xml:space="preserve">
-    <value>Ki?n tr�c:</value>
-  </data>
-  <data name="UpdatePage_DownloadInstaller" xml:space="preserve">
-    <value>T?i tr�nh c�i d?t</value>
-  </data>
-  <data name="UpdatePage_DownloadPortable" xml:space="preserve">
-    <value>T?i Portable</value>
-  </data>
-  <data name="UpdatePage_RemindLatter" xml:space="preserve">
-    <value>Nh?c t�i sau</value>
-  </data>
-  <data name="UpdatePage_IgnoreThisVersion" xml:space="preserve">
-    <value>B? qua phi�n b?n n�y</value>
-  </data>
-  <data name="UpdatePage_UpdateNow" xml:space="preserve">
-    <value>C?p nh?t ngay</value>
-  </data>
-  <data name="UpdatePage_YouNeedToManuallyDownloadTheNewVersionPackage" xml:space="preserve">
-    <value>B?n c?n ph?i t?i xu?ng g�i phi�n b?n m?i th? c�ng</value>
-  </data>
-  <data name="UpdatePage_PreviewChannel" xml:space="preserve">
-    <value>K�nh tr?i nghi?m tru?c</value>
-  </data>
-  <data name="UpdatePage_StableChannel" xml:space="preserve">
-    <value>K�nh ch�nh th?c</value>
-  </data>
-  <data name="UpdatePage_DevChannel" xml:space="preserve">
-    <value>K�nh d�nh cho nh� ph�t tri?n</value>
-  </data>
-  <data name="UpdatePage_ReleasePage" xml:space="preserve">
-    <value>Trang ph�t h�nh</value>
-  </data>
-  <data name="GachaLogPage_GachaLanguageDesc" xml:space="preserve">
-    <value>Ch? d?nh ng�n ng? c?a b?n ghi gacha, ch?ng h?n nhu vi-vn.</value>
-    <comment>Replace en-us with the target language when translating</comment>
-  </data>
-  <data name="SettingPage_Language" xml:space="preserve">
-    <value>Ng�n ng?</value>
-  </data>
-  <data name="SettingPage_FollowSystem" xml:space="preserve">
-    <value>Theo h? th?ng</value>
-  </data>
-  <data name="GachaLogService_GetGachaProgressText" xml:space="preserve">
-    <value>Nh?n {0} v?i trang {1}</value>
-    <comment>{0} = {gachaType} ,  {1} = {page}</comment>
-  </data>
-  <data name="Common_Summary" xml:space="preserve">
-    <value>T?ng quan</value>
-  </data>
-  <data name="Common_Accept" xml:space="preserve">
-    <value>Ch?p nh?n</value>
-  </data>
-  <data name="Common_Reject" xml:space="preserve">
-    <value>T? ch?i</value>
-  </data>
-  <data name="Common_Disclaimer" xml:space="preserve">
-    <value>T? ch?i tr�ch nhi?m</value>
-  </data>
-  <data name="Common_AccountError" xml:space="preserve">
-    <value>T�i kho?n b?t thu?ng</value>
-  </data>
-  <data name="Common_NetworkError" xml:space="preserve">
-    <value>L?i m?ng</value>
-  </data>
-  <data name="ScreenshotPage_ScreenshotFolderDoesNotExist" xml:space="preserve">
-    <value>Thu m?c ?nh ch?p m�n h�nh kh�ng t?n t?i</value>
-  </data>
-  <data name="GachaLogPage_0GachaItemsHaveBeenChangedToLanguage1" xml:space="preserve">
-    <value>Ng�n ng? c?a {0} b?n ghi gacha d� du?c chuy?n th�nh ({1}).</value>
-    <comment>The language of 123 gacha records has been changed to (en-us).</comment>
-  </data>
-  <data name="SettingPage_PrivacyPolicy" xml:space="preserve">
-    <value>Ch�nh s�ch b?o m?t</value>
-  </data>
-  <data name="MainPage_Tips" xml:space="preserve">
-    <value>M?o</value>
-  </data>
-  <data name="SettingPage_CDNTips" xml:space="preserve">
-    <value>M?t s? ngu?i d�ng ? m?t s? khu v?c c� th? g?p ph?i s? b?t thu?ng v? m?ng. B?n c� th? gi?i quy?t v?n d? n�y b?ng c�ch chuy?n d?i CDN.</value>
-  </data>
-  <data name="SettingPage_ExitLauncherWhenClosingWindow" xml:space="preserve">
-    <value>Tho�t tr�nh kh?i ch?y khi d�ng c?a s?</value>
-  </data>
-  <data name="Common_Exit" xml:space="preserve">
-    <value>Tho�t</value>
-  </data>
-  <data name="Common_Hide" xml:space="preserve">
-    <value>?n</value>
-  </data>
-  <data name="ScreenshotPage_BackupScreenshots" xml:space="preserve">
-    <value>Sao luu ?nh ch?p m�n h�nh</value>
-  </data>
-  <data name="ScreenshotPage_OpenBackupFolder" xml:space="preserve">
-    <value>M? thu m?c sao luu</value>
-  </data>
-  <data name="SettingPage_LastBackup" xml:space="preserve">
-    <value>B?n sao luu g?n nh?t</value>
-  </data>
-  <data name="SettingPage_BackupDatabase" xml:space="preserve">
-    <value>Sao luu co s? d? li?u</value>
-  </data>
-  <data name="ScreenshotPage_BackedUpNewScreenshots" xml:space="preserve">
-    <value>�� sao luu {0} ?nh ch?p m�n h�nh m?i.</value>
-  </data>
-  <data name="Common_Attention" xml:space="preserve">
-    <value>Ch� �</value>
-  </data>
-  <data name="SettingPage_Donate" xml:space="preserve">
-    <value>?ng h?</value>
-  </data>
-  <data name="SettingPage_URLProtocolExperimental" xml:space="preserve">
-    <value>Giao th?c URL (th? nghi?m)</value>
-  </data>
-  <data name="SettingPage_URLProtocolDesc" xml:space="preserve">
-    <value>Nh?ng ph?n m?m kh�c c� th? s? d?ng m?t s? t�nh nang c?a Glowworm th�ng qua giao th?c URL.</value>
-  </data>
-  <data name="SettingPage_RegisterURLProtocol" xml:space="preserve">
-    <value>�ang k� giao th?c URL</value>
-  </data>
-  <data name="SettingPage_TestURLProtocol" xml:space="preserve">
-    <value>Ki?m tra giao th?c URL</value>
-  </data>
-  <data name="ImageViewPage_ZoomOut" xml:space="preserve">
-    <value>Thu nh?</value>
-  </data>
-  <data name="ImageViewPage_ZoomIn" xml:space="preserve">
-    <value>Ph�ng to</value>
-  </data>
-  <data name="ImageViewPage_Rotate" xml:space="preserve">
-    <value>Quay</value>
-  </data>
-  <data name="Common_Copy" xml:space="preserve">
-    <value>Sao ch�p</value>
-  </data>
-  <data name="Common_Open" xml:space="preserve">
-    <value>M?</value>
-  </data>
-  <data name="FileSettingPage_DataFolder" xml:space="preserve">
-    <value>Thu m?c d? li?u</value>
-  </data>
-  <data name="FileSettingPage_OpenLogFile" xml:space="preserve">
-    <value>M? t?p tin nh?t k�</value>
-  </data>
-  <data name="SettingPage_FileManagement" xml:space="preserve">
-    <value>Qu?n l� t?p tin</value>
-  </data>
-  <data name="SettingPage_Completed" xml:space="preserve">
-    <value>Ho�n th�nh</value>
-  </data>
-  <data name="AboutSettingPage_Links" xml:space="preserve">
-    <value>Li�n k?t</value>
-  </data>
-  <data name="FileSettingPage_DataFolderIsImportant" xml:space="preserve">
-    <value>D? li?u c� nh�n c?a b?n du?c luu tr? trong thu m?c b�n du?i. N� r?t quan tr?ng, xin d?ng v� t�nh x�a n� di.</value>
-  </data>
-  <data name="SelectLanguagePage_NetworkTest" xml:space="preserve">
-    <value>Ki?m tra m?ng</value>
-  </data>
-  <data name="SelectLanguagePage_AreYouAbleToReceiveUpdatesForGlowworm" xml:space="preserve">
-    <value>B?n c� th? nh?n du?c c?p nh?t cho Glowworm kh�ng?</value>
-  </data>
-  <data name="AppearanceSettingPage_HelpUsTranslateGlowworm" xml:space="preserve">
-    <value>Gi�p ch�ng t�i d?ch Glowworm</value>
-  </data>
-  <data name="FileSettingPage_Cache" xml:space="preserve">
-    <value>B? nh? d?m</value>
-  </data>
-  <data name="FileSettingPage_Log" xml:space="preserve">
-    <value>B?n ghi</value>
-  </data>
-  <data name="FileSettingPage_Image" xml:space="preserve">
-    <value>H�nh ?nh</value>
-  </data>
-  <data name="FileSettingPage_Browser" xml:space="preserve">
-    <value>Tr�nh duy?t</value>
-  </data>
-  <data name="FileSettingPage_ClearCache" xml:space="preserve">
-    <value>D?n b? nh? d?m</value>
-  </data>
-  <data name="AppearanceSettingPage_BetterExperience" xml:space="preserve">
-    <value>�? xu?t b?t {0} v� {1} trong c�i d?t h? th?ng d? c� tr?i nghi?m ngu?i d�ng t?t hon.</value>
-  </data>
-  <data name="AppearanceSettingPage_TransparencyEffects" xml:space="preserve">
-    <value>Hi?u ?ng trong su?t</value>
-  </data>
-  <data name="AppearanceSettingPage_AnimationEffects" xml:space="preserve">
-    <value>Hi?u ?ng chuy?n d?ng</value>
-  </data>
-  <data name="GachaLogPage_AlwaysFailedToGetGachaRecords" xml:space="preserve">
-    <value>V?n kh�ng l?y du?c b?n ghi gacha?</value>
-  </data>
-  <data name="AboutSettingPage_VerifyFileIntegrity" xml:space="preserve">
-    <value>X�c minh t�nh to�n v?n c?a t?p tin</value>
-  </data>
-  <data name="AboutSettingPage_VerifyFailed" xml:space="preserve">
-    <value>X�c minh th?t b?i</value>
-  </data>
-  <data name="AboutSettingPage_CurrentVersionIsNotTheLatestVersion" xml:space="preserve">
-    <value>Phi�n b?n hi?n t?i kh�ng ph?i l� phi�n b?n m?i nh?t ({0}).</value>
-  </data>
-  <data name="AboutSettingPage_ClickButtonToRepairFiles" xml:space="preserve">
-    <value>B?m v�o n�t d? s?a ch?a c�c t?p tin.</value>
-  </data>
-  <data name="AboutSettingPage_RepairFiles" xml:space="preserve">
-    <value>S?a ch?a t?p tin</value>
-  </data>
-  <data name="AboutSettingPage_VerifySuccessfully" xml:space="preserve">
-    <value>X�c minh th�nh c�ng!</value>
-  </data>
-  <data name="GachaLogPage_ShowChronicledWish" xml:space="preserve">
-    <value>Hi?n s? k� c?u nguy?n</value>
-  </data>
-  <data name="CloudGameGachaWindow_OpenTheGachaRecordsPageInGameAndThenClickTheButtonOnTheRight" xml:space="preserve">
-    <value>M? trang l?ch s? Gacha trong tr� choi, sau d� nh?n v�o n�t ? b�n ph?i.</value>
-  </data>
-  <data name="GachaLogPage_ViaCloudGame" xml:space="preserve">
-    <value>b?ng Tr� choi d�m m�y</value>
-  </data>
-  <data name="GachaLogPage_ViaCloudGameWeb" xml:space="preserve">
-    <value>via Cloud Game (Web)</value>
-  </data>
-  <data name="UpdateContentWindow_ClickToRefresh" xml:space="preserve">
-    <value>Nh?n d? l�m m?i</value>
-  </data>
-  <data name="UpdateContentWindow_RecentlyUpdatedContent" xml:space="preserve">
-    <value>N?i dung c?p nh?t g?n d�y</value>
-  </data>
-  <data name="GameBizSelector_AutoSearch" xml:space="preserve">
-    <value>T�m Ki?m T? �?ng</value>
-  </data>
-  <data name="GachaLogService_SignalSearchRecords" xml:space="preserve">
-    <value>L?ch S? Ch?nh K�nh</value>
-  </data>
-  <data name="Common_Change" xml:space="preserve">
-    <value>Thay d?i</value>
-  </data>
-  <data name="Common_Restart" xml:space="preserve">
-    <value>Kh?i d?ng l?i</value>
-  </data>
-  <data name="DeleteGachaLogDialog_BeginTime" xml:space="preserve">
-    <value>Th?i gian b?t d?u</value>
-  </data>
-  <data name="DeleteGachaLogDialog_EndTime" xml:space="preserve">
-    <value>Th?i gian k?t th�c</value>
-  </data>
-  <data name="DeleteGachaLogDialog_DeleteGachaRecordsForASpecificTimePeriod" xml:space="preserve">
-    <value>Xo� l?ch s? gacha trong m?t kho?ng th?i gian c? th?</value>
-  </data>
-  <data name="DeleteGachaLogDialog_6MonthsDeletingWarning" xml:space="preserve">
-    <value>C?nh b�o: Kho?ng th?i gian d� ch?n bao g?m d? li?u gacha t? hon 6 th�ng tru?c, d? li?u n�y s? kh�ng th? kh�i ph?c sau khi b? x�a.</value>
-  </data>
-  <data name="DeleteGachaLogDialog_ThisAccountHas0GachaRecordS" xml:space="preserve">
-    <value>T�i kho?n n�y c� {0} d? li?u gacha.</value>
-  </data>
-  <data name="DeleteGachaLogDialog_TheSelectedTimePeriodIncludes0GachaRecords" xml:space="preserve">
-    <value>Kho?ng th?i gian d� ch?n bao g?m {0} b?n ghi gacha.</value>
-  </data>
-  <data name="GachaLogPage_DeleteAll" xml:space="preserve">
-    <value>Xo� t?t c?</value>
-  </data>
-  <data name="GachaLogPage_SpecificTimePeriod" xml:space="preserve">
-    <value>Kho?ng th?i gian c? th?</value>
-  </data>
-  <data name="SettingPage_General" xml:space="preserve">
-    <value>C�i d?t chung</value>
-    <comment>General Setting</comment>
-  </data>
-  <data name="SettingPage_ForABetterExperiencePleaseEnableTheFollowingFeaturesInSystemSettings" xml:space="preserve">
-    <value>�? c� du?c tr?i nghi?m t?t hon, xin vui l�ng b?t nh?ng t�nh nang sau trong c�i d?t c?a h? th?ng.</value>
-  </data>
-  <data name="UpdateWindow_AutoRestartAfterUpdate" xml:space="preserve">
-    <value>T? d?ng kh?i d?ng l?i sau khi c?p nh?t</value>
-  </data>
-  <data name="UpdateWindow_DisplayUpdateContentAfterRestart" xml:space="preserve">
-    <value>Hi?n th? n?i dung c?p nh?t sau khi kh?i d?ng l?i</value>
-  </data>
-  <data name="Common_WebView2ComponentInitializationFailed" xml:space="preserve">
-    <value>Th�nh ph?n WebView2 kh?i ch?y th?t b?i.</value>
-  </data>
-  <data name="ZZZGachaService_ImportSignalSearchRecordsSuccessfully" xml:space="preserve">
-    <value>Nh?p v�o {0} l?n ghi Ch?nh K�nh th�nh c�ng.</value>
-  </data>
-  <data name="Common_Error" xml:space="preserve">
-    <value>L?i</value>
-  </data>
-  <data name="CloudGameButton_CloudGame" xml:space="preserve">
-    <value>Tr� Choi ��m M�y</value>
-  </data>
-  <data name="UIGFGachaService_UidMismatchDetectedExpected0ButFound1" xml:space="preserve">
-    <value>Ph�t hi?n Uid kh�ng kh?p. D? ki?n: {0}, t�m th?y: {1}.</value>
-  </data>
-  <data name="UIGFGachaService_ImportSuccessfulButNoRecordItemName" xml:space="preserve">
-    <value>Nh?p v�o th�nh c�ng, nhung m?t s? b?n ghi s? b? m?t h�nh ?nh v?t ph?m. Vui l�ng v�o ph?n c�i d?t b?n ghi gacha, thay d?i ng�n ng?, v� �p d?ng.</value>
-  </data>
-  <data name="UIGFGachaService_ImportSuccessful" xml:space="preserve">
-    <value>Nh?p v�o th�nh c�ng.</value>
-  </data>
-  <data name="UIGFGachaService_0FieldIsMissingInAGachaRecord" xml:space="preserve">
-    <value>"{0}" d�ng b? m?t trong l?ch s? gacha.</value>
-  </data>
-  <data name="GachaImportAndExportWindow_Export" xml:space="preserve">
-    <value>Xu?t t?p tin</value>
-  </data>
-  <data name="GachaImportAndExportWindow_SelectTheGachaRecordsToExport" xml:space="preserve">
-    <value>Ch?n l?ch s? gacha d? xu?t.</value>
-  </data>
-  <data name="GachaImportAndExportWindow_TheLastGachaPull" xml:space="preserve">
-    <value>L?n gacha cu?i</value>
-  </data>
-  <data name="GachaImportAndExportWindow_Count" xml:space="preserve">
-    <value>S? l?n</value>
-  </data>
-  <data name="GachaImportAndExportWindow_TimeServerTimeZone" xml:space="preserve">
-    <value>Th?i gian (Gi? m�y ch?)</value>
-  </data>
-  <data name="GachaImportAndExportWindow_Name" xml:space="preserve">
-    <value>T�n</value>
-  </data>
-  <data name="GachaImportAndExportWindow_SelectTheFileToImport" xml:space="preserve">
-    <value>Ch?n t?p tin d? nh?p v�o.</value>
-  </data>
-  <data name="GachaImportAndExportWindow_Import" xml:space="preserve">
-    <value>Nh?p v�o</value>
-  </data>
-  <data name="GachaImportAndExportWindow_TimeZoneOffsetWarning" xml:space="preserve">
-    <value>Tru?c khi nh?p v�o, vui l�ng ch?c ch?n th?i gian l?n cu?i C?u Nguy?n gi?ng v?i th?i gian hi?n th? trong game. N?u ch�ng kh�ng gi?ng, vui l�ng d?t l?i th?i gian khu v?c.</value>
-  </data>
-  <data name="GachaImportAndExportWindow_TimeZoneOffset" xml:space="preserve">
-    <value>�? l?ch m�i gi?</value>
-  </data>
-  <data name="GachaImportAndExportWindow_OffsetTime" xml:space="preserve">
-    <value>�? l?ch th?i gian</value>
-  </data>
-  <data name="GachaImportAndExportWindow_SelectFile" xml:space="preserve">
-    <value>Ch?n t?p tin</value>
-  </data>
-  <data name="Common_Disabled" xml:space="preserve">
-    <value>�� t?t</value>
-  </data>
-  <data name="Common_Enabled" xml:space="preserve">
-    <value>�� b?t</value>
-  </data>
-  <data name="GachaLogPage_ImportAndExport" xml:space="preserve">
-    <value>Nh?p &amp; Xu?t</value>
-  </data>
-  <data name="GachaLogPage_HideGachaBanners" xml:space="preserve">
-    <value>?n banner Gacha</value>
-  </data>
-  <data name="Common_RestoreDefaults" xml:space="preserve">
-    <value>Kh�i ph?c m?c d?nh</value>
-  </data>
-  <data name="MainView_CheckSystemProxy_SystemProxyIsEnabled" xml:space="preserve">
-    <value>�ang s? d?ng proxy h? th?ng.</value>
-  </data>
-  <data name="ScreenCaptureInfoWindow_ScreenshotSaved" xml:space="preserve">
-    <value>?nh ch?p m�n h�nh d� du?c luu</value>
-  </data>
-  <data name="ScreenshotPage_ManageScreenshotFolders" xml:space="preserve">
-    <value>Qu?n l� thu m?c ?nh ch?p m�n h�nh</value>
-  </data>
-  <data name="ScreenshotFolderManageDialog_AddFolder" xml:space="preserve">
-    <value>Th�m thu m?c</value>
-  </data>
-  <data name="ScreenshotFolderManageDialog_BackingUp" xml:space="preserve">
-    <value>�ang sao luu...</value>
-  </data>
-  <data name="Common_Remove" xml:space="preserve">
-    <value>Lo?i b?</value>
-  </data>
-  <data name="ScreenshotFolderManageDialog_FailedToBackupScreenshots" xml:space="preserve">
-    <value>Kh�ng th? sao luu ?nh ch?p m�n h�nh.</value>
-  </data>
-  <data name="ScreenCaptureInfoWindow_ScreenshotFailed" xml:space="preserve">
-    <value>Ch?p ?nh m�n h�nh th?t b?i</value>
-  </data>
-  <data name="ScreenCaptureInfoWindow_CheckTheLogForMoreInformation" xml:space="preserve">
-    <value>Ki?m tra nh?t k� d? bi?t th�m th�ng tin.</value>
-  </data>
-  <data name="ScreenshotFolderManageDialog_ImagesFromTheFollowingFoldersWillBeDisplayedInTheGallery" xml:space="preserve">
-    <value>C�c h�nh ?nh trong c�c thu m?c du?i d�y s? du?c hi?n th? trong thu vi?n.</value>
-  </data>
-  <data name="ImageViewWindow2_OpenInExplorer" xml:space="preserve">
-    <value>M? trong Explorer</value>
-  </data>
-  <data name="ImageViewWindow2_OpenWith" xml:space="preserve">
-    <value>M? b?ng</value>
-  </data>
-  <data name="ImageViewWindow2_Previous" xml:space="preserve">
-    <value>Tru?c</value>
-    <comment>Previous Image</comment>
-  </data>
-  <data name="ImageViewWindow2_Next" xml:space="preserve">
-    <value>Sau</value>
-    <comment>Next Image</comment>
-  </data>
-  <data name="ImageViewWindow2_ShowGallery" xml:space="preserve">
-    <value>Hi?n th? Thu vi?n ?nh</value>
-  </data>
-  <data name="ImageViewWindow2_FitToWindow" xml:space="preserve">
-    <value>V?a kh�t v?i C?a s?</value>
-    <comment>Zoom image fit to window</comment>
-  </data>
-  <data name="ImageViewWindow2_CopyFile" xml:space="preserve">
-    <value>Sao ch�p T?p tin</value>
-  </data>
-  <data name="ImageViewWindow2_CopyPath" xml:space="preserve">
-    <value>Sao ch�p du?ng d?n</value>
-  </data>
-  <data name="ImageViewWindow2_CopyImage" xml:space="preserve">
-    <value>Sao ch�p ?nh</value>
-  </data>
-  <data name="Common_Edit" xml:space="preserve">
-    <value>Ch?nh s?a</value>
-  </data>
-  <data name="ImageViewWindow2_SaveAs" xml:space="preserve">
-    <value>Luu th�nh</value>
-  </data>
-  <data name="ImageViewWindow2_ImageInformation" xml:space="preserve">
-    <value>Th�ng tin ?nh</value>
-  </data>
-  <data name="ImageViewWindow2_EditImage" xml:space="preserve">
-    <value>Ch?nh s?a ?nh</value>
-  </data>
-  <data name="ImageViewWindow2_DisplayMode" xml:space="preserve">
-    <value>Ch? d? hi?n th?</value>
-  </data>
-  <data name="ImageViewWindow2_SDRMappedLuminance" xml:space="preserve">
-    <value>�? S�ng �nh X? SDR</value>
-  </data>
-  <data name="ImageViewWindow2_Auto" xml:space="preserve">
-    <value>T? d?ng</value>
-  </data>
-  <data name="ImageViewWindow2_ExportImage" xml:space="preserve">
-    <value>Xu?t ?nh</value>
-  </data>
-  <data name="ImageViewWindow2_ToConvertAnHDRImageToSDRPleaseUseTheEditFeature" xml:space="preserve">
-    <value>�? chuy?n d?i h�nh ?nh HDR sang SDR, vui l�ng s? d?ng t�nh nang Ch?nh s?a.</value>
-  </data>
-  <data name="ImageViewWindow2_DeleteImageFile" xml:space="preserve">
-    <value>Xo� T?p tin H�nh ?nh</value>
-  </data>
-  <data name="ImageViewWindow2_CopiedToClipboard" xml:space="preserve">
-    <value>�� sao ch�p v�o b? nh? t?m.</value>
-  </data>
-  <data name="ImageViewWindow2_FileDoesNotExist" xml:space="preserve">
-    <value>T?p tin kh�ng t?n t?i.</value>
-  </data>
-  <data name="ImageViewWindow2_OpenWithDefaultApp" xml:space="preserve">
-    <value>M? b?ng ?ng d?ng m?c d?nh</value>
-  </data>
-  <data name="ImageViewWindow2_NoImageToDisplay" xml:space="preserve">
-    <value>Kh�ng c� ?nh d? Hi?n th?</value>
-  </data>
-  <data name="Common_OpenFiles" xml:space="preserve">
-    <value>M? t?p tin</value>
-  </data>
-  <data name="ImageViewWindow2_OpenNewFiles" xml:space="preserve">
-    <value>M? t?p tin m?i</value>
-  </data>
-  <data name="ImageViewWindow2_FailedToDisplayImage" xml:space="preserve">
-    <value>Hi?n h�nh ?nh th?t b?i</value>
-  </data>
-  <data name="ImageViewWindow2_FailedToSaveImage" xml:space="preserve">
-    <value>Luu ?nh th?t b?i</value>
-  </data>
-  <data name="ImageViewWindow2_FailedToDeleteImageFile" xml:space="preserve">
-    <value>Xo� file th?t b?i</value>
-  </data>
-  <data name="ImageViewWindow2_UnableToDeleteTheFile" xml:space="preserve">
-    <value>Kh�ng th? xo� file</value>
-  </data>
-  <data name="ImageViewWindow2_InsufficientPermissionsOrTheFileIsInUse" xml:space="preserve">
-    <value>Thi?u quy?n h?n ho?c file dang du?c s? d?ng.</value>
-  </data>
-  <data name="HotkeyInput_ClickToSetShortcutKeys" xml:space="preserve">
-    <value>Nh?n d? d?t ph�m t?t</value>
-  </data>
-  <data name="HotkeyInput_PressTheShortcutKeys" xml:space="preserve">
-    <value>Nh?n ph�m t?t</value>
-  </data>
-  <data name="HotkeyManager_TheShortcutKeys0IsAlreadyInUse" xml:space="preserve">
-    <value>Ph�m t?t ({0}) d� du?c s? d?ng.</value>
-  </data>
-  <data name="HotkeyManager_FailedToRegisterTheShortcutKeys0" xml:space="preserve">
-    <value>G�n ph�m t?t ({0}) th?t b?i.</value>
-  </data>
-  <data name="HotkeyManager_TheShortcutKeys0IsAlreadyInUsePleaseModifyItInSettingsPage" xml:space="preserve">
-    <value>Ph�m t?t ({0}) d� du?c s? d?ng. Vui l�ng ch?nh s?a trong trang C�i d?t.</value>
-  </data>
-  <data name="HotkeyManager_FailedToRegisterTheShortcutKeys0PleaseRetryInSettingsPage" xml:space="preserve">
-    <value>G�n ph�m t?t ({0}) th?t b?i. Vui l�ng th? l?i trong trang C�i d?t.</value>
-  </data>
-  <data name="ScreenshotSetting_ScreenshotShortcut" xml:space="preserve">
-    <value>Ph�m t?t ?nh ch?p m�n h�nh</value>
-  </data>
-  <data name="HotkeySetting_OpenMainWindow" xml:space="preserve">
-    <value>M? c?a s? ch�nh</value>
-  </data>
-  <data name="HotkeySetting_FailedToRegisterTheShortcutKeys" xml:space="preserve">
-    <value>G�n ph�m t?t th?t b?i.</value>
-  </data>
-  <data name="ScreenshotSetting_TheBuiltInScreenshotFeatureWillSaveImagesToTheFollowingFolder" xml:space="preserve">
-    <value>T�nh nang ch?p m�n h�nh c?a ?ng d?ng s? luu ?nh v�o thu m?c sau.</value>
-  </data>
-  <data name="Common_ChangeFolder" xml:space="preserve">
-    <value>Thay d?i thu m?c</value>
-  </data>
-  <data name="HotkeySetting_SingleKeyShortcutsTips" xml:space="preserve">
-    <value>Khi d?t ph�m t?t m?t ph�m (F1�F12), h�y kh?i ch?y Glowworm du?i quy?n admin, v� n?u kh�ng th� ph�m t?t c� th? b? v� hi?u trong game.</value>
-  </data>
-  <data name="SettingPage_KeyboardShortcuts" xml:space="preserve">
-    <value>Ph�m t?t</value>
-  </data>
-  <data name="ScreenshotSetting_TestScreenshot" xml:space="preserve">
-    <value>Th? Ch?p ?nh</value>
-  </data>
-  <data name="ScreenshotSetting_AutoConvertToSDRImage" xml:space="preserve">
-    <value>T? d?ng chuy?n d?i sang ?nh SDR</value>
-  </data>
-  <data name="ScreenshotSetting_WhenCapturingHDRImagesSDRVersionWillAlsoBeSaved" xml:space="preserve">
-    <value>Khi ch?p ?nh HDR, phi�n b?n SDR cung s? du?c luu l?i.</value>
-  </data>
-  <data name="ScreenshotSetting_ScreenshotFetureDescAndLimit" xml:space="preserve">
-    <value>T�nh nang ch?p ?nh m�n h�nh ch?p tr� choi dang ch?y. N?u c� nhi?u tr� choi dang ch?y c�ng l�c, t�nh nang s? x? l� c?a s? tr� choi v?a du?c thao t�c g?n nh?t. Luu � c�c gi?i h?n sau:
-� Kh�ng th? ch?p c?a s? tr� choi dang du?c thu nh?.
-� Ph?n c?a s? tr� choi ? ngo�i r�a m�n h�nh s? kh�ng du?c ch?p.
-� Trong m?t s? tru?ng h?p hi?m g?p, t�nh nang c� th? ch?p sang c?a s? kh�c.</value>
-  </data>
-  <data name="ScreenshotSetting_ScreenshotWin10Limit" xml:space="preserve">
-    <value>Tr�n Windows 10, t�nh nang ch?p m�n h�nh c� th�m c�c gi?i h?n sau:
-� M?t vi?n m�u c� th? xu?t hi?n xung quanh c?a s? tr� choi trong l�c ch?p.
-� Con tr? chu?t kh�ng th? b? ?n.</value>
-  </data>
-  <data name="ScreenshotSetting_AutoCopyScreenshotFile" xml:space="preserve">
-    <value>T? d?ng sao ch�p t?p tin ch?p m�n h�nh</value>
-  </data>
-  <data name="ImageViewWindow2_CopyAsJPG" xml:space="preserve">
-    <value>Sao ch�p du?i d?ng JPG</value>
-  </data>
-  <data name="ScreenshotPage_MultiSelect" xml:space="preserve">
-    <value>Ch?n nhi?u</value>
-  </data>
-  <data name="ScreenshotPage_Total0Files" xml:space="preserve">
-    <value>T?ng c?ng {0} t?p.</value>
-  </data>
-  <data name="ScreenshotSetting_OtherOptions" xml:space="preserve">
-    <value>C�c tu? ch?n kh�c</value>
-  </data>
-  <data name="ScreenshotSetting_Lossless" xml:space="preserve">
-    <value>Kh�ng M?t D? Li?u</value>
-  </data>
-  <data name="ScreenshotSetting_FormatAndQuality" xml:space="preserve">
-    <value>�?nh d?ng v� Ch?t lu?ng</value>
-  </data>
-  <data name="ScreenCaptureInfoWindow_ProcessingImage" xml:space="preserve">
-    <value>�ang x? l� ?nh</value>
-  </data>
-  <data name="ScreenshotPage_BatchConvert" xml:space="preserve">
-    <value>Chuy?n d?i theo l�</value>
-  </data>
-  <data name="ImageBatchConvertWindow_Quality" xml:space="preserve">
-    <value>Ch?t lu?ng</value>
-  </data>
-  <data name="ImageBatchConvertWindow_StartConvert" xml:space="preserve">
-    <value>B?t d?u chuy?n d?i</value>
-  </data>
-  <data name="Common_Clear" xml:space="preserve">
-    <value>Xo�</value>
-  </data>
-  <data name="ImageBatchConvertWindow_OutputFolder" xml:space="preserve">
-    <value>Thu m?c xu?t ra</value>
-  </data>
-  <data name="ImageBatchConvertWindow_OriginalFileFolder" xml:space="preserve">
-    <value>Thu m?c c?a t?p tin g?c</value>
-  </data>
-  <data name="ImageBatchConvertWindow_SameAsOriginalFileFormat" xml:space="preserve">
-    <value>Gi?ng d?nh d?ng t?p ban d?u</value>
-  </data>
-  <data name="ImageBatchConvertWindow_SelectOutputFormat" xml:space="preserve">
-    <value>Ch?n d?nh d?ng xu?t</value>
-  </data>
-  <data name="ImageBatchConvertWindow_NoReadOrWritePermission" xml:space="preserve">
-    <value>Kh�ng c� quy?n d?c ho?c ghi</value>
-  </data>
-  <data name="ImageBatchConvertWindow_ConvertFailed" xml:space="preserve">
-    <value>Chuy?n d?i th?t b?i</value>
-  </data>
-  <data name="ImageBatchConvertWindow_IfOutputFileExists" xml:space="preserve">
-    <value>N?u t?p tin xu?t ra d� t?n t?i</value>
-  </data>
-  <data name="ImageBatchConvertWindow_SkipDefault" xml:space="preserve">
-    <value>B? qua (M?c d?nh)</value>
-  </data>
-  <data name="ImageBatchConvertWindow_Overwrite" xml:space="preserve">
-    <value>Ghi d�</value>
-  </data>
-  <data name="ImageBatchConvertWindow_Rename" xml:space="preserve">
-    <value>�?i t�n</value>
-  </data>
-  <data name="Common_Success" xml:space="preserve">
-    <value>Th�nh c�ng</value>
-  </data>
-  <data name="Common_Failed" xml:space="preserve">
-    <value>Th�t b?i</value>
-  </data>
-  <data name="ImageBatchConvertWindow_ImageBatchConvert" xml:space="preserve">
-    <value>Chuy?n d?i ?nh theo l�</value>
-  </data>
-  <data name="ScreenshotSetting_ClearThumbnailCache" xml:space="preserve">
-    <value>X�a b? nh? d?m Thumbnail</value>
-  </data>
-  <data name="ScreenshotSetting_ClearSuccessfully" xml:space="preserve">
-    <value>Xo� ho�n t?t</value>
-  </data>
-  <data name="ScreenshotSetting_ClearFailed" xml:space="preserve">
-    <value>Xo� th?t b?i</value>
-  </data>
-  <data name="ScreenshotSetting_HighQualityAVIFAndJPEGXLImageFormatsSaveApproximately85OfStorageSpace" xml:space="preserve">
-    <value>�?nh d?ng h�nh ?nh AVIF v� JPEG XL ch?t lu?ng cao gi�p ti?t ki?m kho?ng 85% dung lu?ng luu tr?.</value>
-  </data>
-  <data name="Common_CopiedToClipboard" xml:space="preserve">
-    <value>�� sao ch�p v�o b? nh? t?m.</value>
-  </data>
-  <data name="GenshinBeyondGachaPage_MiliastraWonderlandOde" xml:space="preserve">
-    <value>Kh�c ca k? quan Miliastra</value>
-  </data>
-  <data name="ItIsRecommendedToInstallTheVP9VideoExtensionsToReduceCPUUsage" xml:space="preserve">
-    <value>Khuy?n ngh? c�i d?t Ph?n M? r?ng Video VP9 d? gi?m t?i cho CPU.</value>
-  </data>
-  <data name="AboutSetting_UpdatedToTheLatestVersion" xml:space="preserve">
-    <value>�� c?p nh?t phi�n b?n m?i nh?t.</value>
-  </data>
-  <data name="Common_All" xml:space="preserve">
-    <value>T?t c?</value>
-  </data>
-  <data name="Common_Video" xml:space="preserve">
-    <value>�o?n phim</value>
-  </data>
-  <data name="Common_Time" xml:space="preserve">
-    <value>Th?i gian</value>
-  </data>
-  <data name="Common_FileSize" xml:space="preserve">
-    <value>K�ch thu?c t?p</value>
-  </data>
-  <data name="Common_Filter" xml:space="preserve">
-    <value>B? l?c</value>
-  </data>
-  <data name="Common_Sort" xml:space="preserve">
-    <value>S?p x?p</value>
-  </data>
-  <data name="AppConfig_AnUnknownIssueOccurredDuringInitialization" xml:space="preserve">
-    <value>�� x?y ra l?i kh�ng x�c d?nh trong qu� tr�nh kh?i t?o.</value>
-  </data>
-  <data name="NoPermissionWindow_NoPermissionToFolderRestartOrClose" xml:space="preserve">
-    <value>Chuong tr�nh kh�ng c� quy?n truy c?p thu m?c sau. Vui l�ng kh?i d?ng l?i v?i quy?n qu?n tr? vi�n ho?c di chuy?n thu m?c.</value>
-  </data>
-  <data name="NoPermissionWindow_RestartAsAdministrator" xml:space="preserve">
-    <value>Kh?i �?ng L?i V?i Quy?n Qu?n Tr? Vi�n</value>
-  </data>
-  <data name="Common_ConfirmDelete" xml:space="preserve">
-    <value>X?c nh?n x?a</value>
-  </data>
-  <data name="Common_Close" xml:space="preserve">
-    <value>Đóng</value>
-  </data>
-  <data name="Common_Retry" xml:space="preserve">
-    <value>Thử lại</value>
-  </data>
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GachaStatsCard_Pity" xml:space="preserve">
+    <value>�?m b?o</value>
+  </data>
+  <data name="GachaStatsCard_Average" xml:space="preserve">
+    <value>Trung b�nh</value>
+  </data>
+  <data name="GachaStatsCard_Stats" xml:space="preserve">
+    <value>Ch? s?</value>
+  </data>
+  <data name="Common_Cancel" xml:space="preserve">
+    <value>Hu?</value>
+  </data>
+  <data name="Common_Confirm" xml:space="preserve">
+    <value>�?ng �</value>
+  </data>
+  <data name="GachaLogPage_NoGachaRecords" xml:space="preserve">
+    <value>Kh�ng c� b?n ghi gacha</value>
+  </data>
+  <data name="GachaLogPage_UpdateRecords" xml:space="preserve">
+    <value>C?p nh?t b?n ghi</value>
+  </data>
+  <data name="GachaLogPage_UpdateSavedURL" xml:space="preserve">
+    <value>C?p nh?t (URL d� luu)</value>
+  </data>
+  <data name="GachaLogPage_UpdateAll" xml:space="preserve">
+    <value>C?p nh?t (t?t c?)</value>
+  </data>
+  <data name="GachaLogPage_InputURL" xml:space="preserve">
+    <value>Nh?p URL</value>
+  </data>
+  <data name="Common_Setting" xml:space="preserve">
+    <value>C�i d?t</value>
+  </data>
+  <data name="GachaLogPage_OtherSettings" xml:space="preserve">
+    <value>C�i d?t kh�c</value>
+  </data>
+  <data name="GachaLogPage_CopyURL" xml:space="preserve">
+    <value>Sao ch�p URL</value>
+  </data>
+  <data name="GachaLogPage_AuthkeyTimeoutAlwaysOccurs" xml:space="preserve">
+    <value>Authkey Timeout lu�n x?y ra?</value>
+  </data>
+  <data name="GachaLogPage_ClearURLCacheFiles" xml:space="preserve">
+    <value>D?n t?p tin cache URL</value>
+  </data>
+  <data name="GachaLogPage_ExportAs" xml:space="preserve">
+    <value>Xu?t nhu</value>
+  </data>
+  <data name="GachaLogPage_ImportFromJson" xml:space="preserve">
+    <value>Nh?p t? file JSON</value>
+  </data>
+  <data name="GachaLogPage_DeleteRecords" xml:space="preserve">
+    <value>Xo� c�c b?n ghi</value>
+  </data>
+  <data name="GachaLogPage_Language" xml:space="preserve">
+    <value>Ng�n ng?</value>
+  </data>
+  <data name="GachaLogPage_CannotFindSavedURLOfUid" xml:space="preserve">
+    <value>Kh�ng th? t�m th?y URL d� luu c?a UID {0}.</value>
+    <comment>{0} = {uid}</comment>
+  </data>
+  <data name="GachaLogPage_GameNotInstalled" xml:space="preserve">
+    <value>Tr� choi chua du?c c�i d?t</value>
+  </data>
+  <data name="GachaLogPage_CannotFindURL" xml:space="preserve">
+    <value>Kh�ng th? t�m th?y URL, vui l�ng h�y m? trang b?n ghi l?ch s? gacha ? trong tr� choi.</value>
+  </data>
+  <data name="GachaLogPage_OperationCanceled" xml:space="preserve">
+    <value>Thao t�c b? hu?</value>
+  </data>
+  <data name="GachaLogPage_PleaseOpenTheGachaRecordsPageInGameAndTryAgain" xml:space="preserve">
+    <value>Vui l�ng h�y m? trang b?n ghi gacha ? trong tr� choi v� th? l?i.</value>
+  </data>
+  <data name="Common_Warning" xml:space="preserve">
+    <value>C?nh b�o</value>
+  </data>
+  <data name="Common_Delete" xml:space="preserve">
+    <value>Xo�</value>
+  </data>
+  <data name="GachaLogPage_DeletedGachaRecordsOfUid" xml:space="preserve">
+    <value>�� xo� {0} b?n ghi gacha c?a UID {1}.</value>
+    <comment>{0} = {count} ,  {1} = {uid}</comment>
+  </data>
+  <data name="GachaLogPage_DeleteGachaRecordsWarning" xml:space="preserve">
+    <value>T?t c? b?n ghi gacha c?a UID {0} s? b? xo�, b?n s? kh�ng th? ho�n t�c h�nh d?ng n�y.</value>
+    <comment>{0} = {uid}</comment>
+  </data>
+  <data name="GachaLogService_WishRecords" xml:space="preserve">
+    <value>B?n ghi C?u Nguy?n</value>
+  </data>
+  <data name="GachaLogService_WarpRecords" xml:space="preserve">
+    <value>B?n ghi Bu?c Nh?y</value>
+  </data>
+  <data name="GachaLogService_GettingUid" xml:space="preserve">
+    <value>�ang thu th?p UID</value>
+  </data>
+  <data name="GachaLogService_ThisAccountHasNoGachaRecordsInTheLast6Months" xml:space="preserve">
+    <value>T�i kho?n n�y kh�ng c� b?n ghi gacha trong 6 th�ng g?n nh?t.</value>
+  </data>
+  <data name="GachaLogService_GetGachaResult" xml:space="preserve">
+    <value>�� t�m du?c {0} b?n ghi, d� th�m {1} b?n ghi.</value>
+    <comment>{0} = {getCount} ,  {1} = {addCount}</comment>
+  </data>
+  <data name="GenshinGachaService_ImportWishRecordsSuccessfully" xml:space="preserve">
+    <value>Nh?p {0} b?n ghi c?u nguy?n th�nh c�ng.</value>
+  </data>
+  <data name="StarRailGachaService_ImportWarpRecordsSuccessfully" xml:space="preserve">
+    <value>Nh?p {0} b?n ghi bu?c nh?y th�nh c�ng.</value>
+  </data>
+  <data name="UpdateService_CannotUpdateAutomatically" xml:space="preserve">
+    <value>Kh�ng th? c?p nh?t t? d?ng</value>
+  </data>
+  <data name="Common_Apply" xml:space="preserve">
+    <value>�p d?ng</value>
+  </data>
+  <data name="Common_Refresh" xml:space="preserve">
+    <value>L�m m?i</value>
+  </data>
+  <data name="Common_Save" xml:space="preserve">
+    <value>Luu</value>
+  </data>
+  <data name="Common_Select" xml:space="preserve">
+    <value>Ch?n</value>
+  </data>
+  <data name="Common_Start" xml:space="preserve">
+    <value>B?t d?u</value>
+  </data>
+  <data name="Common_Continue" xml:space="preserve">
+    <value>Ti?p t?c</value>
+  </data>
+  <data name="MainPage_HowToSwitchGameRegion" xml:space="preserve">
+    <value>L�m th? n�o d? chuy?n d?i v�ng?</value>
+  </data>
+  <data name="MainPage_ClickTheRightMouseButtonOnTheGameIconOnTheLeft" xml:space="preserve">
+    <value>Nh?n chu?t ph?i tr�n bi?u tu?ng tr� choi ? b�n tr�i.</value>
+  </data>
+  <data name="MainPage_Launcer" xml:space="preserve">
+    <value>Tr�nh kh?i ch?y</value>
+  </data>
+  <data name="MainPage_GameScreenshot" xml:space="preserve">
+    <value>?nh ch?p m�n h�nh</value>
+  </data>
+  <data name="ScreenshotPage_GameScreenshot" xml:space="preserve">
+    <value>?nh ch?p m�n h�nh</value>
+  </data>
+  <data name="ScreenshotPage_OpenFolder" xml:space="preserve">
+    <value>M? thu m?c</value>
+  </data>
+  <data name="SettingPage_Log" xml:space="preserve">
+    <value>Nh?t k�</value>
+  </data>
+  <data name="SettingPage_ShowConsole" xml:space="preserve">
+    <value>Hi?n B?ng di?u khi?n</value>
+  </data>
+  <data name="SettingPage_AppSettings" xml:space="preserve">
+    <value>C�i d?t ?ng d?ng</value>
+  </data>
+  <data name="SettingPage_EffectiveAtNextStartup" xml:space="preserve">
+    <value>Hi?u qu? ? l?n kh?i d?ng ti?p theo</value>
+  </data>
+  <data name="SettingPage_OpenLogFolder" xml:space="preserve">
+    <value>M? thu m?c nh?t k�</value>
+  </data>
+  <data name="SettingPage_WindowsSize" xml:space="preserve">
+    <value>K�ch c? c?a s?</value>
+  </data>
+  <data name="SettingPage_CheckForUpdate" xml:space="preserve">
+    <value>Ki?m tra c?p nh?t</value>
+  </data>
+  <data name="SettingPage_CurrentVersion" xml:space="preserve">
+    <value>Phi�n b?n hi?n t?i:</value>
+  </data>
+  <data name="SettingPage_JoinPreviewReleaseChannel" xml:space="preserve">
+    <value>Tham gia k�nh ph�t h�nh xem tru?c</value>
+  </data>
+  <data name="SettingPage_OpenDataFolder" xml:space="preserve">
+    <value>M? thu m?c d? li?u</value>
+  </data>
+  <data name="SettingPage_ReselectDataFolder" xml:space="preserve">
+    <value>Ch?n l?i thu m?c d? li?u</value>
+  </data>
+  <data name="SettingPage_DeleteAllSettings" xml:space="preserve">
+    <value>Xo� t?t c? c�i d?t</value>
+  </data>
+  <data name="SettingPage_ClearCachedFiles" xml:space="preserve">
+    <value>Xo� t?p tin cache</value>
+  </data>
+  <data name="SettingPage_About" xml:space="preserve">
+    <value>V? ch�ng t�i</value>
+  </data>
+  <data name="SettingPage_ProjectHomepage" xml:space="preserve">
+    <value>Trang ch?</value>
+  </data>
+  <data name="SettingPage_ReportIssue" xml:space="preserve">
+    <value>B�o l?i</value>
+  </data>
+  <data name="SettingPage_ReleaseHistory" xml:space="preserve">
+    <value>Lịch sử phát hành</value>
+  </data>
+  <data name="SettingPage_OriginalProject" xml:space="preserve">
+    <value>Dự án gốc</value>
+  </data>
+  <data name="SettingPage_ThisIsALogo" xml:space="preserve">
+    <value>��y l� Logo</value>
+  </data>
+  <data name="SettingPage_Update" xml:space="preserve">
+    <value>C?p nh?t</value>
+  </data>
+  <data name="SettingPage_UpdateSource" xml:space="preserve">
+    <value>Update Source</value>
+  </data>
+  <data name="SettingPage_TestCDNAsync_NetworkError" xml:space="preserve">
+    <value>L?i m?ng</value>
+  </data>
+  <data name="SettingPage_TheCurrentLocationOfTheDataFolderIs" xml:space="preserve">
+    <value>V? tr� hi?n t?i c?a thu m?c ch?a d? li?u l�:</value>
+  </data>
+  <data name="SettingPage_WouldLikeToReselectDataFolder" xml:space="preserve">
+    <value>B?n c� mu?n ch?n l?i? (b?n c?n chuy?n d? li?u th? c�ng tru?c khi ch?n)</value>
+  </data>
+  <data name="Common_Yes" xml:space="preserve">
+    <value>C�</value>
+  </data>
+  <data name="SettingPage_AfterDeletingTheSoftwareWillBeRestartedAutomatically" xml:space="preserve">
+    <value>Sau khi xo�, ?ng d?ng s? t? d?ng du?c kh?i d?ng l?i.</value>
+  </data>
+  <data name="UpdatePage_NewVersion" xml:space="preserve">
+    <value>Phi�n b?n m?i!</value>
+  </data>
+  <data name="UpdatePage_Links" xml:space="preserve">
+    <value>�u?ng d?n:</value>
+  </data>
+  <data name="UpdatePage_BuiltTime" xml:space="preserve">
+    <value>Th?i gian x�y d?ng:</value>
+  </data>
+  <data name="UpdatePage_ReleaseChannel" xml:space="preserve">
+    <value>K�nh ph�t h�nh:</value>
+  </data>
+  <data name="UpdatePage_Architecture" xml:space="preserve">
+    <value>Ki?n tr�c:</value>
+  </data>
+  <data name="UpdatePage_DownloadInstaller" xml:space="preserve">
+    <value>T?i tr�nh c�i d?t</value>
+  </data>
+  <data name="UpdatePage_DownloadPortable" xml:space="preserve">
+    <value>T?i Portable</value>
+  </data>
+  <data name="UpdatePage_RemindLatter" xml:space="preserve">
+    <value>Nh?c t�i sau</value>
+  </data>
+  <data name="UpdatePage_IgnoreThisVersion" xml:space="preserve">
+    <value>B? qua phi�n b?n n�y</value>
+  </data>
+  <data name="UpdatePage_UpdateNow" xml:space="preserve">
+    <value>C?p nh?t ngay</value>
+  </data>
+  <data name="UpdatePage_YouNeedToManuallyDownloadTheNewVersionPackage" xml:space="preserve">
+    <value>B?n c?n ph?i t?i xu?ng g�i phi�n b?n m?i th? c�ng</value>
+  </data>
+  <data name="UpdatePage_PreviewChannel" xml:space="preserve">
+    <value>K�nh tr?i nghi?m tru?c</value>
+  </data>
+  <data name="UpdatePage_StableChannel" xml:space="preserve">
+    <value>K�nh ch�nh th?c</value>
+  </data>
+  <data name="UpdatePage_DevChannel" xml:space="preserve">
+    <value>K�nh d�nh cho nh� ph�t tri?n</value>
+  </data>
+  <data name="UpdatePage_ReleasePage" xml:space="preserve">
+    <value>Trang ph�t h�nh</value>
+  </data>
+  <data name="GachaLogPage_GachaLanguageDesc" xml:space="preserve">
+    <value>Ch? d?nh ng�n ng? c?a b?n ghi gacha, ch?ng h?n nhu vi-vn.</value>
+    <comment>Replace en-us with the target language when translating</comment>
+  </data>
+  <data name="SettingPage_Language" xml:space="preserve">
+    <value>Ng�n ng?</value>
+  </data>
+  <data name="SettingPage_FollowSystem" xml:space="preserve">
+    <value>Theo h? th?ng</value>
+  </data>
+  <data name="GachaLogService_GetGachaProgressText" xml:space="preserve">
+    <value>Nh?n {0} v?i trang {1}</value>
+    <comment>{0} = {gachaType} ,  {1} = {page}</comment>
+  </data>
+  <data name="Common_Summary" xml:space="preserve">
+    <value>T?ng quan</value>
+  </data>
+  <data name="Common_Accept" xml:space="preserve">
+    <value>Ch?p nh?n</value>
+  </data>
+  <data name="Common_Reject" xml:space="preserve">
+    <value>T? ch?i</value>
+  </data>
+  <data name="Common_Disclaimer" xml:space="preserve">
+    <value>T? ch?i tr�ch nhi?m</value>
+  </data>
+  <data name="Common_AccountError" xml:space="preserve">
+    <value>T�i kho?n b?t thu?ng</value>
+  </data>
+  <data name="Common_NetworkError" xml:space="preserve">
+    <value>L?i m?ng</value>
+  </data>
+  <data name="ScreenshotPage_ScreenshotFolderDoesNotExist" xml:space="preserve">
+    <value>Thu m?c ?nh ch?p m�n h�nh kh�ng t?n t?i</value>
+  </data>
+  <data name="GachaLogPage_0GachaItemsHaveBeenChangedToLanguage1" xml:space="preserve">
+    <value>Ng�n ng? c?a {0} b?n ghi gacha d� du?c chuy?n th�nh ({1}).</value>
+    <comment>The language of 123 gacha records has been changed to (en-us).</comment>
+  </data>
+  <data name="SettingPage_PrivacyPolicy" xml:space="preserve">
+    <value>Ch�nh s�ch b?o m?t</value>
+  </data>
+  <data name="MainPage_Tips" xml:space="preserve">
+    <value>M?o</value>
+  </data>
+  <data name="SettingPage_CDNTips" xml:space="preserve">
+    <value>M?t s? ngu?i d�ng ? m?t s? khu v?c c� th? g?p ph?i s? b?t thu?ng v? m?ng. B?n c� th? gi?i quy?t v?n d? n�y b?ng c�ch chuy?n d?i CDN.</value>
+  </data>
+  <data name="SettingPage_ExitLauncherWhenClosingWindow" xml:space="preserve">
+    <value>Tho�t tr�nh kh?i ch?y khi d�ng c?a s?</value>
+  </data>
+  <data name="Common_Exit" xml:space="preserve">
+    <value>Tho�t</value>
+  </data>
+  <data name="Common_Hide" xml:space="preserve">
+    <value>?n</value>
+  </data>
+  <data name="ScreenshotPage_BackupScreenshots" xml:space="preserve">
+    <value>Sao luu ?nh ch?p m�n h�nh</value>
+  </data>
+  <data name="ScreenshotPage_OpenBackupFolder" xml:space="preserve">
+    <value>M? thu m?c sao luu</value>
+  </data>
+  <data name="SettingPage_LastBackup" xml:space="preserve">
+    <value>B?n sao luu g?n nh?t</value>
+  </data>
+  <data name="SettingPage_BackupDatabase" xml:space="preserve">
+    <value>Sao luu co s? d? li?u</value>
+  </data>
+  <data name="ScreenshotPage_BackedUpNewScreenshots" xml:space="preserve">
+    <value>�� sao luu {0} ?nh ch?p m�n h�nh m?i.</value>
+  </data>
+  <data name="Common_Attention" xml:space="preserve">
+    <value>Ch� �</value>
+  </data>
+  <data name="SettingPage_Donate" xml:space="preserve">
+    <value>?ng h?</value>
+  </data>
+  <data name="SettingPage_URLProtocolExperimental" xml:space="preserve">
+    <value>Giao th?c URL (th? nghi?m)</value>
+  </data>
+  <data name="SettingPage_URLProtocolDesc" xml:space="preserve">
+    <value>Nh?ng ph?n m?m kh�c c� th? s? d?ng m?t s? t�nh nang c?a Glowworm th�ng qua giao th?c URL.</value>
+  </data>
+  <data name="SettingPage_RegisterURLProtocol" xml:space="preserve">
+    <value>�ang k� giao th?c URL</value>
+  </data>
+  <data name="SettingPage_TestURLProtocol" xml:space="preserve">
+    <value>Ki?m tra giao th?c URL</value>
+  </data>
+  <data name="ImageViewPage_ZoomOut" xml:space="preserve">
+    <value>Thu nh?</value>
+  </data>
+  <data name="ImageViewPage_ZoomIn" xml:space="preserve">
+    <value>Ph�ng to</value>
+  </data>
+  <data name="ImageViewPage_Rotate" xml:space="preserve">
+    <value>Quay</value>
+  </data>
+  <data name="Common_Copy" xml:space="preserve">
+    <value>Sao ch�p</value>
+  </data>
+  <data name="Common_Open" xml:space="preserve">
+    <value>M?</value>
+  </data>
+  <data name="FileSettingPage_DataFolder" xml:space="preserve">
+    <value>Thu m?c d? li?u</value>
+  </data>
+  <data name="FileSettingPage_OpenLogFile" xml:space="preserve">
+    <value>M? t?p tin nh?t k�</value>
+  </data>
+  <data name="SettingPage_FileManagement" xml:space="preserve">
+    <value>Qu?n l� t?p tin</value>
+  </data>
+  <data name="SettingPage_Completed" xml:space="preserve">
+    <value>Ho�n th�nh</value>
+  </data>
+  <data name="AboutSettingPage_Links" xml:space="preserve">
+    <value>Li�n k?t</value>
+  </data>
+  <data name="FileSettingPage_DataFolderIsImportant" xml:space="preserve">
+    <value>D? li?u c� nh�n c?a b?n du?c luu tr? trong thu m?c b�n du?i. N� r?t quan tr?ng, xin d?ng v� t�nh x�a n� di.</value>
+  </data>
+  <data name="SelectLanguagePage_NetworkTest" xml:space="preserve">
+    <value>Ki?m tra m?ng</value>
+  </data>
+  <data name="SelectLanguagePage_AreYouAbleToReceiveUpdatesForGlowworm" xml:space="preserve">
+    <value>B?n c� th? nh?n du?c c?p nh?t cho Glowworm kh�ng?</value>
+  </data>
+  <data name="AppearanceSettingPage_HelpUsTranslateGlowworm" xml:space="preserve">
+    <value>Gi�p ch�ng t�i d?ch Glowworm</value>
+  </data>
+  <data name="FileSettingPage_Cache" xml:space="preserve">
+    <value>B? nh? d?m</value>
+  </data>
+  <data name="FileSettingPage_Log" xml:space="preserve">
+    <value>B?n ghi</value>
+  </data>
+  <data name="FileSettingPage_Image" xml:space="preserve">
+    <value>H�nh ?nh</value>
+  </data>
+  <data name="FileSettingPage_Browser" xml:space="preserve">
+    <value>Tr�nh duy?t</value>
+  </data>
+  <data name="FileSettingPage_ClearCache" xml:space="preserve">
+    <value>D?n b? nh? d?m</value>
+  </data>
+  <data name="AppearanceSettingPage_BetterExperience" xml:space="preserve">
+    <value>�? xu?t b?t {0} v� {1} trong c�i d?t h? th?ng d? c� tr?i nghi?m ngu?i d�ng t?t hon.</value>
+  </data>
+  <data name="AppearanceSettingPage_TransparencyEffects" xml:space="preserve">
+    <value>Hi?u ?ng trong su?t</value>
+  </data>
+  <data name="AppearanceSettingPage_AnimationEffects" xml:space="preserve">
+    <value>Hi?u ?ng chuy?n d?ng</value>
+  </data>
+  <data name="GachaLogPage_AlwaysFailedToGetGachaRecords" xml:space="preserve">
+    <value>V?n kh�ng l?y du?c b?n ghi gacha?</value>
+  </data>
+  <data name="AboutSettingPage_VerifyFileIntegrity" xml:space="preserve">
+    <value>X�c minh t�nh to�n v?n c?a t?p tin</value>
+  </data>
+  <data name="AboutSettingPage_VerifyFailed" xml:space="preserve">
+    <value>X�c minh th?t b?i</value>
+  </data>
+  <data name="AboutSettingPage_CurrentVersionIsNotTheLatestVersion" xml:space="preserve">
+    <value>Phi�n b?n hi?n t?i kh�ng ph?i l� phi�n b?n m?i nh?t ({0}).</value>
+  </data>
+  <data name="AboutSettingPage_ClickButtonToRepairFiles" xml:space="preserve">
+    <value>B?m v�o n�t d? s?a ch?a c�c t?p tin.</value>
+  </data>
+  <data name="AboutSettingPage_RepairFiles" xml:space="preserve">
+    <value>S?a ch?a t?p tin</value>
+  </data>
+  <data name="AboutSettingPage_VerifySuccessfully" xml:space="preserve">
+    <value>X�c minh th�nh c�ng!</value>
+  </data>
+  <data name="GachaLogPage_ShowChronicledWish" xml:space="preserve">
+    <value>Hi?n s? k� c?u nguy?n</value>
+  </data>
+  <data name="CloudGameGachaWindow_OpenTheGachaRecordsPageInGameAndThenClickTheButtonOnTheRight" xml:space="preserve">
+    <value>M? trang l?ch s? Gacha trong tr� choi, sau d� nh?n v�o n�t ? b�n ph?i.</value>
+  </data>
+  <data name="GachaLogPage_ViaCloudGame" xml:space="preserve">
+    <value>b?ng Tr� choi d�m m�y</value>
+  </data>
+  <data name="GachaLogPage_ViaCloudGameWeb" xml:space="preserve">
+    <value>via Cloud Game (Web)</value>
+  </data>
+  <data name="UpdateContentWindow_ClickToRefresh" xml:space="preserve">
+    <value>Nh?n d? l�m m?i</value>
+  </data>
+  <data name="UpdateContentWindow_RecentlyUpdatedContent" xml:space="preserve">
+    <value>N?i dung c?p nh?t g?n d�y</value>
+  </data>
+  <data name="GameBizSelector_AutoSearch" xml:space="preserve">
+    <value>T�m Ki?m T? �?ng</value>
+  </data>
+  <data name="GachaLogService_SignalSearchRecords" xml:space="preserve">
+    <value>L?ch S? Ch?nh K�nh</value>
+  </data>
+  <data name="Common_Change" xml:space="preserve">
+    <value>Thay d?i</value>
+  </data>
+  <data name="Common_Restart" xml:space="preserve">
+    <value>Kh?i d?ng l?i</value>
+  </data>
+  <data name="DeleteGachaLogDialog_BeginTime" xml:space="preserve">
+    <value>Th?i gian b?t d?u</value>
+  </data>
+  <data name="DeleteGachaLogDialog_EndTime" xml:space="preserve">
+    <value>Th?i gian k?t th�c</value>
+  </data>
+  <data name="DeleteGachaLogDialog_DeleteGachaRecordsForASpecificTimePeriod" xml:space="preserve">
+    <value>Xo� l?ch s? gacha trong m?t kho?ng th?i gian c? th?</value>
+  </data>
+  <data name="DeleteGachaLogDialog_6MonthsDeletingWarning" xml:space="preserve">
+    <value>C?nh b�o: Kho?ng th?i gian d� ch?n bao g?m d? li?u gacha t? hon 6 th�ng tru?c, d? li?u n�y s? kh�ng th? kh�i ph?c sau khi b? x�a.</value>
+  </data>
+  <data name="DeleteGachaLogDialog_ThisAccountHas0GachaRecordS" xml:space="preserve">
+    <value>T�i kho?n n�y c� {0} d? li?u gacha.</value>
+  </data>
+  <data name="DeleteGachaLogDialog_TheSelectedTimePeriodIncludes0GachaRecords" xml:space="preserve">
+    <value>Kho?ng th?i gian d� ch?n bao g?m {0} b?n ghi gacha.</value>
+  </data>
+  <data name="GachaLogPage_DeleteAll" xml:space="preserve">
+    <value>Xo� t?t c?</value>
+  </data>
+  <data name="GachaLogPage_SpecificTimePeriod" xml:space="preserve">
+    <value>Kho?ng th?i gian c? th?</value>
+  </data>
+  <data name="SettingPage_General" xml:space="preserve">
+    <value>C�i d?t chung</value>
+    <comment>General Setting</comment>
+  </data>
+  <data name="SettingPage_RunInSystemTray" xml:space="preserve">
+    <value>Run in System Tray</value>
+  </data>
+  <data name="SettingPage_ForABetterExperiencePleaseEnableTheFollowingFeaturesInSystemSettings" xml:space="preserve">
+    <value>�? c� du?c tr?i nghi?m t?t hon, xin vui l�ng b?t nh?ng t�nh nang sau trong c�i d?t c?a h? th?ng.</value>
+  </data>
+  <data name="UpdateWindow_AutoRestartAfterUpdate" xml:space="preserve">
+    <value>T? d?ng kh?i d?ng l?i sau khi c?p nh?t</value>
+  </data>
+  <data name="UpdateWindow_DisplayUpdateContentAfterRestart" xml:space="preserve">
+    <value>Hi?n th? n?i dung c?p nh?t sau khi kh?i d?ng l?i</value>
+  </data>
+  <data name="Common_WebView2ComponentInitializationFailed" xml:space="preserve">
+    <value>Th�nh ph?n WebView2 kh?i ch?y th?t b?i.</value>
+  </data>
+  <data name="ZZZGachaService_ImportSignalSearchRecordsSuccessfully" xml:space="preserve">
+    <value>Nh?p v�o {0} l?n ghi Ch?nh K�nh th�nh c�ng.</value>
+  </data>
+  <data name="Common_Error" xml:space="preserve">
+    <value>L?i</value>
+  </data>
+  <data name="CloudGameButton_CloudGame" xml:space="preserve">
+    <value>Tr� Choi ��m M�y</value>
+  </data>
+  <data name="UIGFGachaService_UidMismatchDetectedExpected0ButFound1" xml:space="preserve">
+    <value>Ph�t hi?n Uid kh�ng kh?p. D? ki?n: {0}, t�m th?y: {1}.</value>
+  </data>
+  <data name="UIGFGachaService_ImportSuccessfulButNoRecordItemName" xml:space="preserve">
+    <value>Nh?p v�o th�nh c�ng, nhung m?t s? b?n ghi s? b? m?t h�nh ?nh v?t ph?m. Vui l�ng v�o ph?n c�i d?t b?n ghi gacha, thay d?i ng�n ng?, v� �p d?ng.</value>
+  </data>
+  <data name="UIGFGachaService_ImportSuccessful" xml:space="preserve">
+    <value>Nh?p v�o th�nh c�ng.</value>
+  </data>
+  <data name="UIGFGachaService_0FieldIsMissingInAGachaRecord" xml:space="preserve">
+    <value>"{0}" d�ng b? m?t trong l?ch s? gacha.</value>
+  </data>
+  <data name="GachaImportAndExportWindow_Export" xml:space="preserve">
+    <value>Xu?t t?p tin</value>
+  </data>
+  <data name="GachaImportAndExportWindow_SelectTheGachaRecordsToExport" xml:space="preserve">
+    <value>Ch?n l?ch s? gacha d? xu?t.</value>
+  </data>
+  <data name="GachaImportAndExportWindow_TheLastGachaPull" xml:space="preserve">
+    <value>L?n gacha cu?i</value>
+  </data>
+  <data name="GachaImportAndExportWindow_Count" xml:space="preserve">
+    <value>S? l?n</value>
+  </data>
+  <data name="GachaImportAndExportWindow_TimeServerTimeZone" xml:space="preserve">
+    <value>Th?i gian (Gi? m�y ch?)</value>
+  </data>
+  <data name="GachaImportAndExportWindow_Name" xml:space="preserve">
+    <value>T�n</value>
+  </data>
+  <data name="GachaImportAndExportWindow_SelectTheFileToImport" xml:space="preserve">
+    <value>Ch?n t?p tin d? nh?p v�o.</value>
+  </data>
+  <data name="GachaImportAndExportWindow_Import" xml:space="preserve">
+    <value>Nh?p v�o</value>
+  </data>
+  <data name="GachaImportAndExportWindow_TimeZoneOffsetWarning" xml:space="preserve">
+    <value>Tru?c khi nh?p v�o, vui l�ng ch?c ch?n th?i gian l?n cu?i C?u Nguy?n gi?ng v?i th?i gian hi?n th? trong game. N?u ch�ng kh�ng gi?ng, vui l�ng d?t l?i th?i gian khu v?c.</value>
+  </data>
+  <data name="GachaImportAndExportWindow_TimeZoneOffset" xml:space="preserve">
+    <value>�? l?ch m�i gi?</value>
+  </data>
+  <data name="GachaImportAndExportWindow_OffsetTime" xml:space="preserve">
+    <value>�? l?ch th?i gian</value>
+  </data>
+  <data name="GachaImportAndExportWindow_SelectFile" xml:space="preserve">
+    <value>Ch?n t?p tin</value>
+  </data>
+  <data name="Common_Disabled" xml:space="preserve">
+    <value>�� t?t</value>
+  </data>
+  <data name="Common_Enabled" xml:space="preserve">
+    <value>�� b?t</value>
+  </data>
+  <data name="GachaLogPage_ImportAndExport" xml:space="preserve">
+    <value>Nh?p &amp; Xu?t</value>
+  </data>
+  <data name="GachaLogPage_HideGachaBanners" xml:space="preserve">
+    <value>?n banner Gacha</value>
+  </data>
+  <data name="Common_RestoreDefaults" xml:space="preserve">
+    <value>Kh�i ph?c m?c d?nh</value>
+  </data>
+  <data name="MainView_CheckSystemProxy_SystemProxyIsEnabled" xml:space="preserve">
+    <value>�ang s? d?ng proxy h? th?ng.</value>
+  </data>
+  <data name="ScreenCaptureInfoWindow_ScreenshotSaved" xml:space="preserve">
+    <value>?nh ch?p m�n h�nh d� du?c luu</value>
+  </data>
+  <data name="ScreenshotPage_ManageScreenshotFolders" xml:space="preserve">
+    <value>Qu?n l� thu m?c ?nh ch?p m�n h�nh</value>
+  </data>
+  <data name="ScreenshotFolderManageDialog_AddFolder" xml:space="preserve">
+    <value>Th�m thu m?c</value>
+  </data>
+  <data name="ScreenshotFolderManageDialog_BackingUp" xml:space="preserve">
+    <value>�ang sao luu...</value>
+  </data>
+  <data name="Common_Remove" xml:space="preserve">
+    <value>Lo?i b?</value>
+  </data>
+  <data name="ScreenshotFolderManageDialog_FailedToBackupScreenshots" xml:space="preserve">
+    <value>Kh�ng th? sao luu ?nh ch?p m�n h�nh.</value>
+  </data>
+  <data name="ScreenCaptureInfoWindow_ScreenshotFailed" xml:space="preserve">
+    <value>Ch?p ?nh m�n h�nh th?t b?i</value>
+  </data>
+  <data name="ScreenCaptureInfoWindow_CheckTheLogForMoreInformation" xml:space="preserve">
+    <value>Ki?m tra nh?t k� d? bi?t th�m th�ng tin.</value>
+  </data>
+  <data name="ScreenshotFolderManageDialog_ImagesFromTheFollowingFoldersWillBeDisplayedInTheGallery" xml:space="preserve">
+    <value>C�c h�nh ?nh trong c�c thu m?c du?i d�y s? du?c hi?n th? trong thu vi?n.</value>
+  </data>
+  <data name="ImageViewWindow2_OpenInExplorer" xml:space="preserve">
+    <value>M? trong Explorer</value>
+  </data>
+  <data name="ImageViewWindow2_OpenWith" xml:space="preserve">
+    <value>M? b?ng</value>
+  </data>
+  <data name="ImageViewWindow2_Previous" xml:space="preserve">
+    <value>Tru?c</value>
+    <comment>Previous Image</comment>
+  </data>
+  <data name="ImageViewWindow2_Next" xml:space="preserve">
+    <value>Sau</value>
+    <comment>Next Image</comment>
+  </data>
+  <data name="ImageViewWindow2_ShowGallery" xml:space="preserve">
+    <value>Hi?n th? Thu vi?n ?nh</value>
+  </data>
+  <data name="ImageViewWindow2_FitToWindow" xml:space="preserve">
+    <value>V?a kh�t v?i C?a s?</value>
+    <comment>Zoom image fit to window</comment>
+  </data>
+  <data name="ImageViewWindow2_CopyFile" xml:space="preserve">
+    <value>Sao ch�p T?p tin</value>
+  </data>
+  <data name="ImageViewWindow2_CopyPath" xml:space="preserve">
+    <value>Sao ch�p du?ng d?n</value>
+  </data>
+  <data name="ImageViewWindow2_CopyImage" xml:space="preserve">
+    <value>Sao ch�p ?nh</value>
+  </data>
+  <data name="Common_Edit" xml:space="preserve">
+    <value>Ch?nh s?a</value>
+  </data>
+  <data name="ImageViewWindow2_SaveAs" xml:space="preserve">
+    <value>Luu th�nh</value>
+  </data>
+  <data name="ImageViewWindow2_ImageInformation" xml:space="preserve">
+    <value>Th�ng tin ?nh</value>
+  </data>
+  <data name="ImageViewWindow2_EditImage" xml:space="preserve">
+    <value>Ch?nh s?a ?nh</value>
+  </data>
+  <data name="ImageViewWindow2_DisplayMode" xml:space="preserve">
+    <value>Ch? d? hi?n th?</value>
+  </data>
+  <data name="ImageViewWindow2_SDRMappedLuminance" xml:space="preserve">
+    <value>�? S�ng �nh X? SDR</value>
+  </data>
+  <data name="ImageViewWindow2_Auto" xml:space="preserve">
+    <value>T? d?ng</value>
+  </data>
+  <data name="ImageViewWindow2_ExportImage" xml:space="preserve">
+    <value>Xu?t ?nh</value>
+  </data>
+  <data name="ImageViewWindow2_ToConvertAnHDRImageToSDRPleaseUseTheEditFeature" xml:space="preserve">
+    <value>�? chuy?n d?i h�nh ?nh HDR sang SDR, vui l�ng s? d?ng t�nh nang Ch?nh s?a.</value>
+  </data>
+  <data name="ImageViewWindow2_DeleteImageFile" xml:space="preserve">
+    <value>Xo� T?p tin H�nh ?nh</value>
+  </data>
+  <data name="ImageViewWindow2_CopiedToClipboard" xml:space="preserve">
+    <value>�� sao ch�p v�o b? nh? t?m.</value>
+  </data>
+  <data name="ImageViewWindow2_FileDoesNotExist" xml:space="preserve">
+    <value>T?p tin kh�ng t?n t?i.</value>
+  </data>
+  <data name="ImageViewWindow2_OpenWithDefaultApp" xml:space="preserve">
+    <value>M? b?ng ?ng d?ng m?c d?nh</value>
+  </data>
+  <data name="ImageViewWindow2_NoImageToDisplay" xml:space="preserve">
+    <value>Kh�ng c� ?nh d? Hi?n th?</value>
+  </data>
+  <data name="Common_OpenFiles" xml:space="preserve">
+    <value>M? t?p tin</value>
+  </data>
+  <data name="ImageViewWindow2_OpenNewFiles" xml:space="preserve">
+    <value>M? t?p tin m?i</value>
+  </data>
+  <data name="ImageViewWindow2_FailedToDisplayImage" xml:space="preserve">
+    <value>Hi?n h�nh ?nh th?t b?i</value>
+  </data>
+  <data name="ImageViewWindow2_FailedToSaveImage" xml:space="preserve">
+    <value>Luu ?nh th?t b?i</value>
+  </data>
+  <data name="ImageViewWindow2_FailedToDeleteImageFile" xml:space="preserve">
+    <value>Xo� file th?t b?i</value>
+  </data>
+  <data name="ImageViewWindow2_UnableToDeleteTheFile" xml:space="preserve">
+    <value>Kh�ng th? xo� file</value>
+  </data>
+  <data name="ImageViewWindow2_InsufficientPermissionsOrTheFileIsInUse" xml:space="preserve">
+    <value>Thi?u quy?n h?n ho?c file dang du?c s? d?ng.</value>
+  </data>
+  <data name="HotkeyInput_ClickToSetShortcutKeys" xml:space="preserve">
+    <value>Nh?n d? d?t ph�m t?t</value>
+  </data>
+  <data name="HotkeyInput_PressTheShortcutKeys" xml:space="preserve">
+    <value>Nh?n ph�m t?t</value>
+  </data>
+  <data name="HotkeyManager_TheShortcutKeys0IsAlreadyInUse" xml:space="preserve">
+    <value>Ph�m t?t ({0}) d� du?c s? d?ng.</value>
+  </data>
+  <data name="HotkeyManager_FailedToRegisterTheShortcutKeys0" xml:space="preserve">
+    <value>G�n ph�m t?t ({0}) th?t b?i.</value>
+  </data>
+  <data name="HotkeyManager_TheShortcutKeys0IsAlreadyInUsePleaseModifyItInSettingsPage" xml:space="preserve">
+    <value>Ph�m t?t ({0}) d� du?c s? d?ng. Vui l�ng ch?nh s?a trong trang C�i d?t.</value>
+  </data>
+  <data name="HotkeyManager_FailedToRegisterTheShortcutKeys0PleaseRetryInSettingsPage" xml:space="preserve">
+    <value>G�n ph�m t?t ({0}) th?t b?i. Vui l�ng th? l?i trong trang C�i d?t.</value>
+  </data>
+  <data name="ScreenshotSetting_ScreenshotShortcut" xml:space="preserve">
+    <value>Ph�m t?t ?nh ch?p m�n h�nh</value>
+  </data>
+  <data name="HotkeySetting_OpenMainWindow" xml:space="preserve">
+    <value>M? c?a s? ch�nh</value>
+  </data>
+  <data name="HotkeySetting_FailedToRegisterTheShortcutKeys" xml:space="preserve">
+    <value>G�n ph�m t?t th?t b?i.</value>
+  </data>
+  <data name="ScreenshotSetting_TheBuiltInScreenshotFeatureWillSaveImagesToTheFollowingFolder" xml:space="preserve">
+    <value>T�nh nang ch?p m�n h�nh c?a ?ng d?ng s? luu ?nh v�o thu m?c sau.</value>
+  </data>
+  <data name="Common_ChangeFolder" xml:space="preserve">
+    <value>Thay d?i thu m?c</value>
+  </data>
+  <data name="HotkeySetting_SingleKeyShortcutsTips" xml:space="preserve">
+    <value>Khi d?t ph�m t?t m?t ph�m (F1�F12), h�y kh?i ch?y Glowworm du?i quy?n admin, v� n?u kh�ng th� ph�m t?t c� th? b? v� hi?u trong game.</value>
+  </data>
+  <data name="SettingPage_KeyboardShortcuts" xml:space="preserve">
+    <value>Ph�m t?t</value>
+  </data>
+  <data name="ScreenshotSetting_TestScreenshot" xml:space="preserve">
+    <value>Th? Ch?p ?nh</value>
+  </data>
+  <data name="ScreenshotSetting_AutoConvertToSDRImage" xml:space="preserve">
+    <value>T? d?ng chuy?n d?i sang ?nh SDR</value>
+  </data>
+  <data name="ScreenshotSetting_WhenCapturingHDRImagesSDRVersionWillAlsoBeSaved" xml:space="preserve">
+    <value>Khi ch?p ?nh HDR, phi�n b?n SDR cung s? du?c luu l?i.</value>
+  </data>
+  <data name="ScreenshotSetting_ScreenshotFetureDescAndLimit" xml:space="preserve">
+    <value>T�nh nang ch?p ?nh m�n h�nh ch?p tr� choi dang ch?y. N?u c� nhi?u tr� choi dang ch?y c�ng l�c, t�nh nang s? x? l� c?a s? tr� choi v?a du?c thao t�c g?n nh?t. Luu � c�c gi?i h?n sau:
+
+� Kh�ng th? ch?p c?a s? tr� choi dang du?c thu nh?.
+
+� Ph?n c?a s? tr� choi ? ngo�i r�a m�n h�nh s? kh�ng du?c ch?p.
+
+� Trong m?t s? tru?ng h?p hi?m g?p, t�nh nang c� th? ch?p sang c?a s? kh�c.</value>
+  </data>
+  <data name="ScreenshotSetting_ScreenshotWin10Limit" xml:space="preserve">
+    <value>Tr�n Windows 10, t�nh nang ch?p m�n h�nh c� th�m c�c gi?i h?n sau:
+
+� M?t vi?n m�u c� th? xu?t hi?n xung quanh c?a s? tr� choi trong l�c ch?p.
+
+� Con tr? chu?t kh�ng th? b? ?n.</value>
+  </data>
+  <data name="ScreenshotSetting_AutoCopyScreenshotFile" xml:space="preserve">
+    <value>T? d?ng sao ch�p t?p tin ch?p m�n h�nh</value>
+  </data>
+  <data name="ImageViewWindow2_CopyAsJPG" xml:space="preserve">
+    <value>Sao ch�p du?i d?ng JPG</value>
+  </data>
+  <data name="ScreenshotPage_MultiSelect" xml:space="preserve">
+    <value>Ch?n nhi?u</value>
+  </data>
+  <data name="ScreenshotPage_Total0Files" xml:space="preserve">
+    <value>T?ng c?ng {0} t?p.</value>
+  </data>
+  <data name="ScreenshotSetting_OtherOptions" xml:space="preserve">
+    <value>C�c tu? ch?n kh�c</value>
+  </data>
+  <data name="ScreenshotSetting_Lossless" xml:space="preserve">
+    <value>Kh�ng M?t D? Li?u</value>
+  </data>
+  <data name="ScreenshotSetting_FormatAndQuality" xml:space="preserve">
+    <value>�?nh d?ng v� Ch?t lu?ng</value>
+  </data>
+  <data name="ScreenCaptureInfoWindow_ProcessingImage" xml:space="preserve">
+    <value>�ang x? l� ?nh</value>
+  </data>
+  <data name="ScreenshotPage_BatchConvert" xml:space="preserve">
+    <value>Chuy?n d?i theo l�</value>
+  </data>
+  <data name="ImageBatchConvertWindow_Quality" xml:space="preserve">
+    <value>Ch?t lu?ng</value>
+  </data>
+  <data name="ImageBatchConvertWindow_StartConvert" xml:space="preserve">
+    <value>B?t d?u chuy?n d?i</value>
+  </data>
+  <data name="Common_Clear" xml:space="preserve">
+    <value>Xo�</value>
+  </data>
+  <data name="ImageBatchConvertWindow_OutputFolder" xml:space="preserve">
+    <value>Thu m?c xu?t ra</value>
+  </data>
+  <data name="ImageBatchConvertWindow_OriginalFileFolder" xml:space="preserve">
+    <value>Thu m?c c?a t?p tin g?c</value>
+  </data>
+  <data name="ImageBatchConvertWindow_SameAsOriginalFileFormat" xml:space="preserve">
+    <value>Gi?ng d?nh d?ng t?p ban d?u</value>
+  </data>
+  <data name="ImageBatchConvertWindow_SelectOutputFormat" xml:space="preserve">
+    <value>Ch?n d?nh d?ng xu?t</value>
+  </data>
+  <data name="ImageBatchConvertWindow_NoReadOrWritePermission" xml:space="preserve">
+    <value>Kh�ng c� quy?n d?c ho?c ghi</value>
+  </data>
+  <data name="ImageBatchConvertWindow_ConvertFailed" xml:space="preserve">
+    <value>Chuy?n d?i th?t b?i</value>
+  </data>
+  <data name="ImageBatchConvertWindow_IfOutputFileExists" xml:space="preserve">
+    <value>N?u t?p tin xu?t ra d� t?n t?i</value>
+  </data>
+  <data name="ImageBatchConvertWindow_SkipDefault" xml:space="preserve">
+    <value>B? qua (M?c d?nh)</value>
+  </data>
+  <data name="ImageBatchConvertWindow_Overwrite" xml:space="preserve">
+    <value>Ghi d�</value>
+  </data>
+  <data name="ImageBatchConvertWindow_Rename" xml:space="preserve">
+    <value>�?i t�n</value>
+  </data>
+  <data name="Common_Success" xml:space="preserve">
+    <value>Th�nh c�ng</value>
+  </data>
+  <data name="Common_Failed" xml:space="preserve">
+    <value>Th�t b?i</value>
+  </data>
+  <data name="ImageBatchConvertWindow_ImageBatchConvert" xml:space="preserve">
+    <value>Chuy?n d?i ?nh theo l�</value>
+  </data>
+  <data name="ScreenshotSetting_ClearThumbnailCache" xml:space="preserve">
+    <value>X�a b? nh? d?m Thumbnail</value>
+  </data>
+  <data name="ScreenshotSetting_ClearSuccessfully" xml:space="preserve">
+    <value>Xo� ho�n t?t</value>
+  </data>
+  <data name="ScreenshotSetting_ClearFailed" xml:space="preserve">
+    <value>Xo� th?t b?i</value>
+  </data>
+  <data name="ScreenshotSetting_HighQualityAVIFAndJPEGXLImageFormatsSaveApproximately85OfStorageSpace" xml:space="preserve">
+    <value>�?nh d?ng h�nh ?nh AVIF v� JPEG XL ch?t lu?ng cao gi�p ti?t ki?m kho?ng 85% dung lu?ng luu tr?.</value>
+  </data>
+  <data name="Common_CopiedToClipboard" xml:space="preserve">
+    <value>�� sao ch�p v�o b? nh? t?m.</value>
+  </data>
+  <data name="GenshinBeyondGachaPage_MiliastraWonderlandOde" xml:space="preserve">
+    <value>Kh�c ca k? quan Miliastra</value>
+  </data>
+  <data name="ItIsRecommendedToInstallTheVP9VideoExtensionsToReduceCPUUsage" xml:space="preserve">
+    <value>Khuy?n ngh? c�i d?t Ph?n M? r?ng Video VP9 d? gi?m t?i cho CPU.</value>
+  </data>
+  <data name="AboutSetting_UpdatedToTheLatestVersion" xml:space="preserve">
+    <value>�� c?p nh?t phi�n b?n m?i nh?t.</value>
+  </data>
+  <data name="Common_All" xml:space="preserve">
+    <value>T?t c?</value>
+  </data>
+  <data name="Common_Video" xml:space="preserve">
+    <value>�o?n phim</value>
+  </data>
+  <data name="Common_Time" xml:space="preserve">
+    <value>Th?i gian</value>
+  </data>
+  <data name="Common_FileSize" xml:space="preserve">
+    <value>K�ch thu?c t?p</value>
+  </data>
+  <data name="Common_Filter" xml:space="preserve">
+    <value>B? l?c</value>
+  </data>
+  <data name="Common_Sort" xml:space="preserve">
+    <value>S?p x?p</value>
+  </data>
+  <data name="AppConfig_AnUnknownIssueOccurredDuringInitialization" xml:space="preserve">
+    <value>�� x?y ra l?i kh�ng x�c d?nh trong qu� tr�nh kh?i t?o.</value>
+  </data>
+  <data name="NoPermissionWindow_NoPermissionToFolderRestartOrClose" xml:space="preserve">
+    <value>Chuong tr�nh kh�ng c� quy?n truy c?p thu m?c sau. Vui l�ng kh?i d?ng l?i v?i quy?n qu?n tr? vi�n ho?c di chuy?n thu m?c.</value>
+  </data>
+  <data name="NoPermissionWindow_RestartAsAdministrator" xml:space="preserve">
+    <value>Kh?i �?ng L?i V?i Quy?n Qu?n Tr? Vi�n</value>
+  </data>
+  <data name="Common_ConfirmDelete" xml:space="preserve">
+    <value>X?c nh?n x?a</value>
+  </data>
+  <data name="LauncherPage_ConfirmDelete" xml:space="preserve">
+    <value>Confirm Delete</value>
+  </data>
+  <data name="GachaType_StandardOde" xml:space="preserve">
+    <value>Standard Ode</value>
+  </data>
+  <data name="GachaType_EventOde" xml:space="preserve">
+    <value>Event Ode</value>
+  </data>
+  <data name="Common_Uid" xml:space="preserve">
+    <value>UID</value>
+  </data>
+  <data name="GachaStatsCard_Up" xml:space="preserve">
+    <value>up!</value>
+  </data>
+  <data name="SettingPage_RescanGameDirectories" xml:space="preserve">
+    <value>Rescan Game Directories</value>
+  </data>
+  <data name="AboutSettingPage_Description" xml:space="preserve">
+    <value>A rework of Starward Launcher originally developed by Scighost, reworked by Studio Butter, all rights reserved.</value>
+  </data>
+  <data name="Common_Glowworm" xml:space="preserve">
+    <value>Glowworm</value>
+  </data>
+  <data name="MainView_WelcomeTitle" xml:space="preserve">
+    <value>Welcome to Glowworm</value>
+  </data>
+  <data name="MainView_WelcomeContent" xml:space="preserve">
+    <value>Welcome to Glowworm! We will now check your available games.</value>
+  </data>
+  <data name="BeyondProfilePicturePage_MiliastraProfilePictures" xml:space="preserve">
+    <value>Miliastra Profile Pictures</value>
+  </data>
+  <data name="BeyondProfilePicturePage_NoImage" xml:space="preserve">
+    <value>No image found</value>
+  </data>
+  <data name="BeyondProfilePicturePage_GetProfilePictures" xml:space="preserve">
+    <value>Get Profile Pictures</value>
+  </data>
+  <data name="BeyondProfilePicturePage_SaveAs" xml:space="preserve">
+    <value>Save As</value>
+  </data>
+  <data name="BeyondProfilePicturePage_FolderNotFound" xml:space="preserve">
+    <value>Cannot get Profile Pictures, ensure you have taken on in-game and save it before getting the pictures</value>
+  </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>Đóng</value>
+  </data>
+  <data name="Common_Retry" xml:space="preserve">
+    <value>Thử lại</value>
+  </data>
+  <data name="FileSettingPage_SelectedFolderNotWritable" xml:space="preserve">
+    <value>The selected folder is not writable: {0}</value>
+  </data>
 </root>
