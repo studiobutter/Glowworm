@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -324,6 +324,9 @@
   </data>
   <data name="SettingPage_Update" xml:space="preserve">
     <value>檢查更新</value>
+  </data>
+  <data name="SettingPage_UpdateSource" xml:space="preserve">
+    <value>Update Source</value>
   </data>
   <data name="SettingPage_TestCDNAsync_NetworkError" xml:space="preserve">
     <value>網路異常</value>
@@ -619,6 +622,9 @@
   <data name="SettingPage_General" xml:space="preserve">
     <value>一般</value>
     <comment>General Setting</comment>
+  </data>
+  <data name="SettingPage_RunInSystemTray" xml:space="preserve">
+    <value>Run in System Tray</value>
   </data>
   <data name="SettingPage_ForABetterExperiencePleaseEnableTheFollowingFeaturesInSystemSettings" xml:space="preserve">
     <value>為了更好的體驗，請在系統設定中啟用以下功能。</value>
@@ -1015,10 +1021,58 @@
   <data name="Common_ConfirmDelete" xml:space="preserve">
     <value>????</value>
   </data>
+  <data name="LauncherPage_ConfirmDelete" xml:space="preserve">
+    <value>Confirm Delete</value>
+  </data>
+  <data name="GachaType_StandardOde" xml:space="preserve">
+    <value>Standard Ode</value>
+  </data>
+  <data name="GachaType_EventOde" xml:space="preserve">
+    <value>Event Ode</value>
+  </data>
+  <data name="Common_Uid" xml:space="preserve">
+    <value>UID</value>
+  </data>
+  <data name="GachaStatsCard_Up" xml:space="preserve">
+    <value>up!</value>
+  </data>
+  <data name="SettingPage_RescanGameDirectories" xml:space="preserve">
+    <value>Rescan Game Directories</value>
+  </data>
+  <data name="AboutSettingPage_Description" xml:space="preserve">
+    <value>A rework of Starward Launcher originally developed by Scighost, reworked by Studio Butter, all rights reserved.</value>
+  </data>
+  <data name="Common_Glowworm" xml:space="preserve">
+    <value>Glowworm</value>
+  </data>
+  <data name="MainView_WelcomeTitle" xml:space="preserve">
+    <value>Welcome to Glowworm</value>
+  </data>
+  <data name="MainView_WelcomeContent" xml:space="preserve">
+    <value>Welcome to Glowworm! We will now check your available games.</value>
+  </data>
+  <data name="BeyondProfilePicturePage_MiliastraProfilePictures" xml:space="preserve">
+    <value>Miliastra Profile Pictures</value>
+  </data>
+  <data name="BeyondProfilePicturePage_NoImage" xml:space="preserve">
+    <value>No image found</value>
+  </data>
+  <data name="BeyondProfilePicturePage_GetProfilePictures" xml:space="preserve">
+    <value>Get Profile Pictures</value>
+  </data>
+  <data name="BeyondProfilePicturePage_SaveAs" xml:space="preserve">
+    <value>Save As</value>
+  </data>
+  <data name="BeyondProfilePicturePage_FolderNotFound" xml:space="preserve">
+    <value>Cannot get Profile Pictures, ensure you have taken on in-game and save it before getting the pictures</value>
+  </data>
   <data name="Common_Close" xml:space="preserve">
     <value>關閉</value>
   </data>
   <data name="Common_Retry" xml:space="preserve">
     <value>重試</value>
+  </data>
+  <data name="FileSettingPage_SelectedFolderNotWritable" xml:space="preserve">
+    <value>The selected folder is not writable: {0}</value>
   </data>
 </root>
