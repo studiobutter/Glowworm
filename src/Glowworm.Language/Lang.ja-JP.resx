@@ -1,52 +1,110 @@
-<?xml version='1.0' encoding='utf-8'?>
-<root xmlns:ns1="urn:schemas-microsoft-com:xml-msdata" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  
-  <xs:schema id="root">
-    <xs:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xs:element name="root" ns1:IsDataSet="true">
-      <xs:complexType>
-        <xs:choice maxOccurs="unbounded">
-          <xs:element name="metadata">
-            <xs:complexType>
-              <xs:sequence>
-                <xs:element name="value" type="xsd:string" minOccurs="0" />
-              </xs:sequence>
-              <xs:attribute name="name" use="required" type="xsd:string" />
-              <xs:attribute name="type" type="xsd:string" />
-              <xs:attribute name="mimetype" type="xsd:string" />
-              <xs:attribute ref="xml:space" />
-            </xs:complexType>
-          </xs:element>
-          <xs:element name="assembly">
-            <xs:complexType>
-              <xs:attribute name="alias" type="xsd:string" />
-              <xs:attribute name="name" type="xsd:string" />
-            </xs:complexType>
-          </xs:element>
-          <xs:element name="data">
-            <xs:complexType>
-              <xs:sequence>
-                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
-                <xs:element name="comment" type="xsd:string" minOccurs="0" ns1:Ordinal="2" />
-              </xs:sequence>
-              <xs:attribute name="name" type="xsd:string" use="required" ns1:Ordinal="1" />
-              <xs:attribute name="type" type="xsd:string" ns1:Ordinal="3" />
-              <xs:attribute name="mimetype" type="xsd:string" ns1:Ordinal="4" />
-              <xs:attribute ref="xml:space" />
-            </xs:complexType>
-          </xs:element>
-          <xs:element name="resheader">
-            <xs:complexType>
-              <xs:sequence>
-                <xs:element name="value" type="xsd:string" minOccurs="0" ns1:Ordinal="1" />
-              </xs:sequence>
-              <xs:attribute name="name" type="xsd:string" use="required" />
-            </xs:complexType>
-          </xs:element>
-        </xs:choice>
-      </xs:complexType>
-    </xs:element>
-  </xs:schema>
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
   <resheader name="resmimetype">
     <value>text/microsoft-resx</value>
   </resheader>
@@ -71,11 +129,9 @@
   <data name="Common_Cancel" xml:space="preserve">
     <value>キャンセル</value>
   </data>
-
   <data name="Common_Confirm" xml:space="preserve">
     <value>確認</value>
   </data>
-
   <data name="GachaLogPage_NoGachaRecords" xml:space="preserve">
     <value>ガチャの記録がありません</value>
   </data>
@@ -88,7 +144,6 @@
   <data name="GachaLogPage_UpdateAll" xml:space="preserve">
     <value>更新 (すべて)</value>
   </data>
-
   <data name="GachaLogPage_InputURL" xml:space="preserve">
     <value>URLを入力</value>
   </data>
@@ -113,9 +168,6 @@
   <data name="GachaLogPage_ImportFromJson" xml:space="preserve">
     <value>JSONからインポート</value>
   </data>
-  <data name="GachaLogPage_ShowNoviceGachaType" xml:space="preserve">
-    <value>初心者向けガチャの種類を表示</value>
-  </data>
   <data name="GachaLogPage_DeleteRecords" xml:space="preserve">
     <value>記録を削除</value>
   </data>
@@ -134,24 +186,6 @@
   </data>
   <data name="GachaLogPage_OperationCanceled" xml:space="preserve">
     <value>操作をキャンセルしました</value>
-  </data>
-  <data name="GachaLogPage_OnlySupportZZZCNServer" xml:space="preserve">
-    <value>この機能は現在ゼンレスゾーンゼロのみ対応しています。</value>
-  </data>
-  <data name="GachaLogPage_PleaseLoginMiyousheAndAddZZZRole" xml:space="preserve">
-    <value>先に米游社ツールボックスにログインし、米游社アカウントを追加してください。</value>
-  </data>
-  <data name="GachaLogPage_CurrentAccountMissingCookiePleaseReloginMiyoushe" xml:space="preserve">
-    <value>現在のアカウントにログイン認証情報がありません。米游社に再ログインしてください。</value>
-  </data>
-  <data name="GachaLogPage_SelectMiyousheRole" xml:space="preserve">
-    <value>米游社アカウントを選択</value>
-  </data>
-  <data name="GachaLogPage_SelectMiyousheRoleDescription" xml:space="preserve">
-    <value>複数のゼンレスゾーンゼロロールが見つかりました。ガチャ記録を同期するロールを一つ選択してください。</value>
-  </data>
-  <data name="GachaLogPage_PleaseSelectMiyousheRole" xml:space="preserve">
-    <value>先に米游社アカウントを選択してください。</value>
   </data>
   <data name="GachaLogPage_PleaseOpenTheGachaRecordsPageInGameAndTryAgain" xml:space="preserve">
     <value>ゲーム内のガチャの記録のページを開き、再度お試しください。</value>
@@ -249,29 +283,6 @@
   <data name="SettingPage_WindowsSize" xml:space="preserve">
     <value>ウィンドウのサイズ</value>
   </data>
-  <data name="SettingPage_Normal" xml:space="preserve">
-    <value>標準</value>
-    <comment>Window Size Normal</comment>
-  </data>
-  <data name="SettingPage_Small" xml:space="preserve">
-    <value>小</value>
-    <comment>Window Size Small</comment>
-  </data>
-  <data name="SettingPage_TestNetwork" xml:space="preserve">
-    <value>ネットワークのテスト</value>
-  </data>
-  <data name="SettingPage_AppBackground" xml:space="preserve">
-    <value>アプリの背景</value>
-  </data>
-  <data name="SettingPage_CustomBackgroundSupportVideo" xml:space="preserve">
-    <value>カスタム背景 (動画をサポートしています)</value>
-  </data>
-  <data name="SettingPage_DynamicThemeColor" xml:space="preserve">
-    <value>ダイナミックテーマカラー</value>
-  </data>
-  <data name="SettingPage_CloudFlareConnectProperly" xml:space="preserve">
-    <value>アプリはCloudFlareから必要なリソースをダウンロードするため、正しく接続できることを確認してください。</value>
-  </data>
   <data name="SettingPage_CheckForUpdate" xml:space="preserve">
     <value>アップデートを確認</value>
   </data>
@@ -280,9 +291,6 @@
   </data>
   <data name="SettingPage_JoinPreviewReleaseChannel" xml:space="preserve">
     <value>プレビューリリースチャンネルに参加</value>
-  </data>
-  <data name="SettingPage_FileManager" xml:space="preserve">
-    <value>ファイルの管理</value>
   </data>
   <data name="SettingPage_OpenDataFolder" xml:space="preserve">
     <value>データフォルダーを開く</value>
@@ -374,9 +382,6 @@
   <data name="UpdatePage_DevChannel" xml:space="preserve">
     <value>Devチャンネル</value>
   </data>
-  <data name="SettingPage_ThemeColorDesc" xml:space="preserve">
-    <value>背景画像に基づいてテーマカラーを自動的に計算し、既定のシステムカラーとして使用します。</value>
-  </data>
   <data name="UpdatePage_ReleasePage" xml:space="preserve">
     <value>リリースページ</value>
   </data>
@@ -452,7 +457,6 @@
   <data name="ScreenshotPage_BackedUpNewScreenshots" xml:space="preserve">
     <value>新規スクリーンショットの {0} をバックアップしました。</value>
   </data>
-  
   <data name="Common_Attention" xml:space="preserve">
     <value>警告</value>
   </data>
@@ -492,9 +496,6 @@
   <data name="FileSettingPage_OpenLogFile" xml:space="preserve">
     <value>ログファイルを開く</value>
   </data>
-  <data name="SettingPage_Appearance" xml:space="preserve">
-    <value>外観</value>
-  </data>
   <data name="SettingPage_FileManagement" xml:space="preserve">
     <value>ファイルの管理</value>
   </data>
@@ -504,48 +505,14 @@
   <data name="AboutSettingPage_Links" xml:space="preserve">
     <value>リンク</value>
   </data>
-  <data name="SettingPage_Advanced" xml:space="preserve">
-    <value>高度な設定</value>
-  </data>
-  <data name="SettingPage_Experience" xml:space="preserve">
-    <value>エクスペリエンス</value>
-    <comment>means user experience</comment>
-  </data>
   <data name="FileSettingPage_DataFolderIsImportant" xml:space="preserve">
     <value>個人データは以下のフォルダに保存されています。このファイルは非常に重要ですので、安易に削除しないでください。</value>
-  </data>
-  <data name="AppearanceSettingPage_ThemeColor" xml:space="preserve">
-    <value>テーマカラー</value>
-  </data>
-  <data name="AppearanceSettingPage_ThemeColorDescription" xml:space="preserve">
-    <value>既定でのテーマカラーは、背景画像によって決定されます。</value>
-  </data>
-  <data name="AppearanceSettingPage_UseSystemThemeColor" xml:space="preserve">
-    <value>システムテーマカラーを使用する</value>
-  </data>
-  <data name="AppearanceSettingPage_AlwaysDisplayNavigationSidebarIcons" xml:space="preserve">
-    <value>ナビゲーションサイドバーアイコンを常に表示する</value>
-  </data>
-  <data name="ExperienceSettingPage_Features" xml:space="preserve">
-    <value>機能</value>
-  </data>
-  <data name="ExperienceSettingPage_HideGameAccountSwitcher" xml:space="preserve">
-    <value>ゲームアカウントの切り替えを非表示にする</value>
   </data>
   <data name="SelectLanguagePage_NetworkTest" xml:space="preserve">
     <value>ネットワークテスト</value>
   </data>
   <data name="SelectLanguagePage_AreYouAbleToReceiveUpdatesForGlowworm" xml:space="preserve">
     <value>Glowwormのアップデートを受け取りますか?</value>
-  </data>
-  <data name="ExperienceSettingPage_MinimizeToTaskbar" xml:space="preserve">
-    <value>タスクバーに最小化</value>
-  </data>
-  <data name="ExperienceSettingPage_DoNothing" xml:space="preserve">
-    <value>何もしない</value>
-  </data>
-  <data name="ExperienceSettingPage_AfterStartingGame" xml:space="preserve">
-    <value>ゲーム開始後</value>
   </data>
   <data name="AppearanceSettingPage_HelpUsTranslateGlowworm" xml:space="preserve">
     <value>Glowwormの翻訳にご協力ください</value>
@@ -565,7 +532,6 @@
   <data name="FileSettingPage_ClearCache" xml:space="preserve">
     <value>キャッシュをクリア</value>
   </data>
-
   <data name="AppearanceSettingPage_BetterExperience" xml:space="preserve">
     <value>より良いユーザーエクスペリエンスのために、システム設定で「{0}」と「{1}」を有効化する事をお勧めします。</value>
   </data>
@@ -596,7 +562,6 @@
   <data name="AboutSettingPage_VerifySuccessfully" xml:space="preserve">
     <value>検証が成功しました!</value>
   </data>
-  
   <data name="GachaLogPage_ShowChronicledWish" xml:space="preserve">
     <value>集録祈願を表示</value>
   </data>
@@ -605,6 +570,9 @@
   </data>
   <data name="GachaLogPage_ViaCloudGame" xml:space="preserve">
     <value>クラウドゲーム経由</value>
+  </data>
+  <data name="GachaLogPage_ViaCloudGameWeb" xml:space="preserve">
+    <value>via Cloud Game (Web)</value>
   </data>
   <data name="UpdateContentWindow_ClickToRefresh" xml:space="preserve">
     <value>クリックで更新</value>
@@ -670,38 +638,8 @@
   <data name="Common_Error" xml:space="preserve">
     <value>エラー</value>
   </data>
-  <data name="SettingPage_RunService" xml:space="preserve">
-    <value>サービスを実行</value>
-  </data>
-  <data name="SettingPage_StopService" xml:space="preserve">
-    <value>サービスを停止</value>
-  </data>
   <data name="CloudGameButton_CloudGame" xml:space="preserve">
     <value>クラウドゲーム</value>
-  </data>
-  <data name="GameAccountSwitcher_TheCurrentlyLoggedInAccountIsNotSaved" xml:space="preserve">
-    <value>現在ログインしているアカウントは保存されません。</value>
-  </data>
-  <data name="ZZZGachaInfoWindow_Miyoushe" xml:space="preserve">
-    <value>Miyoushe(米游社)</value>
-  </data>
-  <data name="ZZZGachaInfoWindow_FetchDataForAllLanguages" xml:space="preserve">
-    <value>すべての言語のデータを取得</value>
-  </data>
-  <data name="ZZZGachaInfoWindow_SaveToDatabase" xml:space="preserve">
-    <value>データベースへ保存</value>
-  </data>
-  <data name="ZZZGachaInfoWindow_ExportToFolder" xml:space="preserve">
-    <value>フォルダーにエクスポート</value>
-  </data>
-  <data name="ZZZGachaInfoWindow_ZZZGachaInfoWindowGuide" xml:space="preserve">
-    <value>このツールは「ゼンレスゾーンゼロ」ガチャ記録内のアイテム画像を更新するために使用します。
-左上隅の「Miyoushe(米游社)」または「HoYoLAB」をクリックし、ログイン、そして、データ取得をお待ちください。HoYoLAB経由でログインする場合は、「すべての言語のデータを取得」もクリックする必要があります。
-データ取得後、任意の言語でデータベースに保存するか、フォルダへエクスポートできます。
-エクスポートしたデータは以下のリポジトリへご投稿ください:</value>
-  </data>
-  <data name="SettingPage_Toolbox" xml:space="preserve">
-    <value>ツール</value>
   </data>
   <data name="UIGFGachaService_UidMismatchDetectedExpected0ButFound1" xml:space="preserve">
     <value>UIDの不一致が検出されました。 {0} を期待していましたが、{1} でした。</value>
@@ -756,9 +694,6 @@
   </data>
   <data name="Common_Enabled" xml:space="preserve">
     <value>有効</value>
-  </data>
-  <data name="ClearedAt" xml:space="preserve">
-    <value>クリア日時</value>
   </data>
   <data name="GachaLogPage_ImportAndExport" xml:space="preserve">
     <value>インポート/エクスポート</value>
@@ -931,9 +866,6 @@
   <data name="SettingPage_KeyboardShortcuts" xml:space="preserve">
     <value>キーボード ショートカット</value>
   </data>
-  <data name="SettingPage_ControllerEnhancement" xml:space="preserve">
-    <value>コントローラーの拡張</value>
-  </data>
   <data name="ScreenshotSetting_TestScreenshot" xml:space="preserve">
     <value>テストスクショ</value>
   </data>
@@ -953,12 +885,6 @@
     <value>Windows 10では、スクリーンショット機能に以下の追加制限があります:
 • ゲームのウィンドウをキャプチャ中に、色付きの枠線が表示される場合があります。
 • マウスポインタを非表示にすることはできません。</value>
-  </data>
-  <data name="ScreenshotSetting_ScreenshotWithGamepadSuggestion" xml:space="preserve">
-    <value>コントローラーでスクリーンショットをキャプチャしたい場合は、「コントローラーの拡張」ページの「ボタンの割り当て」を使用してください。</value>
-  </data>
-  <data name="TheScreenshotFeatureDoesNotSupportCloudGame" xml:space="preserve">
-    <value>スクリーンショット機能はクラウドゲームに対応していません。</value>
   </data>
   <data name="ScreenshotSetting_AutoCopyScreenshotFile" xml:space="preserve">
     <value>スクショファイルの自動コピー</value>
@@ -1053,38 +979,11 @@
   <data name="GenshinBeyondGachaPage_MiliastraWonderlandOde" xml:space="preserve">
     <value>星々の幻境星願</value>
   </data>
-  <data name="UpdateWindow_FullPackage" xml:space="preserve">
-    <value>フルパッケージ</value>
-  </data>
-  <data name="UpdateWindow_MigrateToSetup" xml:space="preserve">
-    <value>セットアップ版に移行</value>
-  </data>
   <data name="ItIsRecommendedToInstallTheVP9VideoExtensionsToReduceCPUUsage" xml:space="preserve">
     <value>VP9 Video ExtensionsをインストールしてCPU使用率を下げることを推奨します。</value>
   </data>
-  <data name="ChallengePeakPage_ChallengeAttempts" xml:space="preserve">
-    <value>挑戦回数</value>
-  </data>
-  <data name="ChallengePeakPage_KingInCheckStageRecords" xml:space="preserve">
-    <value>王手チェックステージ記録</value>
-  </data>
-  <data name="ChallengePeakPage_Cleared" xml:space="preserve">
-    <value>クリア済み</value>
-  </data>
-  <data name="ChallengePeakPage_NoClearanceRecords" xml:space="preserve">
-    <value>クリア記録なし</value>
-  </data>
-  <data name="ChallengePeakPage_KnightStageRecords" xml:space="preserve">
-    <value>ナイトステージ記録</value>
-  </data>
   <data name="AboutSetting_UpdatedToTheLatestVersion" xml:space="preserve">
     <value>最新バージョンに更新済みです。</value>
-  </data>
-  <data name="BackgroundViewPage_DeleteDuplicateFiles" xml:space="preserve">
-    <value>重複ファイルを削除</value>
-  </data>
-  <data name="BackgroundViewPage_0DuplicateFileSHasBeenDeleted" xml:space="preserve">
-    <value>{0}個の重複ファイルを削除しました。</value>
   </data>
   <data name="Common_All" xml:space="preserve">
     <value>すべて</value>
@@ -1104,25 +1003,6 @@
   <data name="Common_Sort" xml:space="preserve">
     <value>並び替え</value>
   </data>
-  <data name="BackgroundViewPage_DeleteDuplicateFilesTip" xml:space="preserve">
-    <value>重複ファイルはファイルデータに基づいて識別されます。見た目が似ている画像でも削除されない場合があります。</value>
-  </data>
-  <data name="BackgroundViewPage_VP9VideoExtensionsTip" xml:space="preserve">
-    <value>VP9 Video Extensionsは一部の形式をサポートしていないため、サムネイル生成や正常な再生ができない可能性があります。</value>
-  </data>
-  <data name="AppBackground_ImageDecodingFailed" xml:space="preserve">
-    <value>画像デコード失敗</value>
-  </data>
-  <data name="AppBackground_PleaseInstallTheWebPImageExtension" xml:space="preserve">
-    <value>WebP Image Extensionをインストールしてください。</value>
-  </data>
-  <data name="AppBackground_VideoDecodingFailed" xml:space="preserve">
-    <value>動画デコード失敗</value>
-  </data>
-  <data name="AppBackground_VideoDecodingFailedPleaseInstallTheVP9VideoExtensions" xml:space="preserve">
-    <value>動画デコードに失敗しました。VP9 Video Extensionsをインストールしてください。</value>
-  </data>
-
   <data name="AppConfig_AnUnknownIssueOccurredDuringInitialization" xml:space="preserve">
     <value>初期化中に不明な問題が発生しました。</value>
   </data>
@@ -1135,4 +1015,4 @@
   <data name="Common_ConfirmDelete" xml:space="preserve">
     <value>?????</value>
   </data>
-<data name="GachaLogPage_ViaCloudGameWeb" xml:space="preserve"><value>via Cloud Game (Web)</value></data></root>
+</root>
