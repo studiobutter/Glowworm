@@ -241,6 +241,9 @@
   <data name="GameServer_ChinaCloud" xml:space="preserve">
     <value>中國雲端</value>
   </data>
+  <data name="GameServer_GlobalCloud" xml:space="preserve">
+    <value>Global Cloud</value>
+  </data>
   <data name="GameServer_Bilibili" xml:space="preserve">
     <value>Bilibili</value>
   </data>
