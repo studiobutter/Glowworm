@@ -332,6 +332,15 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        public static string Common_Close {
+            get {
+                return ResourceManager.GetString("Common_Close", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm.
         /// </summary>
         public static string Common_Confirm {
@@ -553,6 +562,15 @@ namespace Glowworm.Language {
         public static string Common_RestoreDefaults {
             get {
                 return ResourceManager.GetString("Common_RestoreDefaults", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Retry.
+        /// </summary>
+        public static string Common_Retry {
+            get {
+                return ResourceManager.GetString("Common_Retry", resourceCulture);
             }
         }
         
@@ -796,6 +814,15 @@ namespace Glowworm.Language {
         public static string FileSettingPage_OpenLogFile {
             get {
                 return ResourceManager.GetString("FileSettingPage_OpenLogFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The selected folder is not writable: {0}.
+        /// </summary>
+        public static string FileSettingPage_SelectedFolderNotWritable {
+            get {
+                return ResourceManager.GetString("FileSettingPage_SelectedFolderNotWritable", resourceCulture);
             }
         }
         

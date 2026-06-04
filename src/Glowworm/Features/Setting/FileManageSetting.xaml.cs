@@ -10,6 +10,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Glowworm.Helpers;
 using Windows.Storage;
 using Windows.System;
 
@@ -53,9 +54,8 @@ public sealed partial class FileManageSetting : PageBase
         {
             var dialog = new ContentDialog
             {
-                Title = "",
-                // ???????????:
-                // ????????(???????????????)
+                Title = Lang.Common_Attention,
+                // Inform user and confirm (choose to change folder)
                 Content = $"""
                 {Lang.SettingPage_TheCurrentLocationOfTheDataFolderIs}
 
@@ -63,19 +63,52 @@ public sealed partial class FileManageSetting : PageBase
 
                 {Lang.SettingPage_WouldLikeToReselectDataFolder}
                 """,
-                PrimaryButtonText = "",
-                SecondaryButtonText = "",
-                DefaultButton = ContentDialogButton.Secondary,
+                PrimaryButtonText = Lang.Common_ChangeFolder,
+                SecondaryButtonText = Lang.Common_Cancel,
+                DefaultButton = ContentDialogButton.Primary,
                 XamlRoot = this.XamlRoot,
             };
             var result = await dialog.ShowAsync();
             if (result is ContentDialogResult.Primary)
             {
-                AppConfig.UserDataFolder = null!;
-                AppConfig.SaveConfiguration();
-                AppInstance.GetCurrent().UnregisterKey();
-                Process.Start(AppConfig.GlowwormExecutePath);
-                App.Current.Exit();
+                try
+                {
+                    // Let user pick a new folder. If canceled, do nothing.
+                    var path = await FileDialogHelper.PickFolderAsync(this.XamlRoot.GetWindowHandle());
+                    if (string.IsNullOrWhiteSpace(path))
+                    {
+                        return;
+                    }
+
+                    // Validate folder can be created/written to before applying
+                    try
+                    {
+                        Directory.CreateDirectory(path);
+                        string testFile = Path.Combine(path, $"write_test_{Guid.NewGuid():N}.tmp");
+                        File.WriteAllBytes(testFile, new byte[] { 1 });
+                        File.Delete(testFile);
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.LogWarning(ex, "Selected folder is not writable: {path}", path);
+                        // inform user via toast and abort
+                        InAppToast.MainWindow?.Error((string?)null, string.Format(Lang.FileSettingPage_SelectedFolderNotWritable, path), 5000);
+                        return;
+                    }
+
+                    AppConfig.UserDataFolder = path;
+                    AppConfig.SaveConfiguration();
+                    // Restart application so new data folder is applied
+                    AppInstance.GetCurrent().UnregisterKey();
+                    Process.Start(AppConfig.GlowwormExecutePath);
+                    App.Current.Exit();
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError(ex, "Change data folder - picking folder");
+                    // do not restart if picker failed
+                    return;
+                }
             }
         }
         catch (Exception ex)

@@ -78,7 +78,6 @@ public sealed partial class ImageBatchConvertWindow : WindowEx
             Button_Import.Click -= Button_Import_Click;
             Button_OutputFolder.Click -= Button_OutputFolder_Click;
             Button_StartConvert.Click -= Button_StartConvert_Click;
-            Button_Stop.Click -= Button_Stop_Click;
             Button_Clear.Click -= Button_Clear_Click;
             ListView_ImageConvertItems.DragOver -= ListView_ImageConvertItems_DragOver;
             ListView_ImageConvertItems.Drop -= ListView_ImageConvertItems_Drop;

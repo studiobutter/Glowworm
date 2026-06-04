@@ -1066,4 +1066,13 @@
   <data name="BeyondProfilePicturePage_FolderNotFound" xml:space="preserve">
     <value>Cannot get Profile Pictures, ensure you have taken on in-game and save it before getting the pictures</value>
   </data>
+  <data name="Common_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Common_Retry" xml:space="preserve">
+    <value>Retry</value>
+  </data>
+  <data name="FileSettingPage_SelectedFolderNotWritable" xml:space="preserve">
+    <value>The selected folder is not writable: {0}</value>
+  </data>
 </root>

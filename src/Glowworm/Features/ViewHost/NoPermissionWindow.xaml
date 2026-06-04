@@ -68,7 +68,7 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Command="{x:Bind CloseCommand}"
-                Content="{x:Bind lang:Lang.DownloadGamePage_Close}" />
+                Content="{x:Bind lang:Lang.Common_Close}" />
 
 
 

@@ -181,7 +181,7 @@
                         Content="&#xE711;"
                         FontFamily="{ThemeResource SymbolThemeFontFamily}"
                         Style="{ThemeResource DateTimePickerFlyoutButtonStyle}"
-                        ToolTipService.ToolTip="{x:Bind lang:Lang.DownloadGamePage_Close}"
+                        ToolTipService.ToolTip="{x:Bind lang:Lang.Common_Close}"
                         Visibility="Collapsed" />
             </StackPanel>
         </Border>

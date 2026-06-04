@@ -100,11 +100,6 @@
                         Spacing="12">
 
                 <!--  ??  -->
-                <Button x:Name="Button_Stop"
-                        Click="Button_Stop_Click"
-                        Content="{x:Bind lang:Lang.DownloadGamePage_Stop}" />
-
-                <!--  ??  -->
                 <Button x:Name="Button_Clear"
                         Click="Button_Clear_Click"
                         Content="{x:Bind lang:Lang.Common_Clear}" />

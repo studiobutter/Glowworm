@@ -231,7 +231,7 @@
                         CornerRadius="18">
                     <TextBlock Margin="8,0,8,0"
                                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                               Text="{x:Bind lang:Lang.DownloadGamePage_Retry}" />
+                               Text="{x:Bind lang:Lang.Common_Retry}" />
                 </Button>
                 <SplitButton Name="Button_RemindLatter"
                              Height="36"
