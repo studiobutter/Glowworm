@@ -326,7 +326,7 @@
     <value>업데이트 확인</value>
   </data>
   <data name="SettingPage_UpdateSource" xml:space="preserve">
-    <value>Update Source</value>
+    <value>업데이트 소스</value>
   </data>
   <data name="SettingPage_TestCDNAsync_NetworkError" xml:space="preserve">
     <value>네트워크 오류</value>
@@ -338,7 +338,7 @@
     <value>변경하시겠습니까? (미리 수동으로 파일을 이동한 수 변경헤주세요.)</value>
   </data>
   <data name="Common_Yes" xml:space="preserve">
-    <value>Yes</value>
+    <value>예</value>
   </data>
   <data name="SettingPage_AfterDeletingTheSoftwareWillBeRestartedAutomatically" xml:space="preserve">
     <value>제거완료 후 프로그램이 자동으로 다시시작 됩니다.</value>
@@ -575,7 +575,7 @@
     <value>클라우드에서 받기</value>
   </data>
   <data name="GachaLogPage_ViaCloudGameWeb" xml:space="preserve">
-    <value>via Cloud Game (Web)</value>
+    <value>클라우드에서 받기 (웹)</value>
   </data>
   <data name="UpdateContentWindow_ClickToRefresh" xml:space="preserve">
     <value>새로고침</value>
@@ -624,7 +624,7 @@
     <comment>General Setting</comment>
   </data>
   <data name="SettingPage_RunInSystemTray" xml:space="preserve">
-    <value>Run in System Tray</value>
+    <value>시스템 트레이에서 실행</value>
   </data>
   <data name="SettingPage_ForABetterExperiencePleaseEnableTheFollowingFeaturesInSystemSettings" xml:space="preserve">
     <value>더 나은 경험을 위해 아래 시스템 설정을 활성화 해 주세요．</value>
@@ -1022,13 +1022,13 @@
     <value>?? ??</value>
   </data>
   <data name="LauncherPage_ConfirmDelete" xml:space="preserve">
-    <value>Confirm Delete</value>
+    <value>삭제 확인</value>
   </data>
   <data name="GachaType_StandardOde" xml:space="preserve">
-    <value>Standard Ode</value>
+    <value>일반 축원</value>
   </data>
   <data name="GachaType_EventOde" xml:space="preserve">
-    <value>Event Ode</value>
+    <value>이벤트 축원</value>
   </data>
   <data name="Common_Uid" xml:space="preserve">
     <value>UID</value>
@@ -1037,34 +1037,34 @@
     <value>up!</value>
   </data>
   <data name="SettingPage_RescanGameDirectories" xml:space="preserve">
-    <value>Rescan Game Directories</value>
+    <value>게임 디렉토리 재스캔</value>
   </data>
   <data name="AboutSettingPage_Description" xml:space="preserve">
-    <value>A rework of Starward Launcher originally developed by Scighost, reworked by Studio Butter, all rights reserved.</value>
+    <value>Scighost에서 개발한 Starward Launcher를 Studio Butter에서 리워크한 버전입니다. 모든 권리는 Studio Butter에 있습니다.</value>
   </data>
   <data name="Common_Glowworm" xml:space="preserve">
     <value>Glowworm</value>
   </data>
   <data name="MainView_WelcomeTitle" xml:space="preserve">
-    <value>Welcome to Glowworm</value>
+    <value>Glowworm에 오신 것을 환영합니다</value>
   </data>
   <data name="MainView_WelcomeContent" xml:space="preserve">
-    <value>Welcome to Glowworm! We will now check your installed HoYoverse games.</value>
+    <value>Glowworm에 오신 것을 환영합니다! 이제 설치된 HoYoverse 게임을 확인하겠습니다.</value>
   </data>
   <data name="BeyondProfilePicturePage_MiliastraProfilePictures" xml:space="preserve">
-    <value>Miliastra Profile Pictures</value>
+    <value>스타시 프로필 사진</value>
   </data>
   <data name="BeyondProfilePicturePage_NoImage" xml:space="preserve">
-    <value>No image found</value>
+    <value>사진 없음</value>
   </data>
   <data name="BeyondProfilePicturePage_GetProfilePictures" xml:space="preserve">
-    <value>Get Profile Pictures</value>
+    <value>프로필 사진 가져오기</value>
   </data>
   <data name="BeyondProfilePicturePage_SaveAs" xml:space="preserve">
-    <value>Save As</value>
+    <value>다른 이름으로 저장</value>
   </data>
   <data name="BeyondProfilePicturePage_FolderNotFound" xml:space="preserve">
-    <value>Cannot get Profile Pictures, ensure you have taken on in-game and save it before getting the pictures</value>
+    <value>프로필 사진을 가져올 수 없습니다. 게임 내에서 사진을 촬영하고 저장한 후 사진을 가져오세요.</value>
   </data>
   <data name="Common_Close" xml:space="preserve">
     <value>닫기</value>
@@ -1073,6 +1073,6 @@
     <value>다시 시도</value>
   </data>
   <data name="FileSettingPage_SelectedFolderNotWritable" xml:space="preserve">
-    <value>The selected folder is not writable: {0}</value>
+    <value>선택한 폴더에 쓰기 권한이 없습니다: {0}</value>
   </data>
 </root>
