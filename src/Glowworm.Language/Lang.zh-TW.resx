@@ -326,7 +326,7 @@
     <value>檢查更新</value>
   </data>
   <data name="SettingPage_UpdateSource" xml:space="preserve">
-    <value>Update Source</value>
+    <value>更新來源</value>
   </data>
   <data name="SettingPage_TestCDNAsync_NetworkError" xml:space="preserve">
     <value>網路異常</value>
@@ -575,7 +575,7 @@
     <value>透過雲端遊戲</value>
   </data>
   <data name="GachaLogPage_ViaCloudGameWeb" xml:space="preserve">
-    <value>via Cloud Game (Web)</value>
+    <value>透過雲端遊戲 (網路)</value>
   </data>
   <data name="UpdateContentWindow_ClickToRefresh" xml:space="preserve">
     <value>點選以更新</value>
@@ -624,7 +624,7 @@
     <comment>General Setting</comment>
   </data>
   <data name="SettingPage_RunInSystemTray" xml:space="preserve">
-    <value>Run in System Tray</value>
+    <value>在系統托盤中運行</value>
   </data>
   <data name="SettingPage_ForABetterExperiencePleaseEnableTheFollowingFeaturesInSystemSettings" xml:space="preserve">
     <value>為了更好的體驗，請在系統設定中啟用以下功能。</value>
@@ -1022,13 +1022,13 @@
     <value>????</value>
   </data>
   <data name="LauncherPage_ConfirmDelete" xml:space="preserve">
-    <value>Confirm Delete</value>
+    <value>確認刪除</value>
   </data>
   <data name="GachaType_StandardOde" xml:space="preserve">
-    <value>Standard Ode</value>
+    <value>常駐頌願</value>
   </data>
   <data name="GachaType_EventOde" xml:space="preserve">
-    <value>Event Ode</value>
+    <value>活動頌願</value>
   </data>
   <data name="Common_Uid" xml:space="preserve">
     <value>UID</value>
@@ -1037,34 +1037,34 @@
     <value>up!</value>
   </data>
   <data name="SettingPage_RescanGameDirectories" xml:space="preserve">
-    <value>Rescan Game Directories</value>
+    <value>重新掃描遊戲目錄</value>
   </data>
   <data name="AboutSettingPage_Description" xml:space="preserve">
-    <value>A rework of Starward Launcher originally developed by Scighost, reworked by Studio Butter, all rights reserved.</value>
+    <value>Starward Launcher 最初由 Scighost 開發，後來由 Studio Butter 重新製作，版權所有。</value>
   </data>
   <data name="Common_Glowworm" xml:space="preserve">
     <value>Glowworm</value>
   </data>
   <data name="MainView_WelcomeTitle" xml:space="preserve">
-    <value>Welcome to Glowworm</value>
+    <value>歡迎來到Glowworm</value>
   </data>
   <data name="MainView_WelcomeContent" xml:space="preserve">
-    <value>Welcome to Glowworm! We will now check your installed HoYoverse games.</value>
+    <value>歡迎來到Glowworm! 現在我們將檢查您已安裝的HoYoverse遊戲。</value>
   </data>
   <data name="BeyondProfilePicturePage_MiliastraProfilePictures" xml:space="preserve">
-    <value>Miliastra Profile Pictures</value>
+    <value>千星個人資料圖片</value>
   </data>
   <data name="BeyondProfilePicturePage_NoImage" xml:space="preserve">
-    <value>No image found</value>
+    <value>没有找到图片</value>
   </data>
   <data name="BeyondProfilePicturePage_GetProfilePictures" xml:space="preserve">
-    <value>Get Profile Pictures</value>
+    <value>取得個人資料圖片</value>
   </data>
   <data name="BeyondProfilePicturePage_SaveAs" xml:space="preserve">
-    <value>Save As</value>
+    <value>另存新檔</value>
   </data>
   <data name="BeyondProfilePicturePage_FolderNotFound" xml:space="preserve">
-    <value>Cannot get Profile Pictures, ensure you have taken on in-game and save it before getting the pictures</value>
+    <value>無法取得頭像，請確保您已在遊戲中拍照並儲存後再取得圖片。</value>
   </data>
   <data name="Common_Close" xml:space="preserve">
     <value>關閉</value>
@@ -1073,6 +1073,6 @@
     <value>重試</value>
   </data>
   <data name="FileSettingPage_SelectedFolderNotWritable" xml:space="preserve">
-    <value>The selected folder is not writable: {0}</value>
+    <value>所選資料夾不可寫：{0}</value>
   </data>
 </root>
