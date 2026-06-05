@@ -217,101 +217,101 @@
     <value>Tài khỏan này không có bản ghi gacha trong 12 tháng gần nhất.</value>
   </data>
   <data name="GachaLogService_GetGachaResult" xml:space="preserve">
-    <value>�� t�m du?c {0} b?n ghi, d� th�m {1} b?n ghi.</value>
+    <value>Đã tìm được {0} (các) bản ghi, đã thêm {1} (các) bản ghi.</value>
     <comment>{0} = {getCount} ,  {1} = {addCount}</comment>
   </data>
   <data name="GenshinGachaService_ImportWishRecordsSuccessfully" xml:space="preserve">
-    <value>Nh?p {0} b?n ghi c?u nguy?n th�nh c�ng.</value>
+    <value>Nhập {0} (các) bản ghi cầu nguyện thành công.</value>
   </data>
   <data name="StarRailGachaService_ImportWarpRecordsSuccessfully" xml:space="preserve">
-    <value>Nh?p {0} b?n ghi bu?c nh?y th�nh c�ng.</value>
+    <value>Nhập {0} (các) bản ghi bước nhảy thành công.</value>
   </data>
   <data name="UpdateService_CannotUpdateAutomatically" xml:space="preserve">
-    <value>Kh�ng th? c?p nh?t t? d?ng</value>
+    <value>Không thể cập nhật tự động</value>
   </data>
   <data name="Common_Apply" xml:space="preserve">
-    <value>�p d?ng</value>
+    <value>Áp dụng</value>
   </data>
   <data name="Common_Refresh" xml:space="preserve">
-    <value>L�m m?i</value>
+    <value>Làm mới</value>
   </data>
   <data name="Common_Save" xml:space="preserve">
-    <value>Luu</value>
+    <value>Lưu</value>
   </data>
   <data name="Common_Select" xml:space="preserve">
-    <value>Ch?n</value>
+    <value>Chọn</value>
   </data>
   <data name="Common_Start" xml:space="preserve">
-    <value>B?t d?u</value>
+    <value>Bắt đầu</value>
   </data>
   <data name="Common_Continue" xml:space="preserve">
-    <value>Ti?p t?c</value>
+    <value>Tiếp tục</value>
   </data>
   <data name="MainPage_HowToSwitchGameRegion" xml:space="preserve">
-    <value>L�m th? n�o d? chuy?n d?i v�ng?</value>
+    <value>Làm thế nào để chuyển đổi vùng?</value>
   </data>
   <data name="MainPage_ClickTheRightMouseButtonOnTheGameIconOnTheLeft" xml:space="preserve">
-    <value>Nh?n chu?t ph?i tr�n bi?u tu?ng tr� choi ? b�n tr�i.</value>
+    <value>Trên từng tab, nhấp vào mũi tên xuống của game bạn mông muốn để chuyển vùng.</value>
   </data>
   <data name="MainPage_Launcer" xml:space="preserve">
-    <value>Tr�nh kh?i ch?y</value>
+    <value>Ứng Dụng Đồng Hành</value>
   </data>
   <data name="MainPage_GameScreenshot" xml:space="preserve">
-    <value>?nh ch?p m�n h�nh</value>
+    <value>Chụp ảnh màn hình</value>
   </data>
   <data name="ScreenshotPage_GameScreenshot" xml:space="preserve">
-    <value>?nh ch?p m�n h�nh</value>
+    <value>Chụp ảnh màn hình</value>
   </data>
   <data name="ScreenshotPage_OpenFolder" xml:space="preserve">
-    <value>M? thu m?c</value>
+    <value>Mở thư mục</value>
   </data>
   <data name="SettingPage_Log" xml:space="preserve">
-    <value>Nh?t k�</value>
+    <value>Nhật ký</value>
   </data>
   <data name="SettingPage_ShowConsole" xml:space="preserve">
-    <value>Hi?n B?ng di?u khi?n</value>
+    <value>Hiển thị console</value>
   </data>
   <data name="SettingPage_AppSettings" xml:space="preserve">
-    <value>C�i d?t ?ng d?ng</value>
+    <value>Cài đặt ứng dụng</value>
   </data>
   <data name="SettingPage_EffectiveAtNextStartup" xml:space="preserve">
-    <value>Hi?u qu? ? l?n kh?i d?ng ti?p theo</value>
+    <value>Hiệu quả ở lần khởi động tiếp theo</value>
   </data>
   <data name="SettingPage_OpenLogFolder" xml:space="preserve">
-    <value>M? thu m?c nh?t k�</value>
+    <value>Mở thư mục nhật ký</value>
   </data>
   <data name="SettingPage_WindowsSize" xml:space="preserve">
-    <value>K�ch c? c?a s?</value>
+    <value>Kích cỡ thanh cửa sổ</value>
   </data>
   <data name="SettingPage_CheckForUpdate" xml:space="preserve">
-    <value>Ki?m tra c?p nh?t</value>
+    <value>Kiểm tra cập nhật</value>
   </data>
   <data name="SettingPage_CurrentVersion" xml:space="preserve">
-    <value>Phi�n b?n hi?n t?i:</value>
+    <value>Phiên bản hiện tại:</value>
   </data>
   <data name="SettingPage_JoinPreviewReleaseChannel" xml:space="preserve">
-    <value>Tham gia k�nh ph�t h�nh xem tru?c</value>
+    <value>Chuyển sang kênh phát hành xem trước</value>
   </data>
   <data name="SettingPage_OpenDataFolder" xml:space="preserve">
-    <value>M? thu m?c d? li?u</value>
+    <value>Mở Thư mục Dữ liệu</value>
   </data>
   <data name="SettingPage_ReselectDataFolder" xml:space="preserve">
-    <value>Ch?n l?i thu m?c d? li?u</value>
+    <value>Chọn lại thư mục dữ liệu</value>
   </data>
   <data name="SettingPage_DeleteAllSettings" xml:space="preserve">
-    <value>Xo� t?t c? c�i d?t</value>
+    <value>Xóa tất cả dử liệu</value>
   </data>
   <data name="SettingPage_ClearCachedFiles" xml:space="preserve">
-    <value>Xo� t?p tin cache</value>
+    <value>Xóa tập tin rác</value>
   </data>
   <data name="SettingPage_About" xml:space="preserve">
-    <value>V? ch�ng t�i</value>
+    <value>Giới thiệu</value>
   </data>
   <data name="SettingPage_ProjectHomepage" xml:space="preserve">
-    <value>Trang ch?</value>
+    <value>Trang chủ</value>
   </data>
   <data name="SettingPage_ReportIssue" xml:space="preserve">
-    <value>B�o l?i</value>
+    <value>Báo cáo Sự cố</value>
   </data>
   <data name="SettingPage_ReleaseHistory" xml:space="preserve">
     <value>Lịch sử phát hành</value>
@@ -320,52 +320,52 @@
     <value>Dự án gốc</value>
   </data>
   <data name="SettingPage_ThisIsALogo" xml:space="preserve">
-    <value>��y l� Logo</value>
+    <value>Đây là Logo</value>
   </data>
   <data name="SettingPage_Update" xml:space="preserve">
-    <value>C?p nh?t</value>
+    <value>Cập nhật</value>
   </data>
   <data name="SettingPage_UpdateSource" xml:space="preserve">
     <value>Cập nhật nguồn</value>
   </data>
   <data name="SettingPage_TestCDNAsync_NetworkError" xml:space="preserve">
-    <value>L?i m?ng</value>
+    <value>Lỗi Mạng</value>
   </data>
   <data name="SettingPage_TheCurrentLocationOfTheDataFolderIs" xml:space="preserve">
-    <value>V? tr� hi?n t?i c?a thu m?c ch?a d? li?u l�:</value>
+    <value>Vị trí hiện tại của thư mục chứa dữ liệu là:</value>
   </data>
   <data name="SettingPage_WouldLikeToReselectDataFolder" xml:space="preserve">
-    <value>B?n c� mu?n ch?n l?i? (b?n c?n chuy?n d? li?u th? c�ng tru?c khi ch?n)</value>
+    <value>Bạn có muốn chọn lại? (Bạn cần chuyển dữ liệu thủ công trước khi chọn)</value>
   </data>
   <data name="Common_Yes" xml:space="preserve">
-    <value>C�</value>
+    <value>Có</value>
   </data>
   <data name="SettingPage_AfterDeletingTheSoftwareWillBeRestartedAutomatically" xml:space="preserve">
-    <value>Sau khi xo�, ?ng d?ng s? t? d?ng du?c kh?i d?ng l?i.</value>
+    <value>Sau khi xóa, ứng dụng sẽ tự động được khởi động lại.</value>
   </data>
   <data name="UpdatePage_NewVersion" xml:space="preserve">
-    <value>Phi�n b?n m?i!</value>
+    <value>Phiên Bản Mới!</value>
   </data>
   <data name="UpdatePage_Links" xml:space="preserve">
-    <value>�u?ng d?n:</value>
+    <value>Đường dẫn:</value>
   </data>
   <data name="UpdatePage_BuiltTime" xml:space="preserve">
-    <value>Th?i gian x�y d?ng:</value>
+    <value>Thời gian xây dựng:</value>
   </data>
   <data name="UpdatePage_ReleaseChannel" xml:space="preserve">
-    <value>K�nh ph�t h�nh:</value>
+    <value>Kênh phát hành:</value>
   </data>
   <data name="UpdatePage_Architecture" xml:space="preserve">
-    <value>Ki?n tr�c:</value>
+    <value>Kiến trúc:</value>
   </data>
   <data name="UpdatePage_DownloadInstaller" xml:space="preserve">
-    <value>T?i tr�nh c�i d?t</value>
+    <value>Tải trình cài đặt</value>
   </data>
   <data name="UpdatePage_DownloadPortable" xml:space="preserve">
-    <value>T?i Portable</value>
+    <value>Tải trình cầm tay</value>
   </data>
   <data name="UpdatePage_RemindLatter" xml:space="preserve">
-    <value>Nh?c t�i sau</value>
+    <value>Nhắc Lại Sau</value>
   </data>
   <data name="UpdatePage_IgnoreThisVersion" xml:space="preserve">
     <value>Bỏ qua phiên bản này</value>
@@ -521,113 +521,113 @@
     <value>Giúp chúng tôi dịch Glowworm</value>
   </data>
   <data name="FileSettingPage_Cache" xml:space="preserve">
-    <value>B? nh? d?m</value>
+    <value>Bộ nhớ đệm</value>
   </data>
   <data name="FileSettingPage_Log" xml:space="preserve">
-    <value>B?n ghi</value>
+    <value>Bản ghi</value>
   </data>
   <data name="FileSettingPage_Image" xml:space="preserve">
-    <value>H�nh ?nh</value>
+    <value>Hình ảnh</value>
   </data>
   <data name="FileSettingPage_Browser" xml:space="preserve">
-    <value>Tr�nh duy?t</value>
+    <value>Trình duyệt</value>
   </data>
   <data name="FileSettingPage_ClearCache" xml:space="preserve">
-    <value>D?n b? nh? d?m</value>
+    <value>Xóa bộ nhớ đệm</value>
   </data>
   <data name="AppearanceSettingPage_BetterExperience" xml:space="preserve">
-    <value>�? xu?t b?t {0} v� {1} trong c�i d?t h? th?ng d? c� tr?i nghi?m ngu?i d�ng t?t hon.</value>
+    <value>Đề xuất bật {0} và {1} trong cài đặt hệ thống để có trải nghiệm người dùng tốt hơn.</value>
   </data>
   <data name="AppearanceSettingPage_TransparencyEffects" xml:space="preserve">
-    <value>Hi?u ?ng trong su?t</value>
+    <value>Hiệu ứng trong suốt</value>
   </data>
   <data name="AppearanceSettingPage_AnimationEffects" xml:space="preserve">
-    <value>Hi?u ?ng chuy?n d?ng</value>
+    <value>Hiệu ứng chuyển động</value>
   </data>
   <data name="GachaLogPage_AlwaysFailedToGetGachaRecords" xml:space="preserve">
-    <value>V?n kh�ng l?y du?c b?n ghi gacha?</value>
+    <value>Vẫn không lấy được bản ghi gacha?</value>
   </data>
   <data name="AboutSettingPage_VerifyFileIntegrity" xml:space="preserve">
-    <value>X�c minh t�nh to�n v?n c?a t?p tin</value>
+    <value>Xác minh tính toàn vẹn của tập tin</value>
   </data>
   <data name="AboutSettingPage_VerifyFailed" xml:space="preserve">
-    <value>X�c minh th?t b?i</value>
+    <value>Xác thực thất bại</value>
   </data>
   <data name="AboutSettingPage_CurrentVersionIsNotTheLatestVersion" xml:space="preserve">
-    <value>Phi�n b?n hi?n t?i kh�ng ph?i l� phi�n b?n m?i nh?t ({0}).</value>
+    <value>Phiên bản hiện tại không phải là phiên bản mới nhất ({0}).</value>
   </data>
   <data name="AboutSettingPage_ClickButtonToRepairFiles" xml:space="preserve">
-    <value>B?m v�o n�t d? s?a ch?a c�c t?p tin.</value>
+    <value>Bấm vào nút để sửa chữa các tệp tin.</value>
   </data>
   <data name="AboutSettingPage_RepairFiles" xml:space="preserve">
-    <value>S?a ch?a t?p tin</value>
+    <value>Sửa chữa tập tin</value>
   </data>
   <data name="AboutSettingPage_VerifySuccessfully" xml:space="preserve">
-    <value>X�c minh th�nh c�ng!</value>
+    <value>Xác minh thành công!</value>
   </data>
   <data name="GachaLogPage_ShowChronicledWish" xml:space="preserve">
-    <value>Hi?n s? k� c?u nguy?n</value>
+    <value>Hiển thị Sử ký cầu nguyện</value>
   </data>
   <data name="CloudGameGachaWindow_OpenTheGachaRecordsPageInGameAndThenClickTheButtonOnTheRight" xml:space="preserve">
-    <value>M? trang l?ch s? Gacha trong tr� choi, sau d� nh?n v�o n�t ? b�n ph?i.</value>
+    <value>Mở trang lịch sử Gacha trong trò chơi, sau đó nhấn vào nút ở bên phải.</value>
   </data>
   <data name="GachaLogPage_ViaCloudGame" xml:space="preserve">
-    <value>b?ng Tr� choi d�m m�y</value>
+    <value>bằng Trò Chơi Đám Mấy</value>
   </data>
   <data name="GachaLogPage_ViaCloudGameWeb" xml:space="preserve">
     <value>bằng Trò Chơi Đám Mấy (Web)</value>
   </data>
   <data name="UpdateContentWindow_ClickToRefresh" xml:space="preserve">
-    <value>Nh?n d? l�m m?i</value>
+    <value>Nhấn để làm mới</value>
   </data>
   <data name="UpdateContentWindow_RecentlyUpdatedContent" xml:space="preserve">
-    <value>N?i dung c?p nh?t g?n d�y</value>
+    <value>Nội dung cập nhật gần đây</value>
   </data>
   <data name="GameBizSelector_AutoSearch" xml:space="preserve">
-    <value>T�m Ki?m T? �?ng</value>
+    <value>Tự động tìm kiếm</value>
   </data>
   <data name="GachaLogService_SignalSearchRecords" xml:space="preserve">
-    <value>L?ch S? Ch?nh K�nh</value>
+    <value>Lịch Sử Chỉnh Kênh</value>
   </data>
   <data name="Common_Change" xml:space="preserve">
-    <value>Thay d?i</value>
+    <value>Thay đổi</value>
   </data>
   <data name="Common_Restart" xml:space="preserve">
-    <value>Kh?i d?ng l?i</value>
+    <value>Khởi động lại</value>
   </data>
   <data name="DeleteGachaLogDialog_BeginTime" xml:space="preserve">
-    <value>Th?i gian b?t d?u</value>
+    <value>Thời gian bắt đầu</value>
   </data>
   <data name="DeleteGachaLogDialog_EndTime" xml:space="preserve">
-    <value>Th?i gian k?t th�c</value>
+    <value>Thời gian kết thúc</value>
   </data>
   <data name="DeleteGachaLogDialog_DeleteGachaRecordsForASpecificTimePeriod" xml:space="preserve">
-    <value>Xo� l?ch s? gacha trong m?t kho?ng th?i gian c? th?</value>
+    <value>Xóa lịch sử gacha trong một khỏang thời gian cụ thể</value>
   </data>
   <data name="DeleteGachaLogDialog_6MonthsDeletingWarning" xml:space="preserve">
-    <value>C?nh b�o: Kho?ng th?i gian d� ch?n bao g?m d? li?u gacha t? hon 6 th�ng tru?c, d? li?u n�y s? kh�ng th? kh�i ph?c sau khi b? x�a.</value>
+    <value>Cảnh báo: Khỏang thời gian để chọn bao gồm dữ liệu gacha từ hon 6-12 tháng trước, dữ liệu này sẽ không thể khôi phục sau khi bị xóa.</value>
   </data>
   <data name="DeleteGachaLogDialog_ThisAccountHas0GachaRecordS" xml:space="preserve">
-    <value>T�i kho?n n�y c� {0} d? li?u gacha.</value>
+    <value>Tài khỏan này có {0} (các) dữ liệu gacha.</value>
   </data>
   <data name="DeleteGachaLogDialog_TheSelectedTimePeriodIncludes0GachaRecords" xml:space="preserve">
-    <value>Kho?ng th?i gian d� ch?n bao g?m {0} b?n ghi gacha.</value>
+    <value>Khỏang thời gian để chọn bao gồm {0} bản ghi gacha.</value>
   </data>
   <data name="GachaLogPage_DeleteAll" xml:space="preserve">
-    <value>Xo� t?t c?</value>
+    <value>Xóa tất cả</value>
   </data>
   <data name="GachaLogPage_SpecificTimePeriod" xml:space="preserve">
-    <value>Kho?ng th?i gian c? th?</value>
+    <value>Khỏang thời gian cụ thể</value>
   </data>
   <data name="SettingPage_General" xml:space="preserve">
-    <value>C�i d?t chung</value>
+    <value>Cài đặt chung</value>
     <comment>General Setting</comment>
   </data>
   <data name="SettingPage_RunInSystemTray" xml:space="preserve">
     <value>Chạy ngầm trong Khay Hệ Thống</value>
   </data>
   <data name="SettingPage_ForABetterExperiencePleaseEnableTheFollowingFeaturesInSystemSettings" xml:space="preserve">
-    <value>�? c� du?c tr?i nghi?m t?t hon, xin vui l�ng b?t nh?ng t�nh nang sau trong c�i d?t c?a h? th?ng.</value>
+    <value>Để có được trải nghiệm tốt hơn, xin vui lòng bật những tính năng sau trong cài đặt của hệ thống.</value>
   </data>
   <data name="UpdateWindow_AutoRestartAfterUpdate" xml:space="preserve">
     <value>T? d?ng kh?i d?ng l?i sau khi c?p nh?t</value>
@@ -642,10 +642,10 @@
     <value>Nh?p v�o {0} l?n ghi Ch?nh K�nh th�nh c�ng.</value>
   </data>
   <data name="Common_Error" xml:space="preserve">
-    <value>L?i</value>
+    <value>Lỗi</value>
   </data>
   <data name="CloudGameButton_CloudGame" xml:space="preserve">
-    <value>Tr� Choi ��m M�y</value>
+    <value>Trò chơi Đám mây</value>
   </data>
   <data name="UIGFGachaService_UidMismatchDetectedExpected0ButFound1" xml:space="preserve">
     <value>Ph�t hi?n Uid kh�ng kh?p. D? ki?n: {0}, t�m th?y: {1}.</value>
@@ -654,28 +654,28 @@
     <value>Nh?p v�o th�nh c�ng, nhung m?t s? b?n ghi s? b? m?t h�nh ?nh v?t ph?m. Vui l�ng v�o ph?n c�i d?t b?n ghi gacha, thay d?i ng�n ng?, v� �p d?ng.</value>
   </data>
   <data name="UIGFGachaService_ImportSuccessful" xml:space="preserve">
-    <value>Nh?p v�o th�nh c�ng.</value>
+    <value>Nhập vào thành công.</value>
   </data>
   <data name="UIGFGachaService_0FieldIsMissingInAGachaRecord" xml:space="preserve">
-    <value>"{0}" d�ng b? m?t trong l?ch s? gacha.</value>
+    <value>"{0}" dòng bị mât trong lịch sử gacha.</value>
   </data>
   <data name="GachaImportAndExportWindow_Export" xml:space="preserve">
-    <value>Xu?t t?p tin</value>
+    <value>Xuất tập tin</value>
   </data>
   <data name="GachaImportAndExportWindow_SelectTheGachaRecordsToExport" xml:space="preserve">
-    <value>Ch?n l?ch s? gacha d? xu?t.</value>
+    <value>Chọn lịch sử gacha để xuất.</value>
   </data>
   <data name="GachaImportAndExportWindow_TheLastGachaPull" xml:space="preserve">
-    <value>L?n gacha cu?i</value>
+    <value>Lần gacha cuối</value>
   </data>
   <data name="GachaImportAndExportWindow_Count" xml:space="preserve">
-    <value>S? l?n</value>
+    <value>Số lần</value>
   </data>
   <data name="GachaImportAndExportWindow_TimeServerTimeZone" xml:space="preserve">
-    <value>Th?i gian (Gi? m�y ch?)</value>
+    <value>Thời gian (Giờ máy chủ)</value>
   </data>
   <data name="GachaImportAndExportWindow_Name" xml:space="preserve">
-    <value>T�n</value>
+    <value>Tên</value>
   </data>
   <data name="GachaImportAndExportWindow_SelectTheFileToImport" xml:space="preserve">
     <value>Lựa chọn những tập tin để nhập vào.</value>
@@ -684,70 +684,70 @@
     <value>Nhập vào</value>
   </data>
   <data name="GachaImportAndExportWindow_TimeZoneOffsetWarning" xml:space="preserve">
-    <value>Tru?c khi nh?p v�o, vui l�ng ch?c ch?n th?i gian l?n cu?i C?u Nguy?n gi?ng v?i th?i gian hi?n th? trong game. N?u ch�ng kh�ng gi?ng, vui l�ng d?t l?i th?i gian khu v?c.</value>
+    <value>Trước khi nhập vào, vui lòng chắc chắn thời gian quay lần cuối giống với thời gian hiện thị trong game. Nếu không giống, vui lòng đặt lại thời gian khu vực.</value>
   </data>
   <data name="GachaImportAndExportWindow_TimeZoneOffset" xml:space="preserve">
-    <value>�? l?ch m�i gi?</value>
+    <value>Độ lệch múi giờ</value>
   </data>
   <data name="GachaImportAndExportWindow_OffsetTime" xml:space="preserve">
-    <value>�? l?ch th?i gian</value>
+    <value>Độ lệch thời gian</value>
   </data>
   <data name="GachaImportAndExportWindow_SelectFile" xml:space="preserve">
-    <value>Ch?n t?p tin</value>
+    <value>Chọn tập tin</value>
   </data>
   <data name="Common_Disabled" xml:space="preserve">
-    <value>�� t?t</value>
+    <value>Đã tắt</value>
   </data>
   <data name="Common_Enabled" xml:space="preserve">
-    <value>�� b?t</value>
+    <value>Đã bật</value>
   </data>
   <data name="GachaLogPage_ImportAndExport" xml:space="preserve">
-    <value>Nh?p &amp; Xu?t</value>
+    <value>Nhập và xuất</value>
   </data>
   <data name="GachaLogPage_HideGachaBanners" xml:space="preserve">
-    <value>?n banner Gacha</value>
+    <value>Ẩn banner Gacha</value>
   </data>
   <data name="Common_RestoreDefaults" xml:space="preserve">
-    <value>Kh�i ph?c m?c d?nh</value>
+    <value>Phục hồi mặc định</value>
   </data>
   <data name="MainView_CheckSystemProxy_SystemProxyIsEnabled" xml:space="preserve">
-    <value>�ang s? d?ng proxy h? th?ng.</value>
+    <value>Đang sử dụng proxy hệ thống.</value>
   </data>
   <data name="ScreenCaptureInfoWindow_ScreenshotSaved" xml:space="preserve">
-    <value>?nh ch?p m�n h�nh d� du?c luu</value>
+    <value>Ảnh chụp màn hình đã lưu</value>
   </data>
   <data name="ScreenshotPage_ManageScreenshotFolders" xml:space="preserve">
-    <value>Qu?n l� thu m?c ?nh ch?p m�n h�nh</value>
+    <value>Quản ly thư mục Ảnh chụp màn hình</value>
   </data>
   <data name="ScreenshotFolderManageDialog_AddFolder" xml:space="preserve">
-    <value>Th�m thu m?c</value>
+    <value>Thêm thư mục</value>
   </data>
   <data name="ScreenshotFolderManageDialog_BackingUp" xml:space="preserve">
-    <value>�ang sao luu...</value>
+    <value>Đang sao luu...</value>
   </data>
   <data name="Common_Remove" xml:space="preserve">
-    <value>Lo?i b?</value>
+    <value>Loại bỏ</value>
   </data>
   <data name="ScreenshotFolderManageDialog_FailedToBackupScreenshots" xml:space="preserve">
-    <value>Kh�ng th? sao luu ?nh ch?p m�n h�nh.</value>
+    <value>Không thể sao luu Ảnh chụp màn hình.</value>
   </data>
   <data name="ScreenCaptureInfoWindow_ScreenshotFailed" xml:space="preserve">
-    <value>Ch?p ?nh m�n h�nh th?t b?i</value>
+    <value>Chụp màn hình thất bại</value>
   </data>
   <data name="ScreenCaptureInfoWindow_CheckTheLogForMoreInformation" xml:space="preserve">
-    <value>Ki?m tra nh?t k� d? bi?t th�m th�ng tin.</value>
+    <value>Kiểm tra nhật ký để biết thêm thông tin.</value>
   </data>
   <data name="ScreenshotFolderManageDialog_ImagesFromTheFollowingFoldersWillBeDisplayedInTheGallery" xml:space="preserve">
-    <value>C�c h�nh ?nh trong c�c thu m?c du?i d�y s? du?c hi?n th? trong thu vi?n.</value>
+    <value>Các hình ảnh trong các thư mục dưới đây sé được hiển thị trong thư viện.</value>
   </data>
   <data name="ImageViewWindow2_OpenInExplorer" xml:space="preserve">
-    <value>M? trong Explorer</value>
+    <value>Mở trong Explorer</value>
   </data>
   <data name="ImageViewWindow2_OpenWith" xml:space="preserve">
-    <value>M? b?ng</value>
+    <value>Mở bằng</value>
   </data>
   <data name="ImageViewWindow2_Previous" xml:space="preserve">
-    <value>Tru?c</value>
+    <value>Trước</value>
     <comment>Previous Image</comment>
   </data>
   <data name="ImageViewWindow2_Next" xml:space="preserve">
@@ -755,276 +755,271 @@
     <comment>Next Image</comment>
   </data>
   <data name="ImageViewWindow2_ShowGallery" xml:space="preserve">
-    <value>Hi?n th? Thu vi?n ?nh</value>
+    <value>Hiển thị Thư viện ảnh</value>
   </data>
   <data name="ImageViewWindow2_FitToWindow" xml:space="preserve">
-    <value>V?a kh�t v?i C?a s?</value>
+    <value>Vừa khít với Cửa sổ</value>
     <comment>Zoom image fit to window</comment>
   </data>
   <data name="ImageViewWindow2_CopyFile" xml:space="preserve">
-    <value>Sao ch�p T?p tin</value>
+    <value>Sao Chép Tập Tin</value>
   </data>
   <data name="ImageViewWindow2_CopyPath" xml:space="preserve">
-    <value>Sao ch�p du?ng d?n</value>
+    <value>Sao chép đường dẫn</value>
   </data>
   <data name="ImageViewWindow2_CopyImage" xml:space="preserve">
-    <value>Sao ch�p ?nh</value>
+    <value>Sao chép ảnh</value>
   </data>
   <data name="Common_Edit" xml:space="preserve">
-    <value>Ch?nh s?a</value>
+    <value>Chỉnh sửa</value>
   </data>
   <data name="ImageViewWindow2_SaveAs" xml:space="preserve">
-    <value>Luu th�nh</value>
+    <value>Lưu thành</value>
   </data>
   <data name="ImageViewWindow2_ImageInformation" xml:space="preserve">
-    <value>Th�ng tin ?nh</value>
+    <value>Thông tin ảnh</value>
   </data>
   <data name="ImageViewWindow2_EditImage" xml:space="preserve">
-    <value>Ch?nh s?a ?nh</value>
+    <value>Chỉnh sửa ảnh</value>
   </data>
   <data name="ImageViewWindow2_DisplayMode" xml:space="preserve">
-    <value>Ch? d? hi?n th?</value>
+    <value>Chế độ hiển thị</value>
   </data>
   <data name="ImageViewWindow2_SDRMappedLuminance" xml:space="preserve">
-    <value>�? S�ng �nh X? SDR</value>
+    <value>Độ Sáng Ánh Xạ SDR</value>
   </data>
   <data name="ImageViewWindow2_Auto" xml:space="preserve">
-    <value>T? d?ng</value>
+    <value>Tự động</value>
   </data>
   <data name="ImageViewWindow2_ExportImage" xml:space="preserve">
-    <value>Xu?t ?nh</value>
+    <value>Xuất ảnh</value>
   </data>
   <data name="ImageViewWindow2_ToConvertAnHDRImageToSDRPleaseUseTheEditFeature" xml:space="preserve">
-    <value>�? chuy?n d?i h�nh ?nh HDR sang SDR, vui l�ng s? d?ng t�nh nang Ch?nh s?a.</value>
+    <value>Để chuyển đổi hình ảnh HDR sang SDR, vui lòng sử dụng tính năng Chỉnh sữa.</value>
   </data>
   <data name="ImageViewWindow2_DeleteImageFile" xml:space="preserve">
-    <value>Xo� T?p tin H�nh ?nh</value>
+    <value>Xóa Tệp tin Hình ảnh</value>
   </data>
   <data name="ImageViewWindow2_CopiedToClipboard" xml:space="preserve">
-    <value>�� sao ch�p v�o b? nh? t?m.</value>
+    <value>Đã chép vào bảng tạm.</value>
   </data>
   <data name="ImageViewWindow2_FileDoesNotExist" xml:space="preserve">
-    <value>T?p tin kh�ng t?n t?i.</value>
+    <value>Tập tin không tồn tại.</value>
   </data>
   <data name="ImageViewWindow2_OpenWithDefaultApp" xml:space="preserve">
-    <value>M? b?ng ?ng d?ng m?c d?nh</value>
+    <value>Mở bằng ứng dụng măc định</value>
   </data>
   <data name="ImageViewWindow2_NoImageToDisplay" xml:space="preserve">
-    <value>Kh�ng c� ?nh d? Hi?n th?</value>
+    <value>Không có ảnh để Hiển thị</value>
   </data>
   <data name="Common_OpenFiles" xml:space="preserve">
-    <value>M? t?p tin</value>
+    <value>Mở tập tin</value>
   </data>
   <data name="ImageViewWindow2_OpenNewFiles" xml:space="preserve">
-    <value>M? t?p tin m?i</value>
+    <value>Mở tập tin mới</value>
   </data>
   <data name="ImageViewWindow2_FailedToDisplayImage" xml:space="preserve">
-    <value>Hi?n h�nh ?nh th?t b?i</value>
+    <value>Hiện hình ảnh thất bại</value>
   </data>
   <data name="ImageViewWindow2_FailedToSaveImage" xml:space="preserve">
-    <value>Luu ?nh th?t b?i</value>
+    <value>Không thể lưu hình ảnh</value>
   </data>
   <data name="ImageViewWindow2_FailedToDeleteImageFile" xml:space="preserve">
-    <value>Xo� file th?t b?i</value>
+    <value>Xóa ảnh thất bại</value>
   </data>
   <data name="ImageViewWindow2_UnableToDeleteTheFile" xml:space="preserve">
-    <value>Kh�ng th? xo� file</value>
+    <value>Không thể xóa tệp</value>
   </data>
   <data name="ImageViewWindow2_InsufficientPermissionsOrTheFileIsInUse" xml:space="preserve">
-    <value>Thi?u quy?n h?n ho?c file dang du?c s? d?ng.</value>
+    <value>Thiếu quyền hạn hoặc file đang được sử dụng.</value>
   </data>
   <data name="HotkeyInput_ClickToSetShortcutKeys" xml:space="preserve">
-    <value>Nh?n d? d?t ph�m t?t</value>
+    <value>Nhấn để đổi phím tắt</value>
   </data>
   <data name="HotkeyInput_PressTheShortcutKeys" xml:space="preserve">
-    <value>Nh?n ph�m t?t</value>
+    <value>Nhấn phím tắt</value>
   </data>
   <data name="HotkeyManager_TheShortcutKeys0IsAlreadyInUse" xml:space="preserve">
-    <value>Ph�m t?t ({0}) d� du?c s? d?ng.</value>
+    <value>Phím tắt ({0}) đã được sử dụng.</value>
   </data>
   <data name="HotkeyManager_FailedToRegisterTheShortcutKeys0" xml:space="preserve">
-    <value>G�n ph�m t?t ({0}) th?t b?i.</value>
+    <value>Ghi phím tắt ({0}) thất bại.</value>
   </data>
   <data name="HotkeyManager_TheShortcutKeys0IsAlreadyInUsePleaseModifyItInSettingsPage" xml:space="preserve">
-    <value>Ph�m t?t ({0}) d� du?c s? d?ng. Vui l�ng ch?nh s?a trong trang C�i d?t.</value>
+    <value>Phím tắt ({0}) đã được sử dụng. Vui lòng chỉnh sữa trong trang Cài đặt.</value>
   </data>
   <data name="HotkeyManager_FailedToRegisterTheShortcutKeys0PleaseRetryInSettingsPage" xml:space="preserve">
-    <value>G�n ph�m t?t ({0}) th?t b?i. Vui l�ng th? l?i trong trang C�i d?t.</value>
+    <value>Ghi phím tắt ({0}) thất bại. Vui lòng thử lại trong trang Cài đặt.</value>
   </data>
   <data name="ScreenshotSetting_ScreenshotShortcut" xml:space="preserve">
-    <value>Ph�m t?t ?nh ch?p m�n h�nh</value>
+    <value>Phím tắt chụp ảnh màn hình</value>
   </data>
   <data name="HotkeySetting_OpenMainWindow" xml:space="preserve">
-    <value>M? c?a s? ch�nh</value>
+    <value>Mở cửa sổ chính</value>
   </data>
   <data name="HotkeySetting_FailedToRegisterTheShortcutKeys" xml:space="preserve">
-    <value>G�n ph�m t?t th?t b?i.</value>
+    <value>Ghi phím tắt thất bại.</value>
   </data>
   <data name="ScreenshotSetting_TheBuiltInScreenshotFeatureWillSaveImagesToTheFollowingFolder" xml:space="preserve">
-    <value>T�nh nang ch?p m�n h�nh c?a ?ng d?ng s? luu ?nh v�o thu m?c sau.</value>
+    <value>Tính năng chụp màn hình của ứng dụng sẽ lưu ảnh vào thư mục sau.</value>
   </data>
   <data name="Common_ChangeFolder" xml:space="preserve">
-    <value>Thay d?i thu m?c</value>
+    <value>Thay đổi thư mục</value>
   </data>
   <data name="HotkeySetting_SingleKeyShortcutsTips" xml:space="preserve">
-    <value>Khi d?t ph�m t?t m?t ph�m (F1�F12), h�y kh?i ch?y Glowworm du?i quy?n admin, v� n?u kh�ng th� ph�m t?t c� th? b? v� hi?u trong game.</value>
+    <value>Khi đặt phím tắt một phím (F1-F12), hãy khởi chạy Glowworm dưới quyền admin, và nếu không thể phím tắt có thể bị vô hiệu trong game.</value>
   </data>
   <data name="SettingPage_KeyboardShortcuts" xml:space="preserve">
-    <value>Ph�m t?t</value>
+    <value>Phím tắt</value>
   </data>
   <data name="ScreenshotSetting_TestScreenshot" xml:space="preserve">
-    <value>Th? Ch?p ?nh</value>
+    <value>Thử Chụp ảnh</value>
   </data>
   <data name="ScreenshotSetting_AutoConvertToSDRImage" xml:space="preserve">
-    <value>T? d?ng chuy?n d?i sang ?nh SDR</value>
+    <value>Tự động chuyển đổi sang ảnh SDR</value>
   </data>
   <data name="ScreenshotSetting_WhenCapturingHDRImagesSDRVersionWillAlsoBeSaved" xml:space="preserve">
-    <value>Khi ch?p ?nh HDR, phi�n b?n SDR cung s? du?c luu l?i.</value>
+    <value>Khi chụp ảnh HDR, phiên bản SDR cũng sẽ được lưu lại.</value>
   </data>
   <data name="ScreenshotSetting_ScreenshotFetureDescAndLimit" xml:space="preserve">
-    <value>T�nh nang ch?p ?nh m�n h�nh ch?p tr� choi dang ch?y. N?u c� nhi?u tr� choi dang ch?y c�ng l�c, t�nh nang s? x? l� c?a s? tr� choi v?a du?c thao t�c g?n nh?t. Luu � c�c gi?i h?n sau:
-
-� Kh�ng th? ch?p c?a s? tr� choi dang du?c thu nh?.
-
-� Ph?n c?a s? tr� choi ? ngo�i r�a m�n h�nh s? kh�ng du?c ch?p.
-
-� Trong m?t s? tru?ng h?p hi?m g?p, t�nh nang c� th? ch?p sang c?a s? kh�c.</value>
+    <value>Tính năng chụp ảnh màn hình chụp trò chơi đang chạy. Nếu có nhiều trò chơi đang chạy cùng lúc, tính năng sẽ xử lí cửa sổ trò chơi và được thao tác gần nhất. Lưu ý các giới hạn sau:
+• Không thể chụp cửa sổ trò chơi đang được thu nhỏ.
+• Phần cửa sổ trò chơi ở ngòai rìa màn hìnhsẽ không được chụp.
+• Trong một số trường hởp hiếm gập, tình năng có thể chụp sang cửa sổ khác.</value>
   </data>
   <data name="ScreenshotSetting_ScreenshotWin10Limit" xml:space="preserve">
-    <value>Tr�n Windows 10, t�nh nang ch?p m�n h�nh c� th�m c�c gi?i h?n sau:
-
-� M?t vi?n m�u c� th? xu?t hi?n xung quanh c?a s? tr� choi trong l�c ch?p.
-
-� Con tr? chu?t kh�ng th? b? ?n.</value>
+    <value>Trên Windows 10, tính năng chụp màn hình có thêm các giới hạn sau:
+• Một viền màu có thể xuất hiện xung quanh cửa sổ trò chơi trong lúc chụp.
+• Con trỏ chuột không thể bị ẩn.</value>
   </data>
   <data name="ScreenshotSetting_AutoCopyScreenshotFile" xml:space="preserve">
-    <value>T? d?ng sao ch�p t?p tin ch?p m�n h�nh</value>
+    <value>Tự động sao chép tập tin chụp màn hình</value>
   </data>
   <data name="ImageViewWindow2_CopyAsJPG" xml:space="preserve">
-    <value>Sao ch�p du?i d?ng JPG</value>
+    <value>Sao chép dưới dạng JPG</value>
   </data>
   <data name="ScreenshotPage_MultiSelect" xml:space="preserve">
-    <value>Ch?n nhi?u</value>
+    <value>Chọn nhiều</value>
   </data>
   <data name="ScreenshotPage_Total0Files" xml:space="preserve">
-    <value>T?ng c?ng {0} t?p.</value>
+    <value>Tổng cộng {0} tệp.</value>
   </data>
   <data name="ScreenshotSetting_OtherOptions" xml:space="preserve">
-    <value>C�c tu? ch?n kh�c</value>
+    <value>Các tùy chọn khác</value>
   </data>
   <data name="ScreenshotSetting_Lossless" xml:space="preserve">
-    <value>Kh�ng M?t D? Li?u</value>
+    <value>Không mất dữ liệu</value>
   </data>
   <data name="ScreenshotSetting_FormatAndQuality" xml:space="preserve">
-    <value>�?nh d?ng v� Ch?t lu?ng</value>
+    <value>Định dạng và Chất lượng</value>
   </data>
   <data name="ScreenCaptureInfoWindow_ProcessingImage" xml:space="preserve">
-    <value>�ang x? l� ?nh</value>
+    <value>Đang xử lý ảnh</value>
   </data>
   <data name="ScreenshotPage_BatchConvert" xml:space="preserve">
-    <value>Chuy?n d?i theo l�</value>
+    <value>Chuyển đổi theo lô</value>
   </data>
   <data name="ImageBatchConvertWindow_Quality" xml:space="preserve">
-    <value>Ch?t lu?ng</value>
+    <value>Chất lượng</value>
   </data>
   <data name="ImageBatchConvertWindow_StartConvert" xml:space="preserve">
-    <value>B?t d?u chuy?n d?i</value>
+    <value>Bắt đầu chuyển đổi</value>
   </data>
   <data name="Common_Clear" xml:space="preserve">
-    <value>Xo�</value>
+    <value>Xóa</value>
   </data>
   <data name="ImageBatchConvertWindow_OutputFolder" xml:space="preserve">
-    <value>Thu m?c xu?t ra</value>
+    <value>Thư mục xuất ra</value>
   </data>
   <data name="ImageBatchConvertWindow_OriginalFileFolder" xml:space="preserve">
-    <value>Thu m?c c?a t?p tin g?c</value>
+    <value>Thư mục của tập tin gốc</value>
   </data>
   <data name="ImageBatchConvertWindow_SameAsOriginalFileFormat" xml:space="preserve">
-    <value>Gi?ng d?nh d?ng t?p ban d?u</value>
+    <value>Giống dịnh dạng tập ban đầu</value>
   </data>
   <data name="ImageBatchConvertWindow_SelectOutputFormat" xml:space="preserve">
-    <value>Ch?n d?nh d?ng xu?t</value>
+    <value>Chọn định dạng xuất</value>
   </data>
   <data name="ImageBatchConvertWindow_NoReadOrWritePermission" xml:space="preserve">
-    <value>Kh�ng c� quy?n d?c ho?c ghi</value>
+    <value>Không có quyền đọc hoặc ghi</value>
   </data>
   <data name="ImageBatchConvertWindow_ConvertFailed" xml:space="preserve">
-    <value>Chuy?n d?i th?t b?i</value>
+    <value>Chuyển đổi thất bại</value>
   </data>
   <data name="ImageBatchConvertWindow_IfOutputFileExists" xml:space="preserve">
-    <value>N?u t?p tin xu?t ra d� t?n t?i</value>
+    <value>Nếu tập tin xuất ra đã tồn tại</value>
   </data>
   <data name="ImageBatchConvertWindow_SkipDefault" xml:space="preserve">
-    <value>B? qua (M?c d?nh)</value>
+    <value>Bỏ qua (Mặc định)</value>
   </data>
   <data name="ImageBatchConvertWindow_Overwrite" xml:space="preserve">
-    <value>Ghi d�</value>
+    <value>Ghi đè</value>
   </data>
   <data name="ImageBatchConvertWindow_Rename" xml:space="preserve">
-    <value>�?i t�n</value>
+    <value>Đổi tên</value>
   </data>
   <data name="Common_Success" xml:space="preserve">
-    <value>Th�nh c�ng</value>
+    <value>Thành công</value>
   </data>
   <data name="Common_Failed" xml:space="preserve">
-    <value>Th�t b?i</value>
+    <value>Thất bại</value>
   </data>
   <data name="ImageBatchConvertWindow_ImageBatchConvert" xml:space="preserve">
-    <value>Chuy?n d?i ?nh theo l�</value>
+    <value>Chuyển đổi ảnh theo lô</value>
   </data>
   <data name="ScreenshotSetting_ClearThumbnailCache" xml:space="preserve">
-    <value>X�a b? nh? d?m Thumbnail</value>
+    <value>Xóa bộ nhớ đệm Thumbnail</value>
   </data>
   <data name="ScreenshotSetting_ClearSuccessfully" xml:space="preserve">
-    <value>Xo� ho�n t?t</value>
+    <value>Xóa hòan tất</value>
   </data>
   <data name="ScreenshotSetting_ClearFailed" xml:space="preserve">
-    <value>Xo� th?t b?i</value>
+    <value>Xóa thất bại</value>
   </data>
   <data name="ScreenshotSetting_HighQualityAVIFAndJPEGXLImageFormatsSaveApproximately85OfStorageSpace" xml:space="preserve">
-    <value>�?nh d?ng h�nh ?nh AVIF v� JPEG XL ch?t lu?ng cao gi�p ti?t ki?m kho?ng 85% dung lu?ng luu tr?.</value>
+    <value>Định dạng hình ảnh AVIF và JPEG XL chất lượng cao giúp tiết kiệm khỏang 85% dung lượng lưu trữ.</value>
   </data>
   <data name="Common_CopiedToClipboard" xml:space="preserve">
-    <value>�� sao ch�p v�o b? nh? t?m.</value>
+    <value>Đã sao chép vào bộ nhớ tạm.</value>
   </data>
   <data name="GenshinBeyondGachaPage_MiliastraWonderlandOde" xml:space="preserve">
-    <value>Kh�c ca k? quan Miliastra</value>
+    <value>Ca Tụng Thiên Tinh Kỳ Vực</value>
   </data>
   <data name="ItIsRecommendedToInstallTheVP9VideoExtensionsToReduceCPUUsage" xml:space="preserve">
-    <value>Khuy?n ngh? c�i d?t Ph?n M? r?ng Video VP9 d? gi?m t?i cho CPU.</value>
+    <value>Khuyến nghị cài đặt Phần Mở rộng Video VP9 để giảm tải cho CPU.</value>
   </data>
   <data name="AboutSetting_UpdatedToTheLatestVersion" xml:space="preserve">
-    <value>�� c?p nh?t phi�n b?n m?i nh?t.</value>
+    <value>Đã cập nhật phiên bản mới nhất.</value>
   </data>
   <data name="Common_All" xml:space="preserve">
-    <value>T?t c?</value>
+    <value>Tất cả</value>
   </data>
   <data name="Common_Video" xml:space="preserve">
-    <value>�o?n phim</value>
+    <value>Đoạn phim</value>
   </data>
   <data name="Common_Time" xml:space="preserve">
-    <value>Th?i gian</value>
+    <value>Thời gian</value>
   </data>
   <data name="Common_FileSize" xml:space="preserve">
-    <value>K�ch thu?c t?p</value>
+    <value>Kích thước tệp</value>
   </data>
   <data name="Common_Filter" xml:space="preserve">
-    <value>B? l?c</value>
+    <value>Bộ lọc</value>
   </data>
   <data name="Common_Sort" xml:space="preserve">
-    <value>S?p x?p</value>
+    <value>Sắp xếp</value>
   </data>
   <data name="AppConfig_AnUnknownIssueOccurredDuringInitialization" xml:space="preserve">
-    <value>�� x?y ra l?i kh�ng x�c d?nh trong qu� tr�nh kh?i t?o.</value>
+    <value>Đã xẩy ra lỗi không xác định trong quá trình khởi tạo.</value>
   </data>
   <data name="NoPermissionWindow_NoPermissionToFolderRestartOrClose" xml:space="preserve">
-    <value>Chuong tr�nh kh�ng c� quy?n truy c?p thu m?c sau. Vui l�ng kh?i d?ng l?i v?i quy?n qu?n tr? vi�n ho?c di chuy?n thu m?c.</value>
+    <value>Chương trình không có quyền truy cập thư mục sau. Vui lòng khởi động lại với quyền quản trị viên hoặc di chuyển thư mục.</value>
   </data>
   <data name="NoPermissionWindow_RestartAsAdministrator" xml:space="preserve">
-    <value>Kh?i �?ng L?i V?i Quy?n Qu?n Tr? Vi�n</value>
+    <value>Khởi động lại với quyền Quản trị viên</value>
   </data>
   <data name="Common_ConfirmDelete" xml:space="preserve">
-    <value>X?c nh?n x?a</value>
+    <value>Xác Nhận Xoá</value>
   </data>
   <data name="LauncherPage_ConfirmDelete" xml:space="preserve">
     <value>Xác Nhận Xoá</value>
