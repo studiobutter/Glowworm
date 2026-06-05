@@ -221,7 +221,7 @@
     <value>開拓力</value>
   </data>
   <data name="GameServer_BilibiliServer" xml:space="preserve">
-    <value>Bilibili 伺服器</value>
+    <value>嗶哩嗶哩伺服器</value>
   </data>
   <data name="GachaType_ChronicledWish" xml:space="preserve">
     <value>集錄祈願</value>
@@ -239,10 +239,10 @@
     <value>中國雲端</value>
   </data>
   <data name="GameServer_GlobalCloud" xml:space="preserve">
-    <value>Global Cloud Server</value>
+    <value>全球雲端伺服器</value>
   </data>
   <data name="GameServer_Bilibili" xml:space="preserve">
-    <value>BiliBili</value>
+    <value>嗶哩嗶哩</value>
   </data>
   <data name="GameServer_EuropeAmericas" xml:space="preserve">
     <value>歐美伺服器</value>
