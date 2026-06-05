@@ -648,7 +648,7 @@
     <value>Cloud Game</value>
   </data>
   <data name="UIGFGachaService_UidMismatchDetectedExpected0ButFound1" xml:space="preserve">
-    <value>Uid mismatch detected. Expected: {0}, but found: {1}.</value>
+    <value>UID mismatch detected. Expected: {0}, but found: {1}.</value>
   </data>
   <data name="UIGFGachaService_ImportSuccessfulButNoRecordItemName" xml:space="preserve">
     <value>Import successful, but some records are missing item names. Please go to the gacha record settings, change the language, and apply.</value>
