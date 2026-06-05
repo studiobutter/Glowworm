@@ -326,7 +326,7 @@
     <value>检查更新</value>
   </data>
   <data name="SettingPage_UpdateSource" xml:space="preserve">
-    <value>Update Source</value>
+    <value>升级选项</value>
   </data>
   <data name="SettingPage_TestCDNAsync_NetworkError" xml:space="preserve">
     <value>网络异常</value>
@@ -575,7 +575,7 @@
     <value>通过云游戏获取</value>
   </data>
   <data name="GachaLogPage_ViaCloudGameWeb" xml:space="preserve">
-    <value>via Cloud Game (Web)</value>
+    <value>通过云游戏获取 ⟪网络⟫</value>
   </data>
   <data name="UpdateContentWindow_ClickToRefresh" xml:space="preserve">
     <value>点击刷新</value>
@@ -1019,16 +1019,17 @@
     <value>以管理员身份重启</value>
   </data>
   <data name="Common_ConfirmDelete" xml:space="preserve">
-    <value>????</value>
+    <value>确认删除</value>
   </data>
   <data name="LauncherPage_ConfirmDelete" xml:space="preserve">
-    <value>Confirm Delete</value>
+    <value>确认删除</value>
   </data>
   <data name="GachaType_StandardOde" xml:space="preserve">
-    <value>Standard Ode</value>
+    <value>常驻颂愿</value>
   </data>
   <data name="GachaType_EventOde" xml:space="preserve">
-    <value>Event Ode</value>
+    <value>
+活动颂愿</value>
   </data>
   <data name="Common_Uid" xml:space="preserve">
     <value>UID</value>
@@ -1037,34 +1038,34 @@
     <value>up!</value>
   </data>
   <data name="SettingPage_RescanGameDirectories" xml:space="preserve">
-    <value>Rescan Game Directories</value>
+    <value>重新扫描游戏目录</value>
   </data>
   <data name="AboutSettingPage_Description" xml:space="preserve">
-    <value>A rework of Starward Launcher originally developed by Scighost, reworked by Studio Butter, all rights reserved.</value>
+    <value>Starward Launcher原先由Scighost开发的，由Studio Butter重启，保留所有权利。</value>
   </data>
   <data name="Common_Glowworm" xml:space="preserve">
     <value>Glowworm</value>
   </data>
   <data name="MainView_WelcomeTitle" xml:space="preserve">
-    <value>Welcome to Glowworm</value>
+    <value>欢迎使用 Glowworm</value>
   </data>
   <data name="MainView_WelcomeContent" xml:space="preserve">
-    <value>Welcome to Glowworm! We will now check your installed HoYoverse games.</value>
+    <value>欢迎来到Glowworm！我们现在将检查您已安装的米哈游游戏。</value>
   </data>
   <data name="BeyondProfilePicturePage_MiliastraProfilePictures" xml:space="preserve">
-    <value>Miliastra Profile Pictures</value>
+    <value>千星个人资料图片</value>
   </data>
   <data name="BeyondProfilePicturePage_NoImage" xml:space="preserve">
-    <value>No image found</value>
+    <value>没有找到图片</value>
   </data>
   <data name="BeyondProfilePicturePage_GetProfilePictures" xml:space="preserve">
-    <value>Get Profile Pictures</value>
+    <value>获取个人资料图片</value>
   </data>
   <data name="BeyondProfilePicturePage_SaveAs" xml:space="preserve">
-    <value>Save As</value>
+    <value>另存为</value>
   </data>
   <data name="BeyondProfilePicturePage_FolderNotFound" xml:space="preserve">
-    <value>Cannot get Profile Pictures, ensure you have taken on in-game and save it before getting the pictures</value>
+    <value>无法获取个人资料图片，请确保您已经在游戏中使用并保存它，然后才能获取图片。</value>
   </data>
   <data name="Common_Close" xml:space="preserve">
     <value>关闭</value>
@@ -1073,6 +1074,6 @@
     <value>重试</value>
   </data>
   <data name="FileSettingPage_SelectedFolderNotWritable" xml:space="preserve">
-    <value>The selected folder is not writable: {0}</value>
+    <value>选定的文件夹不可写入： {0}</value>
   </data>
 </root>
