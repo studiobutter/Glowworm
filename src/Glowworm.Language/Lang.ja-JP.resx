@@ -326,7 +326,7 @@
     <value>アップデート</value>
   </data>
   <data name="SettingPage_UpdateSource" xml:space="preserve">
-    <value>Update Source</value>
+    <value>ソースを更新</value>
   </data>
   <data name="SettingPage_TestCDNAsync_NetworkError" xml:space="preserve">
     <value>ネットワークエラー</value>
@@ -575,7 +575,7 @@
     <value>クラウドゲーム経由</value>
   </data>
   <data name="GachaLogPage_ViaCloudGameWeb" xml:space="preserve">
-    <value>via Cloud Game (Web)</value>
+    <value>クラウドゲーム経由（ウェブ）</value>
   </data>
   <data name="UpdateContentWindow_ClickToRefresh" xml:space="preserve">
     <value>クリックで更新</value>
@@ -624,7 +624,7 @@
     <comment>General Setting</comment>
   </data>
   <data name="SettingPage_RunInSystemTray" xml:space="preserve">
-    <value>Run in System Tray</value>
+    <value>システム トレイで実行</value>
   </data>
   <data name="SettingPage_ForABetterExperiencePleaseEnableTheFollowingFeaturesInSystemSettings" xml:space="preserve">
     <value>より良い体験のためにシステム設定で次の機能を有効化してください。</value>
@@ -1019,16 +1019,16 @@
     <value>管理者として再起動</value>
   </data>
   <data name="Common_ConfirmDelete" xml:space="preserve">
-    <value>?????</value>
+    <value>本当に削除</value>
   </data>
   <data name="LauncherPage_ConfirmDelete" xml:space="preserve">
-    <value>Confirm Delete</value>
+    <value>本当に削除</value>
   </data>
   <data name="GachaType_StandardOde" xml:space="preserve">
-    <value>Standard Ode</value>
+    <value>通常星願</value>
   </data>
   <data name="GachaType_EventOde" xml:space="preserve">
-    <value>Event Ode</value>
+    <value>イベント星願</value>
   </data>
   <data name="Common_Uid" xml:space="preserve">
     <value>UID</value>
@@ -1037,34 +1037,34 @@
     <value>up!</value>
   </data>
   <data name="SettingPage_RescanGameDirectories" xml:space="preserve">
-    <value>Rescan Game Directories</value>
+    <value>ゲームディレクトリを再スキャン</value>
   </data>
   <data name="AboutSettingPage_Description" xml:space="preserve">
-    <value>A rework of Starward Launcher originally developed by Scighost, reworked by Studio Butter, all rights reserved.</value>
+    <value>もともとSighostによって開発されたStarward Launcherのリワーク、Studio Butterによって改造され、すべての権利が保有されています。</value>
   </data>
   <data name="Common_Glowworm" xml:space="preserve">
     <value>Glowworm</value>
   </data>
   <data name="MainView_WelcomeTitle" xml:space="preserve">
-    <value>Welcome to Glowworm</value>
+    <value>Glowwormへようこそ</value>
   </data>
   <data name="MainView_WelcomeContent" xml:space="preserve">
-    <value>Welcome to Glowworm! We will now check your installed HoYoverse games.</value>
+    <value>Glowwormへようこそ！インストール済みのHoyoverseゲームをチェックします。</value>
   </data>
   <data name="BeyondProfilePicturePage_MiliastraProfilePictures" xml:space="preserve">
-    <value>Miliastra Profile Pictures</value>
+    <value>星々プロフィール写真</value>
   </data>
   <data name="BeyondProfilePicturePage_NoImage" xml:space="preserve">
-    <value>No image found</value>
+    <value>画像が見つかりません</value>
   </data>
   <data name="BeyondProfilePicturePage_GetProfilePictures" xml:space="preserve">
-    <value>Get Profile Pictures</value>
+    <value>プロフィール写真を取得</value>
   </data>
   <data name="BeyondProfilePicturePage_SaveAs" xml:space="preserve">
-    <value>Save As</value>
+    <value>名前を付けて保存</value>
   </data>
   <data name="BeyondProfilePicturePage_FolderNotFound" xml:space="preserve">
-    <value>Cannot get Profile Pictures, ensure you have taken on in-game and save it before getting the pictures</value>
+    <value>プロフィール画像を取得できません。ゲーム内で撮影したことを確認し、写真を取得する前に保存してください。</value>
   </data>
   <data name="Common_Close" xml:space="preserve">
     <value>閉じる</value>
@@ -1073,6 +1073,6 @@
     <value>リトライ</value>
   </data>
   <data name="FileSettingPage_SelectedFolderNotWritable" xml:space="preserve">
-    <value>The selected folder is not writable: {0}</value>
+    <value>選択したフォルダは書き込み可能ではありません: {0}</value>
   </data>
 </root>
