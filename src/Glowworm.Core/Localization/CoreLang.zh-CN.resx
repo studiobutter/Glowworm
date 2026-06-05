@@ -229,9 +229,6 @@
   <data name="Game_ZZZ" xml:space="preserve">
     <value>绝区零</value>
   </data>
-  <data name="GameServer_ZZZCBT3" xml:space="preserve">
-    <value>喧响测试</value>
-  </data>
   <data name="GameServer_ChinaOfficial" xml:space="preserve">
     <value>中国官方</value>
   </data>
@@ -242,7 +239,7 @@
     <value>中国云游戏</value>
   </data>
   <data name="GameServer_GlobalCloud" xml:space="preserve">
-    <value>Global Cloud</value>
+    <value>Global Cloud Server</value>
   </data>
   <data name="GameServer_Bilibili" xml:space="preserve">
     <value>哔哩哔哩</value>
