@@ -214,7 +214,7 @@
     <value>Getting UID</value>
   </data>
   <data name="GachaLogService_ThisAccountHasNoGachaRecordsInTheLast6Months" xml:space="preserve">
-    <value>This account has no gacha records in the last 6 months.</value>
+    <value>This account has no gacha records in the last 6-12 months.</value>
   </data>
   <data name="GachaLogService_GetGachaResult" xml:space="preserve">
     <value>Got {0} record(s), added {1} record(s).</value>
