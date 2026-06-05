@@ -182,36 +182,36 @@
     <value>Trò chơi chưa được cài đặt</value>
   </data>
   <data name="GachaLogPage_CannotFindURL" xml:space="preserve">
-    <value>Kh�ng th? t�m th?y URL, vui l�ng h�y m? trang b?n ghi l?ch s? gacha ? trong tr� choi.</value>
+    <value>Không thể? tìm thấy URL, vui lòng hãy mở trang bản ghi lịch sử Gacha trong trò chơi.</value>
   </data>
   <data name="GachaLogPage_OperationCanceled" xml:space="preserve">
-    <value>Thao t�c b? hu?</value>
+    <value>Thao tác bị hủy</value>
   </data>
   <data name="GachaLogPage_PleaseOpenTheGachaRecordsPageInGameAndTryAgain" xml:space="preserve">
-    <value>Vui l�ng h�y m? trang b?n ghi gacha ? trong tr� choi v� th? l?i.</value>
+    <value>Vui lòng hãy mở trang bản ghi gacha trong trò chơi và thử lại.</value>
   </data>
   <data name="Common_Warning" xml:space="preserve">
-    <value>C?nh b�o</value>
+    <value>Cảnh báo</value>
   </data>
   <data name="Common_Delete" xml:space="preserve">
-    <value>Xo�</value>
+    <value>Xóa</value>
   </data>
   <data name="GachaLogPage_DeletedGachaRecordsOfUid" xml:space="preserve">
-    <value>�� xo� {0} b?n ghi gacha c?a UID {1}.</value>
+    <value>Đã xóa {0} (các) bản ghi gacha của UID {1}.</value>
     <comment>{0} = {count} ,  {1} = {uid}</comment>
   </data>
   <data name="GachaLogPage_DeleteGachaRecordsWarning" xml:space="preserve">
-    <value>T?t c? b?n ghi gacha c?a UID {0} s? b? xo�, b?n s? kh�ng th? ho�n t�c h�nh d?ng n�y.</value>
+    <value>Tất cả bản ghi gacha của UID {0} sẽ bị xóa, bạn sẽ không thể hòan tác hành động này.</value>
     <comment>{0} = {uid}</comment>
   </data>
   <data name="GachaLogService_WishRecords" xml:space="preserve">
-    <value>B?n ghi C?u Nguy?n</value>
+    <value>Bản ghi Cầu Nguyện</value>
   </data>
   <data name="GachaLogService_WarpRecords" xml:space="preserve">
-    <value>B?n ghi Bu?c Nh?y</value>
+    <value>Bản ghi Bước Nhảy</value>
   </data>
   <data name="GachaLogService_GettingUid" xml:space="preserve">
-    <value>�ang thu th?p UID</value>
+    <value>Đang thu thập UID</value>
   </data>
   <data name="GachaLogService_ThisAccountHasNoGachaRecordsInTheLast6Months" xml:space="preserve">
     <value>T�i kho?n n�y kh�ng c� b?n ghi gacha trong 6 th�ng g?n nh?t.</value>
@@ -368,157 +368,157 @@
     <value>Nh?c t�i sau</value>
   </data>
   <data name="UpdatePage_IgnoreThisVersion" xml:space="preserve">
-    <value>B? qua phi�n b?n n�y</value>
+    <value>Bỏ qua phiên bản này</value>
   </data>
   <data name="UpdatePage_UpdateNow" xml:space="preserve">
-    <value>C?p nh?t ngay</value>
+    <value>Cập nhật ngay</value>
   </data>
   <data name="UpdatePage_YouNeedToManuallyDownloadTheNewVersionPackage" xml:space="preserve">
-    <value>B?n c?n ph?i t?i xu?ng g�i phi�n b?n m?i th? c�ng</value>
+    <value>Bạn cần phải tải xuống gói phiên bản mới thủ công</value>
   </data>
   <data name="UpdatePage_PreviewChannel" xml:space="preserve">
-    <value>K�nh tr?i nghi?m tru?c</value>
+    <value>Kênh trải nghiệm trước</value>
   </data>
   <data name="UpdatePage_StableChannel" xml:space="preserve">
-    <value>K�nh ch�nh th?c</value>
+    <value>Kênh chính thức</value>
   </data>
   <data name="UpdatePage_DevChannel" xml:space="preserve">
-    <value>K�nh d�nh cho nh� ph�t tri?n</value>
+    <value>Kênh dành cho nhà phát triển</value>
   </data>
   <data name="UpdatePage_ReleasePage" xml:space="preserve">
-    <value>Trang ph�t h�nh</value>
+    <value>Trang phát hành</value>
   </data>
   <data name="GachaLogPage_GachaLanguageDesc" xml:space="preserve">
-    <value>Ch? d?nh ng�n ng? c?a b?n ghi gacha, ch?ng h?n nhu vi-vn.</value>
+    <value>Chỉ dịnh ngôn ngử của bản ghi gacha, chẳng hạn như vi-vn.</value>
     <comment>Replace en-us with the target language when translating</comment>
   </data>
   <data name="SettingPage_Language" xml:space="preserve">
-    <value>Ng�n ng?</value>
+    <value>Ngôn ngữ</value>
   </data>
   <data name="SettingPage_FollowSystem" xml:space="preserve">
-    <value>Theo h? th?ng</value>
+    <value>Theo hệ thống</value>
   </data>
   <data name="GachaLogService_GetGachaProgressText" xml:space="preserve">
-    <value>Nh?n {0} v?i trang {1}</value>
+    <value>Nhận {0} với trang {1}</value>
     <comment>{0} = {gachaType} ,  {1} = {page}</comment>
   </data>
   <data name="Common_Summary" xml:space="preserve">
-    <value>T?ng quan</value>
+    <value>Tổng quan</value>
   </data>
   <data name="Common_Accept" xml:space="preserve">
-    <value>Ch?p nh?n</value>
+    <value>Chấp nhận</value>
   </data>
   <data name="Common_Reject" xml:space="preserve">
-    <value>T? ch?i</value>
+    <value>Từ chối</value>
   </data>
   <data name="Common_Disclaimer" xml:space="preserve">
-    <value>T? ch?i tr�ch nhi?m</value>
+    <value>Chối bỏ trách nhiệm</value>
   </data>
   <data name="Common_AccountError" xml:space="preserve">
-    <value>T�i kho?n b?t thu?ng</value>
+    <value>Lỗi tài khoản</value>
   </data>
   <data name="Common_NetworkError" xml:space="preserve">
-    <value>L?i m?ng</value>
+    <value>Lỗi Mạng</value>
   </data>
   <data name="ScreenshotPage_ScreenshotFolderDoesNotExist" xml:space="preserve">
-    <value>Thu m?c ?nh ch?p m�n h�nh kh�ng t?n t?i</value>
+    <value>Thư mục ảnh chụp màn hình không tồn tại</value>
   </data>
   <data name="GachaLogPage_0GachaItemsHaveBeenChangedToLanguage1" xml:space="preserve">
-    <value>Ng�n ng? c?a {0} b?n ghi gacha d� du?c chuy?n th�nh ({1}).</value>
+    <value>Ngôn ngử của {0} bản ghi gacha đã được chuyển thành ({1}).</value>
     <comment>The language of 123 gacha records has been changed to (en-us).</comment>
   </data>
   <data name="SettingPage_PrivacyPolicy" xml:space="preserve">
-    <value>Ch�nh s�ch b?o m?t</value>
+    <value>Chính sách bảo mật</value>
   </data>
   <data name="MainPage_Tips" xml:space="preserve">
-    <value>M?o</value>
+    <value>Mẹo</value>
   </data>
   <data name="SettingPage_CDNTips" xml:space="preserve">
-    <value>M?t s? ngu?i d�ng ? m?t s? khu v?c c� th? g?p ph?i s? b?t thu?ng v? m?ng. B?n c� th? gi?i quy?t v?n d? n�y b?ng c�ch chuy?n d?i CDN.</value>
+    <value>Một số người dùng ở một số khu vực có thể gập phải số bất thường về mạng. Bạn có thể giải quyết vấn đề này bằng cách chuyển đổi CDN.</value>
   </data>
   <data name="SettingPage_ExitLauncherWhenClosingWindow" xml:space="preserve">
-    <value>Tho�t tr�nh kh?i ch?y khi d�ng c?a s?</value>
+    <value>Thóat trình khởi chạy khi đống cửa sổ</value>
   </data>
   <data name="Common_Exit" xml:space="preserve">
-    <value>Tho�t</value>
+    <value>Đóng</value>
   </data>
   <data name="Common_Hide" xml:space="preserve">
-    <value>?n</value>
+    <value>Ẩn</value>
   </data>
   <data name="ScreenshotPage_BackupScreenshots" xml:space="preserve">
-    <value>Sao luu ?nh ch?p m�n h�nh</value>
+    <value>Sao ưu ảnh chụp màn hình</value>
   </data>
   <data name="ScreenshotPage_OpenBackupFolder" xml:space="preserve">
-    <value>M? thu m?c sao luu</value>
+    <value>Mở thư mục sao lưu</value>
   </data>
   <data name="SettingPage_LastBackup" xml:space="preserve">
-    <value>B?n sao luu g?n nh?t</value>
+    <value>Bản sao lưu gần nhất</value>
   </data>
   <data name="SettingPage_BackupDatabase" xml:space="preserve">
-    <value>Sao luu co s? d? li?u</value>
+    <value>Sao lưu Cơ sở dữ liệu</value>
   </data>
   <data name="ScreenshotPage_BackedUpNewScreenshots" xml:space="preserve">
-    <value>�� sao luu {0} ?nh ch?p m�n h�nh m?i.</value>
+    <value>Đã sao lưu {0} ảnh chụp màn hình mới.</value>
   </data>
   <data name="Common_Attention" xml:space="preserve">
-    <value>Ch� �</value>
+    <value>Chú ý</value>
   </data>
   <data name="SettingPage_Donate" xml:space="preserve">
-    <value>?ng h?</value>
+    <value>Ủng hộ</value>
   </data>
   <data name="SettingPage_URLProtocolExperimental" xml:space="preserve">
-    <value>Giao th?c URL (th? nghi?m)</value>
+    <value>Giao thức URL (thí nghiệm)</value>
   </data>
   <data name="SettingPage_URLProtocolDesc" xml:space="preserve">
-    <value>Nh?ng ph?n m?m kh�c c� th? s? d?ng m?t s? t�nh nang c?a Glowworm th�ng qua giao th?c URL.</value>
+    <value>Những phần mềm khác có thể sử dụng một số tính nang của Glowworm thông qua giao thức URL.</value>
   </data>
   <data name="SettingPage_RegisterURLProtocol" xml:space="preserve">
-    <value>�ang k� giao th?c URL</value>
+    <value>Đang ký giao thức URL</value>
   </data>
   <data name="SettingPage_TestURLProtocol" xml:space="preserve">
-    <value>Ki?m tra giao th?c URL</value>
+    <value>Kiểm tra giao thức URL</value>
   </data>
   <data name="ImageViewPage_ZoomOut" xml:space="preserve">
-    <value>Thu nh?</value>
+    <value>Thu nhỏ</value>
   </data>
   <data name="ImageViewPage_ZoomIn" xml:space="preserve">
-    <value>Ph�ng to</value>
+    <value>Phóng to</value>
   </data>
   <data name="ImageViewPage_Rotate" xml:space="preserve">
-    <value>Quay</value>
+    <value>Xoay</value>
   </data>
   <data name="Common_Copy" xml:space="preserve">
-    <value>Sao ch�p</value>
+    <value>Sao chép</value>
   </data>
   <data name="Common_Open" xml:space="preserve">
-    <value>M?</value>
+    <value>Mở</value>
   </data>
   <data name="FileSettingPage_DataFolder" xml:space="preserve">
-    <value>Thu m?c d? li?u</value>
+    <value>Thư mục Dữ liệu</value>
   </data>
   <data name="FileSettingPage_OpenLogFile" xml:space="preserve">
-    <value>M? t?p tin nh?t k�</value>
+    <value>Mở tệp nhật ký</value>
   </data>
   <data name="SettingPage_FileManagement" xml:space="preserve">
-    <value>Qu?n l� t?p tin</value>
+    <value>Quản lý Tệp</value>
   </data>
   <data name="SettingPage_Completed" xml:space="preserve">
-    <value>Ho�n th�nh</value>
+    <value>Đã hoàn thành</value>
   </data>
   <data name="AboutSettingPage_Links" xml:space="preserve">
-    <value>Li�n k?t</value>
+    <value>Links</value>
   </data>
   <data name="FileSettingPage_DataFolderIsImportant" xml:space="preserve">
-    <value>D? li?u c� nh�n c?a b?n du?c luu tr? trong thu m?c b�n du?i. N� r?t quan tr?ng, xin d?ng v� t�nh x�a n� di.</value>
+    <value>Dử liệu cá nhân của bạn được lưu trữ trong thư mục bên dưới. Nó rất quan trọng, xin đừng vô tình xóa nó đi.</value>
   </data>
   <data name="SelectLanguagePage_NetworkTest" xml:space="preserve">
-    <value>Ki?m tra m?ng</value>
+    <value>Kiểm tra mạng</value>
   </data>
   <data name="SelectLanguagePage_AreYouAbleToReceiveUpdatesForGlowworm" xml:space="preserve">
-    <value>B?n c� th? nh?n du?c c?p nh?t cho Glowworm kh�ng?</value>
+    <value>Bạn có thể nhận được cập nhật cho Glowworm không?</value>
   </data>
   <data name="AppearanceSettingPage_HelpUsTranslateGlowworm" xml:space="preserve">
-    <value>Gi�p ch�ng t�i d?ch Glowworm</value>
+    <value>Giúp chúng tôi dịch Glowworm</value>
   </data>
   <data name="FileSettingPage_Cache" xml:space="preserve">
     <value>B? nh? d?m</value>
@@ -678,10 +678,10 @@
     <value>T�n</value>
   </data>
   <data name="GachaImportAndExportWindow_SelectTheFileToImport" xml:space="preserve">
-    <value>Ch?n t?p tin d? nh?p v�o.</value>
+    <value>Lựa chọn những tập tin để nhập vào.</value>
   </data>
   <data name="GachaImportAndExportWindow_Import" xml:space="preserve">
-    <value>Nh?p v�o</value>
+    <value>Nhập vào</value>
   </data>
   <data name="GachaImportAndExportWindow_TimeZoneOffsetWarning" xml:space="preserve">
     <value>Tru?c khi nh?p v�o, vui l�ng ch?c ch?n th?i gian l?n cu?i C?u Nguy?n gi?ng v?i th?i gian hi?n th? trong game. N?u ch�ng kh�ng gi?ng, vui l�ng d?t l?i th?i gian khu v?c.</value>
