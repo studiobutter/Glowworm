@@ -229,9 +229,6 @@
   <data name="Game_ZZZ" xml:space="preserve">
     <value>젠레스 존 제로</value>
   </data>
-  <data name="GameServer_ZZZCBT3" xml:space="preserve">
-    <value>CBT3</value>
-  </data>
   <data name="GameServer_ChinaOfficial" xml:space="preserve">
     <value>중국 (본토)</value>
   </data>
@@ -242,7 +239,7 @@
     <value>중국 (클라우드)</value>
   </data>
   <data name="GameServer_GlobalCloud" xml:space="preserve">
-    <value>Global Cloud</value>
+    <value>Global Cloud Server</value>
   </data>
   <data name="GameServer_Bilibili" xml:space="preserve">
     <value>Bilbili 서버</value>
