@@ -229,9 +229,6 @@
   <data name="Game_ZZZ" xml:space="preserve">
     <value>ゼンレスゾーンゼロ</value>
   </data>
-  <data name="GameServer_ZZZCBT3" xml:space="preserve">
-    <value>CBT3</value>
-  </data>
   <data name="GameServer_ChinaOfficial" xml:space="preserve">
     <value>中国公式</value>
   </data>
@@ -242,10 +239,10 @@
     <value>クラウド版（中国）</value>
   </data>
   <data name="GameServer_GlobalCloud" xml:space="preserve">
-    <value>Global Cloud</value>
+    <value>Global Cloud Server</value>
   </data>
   <data name="GameServer_Bilibili" xml:space="preserve">
-    <value>Bilibili</value>
+    <value>BiliBili</value>
   </data>
   <data name="GameServer_EuropeAmericas" xml:space="preserve">
     <value>ヨーロッパ &amp; アメリカ</value>
