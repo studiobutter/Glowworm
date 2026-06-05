@@ -118,68 +118,68 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="GachaStatsCard_Pity" xml:space="preserve">
-    <value>�?m b?o</value>
+    <value>Đảm Bảo</value>
   </data>
   <data name="GachaStatsCard_Average" xml:space="preserve">
-    <value>Trung b�nh</value>
+    <value>Trung bình</value>
   </data>
   <data name="GachaStatsCard_Stats" xml:space="preserve">
-    <value>Ch? s?</value>
+    <value>Chỉ số</value>
   </data>
   <data name="Common_Cancel" xml:space="preserve">
-    <value>Hu?</value>
+    <value>Hủy</value>
   </data>
   <data name="Common_Confirm" xml:space="preserve">
-    <value>�?ng �</value>
+    <value>Xác nhận</value>
   </data>
   <data name="GachaLogPage_NoGachaRecords" xml:space="preserve">
-    <value>Kh�ng c� b?n ghi gacha</value>
+    <value>Không có bản ghi Gacha</value>
   </data>
   <data name="GachaLogPage_UpdateRecords" xml:space="preserve">
-    <value>C?p nh?t b?n ghi</value>
+    <value>Cập nhậtt bản ghi</value>
   </data>
   <data name="GachaLogPage_UpdateSavedURL" xml:space="preserve">
-    <value>C?p nh?t (URL d� luu)</value>
+    <value>Cậpp nhậtt (URL dã lưu)</value>
   </data>
   <data name="GachaLogPage_UpdateAll" xml:space="preserve">
-    <value>C?p nh?t (t?t c?)</value>
+    <value>Cập nhậtt (tất cả)</value>
   </data>
   <data name="GachaLogPage_InputURL" xml:space="preserve">
-    <value>Nh?p URL</value>
+    <value>Nhập URL</value>
   </data>
   <data name="Common_Setting" xml:space="preserve">
-    <value>C�i d?t</value>
+    <value>Cài đặt</value>
   </data>
   <data name="GachaLogPage_OtherSettings" xml:space="preserve">
-    <value>C�i d?t kh�c</value>
+    <value>Cài đặt khác</value>
   </data>
   <data name="GachaLogPage_CopyURL" xml:space="preserve">
-    <value>Sao ch�p URL</value>
+    <value>Sao chép URL</value>
   </data>
   <data name="GachaLogPage_AuthkeyTimeoutAlwaysOccurs" xml:space="preserve">
-    <value>Authkey Timeout lu�n x?y ra?</value>
+    <value>Khóa xác thục hết hạn luôn xẩy ra?</value>
   </data>
   <data name="GachaLogPage_ClearURLCacheFiles" xml:space="preserve">
-    <value>D?n t?p tin cache URL</value>
+    <value>Dọn tập tin URL rác</value>
   </data>
   <data name="GachaLogPage_ExportAs" xml:space="preserve">
-    <value>Xu?t nhu</value>
+    <value>Xuất dưới dạng</value>
   </data>
   <data name="GachaLogPage_ImportFromJson" xml:space="preserve">
-    <value>Nh?p t? file JSON</value>
+    <value>Nhập từ JSON</value>
   </data>
   <data name="GachaLogPage_DeleteRecords" xml:space="preserve">
-    <value>Xo� c�c b?n ghi</value>
+    <value>Xoá bản ghi</value>
   </data>
   <data name="GachaLogPage_Language" xml:space="preserve">
-    <value>Ng�n ng?</value>
+    <value>Ngôn ngữ</value>
   </data>
   <data name="GachaLogPage_CannotFindSavedURLOfUid" xml:space="preserve">
-    <value>Kh�ng th? t�m th?y URL d� luu c?a UID {0}.</value>
+    <value>Không thể tìm thấy URL đã lưu của UID {0}.</value>
     <comment>{0} = {uid}</comment>
   </data>
   <data name="GachaLogPage_GameNotInstalled" xml:space="preserve">
-    <value>Tr� choi chua du?c c�i d?t</value>
+    <value>Trò chơi chưa được cài đặt</value>
   </data>
   <data name="GachaLogPage_CannotFindURL" xml:space="preserve">
     <value>Kh�ng th? t�m th?y URL, vui l�ng h�y m? trang b?n ghi l?ch s? gacha ? trong tr� choi.</value>
@@ -326,7 +326,7 @@
     <value>C?p nh?t</value>
   </data>
   <data name="SettingPage_UpdateSource" xml:space="preserve">
-    <value>Update Source</value>
+    <value>Cập nhật nguồn</value>
   </data>
   <data name="SettingPage_TestCDNAsync_NetworkError" xml:space="preserve">
     <value>L?i m?ng</value>
@@ -575,7 +575,7 @@
     <value>b?ng Tr� choi d�m m�y</value>
   </data>
   <data name="GachaLogPage_ViaCloudGameWeb" xml:space="preserve">
-    <value>via Cloud Game (Web)</value>
+    <value>bằng Trò Chơi Đám Mấy (Web)</value>
   </data>
   <data name="UpdateContentWindow_ClickToRefresh" xml:space="preserve">
     <value>Nh?n d? l�m m?i</value>
@@ -624,7 +624,7 @@
     <comment>General Setting</comment>
   </data>
   <data name="SettingPage_RunInSystemTray" xml:space="preserve">
-    <value>Run in System Tray</value>
+    <value>Chạy ngầm trong Khay Hệ Thống</value>
   </data>
   <data name="SettingPage_ForABetterExperiencePleaseEnableTheFollowingFeaturesInSystemSettings" xml:space="preserve">
     <value>�? c� du?c tr?i nghi?m t?t hon, xin vui l�ng b?t nh?ng t�nh nang sau trong c�i d?t c?a h? th?ng.</value>
@@ -1027,13 +1027,13 @@
     <value>X?c nh?n x?a</value>
   </data>
   <data name="LauncherPage_ConfirmDelete" xml:space="preserve">
-    <value>Confirm Delete</value>
+    <value>Xác Nhận Xoá</value>
   </data>
   <data name="GachaType_StandardOde" xml:space="preserve">
-    <value>Standard Ode</value>
+    <value>Ca Tụng Thường</value>
   </data>
   <data name="GachaType_EventOde" xml:space="preserve">
-    <value>Event Ode</value>
+    <value>Ca Tụng Sự Kiện</value>
   </data>
   <data name="Common_Uid" xml:space="preserve">
     <value>UID</value>
@@ -1042,34 +1042,34 @@
     <value>up!</value>
   </data>
   <data name="SettingPage_RescanGameDirectories" xml:space="preserve">
-    <value>Rescan Game Directories</value>
+    <value>Quét lại Thư mục Trò chơi</value>
   </data>
   <data name="AboutSettingPage_Description" xml:space="preserve">
-    <value>A rework of Starward Launcher originally developed by Scighost, reworked by Studio Butter, all rights reserved.</value>
+    <value>Đây là phiên bản làm lại của Starward Launcher, ban đầu được phát triển bởi Scighost, được Studio Butter chỉnh sửa lại, mọi quyền được bảo lưu.</value>
   </data>
   <data name="Common_Glowworm" xml:space="preserve">
     <value>Glowworm</value>
   </data>
   <data name="MainView_WelcomeTitle" xml:space="preserve">
-    <value>Welcome to Glowworm</value>
+    <value>Chào mừng đến Glowworm</value>
   </data>
   <data name="MainView_WelcomeContent" xml:space="preserve">
-    <value>Welcome to Glowworm! We will now check your available games.</value>
+    <value>Chào mừng đến Glowworm! Ứng dụng sẽ tiến hành quét các trò chơi HoYoverse được cài.</value>
   </data>
   <data name="BeyondProfilePicturePage_MiliastraProfilePictures" xml:space="preserve">
-    <value>Miliastra Profile Pictures</value>
+    <value>Ảnh Đại Diên Kỳ Vực</value>
   </data>
   <data name="BeyondProfilePicturePage_NoImage" xml:space="preserve">
-    <value>No image found</value>
+    <value>Không tìm thấy hình ảnh</value>
   </data>
   <data name="BeyondProfilePicturePage_GetProfilePictures" xml:space="preserve">
-    <value>Get Profile Pictures</value>
+    <value>Lấy Ảnh Đại diện</value>
   </data>
   <data name="BeyondProfilePicturePage_SaveAs" xml:space="preserve">
-    <value>Save As</value>
+    <value>Lưu với</value>
   </data>
   <data name="BeyondProfilePicturePage_FolderNotFound" xml:space="preserve">
-    <value>Cannot get Profile Pictures, ensure you have taken on in-game and save it before getting the pictures</value>
+    <value>Không thể lấy ảnh đại diện, hãy đảm bảo bạn đã chụp ảnh trong game và lưu lại trước khi tải ảnh</value>
   </data>
   <data name="Common_Close" xml:space="preserve">
     <value>Đóng</value>
@@ -1078,6 +1078,6 @@
     <value>Thử lại</value>
   </data>
   <data name="FileSettingPage_SelectedFolderNotWritable" xml:space="preserve">
-    <value>The selected folder is not writable: {0}</value>
+    <value>Thư mục này không thể ghi được: {0}</value>
   </data>
 </root>
