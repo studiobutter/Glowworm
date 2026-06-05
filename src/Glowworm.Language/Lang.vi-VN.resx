@@ -630,16 +630,16 @@
     <value>Để có được trải nghiệm tốt hơn, xin vui lòng bật những tính năng sau trong cài đặt của hệ thống.</value>
   </data>
   <data name="UpdateWindow_AutoRestartAfterUpdate" xml:space="preserve">
-    <value>T? d?ng kh?i d?ng l?i sau khi c?p nh?t</value>
+    <value>Tự động khởi động lại sau khi cập nhật</value>
   </data>
   <data name="UpdateWindow_DisplayUpdateContentAfterRestart" xml:space="preserve">
-    <value>Hi?n th? n?i dung c?p nh?t sau khi kh?i d?ng l?i</value>
+    <value>Hiển thị nội dung cập nhật sau khi khởi động lại</value>
   </data>
   <data name="Common_WebView2ComponentInitializationFailed" xml:space="preserve">
-    <value>Th�nh ph?n WebView2 kh?i ch?y th?t b?i.</value>
+    <value>Thành phần WebView2 khởi chạy thất bại.</value>
   </data>
   <data name="ZZZGachaService_ImportSignalSearchRecordsSuccessfully" xml:space="preserve">
-    <value>Nh?p v�o {0} l?n ghi Ch?nh K�nh th�nh c�ng.</value>
+    <value>Nhập vào {0} (các) lần ghi Chỉnh Kênh thành công.</value>
   </data>
   <data name="Common_Error" xml:space="preserve">
     <value>Lỗi</value>
@@ -648,10 +648,10 @@
     <value>Trò chơi Đám mây</value>
   </data>
   <data name="UIGFGachaService_UidMismatchDetectedExpected0ButFound1" xml:space="preserve">
-    <value>Ph�t hi?n Uid kh�ng kh?p. D? ki?n: {0}, t�m th?y: {1}.</value>
+    <value>Phát hiện Uid không khớp. Dự kiến: {0}, tìm thấy: {1}.</value>
   </data>
   <data name="UIGFGachaService_ImportSuccessfulButNoRecordItemName" xml:space="preserve">
-    <value>Nh?p v�o th�nh c�ng, nhung m?t s? b?n ghi s? b? m?t h�nh ?nh v?t ph?m. Vui l�ng v�o ph?n c�i d?t b?n ghi gacha, thay d?i ng�n ng?, v� �p d?ng.</value>
+    <value>Nhập vào thành công, nhung một số bản ghi sẽ bị mất tên vật phẩm. Vui lòng vào phần cài đặt bản ghi gacha, thay đổi ngôn ngử, và áp dụng.</value>
   </data>
   <data name="UIGFGachaService_ImportSuccessful" xml:space="preserve">
     <value>Nhập vào thành công.</value>
