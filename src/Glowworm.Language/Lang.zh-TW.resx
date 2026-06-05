@@ -1049,7 +1049,7 @@
     <value>Welcome to Glowworm</value>
   </data>
   <data name="MainView_WelcomeContent" xml:space="preserve">
-    <value>Welcome to Glowworm! We will now check your available games.</value>
+    <value>Welcome to Glowworm! We will now check your installed HoYoverse games.</value>
   </data>
   <data name="BeyondProfilePicturePage_MiliastraProfilePictures" xml:space="preserve">
     <value>Miliastra Profile Pictures</value>
