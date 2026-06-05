@@ -239,10 +239,10 @@
     <value>クラウド版（中国）</value>
   </data>
   <data name="GameServer_GlobalCloud" xml:space="preserve">
-    <value>Global Cloud Server</value>
+    <value>クラウド版（グローバル）</value>
   </data>
   <data name="GameServer_Bilibili" xml:space="preserve">
-    <value>BiliBili</value>
+    <value>ビリビリ</value>
   </data>
   <data name="GameServer_EuropeAmericas" xml:space="preserve">
     <value>ヨーロッパ &amp; アメリカ</value>
