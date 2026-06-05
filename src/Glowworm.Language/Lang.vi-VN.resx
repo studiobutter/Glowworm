@@ -214,7 +214,7 @@
     <value>Đang thu thập UID</value>
   </data>
   <data name="GachaLogService_ThisAccountHasNoGachaRecordsInTheLast6Months" xml:space="preserve">
-    <value>T�i kho?n n�y kh�ng c� b?n ghi gacha trong 6 th�ng g?n nh?t.</value>
+    <value>Tài khỏan này không có bản ghi gacha trong 12 tháng gần nhất.</value>
   </data>
   <data name="GachaLogService_GetGachaResult" xml:space="preserve">
     <value>�� t�m du?c {0} b?n ghi, d� th�m {1} b?n ghi.</value>
