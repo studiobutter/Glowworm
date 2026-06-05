@@ -605,7 +605,7 @@
     <value>Delete gacha records for a specific time period</value>
   </data>
   <data name="DeleteGachaLogDialog_6MonthsDeletingWarning" xml:space="preserve">
-    <value>Warning: The selected time period includes gacha records from more than 6 months ago, which cannot be retrieved after deleting.</value>
+    <value>Warning: The selected time period includes gacha records from more than 6-12 months ago, which cannot be retrieved after deleting.</value>
   </data>
   <data name="DeleteGachaLogDialog_ThisAccountHas0GachaRecordS" xml:space="preserve">
     <value>This account has {0} gacha record(s).</value>
