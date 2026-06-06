@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -150,15 +150,6 @@
   <data name="Gacha_CannotParseTheWishRecordURL" xml:space="preserve">
     <value>Cannot parse the wish record URL.</value>
   </data>
-  <data name="PostType_Activity" xml:space="preserve">
-    <value>Events</value>
-  </data>
-  <data name="PostType_Announcement" xml:space="preserve">
-    <value>Notices</value>
-  </data>
-  <data name="PostType_Information" xml:space="preserve">
-    <value>Info</value>
-  </data>
   <data name="Game_GenshinImpact" xml:space="preserve">
     <value>Genshin Impact</value>
   </data>
@@ -171,93 +162,20 @@
   <data name="GameServer_GlobalServer" xml:space="preserve">
     <value>Global Server</value>
   </data>
-  <data name="GameServer_ChinaCloudServer" xml:space="preserve">
-    <value>China Cloud Server</value>
-  </data>
-  <data name="GameServer_EuropeAmericasServers" xml:space="preserve">
-    <value>Europe &amp; Americas Servers</value>
-  </data>
-  <data name="GameServer_JapanServer" xml:space="preserve">
-    <value>Japan Server</value>
-  </data>
-  <data name="GameServer_KoreaServer" xml:space="preserve">
-    <value>Korea Server</value>
-  </data>
-  <data name="GameServer_SEAServer" xml:space="preserve">
-    <value>Southeast Asia Server</value>
-    <comment>Southeast Asia and Australia Server</comment>
-  </data>
-  <data name="GameServer_TraditionalChineseServer" xml:space="preserve">
-    <value>Traditional Chinese Server</value>
-  </data>
-  <data name="GenshinQueryType_GenesisCrystal" xml:space="preserve">
-    <value>Genesis Crystals</value>
-  </data>
-  <data name="GenshinQueryType_Primogem" xml:space="preserve">
-    <value>Primogems</value>
-  </data>
-  <data name="GenshinQueryType_OriginalResin" xml:space="preserve">
-    <value>Original Resins</value>
-  </data>
-  <data name="GenshinQueryType_Artifact" xml:space="preserve">
-    <value>Artifacts</value>
-  </data>
-  <data name="GenshinQueryType_Weapon" xml:space="preserve">
-    <value>Weapons</value>
-  </data>
-  <data name="StarRailQueryType_StellarJade" xml:space="preserve">
-    <value>Stellar Jade</value>
-  </data>
-  <data name="StarRailQueryType_OneiricShared" xml:space="preserve">
-    <value>Oneiric Shared</value>
-  </data>
-  <data name="StarRailQueryType_Relic" xml:space="preserve">
-    <value>Relic</value>
-  </data>
-  <data name="StarRailQueryType_LightCone" xml:space="preserve">
-    <value>Light Cone</value>
-  </data>
-  <data name="StarRailQueryType_TrailblazePower" xml:space="preserve">
-    <value>Trailblaze Power</value>
-  </data>
-  <data name="GameServer_BilibiliServer" xml:space="preserve">
-    <value>Bilibili Server</value>
-  </data>
   <data name="GachaType_ChronicledWish" xml:space="preserve">
     <value>Chronicled Wish</value>
   </data>
   <data name="Game_ZZZ" xml:space="preserve">
     <value>Zenless Zone Zero</value>
   </data>
-  <data name="GameServer_ChinaOfficial" xml:space="preserve">
-    <value>China Official</value>
-  </data>
-  <data name="GameServer_GlobalOfficial" xml:space="preserve">
-    <value>Global Official</value>
-  </data>
   <data name="GameServer_ChinaCloud" xml:space="preserve">
-    <value>China Cloud</value>
+    <value>China Cloud Server</value>
   </data>
   <data name="GameServer_GlobalCloud" xml:space="preserve">
     <value>Global Cloud Server</value>
   </data>
   <data name="GameServer_Bilibili" xml:space="preserve">
     <value>BiliBili</value>
-  </data>
-  <data name="GameServer_EuropeAmericas" xml:space="preserve">
-    <value>Europe &amp; Americas</value>
-  </data>
-  <data name="GameServer_Japan" xml:space="preserve">
-    <value>Japan</value>
-  </data>
-  <data name="GameServer_Korea" xml:space="preserve">
-    <value>Korea</value>
-  </data>
-  <data name="GameServer_SoutheastAsia" xml:space="preserve">
-    <value>Southeast Asia</value>
-  </data>
-  <data name="GameServer_TraditionalChinese" xml:space="preserve">
-    <value>Traditional Chinese</value>
   </data>
   <data name="GachaType_StandardChannel" xml:space="preserve">
     <value>Standard Channel</value>
@@ -271,24 +189,6 @@
   <data name="GachaType_BangbooChannel" xml:space="preserve">
     <value>Bangboo Channel</value>
   </data>
-  <data name="ZZZQueryType_Monochrome" xml:space="preserve">
-    <value>Monochrome</value>
-  </data>
-  <data name="ZZZQueryType_Ploychrome" xml:space="preserve">
-    <value>Polychrome</value>
-  </data>
-  <data name="ZZZQueryType_Bundle" xml:space="preserve">
-    <value>Bundle</value>
-  </data>
-  <data name="ZZZQueryType_BatteryCharge" xml:space="preserve">
-    <value>Battery Charge</value>
-  </data>
-  <data name="ZZZQueryType_WEngine" xml:space="preserve">
-    <value>W-Engine</value>
-  </data>
-  <data name="ZZZQueryType_DriveDisc" xml:space="preserve">
-    <value>Drive Disc</value>
-  </data>
   <data name="GachaType_CharacterCollaborationWarp" xml:space="preserve">
     <value>Character Collaboration Warp</value>
   </data>
@@ -300,12 +200,6 @@
   </data>
   <data name="GachaType_EventOde" xml:space="preserve">
     <value>Event Ode</value>
-  </data>
-  <data name="GenshinQueryType_ChronalNexus" xml:space="preserve">
-    <value>Chronal Nexus</value>
-  </data>
-  <data name="GenshinQueryType_ArcaneKeystone" xml:space="preserve">
-    <value>Arcane Keystone</value>
   </data>
   <data name="GachaType_ExclusiveRescreening" xml:space="preserve">
     <value>Exclusive Rescreening</value>

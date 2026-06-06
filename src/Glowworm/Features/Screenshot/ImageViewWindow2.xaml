@@ -637,7 +637,7 @@
                         <cwc:Segmented x:Name="Segmented_DisplayMode"
                                        IsTextScaleFactorEnabled="False"
                                        SelectedIndex="{x:Bind DisplayMode, Mode=TwoWay}">
-                            <cwc:SegmentedItem Width="80" Content="Auto" />
+                            <cwc:SegmentedItem Width="80" Content="{x:Bind lang:Lang.ImageViewWindow2_Auto}" />
                             <cwc:SegmentedItem Width="80" Content="SDR" />
                             <cwc:SegmentedItem Width="80" Content="HDR" />
                         </cwc:Segmented>

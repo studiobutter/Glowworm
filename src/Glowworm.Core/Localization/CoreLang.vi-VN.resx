@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -150,15 +150,6 @@
   <data name="Gacha_CannotParseTheWishRecordURL" xml:space="preserve">
     <value>Không thể phân tích URL bản ghi cầu nguyện.</value>
   </data>
-  <data name="PostType_Activity" xml:space="preserve">
-    <value>Sự Kiện</value>
-  </data>
-  <data name="PostType_Announcement" xml:space="preserve">
-    <value>Thông Báo</value>
-  </data>
-  <data name="PostType_Information" xml:space="preserve">
-    <value>Thông Tin</value>
-  </data>
   <data name="Game_GenshinImpact" xml:space="preserve">
     <value>Genshin Impact</value>
   </data>
@@ -171,69 +162,11 @@
   <data name="GameServer_GlobalServer" xml:space="preserve">
     <value>Máy chủ Toàn Cầu</value>
   </data>
-  <data name="GameServer_ChinaCloudServer" xml:space="preserve">
-    <value>Máy chủ đám mây Trung Quốc</value>
-  </data>
-  <data name="GameServer_EuropeAmericasServers" xml:space="preserve">
-    <value>Máy chủ Châu Âu &amp; Châu Mỹ</value>
-  </data>
-  <data name="GameServer_JapanServer" xml:space="preserve">
-    <value>Máy chủ Nhật Bản</value>
-  </data>
-  <data name="GameServer_KoreaServer" xml:space="preserve">
-    <value>Máy chủ Hàn Quốc</value>
-  </data>
-  <data name="GameServer_SEAServer" xml:space="preserve">
-    <value>Máy chủ Đông Nam Á</value>
-    <comment>Southeast Asia and Australia Server</comment>
-  </data>
-  <data name="GameServer_TraditionalChineseServer" xml:space="preserve">
-    <value>Máy chủ Tiếng Trung Phồn Thể</value>
-  </data>
-  <data name="GenshinQueryType_GenesisCrystal" xml:space="preserve">
-    <value>Đá sáng thế</value>
-  </data>
-  <data name="GenshinQueryType_Primogem" xml:space="preserve">
-    <value>Nguyên thạch</value>
-  </data>
-  <data name="GenshinQueryType_OriginalResin" xml:space="preserve">
-    <value>Nhựa nguyên chất</value>
-  </data>
-  <data name="GenshinQueryType_Artifact" xml:space="preserve">
-    <value>Thánh di vật</value>
-  </data>
-  <data name="GenshinQueryType_Weapon" xml:space="preserve">
-    <value>Vũ khí</value>
-  </data>
-  <data name="StarRailQueryType_StellarJade" xml:space="preserve">
-    <value>Ngọc ánh sao</value>
-  </data>
-  <data name="StarRailQueryType_OneiricShared" xml:space="preserve">
-    <value>Mộng ước viễn cổ</value>
-  </data>
-  <data name="StarRailQueryType_Relic" xml:space="preserve">
-    <value>Di vật</value>
-  </data>
-  <data name="StarRailQueryType_LightCone" xml:space="preserve">
-    <value>Nón ánh sáng</value>
-  </data>
-  <data name="StarRailQueryType_TrailblazePower" xml:space="preserve">
-    <value>Sức mạnh khai phá</value>
-  </data>
-  <data name="GameServer_BilibiliServer" xml:space="preserve">
-    <value>Máy chủ Bilibili</value>
-  </data>
   <data name="GachaType_ChronicledWish" xml:space="preserve">
     <value>Sử ký cầu nguyện</value>
   </data>
   <data name="Game_ZZZ" xml:space="preserve">
     <value>Zenless Zone Zero</value>
-  </data>
-  <data name="GameServer_ChinaOfficial" xml:space="preserve">
-    <value>Trung Quốc</value>
-  </data>
-  <data name="GameServer_GlobalOfficial" xml:space="preserve">
-    <value>Toàn Cầu</value>
   </data>
   <data name="GameServer_ChinaCloud" xml:space="preserve">
     <value>Cloud Trung Quốc</value>
@@ -243,21 +176,6 @@
   </data>
   <data name="GameServer_Bilibili" xml:space="preserve">
     <value>BiliBili</value>
-  </data>
-  <data name="GameServer_EuropeAmericas" xml:space="preserve">
-    <value>Châu Âu &amp; Châu Mỹ</value>
-  </data>
-  <data name="GameServer_Japan" xml:space="preserve">
-    <value>Nhật Bản</value>
-  </data>
-  <data name="GameServer_Korea" xml:space="preserve">
-    <value>Hàn Quốc</value>
-  </data>
-  <data name="GameServer_SoutheastAsia" xml:space="preserve">
-    <value>Đông Nam Á</value>
-  </data>
-  <data name="GameServer_TraditionalChinese" xml:space="preserve">
-    <value>Tiếng Trung Phồn Thể</value>
   </data>
   <data name="GachaType_StandardChannel" xml:space="preserve">
     <value>Kênh Thường Trực</value>
@@ -271,24 +189,6 @@
   <data name="GachaType_BangbooChannel" xml:space="preserve">
     <value>Kênh Bangboo</value>
   </data>
-  <data name="ZZZQueryType_Monochrome" xml:space="preserve">
-    <value>Film Trắng Đen</value>
-  </data>
-  <data name="ZZZQueryType_Ploychrome" xml:space="preserve">
-    <value>Film Màu</value>
-  </data>
-  <data name="ZZZQueryType_Bundle" xml:space="preserve">
-    <value>Gói</value>
-  </data>
-  <data name="ZZZQueryType_BatteryCharge" xml:space="preserve">
-    <value>Pin Năng Lượng</value>
-  </data>
-  <data name="ZZZQueryType_WEngine" xml:space="preserve">
-    <value>W-Engine</value>
-  </data>
-  <data name="ZZZQueryType_DriveDisc" xml:space="preserve">
-    <value>Đĩa</value>
-  </data>
   <data name="GachaType_CharacterCollaborationWarp" xml:space="preserve">
     <value>Bước Nhảy Nhân Vật Hợp Tác</value>
   </data>
@@ -300,12 +200,6 @@
   </data>
   <data name="GachaType_EventOde" xml:space="preserve">
     <value>Ca Tụng Sự Kiện</value>
-  </data>
-  <data name="GenshinQueryType_ChronalNexus" xml:space="preserve">
-    <value>Lõi Sử Ký</value>
-  </data>
-  <data name="GenshinQueryType_ArcaneKeystone" xml:space="preserve">
-    <value>Ngọc Kỳ Bí</value>
   </data>
   <data name="GachaType_ExclusiveRescreening" xml:space="preserve">
     <value>Độc Quyền Phát Lại</value>

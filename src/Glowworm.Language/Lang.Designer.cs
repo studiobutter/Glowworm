@@ -70,24 +70,6 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Click button to repair files..
-        /// </summary>
-        public static string AboutSettingPage_ClickButtonToRepairFiles {
-            get {
-                return ResourceManager.GetString("AboutSettingPage_ClickButtonToRepairFiles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Current version is not the latest version ({0})..
-        /// </summary>
-        public static string AboutSettingPage_CurrentVersionIsNotTheLatestVersion {
-            get {
-                return ResourceManager.GetString("AboutSettingPage_CurrentVersionIsNotTheLatestVersion", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to A rework of Starward Launcher originally developed by Scighost, reworked by Studio Butter, all rights reserved..
         /// </summary>
         public static string AboutSettingPage_Description {
@@ -106,42 +88,6 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Repair Files.
-        /// </summary>
-        public static string AboutSettingPage_RepairFiles {
-            get {
-                return ResourceManager.GetString("AboutSettingPage_RepairFiles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Verify failed.
-        /// </summary>
-        public static string AboutSettingPage_VerifyFailed {
-            get {
-                return ResourceManager.GetString("AboutSettingPage_VerifyFailed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Verify File Integrity.
-        /// </summary>
-        public static string AboutSettingPage_VerifyFileIntegrity {
-            get {
-                return ResourceManager.GetString("AboutSettingPage_VerifyFileIntegrity", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Verify successfully!.
-        /// </summary>
-        public static string AboutSettingPage_VerifySuccessfully {
-            get {
-                return ResourceManager.GetString("AboutSettingPage_VerifySuccessfully", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to An unknown issue occurred during initialization..
         /// </summary>
         public static string AppConfig_AnUnknownIssueOccurredDuringInitialization {
@@ -156,15 +102,6 @@ namespace Glowworm.Language {
         public static string AppearanceSettingPage_AnimationEffects {
             get {
                 return ResourceManager.GetString("AppearanceSettingPage_AnimationEffects", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Recommend enabling {0} and {1} in system settings for a better user experience..
-        /// </summary>
-        public static string AppearanceSettingPage_BetterExperience {
-            get {
-                return ResourceManager.GetString("AppearanceSettingPage_BetterExperience", resourceCulture);
             }
         }
         
@@ -692,7 +629,7 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Warning: The selected time period includes gacha records from more than 6 months ago, which cannot be retrieved after deleting..
+        ///   Looks up a localized string similar to Warning: The selected time period includes gacha records from more than 6-12 months ago, which cannot be retrieved after deleting..
         /// </summary>
         public static string DeleteGachaLogDialog_6MonthsDeletingWarning {
             get {
@@ -805,15 +742,6 @@ namespace Glowworm.Language {
         public static string FileSettingPage_Log {
             get {
                 return ResourceManager.GetString("FileSettingPage_Log", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Open Log File.
-        /// </summary>
-        public static string FileSettingPage_OpenLogFile {
-            get {
-                return ResourceManager.GetString("FileSettingPage_OpenLogFile", resourceCulture);
             }
         }
         
@@ -940,15 +868,6 @@ namespace Glowworm.Language {
         public static string GachaLogPage_0GachaItemsHaveBeenChangedToLanguage1 {
             get {
                 return ResourceManager.GetString("GachaLogPage_0GachaItemsHaveBeenChangedToLanguage1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Always failed to get gacha records?.
-        /// </summary>
-        public static string GachaLogPage_AlwaysFailedToGetGachaRecords {
-            get {
-                return ResourceManager.GetString("GachaLogPage_AlwaysFailedToGetGachaRecords", resourceCulture);
             }
         }
         
@@ -1142,15 +1061,6 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show Chronicled Wish.
-        /// </summary>
-        public static string GachaLogPage_ShowChronicledWish {
-            get {
-                return ResourceManager.GetString("GachaLogPage_ShowChronicledWish", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Specific Time Period.
         /// </summary>
         public static string GachaLogPage_SpecificTimePeriod {
@@ -1241,7 +1151,7 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This account has no gacha records in the last 6 months..
+        ///   Looks up a localized string similar to This account has no gacha records in the last 6-12 months..
         /// </summary>
         public static string GachaLogService_ThisAccountHasNoGachaRecordsInTheLast6Months {
             get {
@@ -1363,60 +1273,6 @@ namespace Glowworm.Language {
         public static string HotkeyInput_PressTheShortcutKeys {
             get {
                 return ResourceManager.GetString("HotkeyInput_PressTheShortcutKeys", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to register the shortcut keys ({0})..
-        /// </summary>
-        public static string HotkeyManager_FailedToRegisterTheShortcutKeys0 {
-            get {
-                return ResourceManager.GetString("HotkeyManager_FailedToRegisterTheShortcutKeys0", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to register the shortcut keys ({0}). Please retry in Settings page..
-        /// </summary>
-        public static string HotkeyManager_FailedToRegisterTheShortcutKeys0PleaseRetryInSettingsPage {
-            get {
-                return ResourceManager.GetString("HotkeyManager_FailedToRegisterTheShortcutKeys0PleaseRetryInSettingsPage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The shortcut keys ({0}) is already in use..
-        /// </summary>
-        public static string HotkeyManager_TheShortcutKeys0IsAlreadyInUse {
-            get {
-                return ResourceManager.GetString("HotkeyManager_TheShortcutKeys0IsAlreadyInUse", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The shortcut keys ({0}) is already in use. Please modify it in Settings page..
-        /// </summary>
-        public static string HotkeyManager_TheShortcutKeys0IsAlreadyInUsePleaseModifyItInSettingsPage {
-            get {
-                return ResourceManager.GetString("HotkeyManager_TheShortcutKeys0IsAlreadyInUsePleaseModifyItInSettingsPage", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed to register the shortcut keys..
-        /// </summary>
-        public static string HotkeySetting_FailedToRegisterTheShortcutKeys {
-            get {
-                return ResourceManager.GetString("HotkeySetting_FailedToRegisterTheShortcutKeys", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Open Main Window.
-        /// </summary>
-        public static string HotkeySetting_OpenMainWindow {
-            get {
-                return ResourceManager.GetString("HotkeySetting_OpenMainWindow", resourceCulture);
             }
         }
         
@@ -1579,15 +1435,6 @@ namespace Glowworm.Language {
         public static string ImageViewWindow2_Auto {
             get {
                 return ResourceManager.GetString("ImageViewWindow2_Auto", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Copied to clipboard..
-        /// </summary>
-        public static string ImageViewWindow2_CopiedToClipboard {
-            get {
-                return ResourceManager.GetString("ImageViewWindow2_CopiedToClipboard", resourceCulture);
             }
         }
         
@@ -1790,15 +1637,6 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save As.
-        /// </summary>
-        public static string ImageViewWindow2_SaveAs {
-            get {
-                return ResourceManager.GetString("ImageViewWindow2_SaveAs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to SDR Mapped Luminance.
         /// </summary>
         public static string ImageViewWindow2_SDRMappedLuminance {
@@ -1831,15 +1669,6 @@ namespace Glowworm.Language {
         public static string ImageViewWindow2_UnableToDeleteTheFile {
             get {
                 return ResourceManager.GetString("ImageViewWindow2_UnableToDeleteTheFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to It is recommended to install the VP9 Video Extensions to reduce CPU usage..
-        /// </summary>
-        public static string ItIsRecommendedToInstallTheVP9VideoExtensionsToReduceCPUUsage {
-            get {
-                return ResourceManager.GetString("ItIsRecommendedToInstallTheVP9VideoExtensionsToReduceCPUUsage", resourceCulture);
             }
         }
         
@@ -1880,15 +1709,6 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Companion App.
-        /// </summary>
-        public static string MainPage_Launcer {
-            get {
-                return ResourceManager.GetString("MainPage_Launcer", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Tips.
         /// </summary>
         public static string MainPage_Tips {
@@ -1898,16 +1718,7 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to System proxy is enabled..
-        /// </summary>
-        public static string MainView_CheckSystemProxy_SystemProxyIsEnabled {
-            get {
-                return ResourceManager.GetString("MainView_CheckSystemProxy_SystemProxyIsEnabled", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Welcome to Glowworm! We will now check your available games..
+        ///   Looks up a localized string similar to Welcome to Glowworm! We will now check your installed HoYoverse games..
         /// </summary>
         public static string MainView_WelcomeContent {
             get {
@@ -2070,38 +1881,11 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open Backup Folder.
-        /// </summary>
-        public static string ScreenshotPage_OpenBackupFolder {
-            get {
-                return ResourceManager.GetString("ScreenshotPage_OpenBackupFolder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Open Folder.
-        /// </summary>
-        public static string ScreenshotPage_OpenFolder {
-            get {
-                return ResourceManager.GetString("ScreenshotPage_OpenFolder", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Screenshot folder does not exist.
         /// </summary>
         public static string ScreenshotPage_ScreenshotFolderDoesNotExist {
             get {
                 return ResourceManager.GetString("ScreenshotPage_ScreenshotFolderDoesNotExist", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Total {0} files..
-        /// </summary>
-        public static string ScreenshotPage_Total0Files {
-            get {
-                return ResourceManager.GetString("ScreenshotPage_Total0Files", resourceCulture);
             }
         }
         
@@ -2120,24 +1904,6 @@ namespace Glowworm.Language {
         public static string ScreenshotSetting_AutoCopyScreenshotFile {
             get {
                 return ResourceManager.GetString("ScreenshotSetting_AutoCopyScreenshotFile", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Clear Failed.
-        /// </summary>
-        public static string ScreenshotSetting_ClearFailed {
-            get {
-                return ResourceManager.GetString("ScreenshotSetting_ClearFailed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Clear Successfully.
-        /// </summary>
-        public static string ScreenshotSetting_ClearSuccessfully {
-            get {
-                return ResourceManager.GetString("ScreenshotSetting_ClearSuccessfully", resourceCulture);
             }
         }
         
@@ -2274,7 +2040,7 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to After deleting, the software will be restarted automatically..
+        ///   Looks up a localized string similar to After deleting, the software will be restarted automatically. Proceed?.
         /// </summary>
         public static string SettingPage_AfterDeletingTheSoftwareWillBeRestartedAutomatically {
             get {
@@ -2319,24 +2085,6 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clear Cached Files.
-        /// </summary>
-        public static string SettingPage_ClearCachedFiles {
-            get {
-                return ResourceManager.GetString("SettingPage_ClearCachedFiles", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Completed.
-        /// </summary>
-        public static string SettingPage_Completed {
-            get {
-                return ResourceManager.GetString("SettingPage_Completed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Current Version:.
         /// </summary>
         public static string SettingPage_CurrentVersion {
@@ -2360,24 +2108,6 @@ namespace Glowworm.Language {
         public static string SettingPage_Donate {
             get {
                 return ResourceManager.GetString("SettingPage_Donate", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Effective at next startup.
-        /// </summary>
-        public static string SettingPage_EffectiveAtNextStartup {
-            get {
-                return ResourceManager.GetString("SettingPage_EffectiveAtNextStartup", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Exit Launcher When Closing Window.
-        /// </summary>
-        public static string SettingPage_ExitLauncherWhenClosingWindow {
-            get {
-                return ResourceManager.GetString("SettingPage_ExitLauncherWhenClosingWindow", resourceCulture);
             }
         }
         
@@ -2427,15 +2157,6 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Keyboard Shortcuts.
-        /// </summary>
-        public static string SettingPage_KeyboardShortcuts {
-            get {
-                return ResourceManager.GetString("SettingPage_KeyboardShortcuts", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Language.
         /// </summary>
         public static string SettingPage_Language {
@@ -2459,15 +2180,6 @@ namespace Glowworm.Language {
         public static string SettingPage_Log {
             get {
                 return ResourceManager.GetString("SettingPage_Log", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Open Data Folder.
-        /// </summary>
-        public static string SettingPage_OpenDataFolder {
-            get {
-                return ResourceManager.GetString("SettingPage_OpenDataFolder", resourceCulture);
             }
         }
         
@@ -2571,38 +2283,11 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Network Error.
-        /// </summary>
-        public static string SettingPage_TestCDNAsync_NetworkError {
-            get {
-                return ResourceManager.GetString("SettingPage_TestCDNAsync_NetworkError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Test URL Protocol.
-        /// </summary>
-        public static string SettingPage_TestURLProtocol {
-            get {
-                return ResourceManager.GetString("SettingPage_TestURLProtocol", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to The current location of the data folder is:.
         /// </summary>
         public static string SettingPage_TheCurrentLocationOfTheDataFolderIs {
             get {
                 return ResourceManager.GetString("SettingPage_TheCurrentLocationOfTheDataFolderIs", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to This is a Logo.
-        /// </summary>
-        public static string SettingPage_ThisIsALogo {
-            get {
-                return ResourceManager.GetString("SettingPage_ThisIsALogo", resourceCulture);
             }
         }
         
@@ -2621,33 +2306,6 @@ namespace Glowworm.Language {
         public static string SettingPage_UpdateSource {
             get {
                 return ResourceManager.GetString("SettingPage_UpdateSource", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Other software can use some of Glowworm&apos;s features through the URL protocol..
-        /// </summary>
-        public static string SettingPage_URLProtocolDesc {
-            get {
-                return ResourceManager.GetString("SettingPage_URLProtocolDesc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to URL Protocol (Experimental).
-        /// </summary>
-        public static string SettingPage_URLProtocolExperimental {
-            get {
-                return ResourceManager.GetString("SettingPage_URLProtocolExperimental", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Windows Size.
-        /// </summary>
-        public static string SettingPage_WindowsSize {
-            get {
-                return ResourceManager.GetString("SettingPage_WindowsSize", resourceCulture);
             }
         }
         
@@ -2697,20 +2355,11 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Uid mismatch detected. Expected: {0}, but found: {1}..
+        ///   Looks up a localized string similar to UID mismatch detected. Expected: {0}, but found: {1}..
         /// </summary>
         public static string UIGFGachaService_UidMismatchDetectedExpected0ButFound1 {
             get {
                 return ResourceManager.GetString("UIGFGachaService_UidMismatchDetectedExpected0ButFound1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Click to Refresh.
-        /// </summary>
-        public static string UpdateContentWindow_ClickToRefresh {
-            get {
-                return ResourceManager.GetString("UpdateContentWindow_ClickToRefresh", resourceCulture);
             }
         }
         
@@ -2720,24 +2369,6 @@ namespace Glowworm.Language {
         public static string UpdateContentWindow_RecentlyUpdatedContent {
             get {
                 return ResourceManager.GetString("UpdateContentWindow_RecentlyUpdatedContent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Architecture:.
-        /// </summary>
-        public static string UpdatePage_Architecture {
-            get {
-                return ResourceManager.GetString("UpdatePage_Architecture", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Build Time:.
-        /// </summary>
-        public static string UpdatePage_BuiltTime {
-            get {
-                return ResourceManager.GetString("UpdatePage_BuiltTime", resourceCulture);
             }
         }
         

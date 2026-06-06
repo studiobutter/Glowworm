@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -253,17 +253,11 @@
   <data name="MainPage_ClickTheRightMouseButtonOnTheGameIconOnTheLeft" xml:space="preserve">
     <value>ゲームアイコンをマウスの右クリックでメニューが表示されます。</value>
   </data>
-  <data name="MainPage_Launcer" xml:space="preserve">
-    <value>ランチャー</value>
-  </data>
   <data name="MainPage_GameScreenshot" xml:space="preserve">
     <value>スクリーンショット</value>
   </data>
   <data name="ScreenshotPage_GameScreenshot" xml:space="preserve">
     <value>スクリーンショット</value>
-  </data>
-  <data name="ScreenshotPage_OpenFolder" xml:space="preserve">
-    <value>フォルダーを開く</value>
   </data>
   <data name="SettingPage_Log" xml:space="preserve">
     <value>ログ</value>
@@ -274,14 +268,8 @@
   <data name="SettingPage_AppSettings" xml:space="preserve">
     <value>アプリの設定</value>
   </data>
-  <data name="SettingPage_EffectiveAtNextStartup" xml:space="preserve">
-    <value>次回の起動時に有効化されます。</value>
-  </data>
   <data name="SettingPage_OpenLogFolder" xml:space="preserve">
     <value>ログフォルダーを開く</value>
-  </data>
-  <data name="SettingPage_WindowsSize" xml:space="preserve">
-    <value>ウィンドウのサイズ</value>
   </data>
   <data name="SettingPage_CheckForUpdate" xml:space="preserve">
     <value>アップデートを確認</value>
@@ -292,17 +280,11 @@
   <data name="SettingPage_JoinPreviewReleaseChannel" xml:space="preserve">
     <value>プレビューリリースチャンネルに参加</value>
   </data>
-  <data name="SettingPage_OpenDataFolder" xml:space="preserve">
-    <value>データフォルダーを開く</value>
-  </data>
   <data name="SettingPage_ReselectDataFolder" xml:space="preserve">
     <value>データフォルダーを再選択</value>
   </data>
   <data name="SettingPage_DeleteAllSettings" xml:space="preserve">
     <value>すべての設定を削除</value>
-  </data>
-  <data name="SettingPage_ClearCachedFiles" xml:space="preserve">
-    <value>キャッシュされたファイルをクリア</value>
   </data>
   <data name="SettingPage_About" xml:space="preserve">
     <value>バージョン情報</value>
@@ -319,17 +301,11 @@
   <data name="SettingPage_OriginalProject" xml:space="preserve">
     <value>元のプロジェクト</value>
   </data>
-  <data name="SettingPage_ThisIsALogo" xml:space="preserve">
-    <value>これはロゴです</value>
-  </data>
   <data name="SettingPage_Update" xml:space="preserve">
     <value>アップデート</value>
   </data>
   <data name="SettingPage_UpdateSource" xml:space="preserve">
     <value>ソースを更新</value>
-  </data>
-  <data name="SettingPage_TestCDNAsync_NetworkError" xml:space="preserve">
-    <value>ネットワークエラー</value>
   </data>
   <data name="SettingPage_TheCurrentLocationOfTheDataFolderIs" xml:space="preserve">
     <value>データフォルダーの現在の場所:</value>
@@ -340,23 +316,14 @@
   <data name="Common_Yes" xml:space="preserve">
     <value>はい</value>
   </data>
-  <data name="SettingPage_AfterDeletingTheSoftwareWillBeRestartedAutomatically" xml:space="preserve">
-    <value>削除後にソフトウェアは自動的に再起動されます。</value>
-  </data>
   <data name="UpdatePage_NewVersion" xml:space="preserve">
     <value>新しいバージョンです!</value>
   </data>
   <data name="UpdatePage_Links" xml:space="preserve">
     <value>リンク:</value>
   </data>
-  <data name="UpdatePage_BuiltTime" xml:space="preserve">
-    <value>ビルド日時:</value>
-  </data>
   <data name="UpdatePage_ReleaseChannel" xml:space="preserve">
     <value>リリースチャンネル:</value>
-  </data>
-  <data name="UpdatePage_Architecture" xml:space="preserve">
-    <value>アーキテクチャ:</value>
   </data>
   <data name="UpdatePage_DownloadInstaller" xml:space="preserve">
     <value>インストーラーをダウンロード</value>
@@ -394,9 +361,6 @@
   </data>
   <data name="SettingPage_Language" xml:space="preserve">
     <value>言語</value>
-  </data>
-  <data name="SettingPage_FollowSystem" xml:space="preserve">
-    <value>システムに従う</value>
   </data>
   <data name="GachaLogService_GetGachaProgressText" xml:space="preserve">
     <value>{1} ページ目で {0} の記録を取得</value>
@@ -436,9 +400,6 @@
   <data name="SettingPage_CDNTips" xml:space="preserve">
     <value>一部の地域のユーザーは、ネットワークの異常が発生する場合があります。この問題はCDNを変更する事で解決ができます。</value>
   </data>
-  <data name="SettingPage_ExitLauncherWhenClosingWindow" xml:space="preserve">
-    <value>ウィンドウを閉じたときにランチャーを終了する</value>
-  </data>
   <data name="Common_Exit" xml:space="preserve">
     <value>終了</value>
   </data>
@@ -447,12 +408,6 @@
   </data>
   <data name="ScreenshotPage_BackupScreenshots" xml:space="preserve">
     <value>スクリーンショットのバックアップ</value>
-  </data>
-  <data name="ScreenshotPage_OpenBackupFolder" xml:space="preserve">
-    <value>バックアップフォルダーを開く</value>
-  </data>
-  <data name="SettingPage_LastBackup" xml:space="preserve">
-    <value>最終バックアップ</value>
   </data>
   <data name="SettingPage_BackupDatabase" xml:space="preserve">
     <value>データベースのバックアップ</value>
@@ -465,18 +420,6 @@
   </data>
   <data name="SettingPage_Donate" xml:space="preserve">
     <value>寄付</value>
-  </data>
-  <data name="SettingPage_URLProtocolExperimental" xml:space="preserve">
-    <value>URLプロトコル (試験的)</value>
-  </data>
-  <data name="SettingPage_URLProtocolDesc" xml:space="preserve">
-    <value>他のソフトウェアは、URLプロトコルを通じてGlowwormの機能の一部を利用することができます。</value>
-  </data>
-  <data name="SettingPage_RegisterURLProtocol" xml:space="preserve">
-    <value>URLプロトコルを登録</value>
-  </data>
-  <data name="SettingPage_TestURLProtocol" xml:space="preserve">
-    <value>URLプロトコルをテスト</value>
   </data>
   <data name="ImageViewPage_ZoomOut" xml:space="preserve">
     <value>縮小</value>
@@ -496,14 +439,8 @@
   <data name="FileSettingPage_DataFolder" xml:space="preserve">
     <value>データフォルダー</value>
   </data>
-  <data name="FileSettingPage_OpenLogFile" xml:space="preserve">
-    <value>ログファイルを開く</value>
-  </data>
   <data name="SettingPage_FileManagement" xml:space="preserve">
     <value>ファイルの管理</value>
-  </data>
-  <data name="SettingPage_Completed" xml:space="preserve">
-    <value>完了</value>
   </data>
   <data name="AboutSettingPage_Links" xml:space="preserve">
     <value>リンク</value>
@@ -535,38 +472,11 @@
   <data name="FileSettingPage_ClearCache" xml:space="preserve">
     <value>キャッシュをクリア</value>
   </data>
-  <data name="AppearanceSettingPage_BetterExperience" xml:space="preserve">
-    <value>より良いユーザーエクスペリエンスのために、システム設定で「{0}」と「{1}」を有効化する事をお勧めします。</value>
-  </data>
   <data name="AppearanceSettingPage_TransparencyEffects" xml:space="preserve">
     <value>透過効果</value>
   </data>
   <data name="AppearanceSettingPage_AnimationEffects" xml:space="preserve">
     <value>アニメーション効果</value>
-  </data>
-  <data name="GachaLogPage_AlwaysFailedToGetGachaRecords" xml:space="preserve">
-    <value>常にガチャの記録に失敗しますか?</value>
-  </data>
-  <data name="AboutSettingPage_VerifyFileIntegrity" xml:space="preserve">
-    <value>ファイルの完全性を検証</value>
-  </data>
-  <data name="AboutSettingPage_VerifyFailed" xml:space="preserve">
-    <value>検証に失敗</value>
-  </data>
-  <data name="AboutSettingPage_CurrentVersionIsNotTheLatestVersion" xml:space="preserve">
-    <value>現在のバージョンは、最新のバージョン({0})ではありません。</value>
-  </data>
-  <data name="AboutSettingPage_ClickButtonToRepairFiles" xml:space="preserve">
-    <value>ボタンをクリックでファイルを修復します。</value>
-  </data>
-  <data name="AboutSettingPage_RepairFiles" xml:space="preserve">
-    <value>ファイルを修復</value>
-  </data>
-  <data name="AboutSettingPage_VerifySuccessfully" xml:space="preserve">
-    <value>検証が成功しました!</value>
-  </data>
-  <data name="GachaLogPage_ShowChronicledWish" xml:space="preserve">
-    <value>集録祈願を表示</value>
   </data>
   <data name="CloudGameGachaWindow_OpenTheGachaRecordsPageInGameAndThenClickTheButtonOnTheRight" xml:space="preserve">
     <value>ゲーム内のガチャの記録ページを開き、右側のボタンをクリックします。</value>
@@ -576,9 +486,6 @@
   </data>
   <data name="GachaLogPage_ViaCloudGameWeb" xml:space="preserve">
     <value>クラウドゲーム経由（ウェブ）</value>
-  </data>
-  <data name="UpdateContentWindow_ClickToRefresh" xml:space="preserve">
-    <value>クリックで更新</value>
   </data>
   <data name="UpdateContentWindow_RecentlyUpdatedContent" xml:space="preserve">
     <value>最近更新されたコンテンツ</value>
@@ -710,9 +617,6 @@
   <data name="Common_RestoreDefaults" xml:space="preserve">
     <value>既定に復元</value>
   </data>
-  <data name="MainView_CheckSystemProxy_SystemProxyIsEnabled" xml:space="preserve">
-    <value>システムプロキシは有効です。</value>
-  </data>
   <data name="ScreenCaptureInfoWindow_ScreenshotSaved" xml:space="preserve">
     <value>スクリーンショットを保存しました</value>
   </data>
@@ -773,9 +677,6 @@
   <data name="Common_Edit" xml:space="preserve">
     <value>編集</value>
   </data>
-  <data name="ImageViewWindow2_SaveAs" xml:space="preserve">
-    <value>名前を付けて保存</value>
-  </data>
   <data name="ImageViewWindow2_ImageInformation" xml:space="preserve">
     <value>画像情報</value>
   </data>
@@ -788,9 +689,6 @@
   <data name="ImageViewWindow2_SDRMappedLuminance" xml:space="preserve">
     <value>SDR マッピングされた輝度</value>
   </data>
-  <data name="ImageViewWindow2_Auto" xml:space="preserve">
-    <value>自動</value>
-  </data>
   <data name="ImageViewWindow2_ExportImage" xml:space="preserve">
     <value>画像をエクスポート</value>
   </data>
@@ -799,9 +697,6 @@
   </data>
   <data name="ImageViewWindow2_DeleteImageFile" xml:space="preserve">
     <value>画像ファイルを削除</value>
-  </data>
-  <data name="ImageViewWindow2_CopiedToClipboard" xml:space="preserve">
-    <value>クリップボードにコピーしました。</value>
   </data>
   <data name="ImageViewWindow2_FileDoesNotExist" xml:space="preserve">
     <value>ファイルが見つかりません。</value>
@@ -839,38 +734,14 @@
   <data name="HotkeyInput_PressTheShortcutKeys" xml:space="preserve">
     <value>ショートカットキーを押す</value>
   </data>
-  <data name="HotkeyManager_TheShortcutKeys0IsAlreadyInUse" xml:space="preserve">
-    <value>ショートカットキー（{0}）は既に使用されています。</value>
-  </data>
-  <data name="HotkeyManager_FailedToRegisterTheShortcutKeys0" xml:space="preserve">
-    <value>ショートカットキー（{0}）を登録できませんでした。</value>
-  </data>
-  <data name="HotkeyManager_TheShortcutKeys0IsAlreadyInUsePleaseModifyItInSettingsPage" xml:space="preserve">
-    <value>ショートカットキー（{0}）は既に使用されています。設定ページで変更してください。</value>
-  </data>
-  <data name="HotkeyManager_FailedToRegisterTheShortcutKeys0PleaseRetryInSettingsPage" xml:space="preserve">
-    <value>ショートカットキー（{0}）を登録できませんでした。設定ページで再試行してください。</value>
-  </data>
   <data name="ScreenshotSetting_ScreenshotShortcut" xml:space="preserve">
     <value>スクショのショートカット</value>
-  </data>
-  <data name="HotkeySetting_OpenMainWindow" xml:space="preserve">
-    <value>メインウィンドウを開く</value>
-  </data>
-  <data name="HotkeySetting_FailedToRegisterTheShortcutKeys" xml:space="preserve">
-    <value>ショートカットキーを登録できませんでした。</value>
   </data>
   <data name="ScreenshotSetting_TheBuiltInScreenshotFeatureWillSaveImagesToTheFollowingFolder" xml:space="preserve">
     <value>内蔵のスクショ機能により、以下のフォルダーに画像を保存します。</value>
   </data>
   <data name="Common_ChangeFolder" xml:space="preserve">
     <value>フォルダーの変更</value>
-  </data>
-  <data name="HotkeySetting_SingleKeyShortcutsTips" xml:space="preserve">
-    <value>シングルキーショートカット(F1-F12)を登録する場合は、Glowwormを管理者権限で実行する必要があります。そうでなければ、ショートカットがゲームで動作しない場合があります。</value>
-  </data>
-  <data name="SettingPage_KeyboardShortcuts" xml:space="preserve">
-    <value>キーボード ショートカット</value>
   </data>
   <data name="ScreenshotSetting_TestScreenshot" xml:space="preserve">
     <value>テストスクショ</value>
@@ -900,9 +771,6 @@
   </data>
   <data name="ScreenshotPage_MultiSelect" xml:space="preserve">
     <value>複数選択</value>
-  </data>
-  <data name="ScreenshotPage_Total0Files" xml:space="preserve">
-    <value>合計 {0} ファイル。</value>
   </data>
   <data name="ScreenshotSetting_OtherOptions" xml:space="preserve">
     <value>その他のオプション</value>
@@ -970,12 +838,6 @@
   <data name="ScreenshotSetting_ClearThumbnailCache" xml:space="preserve">
     <value>サムネキャッシュを削除</value>
   </data>
-  <data name="ScreenshotSetting_ClearSuccessfully" xml:space="preserve">
-    <value>正常に削除しました</value>
-  </data>
-  <data name="ScreenshotSetting_ClearFailed" xml:space="preserve">
-    <value>失敗を削除</value>
-  </data>
   <data name="ScreenshotSetting_HighQualityAVIFAndJPEGXLImageFormatsSaveApproximately85OfStorageSpace" xml:space="preserve">
     <value>高品質の AVIF および JPEG XL 画像フォーマットは、ストレージスペースの約 85% を節約します。</value>
   </data>
@@ -984,9 +846,6 @@
   </data>
   <data name="GenshinBeyondGachaPage_MiliastraWonderlandOde" xml:space="preserve">
     <value>星々の幻境星願</value>
-  </data>
-  <data name="ItIsRecommendedToInstallTheVP9VideoExtensionsToReduceCPUUsage" xml:space="preserve">
-    <value>VP9 Video ExtensionsをインストールしてCPU使用率を下げることを推奨します。</value>
   </data>
   <data name="AboutSetting_UpdatedToTheLatestVersion" xml:space="preserve">
     <value>最新バージョンに更新済みです。</value>
@@ -1008,9 +867,6 @@
   </data>
   <data name="Common_Sort" xml:space="preserve">
     <value>並び替え</value>
-  </data>
-  <data name="AppConfig_AnUnknownIssueOccurredDuringInitialization" xml:space="preserve">
-    <value>初期化中に不明な問題が発生しました。</value>
   </data>
   <data name="NoPermissionWindow_NoPermissionToFolderRestartOrClose" xml:space="preserve">
     <value>プログラムに以下のフォルダへのアクセス権限がありません。管理者として再起動するか、フォルダを移動してください。</value>
@@ -1074,5 +930,26 @@
   </data>
   <data name="FileSettingPage_SelectedFolderNotWritable" xml:space="preserve">
     <value>選択したフォルダは書き込み可能ではありません: {0}</value>
+  </data>
+  <data name="SettingPage_AfterDeletingTheSoftwareWillBeRestartedAutomatically" xml:space="preserve">
+    <value>削除後にソフトウェアは自動的に再起動されます。進む？</value>
+  </data>
+  <data name="AppConfig_AnUnknownIssueOccurredDuringInitialization" xml:space="preserve">
+    <value>初期化中に不明な問題が発生しました。</value>
+  </data>
+  <data name="SettingPage_LastBackup" xml:space="preserve">
+    <value>最終バックアップ</value>
+  </data>
+  <data name="SettingPage_RegisterURLProtocol" xml:space="preserve">
+    <value>URLプロトコルを登録</value>
+  </data>
+  <data name="SettingPage_FollowSystem" xml:space="preserve">
+    <value>システムに従う</value>
+  </data>
+  <data name="HotkeySetting_SingleKeyShortcutsTips" xml:space="preserve">
+    <value>シングルキーショートカット(F1-F12)を登録する場合は、Glowwormを管理者権限で実行する必要があります。そうでなければ、ショートカットがゲームで動作しない場合があります。</value>
+  </data>
+  <data name="ImageViewWindow2_Auto" xml:space="preserve">
+    <value>自動</value>
   </data>
 </root>

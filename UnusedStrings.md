@@ -1,0 +1,25 @@
+The Common strings are the important ones that is being used, it should not be deleted as it is use for bug fixing any missing text or .
+   - Common_Accept
+   - Common_AccountError
+   - Common_All
+   - Common_Continue
+   - Common_Disabled
+   - Common_Disclaimer
+   - Common_Enabled
+   - Common_Exit
+   - Common_FileSize
+   - Common_Filter
+   - Common_Hide
+   - Common_NetworkError
+   - Common_Refresh
+   - Common_Reject
+   - Common_RestoreDefaults
+   - Common_Select
+   - Common_Sort
+   - Common_Start
+   - Common_Summary
+   - Common_Time
+   - Common_Video
+   - Common_Warning
+   - Common_WebView2ComponentInitializationFailed
+   - Common_Yes

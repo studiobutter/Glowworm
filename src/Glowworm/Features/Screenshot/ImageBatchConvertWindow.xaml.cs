@@ -124,7 +124,7 @@ public sealed partial class ImageBatchConvertWindow : WindowEx
 
     public ObservableCollection<ImageConvertItem> ImageConvertItems { get; set; } = new();
 
-    public string OutputFolder { get; set => SetProperty(ref field, value); } = "";
+    public string OutputFolder { get; set => SetProperty(ref field, value); } = Lang.ImageBatchConvertWindow_OriginalFileFolder;
 
     public int TotalCount { get; set => SetProperty(ref field, value); }
 
@@ -513,11 +513,15 @@ public sealed partial class ImageBatchConvertWindow : WindowEx
             item.ConvertError = true;
             if (ex is UnauthorizedAccessException)
             {
-                item.ErrorMessage = "";
+                item.ErrorMessage = Lang.ImageBatchConvertWindow_NoReadOrWritePermission;
+            }
+            else if (ex is InvalidOperationException)
+            {
+                item.ErrorMessage = ex.Message;
             }
             else
             {
-                item.ErrorMessage = "";
+                item.ErrorMessage = Lang.ImageBatchConvertWindow_ConvertFailed;
             }
             ErrorCount++;
         }

@@ -1026,7 +1026,7 @@ public sealed partial class ImageViewWindow2 : Window
             }
             else
             {
-                ShowInfo(InfoBarSeverity.Warning, "", "", 5000);
+                ShowInfo(InfoBarSeverity.Warning, Lang.ImageViewWindow2_FileDoesNotExist, "", 5000);
             }
         }
         catch (Exception ex)
@@ -1047,7 +1047,7 @@ public sealed partial class ImageViewWindow2 : Window
             }
             else
             {
-                ShowInfo(InfoBarSeverity.Warning, "", "", 5000);
+                ShowInfo(InfoBarSeverity.Warning, Lang.ImageViewWindow2_FileDoesNotExist, "", 5000);
             }
         }
         catch (Exception ex)
@@ -1069,7 +1069,7 @@ public sealed partial class ImageViewWindow2 : Window
             }
             else
             {
-                ShowInfo(InfoBarSeverity.Warning, "", "", 5000);
+                ShowInfo(InfoBarSeverity.Warning, Lang.ImageViewWindow2_FileDoesNotExist, "", 5000);
             }
         }
         catch (Exception ex)
@@ -1087,11 +1087,11 @@ public sealed partial class ImageViewWindow2 : Window
             {
                 var file = await StorageFile.GetFileFromPathAsync(CurrentFilePath);
                 ClipboardHelper.SetStorageItems(DataPackageOperation.Copy, file);
-                ShowInfo(InfoBarSeverity.Success, "", "", 2000);
+                ShowInfo(InfoBarSeverity.Success, Lang.Common_CopiedToClipboard, "", 2000);
             }
             else
             {
-                ShowInfo(InfoBarSeverity.Warning, "", "", 5000);
+                ShowInfo(InfoBarSeverity.Warning, Lang.ImageViewWindow2_FileDoesNotExist, "", 5000);
             }
         }
         catch (Exception ex)
@@ -1108,11 +1108,11 @@ public sealed partial class ImageViewWindow2 : Window
             if (File.Exists(CurrentFilePath))
             {
                 ClipboardHelper.SetText(CurrentFilePath);
-                ShowInfo(InfoBarSeverity.Success, "", "", 2000);
+                ShowInfo(InfoBarSeverity.Success, Lang.Common_CopiedToClipboard, "", 2000);
             }
             else
             {
-                ShowInfo(InfoBarSeverity.Warning, "", "", 5000);
+                ShowInfo(InfoBarSeverity.Warning, Lang.ImageViewWindow2_FileDoesNotExist, "", 5000);
             }
         }
         catch (Exception ex)
@@ -1130,11 +1130,11 @@ public sealed partial class ImageViewWindow2 : Window
             {
                 var file = await StorageFile.GetFileFromPathAsync(CurrentFilePath);
                 ClipboardHelper.SetBitmap(file);
-                ShowInfo(InfoBarSeverity.Success, "", "", 2000);
+                ShowInfo(InfoBarSeverity.Success, Lang.Common_CopiedToClipboard, "", 2000);
             }
             else
             {
-                ShowInfo(InfoBarSeverity.Warning, "", "", 5000);
+                ShowInfo(InfoBarSeverity.Warning, Lang.ImageViewWindow2_FileDoesNotExist, "", 5000);
             }
         }
         catch (Exception ex)
@@ -1183,12 +1183,12 @@ public sealed partial class ImageViewWindow2 : Window
         catch (UnauthorizedAccessException ex)
         {
             // TODO ?? RPC ??
-            ShowInfo(InfoBarSeverity.Warning, "", "", 5000);
+            ShowInfo(InfoBarSeverity.Warning, Lang.ImageViewWindow2_UnableToDeleteTheFile, Lang.ImageViewWindow2_InsufficientPermissionsOrTheFileIsInUse, 5000);
             _logger.LogError(ex, "Failed to delete image file");
         }
         catch (Exception ex)
         {
-            ShowInfo(InfoBarSeverity.Error, "", ex.Message, 0);
+            ShowInfo(InfoBarSeverity.Error, Lang.ImageViewWindow2_FailedToDeleteImageFile, ex.Message, 0);
             _logger.LogError(ex, "Failed to delete image file");
         }
     }

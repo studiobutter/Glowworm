@@ -460,7 +460,7 @@ public sealed partial class GachaLogPage : PageBase
                     }
                     else
                     {
-                        InAppToast.MainWindow?.Warning(null, Lang.GachaLogPage_CannotFindURL);
+                        InAppToast.MainWindow?.Warning(Lang.GachaLogPage_CannotFindURL, Lang.GachaLogPage_PleaseOpenTheGachaRecordsPageInGameAndTryAgain);
                     }
                     return;
                 }

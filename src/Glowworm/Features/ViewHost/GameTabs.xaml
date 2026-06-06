@@ -8,41 +8,65 @@
              mc:Ignorable="d">
 
     <Grid Height="48" Canvas.ZIndex="100">
-        <ItemsControl x:Name="ItemsControl_GameTabs" ItemsSource="{x:Bind GameList}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,0,0"/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate x:DataType="local:GameTabItem">
-                    <Button Click="Button_GameTab_Click" 
-                            Padding="12,0,8,0" 
-                            Height="32" 
-                            VerticalAlignment="Center"
-                            HorizontalAlignment="Left"
-                            HorizontalContentAlignment="Left"
-                            Style="{ThemeResource DefaultButtonStyle}">
-                        <StackPanel Orientation="Horizontal" Spacing="12">
-                            <Image Source="{x:Bind Icon}" Width="16" Height="16"/>
-                            <TextBlock Text="{x:Bind SelectedRegionName, Mode=OneWay}" VerticalAlignment="Center"/>
-                            <DropDownButton x:Name="Button_SwitchRegion" 
-                                            Width="24" 
-                                            Height="24" 
-                                            Padding="-8,0,6,0" 
-                                            BorderThickness="0"
-                                            Background="Transparent"
-                                            HorizontalAlignment="Left"
-                                            Loaded="Button_SwitchRegion_Loaded">
-                                <DropDownButton.Flyout>
-                                    <MenuFlyout x:Name="MenuFlyout_Regions" Placement="Bottom">
-                                    </MenuFlyout>
-                                </DropDownButton.Flyout>
-                            </DropDownButton>
+        <StackPanel Orientation="Horizontal" Spacing="8">
+            <ItemsControl x:Name="ItemsControl_GameTabs" ItemsSource="{x:Bind GameList}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,0,0"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate x:DataType="local:GameTabItem">
+                        <Button Click="Button_GameTab_Click" 
+                                Padding="12,0,8,0" 
+                                Height="32" 
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left"
+                                HorizontalContentAlignment="Left"
+                                Style="{ThemeResource DefaultButtonStyle}">
+                            <StackPanel Orientation="Horizontal" Spacing="12">
+                                <Image Source="{x:Bind Icon}" Width="16" Height="16"/>
+                                <TextBlock Text="{x:Bind SelectedRegionName, Mode=OneWay}" VerticalAlignment="Center"/>
+                                <DropDownButton x:Name="Button_SwitchRegion" 
+                                                Width="24" 
+                                                Height="24" 
+                                                Padding="-8,0,6,0" 
+                                                BorderThickness="0"
+                                                Background="Transparent"
+                                                HorizontalAlignment="Left"
+                                                Loaded="Button_SwitchRegion_Loaded">
+                                    <DropDownButton.Flyout>
+                                        <MenuFlyout x:Name="MenuFlyout_Regions" Placement="Bottom">
+                                        </MenuFlyout>
+                                    </DropDownButton.Flyout>
+                                </DropDownButton>
+                            </StackPanel>
+                        </Button>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,148,0">
+            <Button Command="{x:Bind RescanGameDirectoriesCommand}"
+                    ToolTipService.ToolTip="{x:Bind lang:Lang.Common_Refresh}"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Padding="8">
+                <FontIcon Glyph="&#xE72C;" FontSize="14" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+            </Button>
+            
+            <FontIcon Glyph="&#xE946;" FontSize="14" Foreground="{ThemeResource TextFillColorSecondaryBrush}">
+                <ToolTipService.ToolTip>
+                    <ToolTip>
+                        <StackPanel Spacing="4" MaxWidth="280">
+                            <TextBlock Text="{x:Bind lang:Lang.MainPage_Tips}" FontWeight="SemiBold" />
+                            <TextBlock Text="{x:Bind lang:Lang.MainPage_HowToSwitchGameRegion}" FontWeight="SemiBold" />
+                            <TextBlock Text="{x:Bind lang:Lang.MainPage_ClickTheRightMouseButtonOnTheGameIconOnTheLeft}" TextWrapping="Wrap" />
                         </StackPanel>
-                    </Button>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+                    </ToolTip>
+                </ToolTipService.ToolTip>
+            </FontIcon>
+        </StackPanel>
     </Grid>
 </UserControl>

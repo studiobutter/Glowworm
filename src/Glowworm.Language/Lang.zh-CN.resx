@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -253,17 +253,11 @@
   <data name="MainPage_ClickTheRightMouseButtonOnTheGameIconOnTheLeft" xml:space="preserve">
     <value>在左侧的游戏图标上点击鼠标右键</value>
   </data>
-  <data name="MainPage_Launcer" xml:space="preserve">
-    <value>启动器</value>
-  </data>
   <data name="MainPage_GameScreenshot" xml:space="preserve">
     <value>游戏截图</value>
   </data>
   <data name="ScreenshotPage_GameScreenshot" xml:space="preserve">
     <value>游戏截图</value>
-  </data>
-  <data name="ScreenshotPage_OpenFolder" xml:space="preserve">
-    <value>打开文件夹</value>
   </data>
   <data name="SettingPage_Log" xml:space="preserve">
     <value>日志</value>
@@ -274,14 +268,8 @@
   <data name="SettingPage_AppSettings" xml:space="preserve">
     <value>应用设置</value>
   </data>
-  <data name="SettingPage_EffectiveAtNextStartup" xml:space="preserve">
-    <value>下次启动时生效</value>
-  </data>
   <data name="SettingPage_OpenLogFolder" xml:space="preserve">
     <value>打开日志文件夹</value>
-  </data>
-  <data name="SettingPage_WindowsSize" xml:space="preserve">
-    <value>窗口大小</value>
   </data>
   <data name="SettingPage_CheckForUpdate" xml:space="preserve">
     <value>检查更新</value>
@@ -292,17 +280,11 @@
   <data name="SettingPage_JoinPreviewReleaseChannel" xml:space="preserve">
     <value>加入预览版更新渠道</value>
   </data>
-  <data name="SettingPage_OpenDataFolder" xml:space="preserve">
-    <value>打开数据文件夹</value>
-  </data>
   <data name="SettingPage_ReselectDataFolder" xml:space="preserve">
     <value>重新选择数据文件夹</value>
   </data>
   <data name="SettingPage_DeleteAllSettings" xml:space="preserve">
     <value>删除所有设置</value>
-  </data>
-  <data name="SettingPage_ClearCachedFiles" xml:space="preserve">
-    <value>清除缓存文件</value>
   </data>
   <data name="SettingPage_About" xml:space="preserve">
     <value>关于</value>
@@ -319,17 +301,11 @@
   <data name="SettingPage_OriginalProject" xml:space="preserve">
     <value>原项目</value>
   </data>
-  <data name="SettingPage_ThisIsALogo" xml:space="preserve">
-    <value>假装这里有个 logo</value>
-  </data>
   <data name="SettingPage_Update" xml:space="preserve">
     <value>检查更新</value>
   </data>
   <data name="SettingPage_UpdateSource" xml:space="preserve">
     <value>升级选项</value>
-  </data>
-  <data name="SettingPage_TestCDNAsync_NetworkError" xml:space="preserve">
-    <value>网络异常</value>
   </data>
   <data name="SettingPage_TheCurrentLocationOfTheDataFolderIs" xml:space="preserve">
     <value>当前数据文件夹的位置是：</value>
@@ -340,23 +316,14 @@
   <data name="Common_Yes" xml:space="preserve">
     <value>是的</value>
   </data>
-  <data name="SettingPage_AfterDeletingTheSoftwareWillBeRestartedAutomatically" xml:space="preserve">
-    <value>删除完成后，将自动重启软件。</value>
-  </data>
   <data name="UpdatePage_NewVersion" xml:space="preserve">
     <value>新版本！</value>
   </data>
   <data name="UpdatePage_Links" xml:space="preserve">
     <value>相关链接：</value>
   </data>
-  <data name="UpdatePage_BuiltTime" xml:space="preserve">
-    <value>编译时间：</value>
-  </data>
   <data name="UpdatePage_ReleaseChannel" xml:space="preserve">
     <value>更新渠道：</value>
-  </data>
-  <data name="UpdatePage_Architecture" xml:space="preserve">
-    <value>架构：</value>
   </data>
   <data name="UpdatePage_DownloadInstaller" xml:space="preserve">
     <value>安装版下载</value>
@@ -394,9 +361,6 @@
   </data>
   <data name="SettingPage_Language" xml:space="preserve">
     <value>语言</value>
-  </data>
-  <data name="SettingPage_FollowSystem" xml:space="preserve">
-    <value>跟随系统</value>
   </data>
   <data name="GachaLogService_GetGachaProgressText" xml:space="preserve">
     <value>正在获取 {0} 第 {1} 页</value>
@@ -436,9 +400,6 @@
   <data name="SettingPage_CDNTips" xml:space="preserve">
     <value>部分地区的用户可能会碰到网络异常的情况，您可以通过切换 CDN 解决此问题。</value>
   </data>
-  <data name="SettingPage_ExitLauncherWhenClosingWindow" xml:space="preserve">
-    <value>关闭窗口时退出启动器</value>
-  </data>
   <data name="Common_Exit" xml:space="preserve">
     <value>退出</value>
   </data>
@@ -447,12 +408,6 @@
   </data>
   <data name="ScreenshotPage_BackupScreenshots" xml:space="preserve">
     <value>备份截图</value>
-  </data>
-  <data name="ScreenshotPage_OpenBackupFolder" xml:space="preserve">
-    <value>打开备份文件夹</value>
-  </data>
-  <data name="SettingPage_LastBackup" xml:space="preserve">
-    <value>上次备份</value>
   </data>
   <data name="SettingPage_BackupDatabase" xml:space="preserve">
     <value>备份数据库</value>
@@ -465,18 +420,6 @@
   </data>
   <data name="SettingPage_Donate" xml:space="preserve">
     <value>赞助开发者</value>
-  </data>
-  <data name="SettingPage_URLProtocolExperimental" xml:space="preserve">
-    <value>URL 协议（实验中）</value>
-  </data>
-  <data name="SettingPage_URLProtocolDesc" xml:space="preserve">
-    <value>其他软件可通过 URL 协议使用 Glowworm 的部分功能</value>
-  </data>
-  <data name="SettingPage_RegisterURLProtocol" xml:space="preserve">
-    <value>注册 URL 协议</value>
-  </data>
-  <data name="SettingPage_TestURLProtocol" xml:space="preserve">
-    <value>测试 URL 协议</value>
   </data>
   <data name="ImageViewPage_ZoomOut" xml:space="preserve">
     <value>缩小</value>
@@ -496,14 +439,8 @@
   <data name="FileSettingPage_DataFolder" xml:space="preserve">
     <value>数据文件夹</value>
   </data>
-  <data name="FileSettingPage_OpenLogFile" xml:space="preserve">
-    <value>打开日志文件</value>
-  </data>
   <data name="SettingPage_FileManagement" xml:space="preserve">
     <value>文件管理</value>
-  </data>
-  <data name="SettingPage_Completed" xml:space="preserve">
-    <value>完成</value>
   </data>
   <data name="AboutSettingPage_Links" xml:space="preserve">
     <value>相关链接</value>
@@ -535,38 +472,11 @@
   <data name="FileSettingPage_ClearCache" xml:space="preserve">
     <value>清理缓存</value>
   </data>
-  <data name="AppearanceSettingPage_BetterExperience" xml:space="preserve">
-    <value>推荐在系统设置中启用 {0} 和 {1} 以获得更好的使用体验。</value>
-  </data>
   <data name="AppearanceSettingPage_TransparencyEffects" xml:space="preserve">
     <value>透明效果</value>
   </data>
   <data name="AppearanceSettingPage_AnimationEffects" xml:space="preserve">
     <value>动画效果</value>
-  </data>
-  <data name="GachaLogPage_AlwaysFailedToGetGachaRecords" xml:space="preserve">
-    <value>总是获取不到抽卡记录？</value>
-  </data>
-  <data name="AboutSettingPage_VerifyFileIntegrity" xml:space="preserve">
-    <value>校验文件完整性</value>
-  </data>
-  <data name="AboutSettingPage_VerifyFailed" xml:space="preserve">
-    <value>校验失败</value>
-  </data>
-  <data name="AboutSettingPage_CurrentVersionIsNotTheLatestVersion" xml:space="preserve">
-    <value>当前版本不是最新版本 ({0})</value>
-  </data>
-  <data name="AboutSettingPage_ClickButtonToRepairFiles" xml:space="preserve">
-    <value>点击按键，修复文件。</value>
-  </data>
-  <data name="AboutSettingPage_RepairFiles" xml:space="preserve">
-    <value>修复文件</value>
-  </data>
-  <data name="AboutSettingPage_VerifySuccessfully" xml:space="preserve">
-    <value>校验成功！</value>
-  </data>
-  <data name="GachaLogPage_ShowChronicledWish" xml:space="preserve">
-    <value>展示集录祈愿</value>
   </data>
   <data name="CloudGameGachaWindow_OpenTheGachaRecordsPageInGameAndThenClickTheButtonOnTheRight" xml:space="preserve">
     <value>在游戏中打开抽卡记录页面，然后点击右边的按键。</value>
@@ -576,9 +486,6 @@
   </data>
   <data name="GachaLogPage_ViaCloudGameWeb" xml:space="preserve">
     <value>通过云游戏获取 ⟪网络⟫</value>
-  </data>
-  <data name="UpdateContentWindow_ClickToRefresh" xml:space="preserve">
-    <value>点击刷新</value>
   </data>
   <data name="UpdateContentWindow_RecentlyUpdatedContent" xml:space="preserve">
     <value>最近更新内容</value>
@@ -710,9 +617,6 @@
   <data name="Common_RestoreDefaults" xml:space="preserve">
     <value>恢复默认设置</value>
   </data>
-  <data name="MainView_CheckSystemProxy_SystemProxyIsEnabled" xml:space="preserve">
-    <value>系统代理已启用</value>
-  </data>
   <data name="ScreenCaptureInfoWindow_ScreenshotSaved" xml:space="preserve">
     <value>截图已保存</value>
   </data>
@@ -773,9 +677,6 @@
   <data name="Common_Edit" xml:space="preserve">
     <value>编辑</value>
   </data>
-  <data name="ImageViewWindow2_SaveAs" xml:space="preserve">
-    <value>另存为</value>
-  </data>
   <data name="ImageViewWindow2_ImageInformation" xml:space="preserve">
     <value>图像信息</value>
   </data>
@@ -788,9 +689,6 @@
   <data name="ImageViewWindow2_SDRMappedLuminance" xml:space="preserve">
     <value>SDR 映射亮度</value>
   </data>
-  <data name="ImageViewWindow2_Auto" xml:space="preserve">
-    <value>自动</value>
-  </data>
   <data name="ImageViewWindow2_ExportImage" xml:space="preserve">
     <value>导出图像</value>
   </data>
@@ -799,9 +697,6 @@
   </data>
   <data name="ImageViewWindow2_DeleteImageFile" xml:space="preserve">
     <value>删除图像文件</value>
-  </data>
-  <data name="ImageViewWindow2_CopiedToClipboard" xml:space="preserve">
-    <value>已复制到剪贴板</value>
   </data>
   <data name="ImageViewWindow2_FileDoesNotExist" xml:space="preserve">
     <value>文件不存在</value>
@@ -839,38 +734,14 @@
   <data name="HotkeyInput_PressTheShortcutKeys" xml:space="preserve">
     <value>按下快捷键</value>
   </data>
-  <data name="HotkeyManager_TheShortcutKeys0IsAlreadyInUse" xml:space="preserve">
-    <value>快捷键 ({0}) 已被占用</value>
-  </data>
-  <data name="HotkeyManager_FailedToRegisterTheShortcutKeys0" xml:space="preserve">
-    <value>快捷键 ({0}) 注册失败</value>
-  </data>
-  <data name="HotkeyManager_TheShortcutKeys0IsAlreadyInUsePleaseModifyItInSettingsPage" xml:space="preserve">
-    <value>快捷键 ({0}) 已被占用，请在设置页面中修改。</value>
-  </data>
-  <data name="HotkeyManager_FailedToRegisterTheShortcutKeys0PleaseRetryInSettingsPage" xml:space="preserve">
-    <value>快捷键 ({0}) 注册失败，请在设置页面中重试。</value>
-  </data>
   <data name="ScreenshotSetting_ScreenshotShortcut" xml:space="preserve">
     <value>截图快捷键</value>
-  </data>
-  <data name="HotkeySetting_OpenMainWindow" xml:space="preserve">
-    <value>打开主窗口</value>
-  </data>
-  <data name="HotkeySetting_FailedToRegisterTheShortcutKeys" xml:space="preserve">
-    <value>快捷键注册失败</value>
   </data>
   <data name="ScreenshotSetting_TheBuiltInScreenshotFeatureWillSaveImagesToTheFollowingFolder" xml:space="preserve">
     <value>内置截图功能会将图片保存到以下文件夹。</value>
   </data>
   <data name="Common_ChangeFolder" xml:space="preserve">
     <value>修改文件夹</value>
-  </data>
-  <data name="HotkeySetting_SingleKeyShortcutsTips" xml:space="preserve">
-    <value>如果注册单键快捷键 (F1-F12)，需要以管理员权限运行 Glowworm，否则在游戏中快捷键无法生效。</value>
-  </data>
-  <data name="SettingPage_KeyboardShortcuts" xml:space="preserve">
-    <value>键盘快捷键</value>
   </data>
   <data name="ScreenshotSetting_TestScreenshot" xml:space="preserve">
     <value>测试截图</value>
@@ -900,9 +771,6 @@
   </data>
   <data name="ScreenshotPage_MultiSelect" xml:space="preserve">
     <value>多选</value>
-  </data>
-  <data name="ScreenshotPage_Total0Files" xml:space="preserve">
-    <value>总计 {0} 个文件。</value>
   </data>
   <data name="ScreenshotSetting_OtherOptions" xml:space="preserve">
     <value>其他选项</value>
@@ -970,12 +838,6 @@
   <data name="ScreenshotSetting_ClearThumbnailCache" xml:space="preserve">
     <value>清除缩略图缓存</value>
   </data>
-  <data name="ScreenshotSetting_ClearSuccessfully" xml:space="preserve">
-    <value>清除成功</value>
-  </data>
-  <data name="ScreenshotSetting_ClearFailed" xml:space="preserve">
-    <value>清除失败</value>
-  </data>
   <data name="ScreenshotSetting_HighQualityAVIFAndJPEGXLImageFormatsSaveApproximately85OfStorageSpace" xml:space="preserve">
     <value>高质量的 AVIF 和 JPEG XL 图片格式可节省约 85% 的存储空间。</value>
   </data>
@@ -984,9 +846,6 @@
   </data>
   <data name="GenshinBeyondGachaPage_MiliastraWonderlandOde" xml:space="preserve">
     <value>千星奇域颂愿</value>
-  </data>
-  <data name="ItIsRecommendedToInstallTheVP9VideoExtensionsToReduceCPUUsage" xml:space="preserve">
-    <value>建议安装 VP9 视频扩展，降低 CPU 占用率。</value>
   </data>
   <data name="AboutSetting_UpdatedToTheLatestVersion" xml:space="preserve">
     <value>已更新到最新版</value>
@@ -1008,9 +867,6 @@
   </data>
   <data name="Common_Sort" xml:space="preserve">
     <value>排序</value>
-  </data>
-  <data name="AppConfig_AnUnknownIssueOccurredDuringInitialization" xml:space="preserve">
-    <value>初始化过程中发生未知错误</value>
   </data>
   <data name="NoPermissionWindow_NoPermissionToFolderRestartOrClose" xml:space="preserve">
     <value>应用程序没有权限访问以下文件夹。请以管理员身份重新启动，或移动该文件夹。</value>
@@ -1075,5 +931,26 @@
   </data>
   <data name="FileSettingPage_SelectedFolderNotWritable" xml:space="preserve">
     <value>选定的文件夹不可写入： {0}</value>
+  </data>
+  <data name="SettingPage_AfterDeletingTheSoftwareWillBeRestartedAutomatically" xml:space="preserve">
+    <value>删除完成后，将自动重启软件。继续？</value>
+  </data>
+  <data name="AppConfig_AnUnknownIssueOccurredDuringInitialization" xml:space="preserve">
+    <value>初始化过程中发生未知错误</value>
+  </data>
+  <data name="SettingPage_LastBackup" xml:space="preserve">
+    <value>上次备份</value>
+  </data>
+  <data name="SettingPage_RegisterURLProtocol" xml:space="preserve">
+    <value>注册 URL 协议</value>
+  </data>
+  <data name="SettingPage_FollowSystem" xml:space="preserve">
+    <value>跟随系统</value>
+  </data>
+  <data name="HotkeySetting_SingleKeyShortcutsTips" xml:space="preserve">
+    <value>如果注册单键快捷键 (F1-F12)，需要以管理员权限运行 Glowworm，否则在游戏中快捷键无法生效。</value>
+  </data>
+  <data name="ImageViewWindow2_Auto" xml:space="preserve">
+    <value>汽車</value>
   </data>
 </root>

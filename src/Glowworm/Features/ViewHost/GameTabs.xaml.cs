@@ -6,11 +6,16 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using CommunityToolkit.Mvvm.Messaging;
+using CommunityToolkit.Mvvm.Input;
+using Microsoft.Extensions.Logging;
 using Glowworm.Features.Database;
 using Glowworm.Features.Setting;
+using Glowworm.Helpers;
+using System;
 
 namespace Glowworm.Features.ViewHost;
 
+[CommunityToolkit.Mvvm.ComponentModel.INotifyPropertyChanged]
 public sealed partial class GameTabs : UserControl
 {
     public ObservableCollection<GameTabItem> GameList { get; } = new();
@@ -28,6 +33,29 @@ public sealed partial class GameTabs : UserControl
         {
             OnCurrentGameChanged(msg.NewBiz);
         });
+    }
+
+    [RelayCommand]
+    private void RescanGameDirectories()
+    {
+        try
+        {
+            int count = 0;
+            foreach (var biz in Core.GameBiz.AllGameBizs)
+            {
+                var path = Core.GameRegistryHelper.GetGameInstallPath(biz);
+                if (path != null)
+                {
+                    AppConfig.SetGameInstallPath(biz, path);
+                    count++;
+                }
+            }
+            InAppToast.MainWindow?.Success(Lang.SettingPage_RescanGameDirectories, $"Rescanned {count} game directories.", 5000);
+        }
+        catch (Exception ex)
+        {
+            AppConfig.GetLogger<GameTabs>().LogError(ex, "Rescan game directories");
+        }
     }
 
     private void InitializeGameList()

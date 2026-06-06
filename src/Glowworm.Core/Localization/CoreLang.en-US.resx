@@ -150,15 +150,6 @@
   <data name="Gacha_CannotParseTheWishRecordURL" xml:space="preserve">
     <value>Cannot parse the wish record URL.</value>
   </data>
-  <data name="PostType_Activity" xml:space="preserve">
-    <value>Events</value>
-  </data>
-  <data name="PostType_Announcement" xml:space="preserve">
-    <value>Notices</value>
-  </data>
-  <data name="PostType_Information" xml:space="preserve">
-    <value>Info</value>
-  </data>
   <data name="Game_GenshinImpact" xml:space="preserve">
     <value>Genshin Impact</value>
   </data>
@@ -171,54 +162,14 @@
   <data name="GameServer_GlobalServer" xml:space="preserve">
     <value>Global Server</value>
   </data>
-  <data name="GameServer_ChinaCloudServer" xml:space="preserve">
+  <data name="GameServer_ChinaCloud" xml:space="preserve">
     <value>China Cloud Server</value>
   </data>
-  <data name="GameServer_EuropeAmericasServers" xml:space="preserve">
-    <value>Europe &amp; Americas Servers</value>
+  <data name="GameServer_GlobalCloud" xml:space="preserve">
+    <value>Global Cloud Server</value>
   </data>
-  <data name="GameServer_JapanServer" xml:space="preserve">
-    <value>Japan Server</value>
-  </data>
-  <data name="GameServer_KoreaServer" xml:space="preserve">
-    <value>Korea Server</value>
-  </data>
-  <data name="GameServer_SEAServer" xml:space="preserve">
-    <value>Southeast Asia Server</value>
-    <comment>Southeast Asia and Australia Server</comment>
-  </data>
-  <data name="GameServer_TraditionalChineseServer" xml:space="preserve">
-    <value>Traditional Chinese Server</value>
-  </data>
-  <data name="GenshinQueryType_GenesisCrystal" xml:space="preserve">
-    <value>Genesis Crystals</value>
-  </data>
-  <data name="GenshinQueryType_Primogem" xml:space="preserve">
-    <value>Primogems</value>
-  </data>
-  <data name="GenshinQueryType_OriginalResin" xml:space="preserve">
-    <value>Original Resins</value>
-  </data>
-  <data name="GenshinQueryType_Artifact" xml:space="preserve">
-    <value>Artifacts</value>
-  </data>
-  <data name="GenshinQueryType_Weapon" xml:space="preserve">
-    <value>Weapons</value>
-  </data>
-  <data name="StarRailQueryType_StellarJade" xml:space="preserve">
-    <value>Stellar Jade</value>
-  </data>
-  <data name="StarRailQueryType_OneiricShared" xml:space="preserve">
-    <value>Oneiric Shared</value>
-  </data>
-  <data name="StarRailQueryType_Relic" xml:space="preserve">
-    <value>Relic</value>
-  </data>
-  <data name="StarRailQueryType_LightCone" xml:space="preserve">
-    <value>Light Cone</value>
-  </data>
-  <data name="StarRailQueryType_TrailblazePower" xml:space="preserve">
-    <value>Trailblaze Power</value>
+  <data name="GameServer_Bilibili" xml:space="preserve">
+    <value>BiliBili</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="GachaType_StandardOde" type="System.Resources.ResXNullRef, System.Windows.Forms">

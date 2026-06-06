@@ -178,7 +178,7 @@ public sealed partial class FileManageSetting : PageBase
             {
                 Title = Lang.SettingPage_DeleteAllSettings,
                 // ?????,????????
-                Content = Lang.Common_ConfirmDelete,
+                Content = Lang.SettingPage_AfterDeletingTheSoftwareWillBeRestartedAutomatically,
                 PrimaryButtonText = Lang.Common_Delete,
                 SecondaryButtonText = Lang.Common_Cancel,
                 DefaultButton = ContentDialogButton.Secondary,

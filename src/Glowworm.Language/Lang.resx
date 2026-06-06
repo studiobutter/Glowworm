@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string"/>
-              <xsd:attribute name="type" type="xsd:string"/>
-              <xsd:attribute name="mimetype" type="xsd:string"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string"/>
-              <xsd:attribute name="name" type="xsd:string"/>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-              <xsd:attribute ref="xml:space"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required"/>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -253,17 +253,11 @@
   <data name="MainPage_ClickTheRightMouseButtonOnTheGameIconOnTheLeft" xml:space="preserve">
     <value>On each tab, click the drop down of your desired game to switch regions.</value>
   </data>
-  <data name="MainPage_Launcer" xml:space="preserve">
-    <value>Companion App</value>
-  </data>
   <data name="MainPage_GameScreenshot" xml:space="preserve">
     <value>Screenshot</value>
   </data>
   <data name="ScreenshotPage_GameScreenshot" xml:space="preserve">
     <value>Screenshot</value>
-  </data>
-  <data name="ScreenshotPage_OpenFolder" xml:space="preserve">
-    <value>Open Folder</value>
   </data>
   <data name="SettingPage_Log" xml:space="preserve">
     <value>Log</value>
@@ -274,14 +268,8 @@
   <data name="SettingPage_AppSettings" xml:space="preserve">
     <value>App Settings</value>
   </data>
-  <data name="SettingPage_EffectiveAtNextStartup" xml:space="preserve">
-    <value>Effective at next startup</value>
-  </data>
   <data name="SettingPage_OpenLogFolder" xml:space="preserve">
     <value>Open Log Folder</value>
-  </data>
-  <data name="SettingPage_WindowsSize" xml:space="preserve">
-    <value>Windows Size</value>
   </data>
   <data name="SettingPage_CheckForUpdate" xml:space="preserve">
     <value>Check for Update</value>
@@ -292,17 +280,11 @@
   <data name="SettingPage_JoinPreviewReleaseChannel" xml:space="preserve">
     <value>Switch to Preview Release Channel</value>
   </data>
-  <data name="SettingPage_OpenDataFolder" xml:space="preserve">
-    <value>Open Data Folder</value>
-  </data>
   <data name="SettingPage_ReselectDataFolder" xml:space="preserve">
     <value>Reselect Data Folder</value>
   </data>
   <data name="SettingPage_DeleteAllSettings" xml:space="preserve">
     <value>Delete All Settings</value>
-  </data>
-  <data name="SettingPage_ClearCachedFiles" xml:space="preserve">
-    <value>Clear Cached Files</value>
   </data>
   <data name="SettingPage_About" xml:space="preserve">
     <value>About</value>
@@ -319,17 +301,11 @@
   <data name="SettingPage_OriginalProject" xml:space="preserve">
     <value>Original Project</value>
   </data>
-  <data name="SettingPage_ThisIsALogo" xml:space="preserve">
-    <value>This is a Logo</value>
-  </data>
   <data name="SettingPage_Update" xml:space="preserve">
     <value>Update</value>
   </data>
   <data name="SettingPage_UpdateSource" xml:space="preserve">
     <value>Update Source</value>
-  </data>
-  <data name="SettingPage_TestCDNAsync_NetworkError" xml:space="preserve">
-    <value>Network Error</value>
   </data>
   <data name="SettingPage_TheCurrentLocationOfTheDataFolderIs" xml:space="preserve">
     <value>The current location of the data folder is:</value>
@@ -340,23 +316,14 @@
   <data name="Common_Yes" xml:space="preserve">
     <value>Yes</value>
   </data>
-  <data name="SettingPage_AfterDeletingTheSoftwareWillBeRestartedAutomatically" xml:space="preserve">
-    <value>After deleting, the software will be restarted automatically.</value>
-  </data>
   <data name="UpdatePage_NewVersion" xml:space="preserve">
     <value>New Version!</value>
   </data>
   <data name="UpdatePage_Links" xml:space="preserve">
     <value>Links:</value>
   </data>
-  <data name="UpdatePage_BuiltTime" xml:space="preserve">
-    <value>Build Time:</value>
-  </data>
   <data name="UpdatePage_ReleaseChannel" xml:space="preserve">
     <value>Release Channel:</value>
-  </data>
-  <data name="UpdatePage_Architecture" xml:space="preserve">
-    <value>Architecture:</value>
   </data>
   <data name="UpdatePage_DownloadInstaller" xml:space="preserve">
     <value>Download Installer</value>
@@ -395,9 +362,6 @@
   <data name="SettingPage_Language" xml:space="preserve">
     <value>Language</value>
   </data>
-  <data name="SettingPage_FollowSystem" xml:space="preserve">
-    <value>Follow System</value>
-  </data>
   <data name="GachaLogService_GetGachaProgressText" xml:space="preserve">
     <value>Getting {0} with page {1}</value>
     <comment>{0} = {gachaType} ,  {1} = {page}</comment>
@@ -435,9 +399,7 @@
   </data>
   <data name="SettingPage_CDNTips" xml:space="preserve">
     <value>Users in some areas may encounter network anomalies. You could solve this problem by switching CDNs.</value>
-  </data>
-  <data name="SettingPage_ExitLauncherWhenClosingWindow" xml:space="preserve">
-    <value>Exit Launcher When Closing Window</value>
+    <comment>For Metadata and such, Keep</comment>
   </data>
   <data name="Common_Exit" xml:space="preserve">
     <value>Exit</value>
@@ -447,12 +409,6 @@
   </data>
   <data name="ScreenshotPage_BackupScreenshots" xml:space="preserve">
     <value>Backup Screenshots</value>
-  </data>
-  <data name="ScreenshotPage_OpenBackupFolder" xml:space="preserve">
-    <value>Open Backup Folder</value>
-  </data>
-  <data name="SettingPage_LastBackup" xml:space="preserve">
-    <value>Last backup</value>
   </data>
   <data name="SettingPage_BackupDatabase" xml:space="preserve">
     <value>Backup Database</value>
@@ -465,18 +421,6 @@
   </data>
   <data name="SettingPage_Donate" xml:space="preserve">
     <value>Donate</value>
-  </data>
-  <data name="SettingPage_URLProtocolExperimental" xml:space="preserve">
-    <value>URL Protocol (Experimental)</value>
-  </data>
-  <data name="SettingPage_URLProtocolDesc" xml:space="preserve">
-    <value>Other software can use some of Glowworm's features through the URL protocol.</value>
-  </data>
-  <data name="SettingPage_RegisterURLProtocol" xml:space="preserve">
-    <value>Register URL Protocol</value>
-  </data>
-  <data name="SettingPage_TestURLProtocol" xml:space="preserve">
-    <value>Test URL Protocol</value>
   </data>
   <data name="ImageViewPage_ZoomOut" xml:space="preserve">
     <value>Zoom out</value>
@@ -496,14 +440,8 @@
   <data name="FileSettingPage_DataFolder" xml:space="preserve">
     <value>Data Folder</value>
   </data>
-  <data name="FileSettingPage_OpenLogFile" xml:space="preserve">
-    <value>Open Log File</value>
-  </data>
   <data name="SettingPage_FileManagement" xml:space="preserve">
     <value>File Management</value>
-  </data>
-  <data name="SettingPage_Completed" xml:space="preserve">
-    <value>Completed</value>
   </data>
   <data name="AboutSettingPage_Links" xml:space="preserve">
     <value>Links</value>
@@ -535,38 +473,11 @@
   <data name="FileSettingPage_ClearCache" xml:space="preserve">
     <value>Clear Cache</value>
   </data>
-  <data name="AppearanceSettingPage_BetterExperience" xml:space="preserve">
-    <value>Recommend enabling {0} and {1} in system settings for a better user experience.</value>
-  </data>
   <data name="AppearanceSettingPage_TransparencyEffects" xml:space="preserve">
     <value>Transparency effects</value>
   </data>
   <data name="AppearanceSettingPage_AnimationEffects" xml:space="preserve">
     <value>Animation effects</value>
-  </data>
-  <data name="GachaLogPage_AlwaysFailedToGetGachaRecords" xml:space="preserve">
-    <value>Always failed to get gacha records?</value>
-  </data>
-  <data name="AboutSettingPage_VerifyFileIntegrity" xml:space="preserve">
-    <value>Verify File Integrity</value>
-  </data>
-  <data name="AboutSettingPage_VerifyFailed" xml:space="preserve">
-    <value>Verify failed</value>
-  </data>
-  <data name="AboutSettingPage_CurrentVersionIsNotTheLatestVersion" xml:space="preserve">
-    <value>Current version is not the latest version ({0}).</value>
-  </data>
-  <data name="AboutSettingPage_ClickButtonToRepairFiles" xml:space="preserve">
-    <value>Click button to repair files.</value>
-  </data>
-  <data name="AboutSettingPage_RepairFiles" xml:space="preserve">
-    <value>Repair Files</value>
-  </data>
-  <data name="AboutSettingPage_VerifySuccessfully" xml:space="preserve">
-    <value>Verify successfully!</value>
-  </data>
-  <data name="GachaLogPage_ShowChronicledWish" xml:space="preserve">
-    <value>Show Chronicled Wish</value>
   </data>
   <data name="CloudGameGachaWindow_OpenTheGachaRecordsPageInGameAndThenClickTheButtonOnTheRight" xml:space="preserve">
     <value>Open the gacha records page in game, and then click the button on the right.</value>
@@ -577,14 +488,12 @@
   <data name="GachaLogPage_ViaCloudGameWeb" xml:space="preserve">
     <value>via Cloud Game (Web)</value>
   </data>
-  <data name="UpdateContentWindow_ClickToRefresh" xml:space="preserve">
-    <value>Click to Refresh</value>
-  </data>
   <data name="UpdateContentWindow_RecentlyUpdatedContent" xml:space="preserve">
     <value>Recently Updated Content</value>
   </data>
   <data name="GameBizSelector_AutoSearch" xml:space="preserve">
     <value>Auto Search</value>
+    <comment>Kept for future use</comment>
   </data>
   <data name="GachaLogService_SignalSearchRecords" xml:space="preserve">
     <value>Signal Search Records</value>
@@ -710,9 +619,6 @@
   <data name="Common_RestoreDefaults" xml:space="preserve">
     <value>Restore Defaults</value>
   </data>
-  <data name="MainView_CheckSystemProxy_SystemProxyIsEnabled" xml:space="preserve">
-    <value>System proxy is enabled.</value>
-  </data>
   <data name="ScreenCaptureInfoWindow_ScreenshotSaved" xml:space="preserve">
     <value>Screenshot Saved</value>
   </data>
@@ -773,9 +679,6 @@
   <data name="Common_Edit" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="ImageViewWindow2_SaveAs" xml:space="preserve">
-    <value>Save As</value>
-  </data>
   <data name="ImageViewWindow2_ImageInformation" xml:space="preserve">
     <value>Image Information</value>
   </data>
@@ -788,9 +691,6 @@
   <data name="ImageViewWindow2_SDRMappedLuminance" xml:space="preserve">
     <value>SDR Mapped Luminance</value>
   </data>
-  <data name="ImageViewWindow2_Auto" xml:space="preserve">
-    <value>Auto</value>
-  </data>
   <data name="ImageViewWindow2_ExportImage" xml:space="preserve">
     <value>Export Image</value>
   </data>
@@ -799,9 +699,6 @@
   </data>
   <data name="ImageViewWindow2_DeleteImageFile" xml:space="preserve">
     <value>Delete Image File</value>
-  </data>
-  <data name="ImageViewWindow2_CopiedToClipboard" xml:space="preserve">
-    <value>Copied to clipboard.</value>
   </data>
   <data name="ImageViewWindow2_FileDoesNotExist" xml:space="preserve">
     <value>File does not exist.</value>
@@ -839,38 +736,14 @@
   <data name="HotkeyInput_PressTheShortcutKeys" xml:space="preserve">
     <value>Press the Shortcut Keys</value>
   </data>
-  <data name="HotkeyManager_TheShortcutKeys0IsAlreadyInUse" xml:space="preserve">
-    <value>The shortcut keys ({0}) is already in use.</value>
-  </data>
-  <data name="HotkeyManager_FailedToRegisterTheShortcutKeys0" xml:space="preserve">
-    <value>Failed to register the shortcut keys ({0}).</value>
-  </data>
-  <data name="HotkeyManager_TheShortcutKeys0IsAlreadyInUsePleaseModifyItInSettingsPage" xml:space="preserve">
-    <value>The shortcut keys ({0}) is already in use. Please modify it in Settings page.</value>
-  </data>
-  <data name="HotkeyManager_FailedToRegisterTheShortcutKeys0PleaseRetryInSettingsPage" xml:space="preserve">
-    <value>Failed to register the shortcut keys ({0}). Please retry in Settings page.</value>
-  </data>
   <data name="ScreenshotSetting_ScreenshotShortcut" xml:space="preserve">
     <value>Screenshot Shortcut</value>
-  </data>
-  <data name="HotkeySetting_OpenMainWindow" xml:space="preserve">
-    <value>Open Main Window</value>
-  </data>
-  <data name="HotkeySetting_FailedToRegisterTheShortcutKeys" xml:space="preserve">
-    <value>Failed to register the shortcut keys.</value>
   </data>
   <data name="ScreenshotSetting_TheBuiltInScreenshotFeatureWillSaveImagesToTheFollowingFolder" xml:space="preserve">
     <value>The built-in screenshot feature will save images to the following folder.</value>
   </data>
   <data name="Common_ChangeFolder" xml:space="preserve">
     <value>Change Folder</value>
-  </data>
-  <data name="HotkeySetting_SingleKeyShortcutsTips" xml:space="preserve">
-    <value>If you register single-key shortcuts (F1-F12), you need to run Glowworm with administrator privileges; otherwise, the shortcuts may not work in the game.</value>
-  </data>
-  <data name="SettingPage_KeyboardShortcuts" xml:space="preserve">
-    <value>Keyboard Shortcuts</value>
   </data>
   <data name="ScreenshotSetting_TestScreenshot" xml:space="preserve">
     <value>Test Screenshot</value>
@@ -900,9 +773,6 @@
   </data>
   <data name="ScreenshotPage_MultiSelect" xml:space="preserve">
     <value>Multi Select</value>
-  </data>
-  <data name="ScreenshotPage_Total0Files" xml:space="preserve">
-    <value>Total {0} files.</value>
   </data>
   <data name="ScreenshotSetting_OtherOptions" xml:space="preserve">
     <value>Other Options</value>
@@ -970,12 +840,6 @@
   <data name="ScreenshotSetting_ClearThumbnailCache" xml:space="preserve">
     <value>Clear Thumbnail Cache</value>
   </data>
-  <data name="ScreenshotSetting_ClearSuccessfully" xml:space="preserve">
-    <value>Clear Successfully</value>
-  </data>
-  <data name="ScreenshotSetting_ClearFailed" xml:space="preserve">
-    <value>Clear Failed</value>
-  </data>
   <data name="ScreenshotSetting_HighQualityAVIFAndJPEGXLImageFormatsSaveApproximately85OfStorageSpace" xml:space="preserve">
     <value>High-quality AVIF and JPEG XL image formats save approximately 85% of storage space.</value>
   </data>
@@ -984,9 +848,6 @@
   </data>
   <data name="GenshinBeyondGachaPage_MiliastraWonderlandOde" xml:space="preserve">
     <value>Miliastra Wonderland Ode</value>
-  </data>
-  <data name="ItIsRecommendedToInstallTheVP9VideoExtensionsToReduceCPUUsage" xml:space="preserve">
-    <value>It is recommended to install the VP9 Video Extensions to reduce CPU usage.</value>
   </data>
   <data name="AboutSetting_UpdatedToTheLatestVersion" xml:space="preserve">
     <value>Updated to the latest version.</value>
@@ -1008,9 +869,6 @@
   </data>
   <data name="Common_Sort" xml:space="preserve">
     <value>Sort</value>
-  </data>
-  <data name="AppConfig_AnUnknownIssueOccurredDuringInitialization" xml:space="preserve">
-    <value>An unknown issue occurred during initialization.</value>
   </data>
   <data name="NoPermissionWindow_NoPermissionToFolderRestartOrClose" xml:space="preserve">
     <value>The program does not have permission to access the following folder. Please restart as administrator or move the folder.</value>
@@ -1074,5 +932,26 @@
   </data>
   <data name="FileSettingPage_SelectedFolderNotWritable" xml:space="preserve">
     <value>The selected folder is not writable: {0}</value>
+  </data>
+  <data name="SettingPage_AfterDeletingTheSoftwareWillBeRestartedAutomatically" xml:space="preserve">
+    <value>After deleting, the software will be restarted automatically. Proceed?</value>
+  </data>
+  <data name="AppConfig_AnUnknownIssueOccurredDuringInitialization" xml:space="preserve">
+    <value>An unknown issue occurred during initialization.</value>
+  </data>
+  <data name="SettingPage_LastBackup" xml:space="preserve">
+    <value>Last backup</value>
+  </data>
+  <data name="SettingPage_RegisterURLProtocol" xml:space="preserve">
+    <value>Register URL Protocol</value>
+  </data>
+  <data name="SettingPage_FollowSystem" xml:space="preserve">
+    <value>Follow System</value>
+  </data>
+  <data name="HotkeySetting_SingleKeyShortcutsTips" xml:space="preserve">
+    <value>If you register single-key shortcuts (F1-F12), you need to run Glowworm with administrator privileges; otherwise, the shortcuts may not work in the game.</value>
+  </data>
+  <data name="ImageViewWindow2_Auto" xml:space="preserve">
+    <value>Auto</value>
   </data>
 </root>
