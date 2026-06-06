@@ -60,8 +60,10 @@ Glowworm 将使用 Crowdin 作为其官方翻译服务。我们目前正在准�
 
 ## 屏幕截图
 
-<img width="1200" src="../screenshots/Screenshot 2026-05-21 123957.png" />
+<img width="1200" src="../screenshots/Screenshot 2026-06-06 083909.png" />
 
-<img width="1200" src="../screenshots/Screenshot 2026-05-21 124127.png" />
+<img width="1200" src="../screenshots/Screenshot 2026-06-06 083935.png" />
 
-<img width="1200" src="../screenshots/Screenshot 2026-05-21 124240.png" />
+<img width="1200" src="../screenshots/Screenshot 2026-06-06 084131.png" />
+
+<img width="1200" src="../screenshots/Screenshot 2026-06-06 083956.png" />
