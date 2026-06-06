@@ -62,8 +62,10 @@ Not obliged but you can also donate to [me](https://ko-fi.com/studiobutterteam)
 
 ## Screenshots
 
-<img width="1200" src="./screenshots/Screenshot 2026-05-21 123957.png" />
+<img width="1200" src="./screenshots/Screenshot 2026-06-06 083909.png" />
 
-<img width="1200" src="./screenshots/Screenshot 2026-05-21 124127.png" />
+<img width="1200" src="./screenshots/Screenshot 2026-06-06 083935.png" />
 
-<img width="1200" src="./screenshots/Screenshot 2026-05-21 124240.png" />
+<img width="1200" src="./screenshots/Screenshot 2026-06-06 084131.png" />
+
+<img width="1200" src="./screenshots/Screenshot 2026-06-06 083956.png" />
