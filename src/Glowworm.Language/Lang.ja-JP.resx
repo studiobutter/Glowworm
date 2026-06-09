@@ -259,6 +259,9 @@
   <data name="ScreenshotPage_GameScreenshot" xml:space="preserve">
     <value>スクリーンショット</value>
   </data>
+  <data name="ImageViewWindow2_Auto" xml:space="preserve">
+    <value>自動</value>
+  </data>
   <data name="SettingPage_Log" xml:space="preserve">
     <value>ログ</value>
   </data>
@@ -952,6 +955,12 @@
     <value>シングルキーショートカット(F1-F12)を登録する場合は、Glowwormを管理者権限で実行する必要があります。そうでなければ、ショートカットがゲームで動作しない場合があります。</value>
   </data>
   <data name="ImageViewWindow2_Auto" xml:space="preserve">
-    <value>自動</value>
+    <value>Auto</value>
+  </data>
+  <data name="SettingPage_ImageManagement" xml:space="preserve">
+    <value>Image Management</value>
+  </data>
+  <data name="ScreenshotSetting_BeyondProfileLocationDesc" xml:space="preserve">
+    <value>Miliastra Wonderland Profile Pictures will be back up to the following folder</value>
   </data>
 </root>
