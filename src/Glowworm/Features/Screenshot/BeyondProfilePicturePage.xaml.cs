@@ -34,7 +34,7 @@ public sealed partial class BeyondProfilePicturePage : PageBase
         string? cfg = AppConfig.BeyondProfilePicturesBackupFolder;
         if (string.IsNullOrWhiteSpace(cfg))
         {
-            _backupFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Glowworm", "BeyondProfilePictures");
+            _backupFolder = Path.Combine(AppConfig.UserDataFolder, "BeyondProfilePictures");
             Directory.CreateDirectory(_backupFolder);
             AppConfig.BeyondProfilePicturesBackupFolder = _backupFolder;
         }
