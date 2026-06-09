@@ -259,6 +259,9 @@
   <data name="ScreenshotPage_GameScreenshot" xml:space="preserve">
     <value>游戏截图</value>
   </data>
+  <data name="ImageViewWindow2_Auto" xml:space="preserve">
+    <value>汽車</value>
+  </data>
   <data name="SettingPage_Log" xml:space="preserve">
     <value>日志</value>
   </data>
@@ -953,6 +956,12 @@
     <value>如果注册单键快捷键 (F1-F12)，需要以管理员权限运行 Glowworm，否则在游戏中快捷键无法生效。</value>
   </data>
   <data name="ImageViewWindow2_Auto" xml:space="preserve">
-    <value>汽車</value>
+    <value>Auto</value>
+  </data>
+  <data name="SettingPage_ImageManagement" xml:space="preserve">
+    <value>Image Management</value>
+  </data>
+  <data name="ScreenshotSetting_BeyondProfileLocationDesc" xml:space="preserve">
+    <value>Miliastra Wonderland Profile Pictures will be back up to the following folder</value>
   </data>
 </root>
