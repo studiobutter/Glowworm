@@ -952,4 +952,10 @@
   <data name="ImageViewWindow2_Auto" xml:space="preserve">
     <value>自動</value>
   </data>
+  <data name="SettingPage_ImageManagement" xml:space="preserve">
+    <value>画像管理</value>
+  </data>
+  <data name="ScreenshotSetting_BeyondProfileLocationDesc" xml:space="preserve">
+    <value>星々の幻境のプロフィール写真は、以下のフォルダに復元されます。</value>
+  </data>
 </root>

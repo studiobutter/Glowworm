@@ -168,6 +168,15 @@ public static partial class AppConfig
     }
 
     /// <summary>
+    /// BeyondProfilePictures backup folder
+    /// </summary>
+    public static string? BeyondProfilePicturesBackupFolder
+    {
+        get => GetValue<string>();
+        set => SetValue(value);
+    }
+
+    /// <summary>
     /// 截图快捷键
     /// </summary>
     public static string? ScreenshotCaptureHotkey

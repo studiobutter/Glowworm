@@ -1908,6 +1908,15 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Miliastra Wonderland Profile Pictures will be back up to the following folder.
+        /// </summary>
+        public static string ScreenshotSetting_BeyondProfileLocationDesc {
+            get {
+                return ResourceManager.GetString("ScreenshotSetting_BeyondProfileLocationDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clear Thumbnail Cache.
         /// </summary>
         public static string ScreenshotSetting_ClearThumbnailCache {
@@ -2144,6 +2153,15 @@ namespace Glowworm.Language {
         public static string SettingPage_General {
             get {
                 return ResourceManager.GetString("SettingPage_General", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image Management.
+        /// </summary>
+        public static string SettingPage_ImageManagement {
+            get {
+                return ResourceManager.GetString("SettingPage_ImageManagement", resourceCulture);
             }
         }
         

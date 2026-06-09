@@ -952,4 +952,10 @@
   <data name="ImageViewWindow2_Auto" xml:space="preserve">
     <value>Tự Động</value>
   </data>
+  <data name="SettingPage_ImageManagement" xml:space="preserve">
+    <value>Quản lý Hình Ảnh</value>
+  </data>
+  <data name="ScreenshotSetting_BeyondProfileLocationDesc" xml:space="preserve">
+    <value>Các ảnh đại diện trong Thiên Tinh Kỳ Vực sẽ được sao lưu trong thư mục sau</value>
+  </data>
 </root>

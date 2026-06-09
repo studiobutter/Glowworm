@@ -952,4 +952,10 @@
   <data name="ImageViewWindow2_Auto" xml:space="preserve">
     <value>자동</value>
   </data>
+  <data name="SettingPage_ImageManagement" xml:space="preserve">
+    <value>이미지 관리</value>
+  </data>
+  <data name="ScreenshotSetting_BeyondProfileLocationDesc" xml:space="preserve">
+    <value>별바다 세계님의 프로필 사진은 다음 폴더에 다시 업로드됩니다.</value>
+  </data>
 </root>

@@ -953,4 +953,10 @@
   <data name="ImageViewWindow2_Auto" xml:space="preserve">
     <value>汽車</value>
   </data>
+  <data name="SettingPage_ImageManagement" xml:space="preserve">
+    <value>图像管理</value>
+  </data>
+  <data name="ScreenshotSetting_BeyondProfileLocationDesc" xml:space="preserve">
+    <value>千星奇域个人资料图片将恢复到以下文件夹</value>
+  </data>
 </root>
