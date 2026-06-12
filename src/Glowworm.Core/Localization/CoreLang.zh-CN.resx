@@ -162,6 +162,15 @@
   <data name="GameServer_GlobalServer" xml:space="preserve">
     <value>国际服</value>
   </data>
+  <data name="GameServer_Steam" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="GameServer_Epic" xml:space="preserve">
+    <value>Epic Games</value>
+  </data>
+  <data name="GameServer_GPlay" xml:space="preserve">
+    <value>Google Play</value>
+  </data>
   <data name="GachaType_ChronicledWish" xml:space="preserve">
     <value>集录祈愿</value>
   </data>
@@ -173,6 +182,9 @@
   </data>
   <data name="GameServer_GlobalCloud" xml:space="preserve">
     <value>全球服云游戏</value>
+  </data>
+  <data name="GameServer_Cloud" xml:space="preserve">
+    <value>Cloud</value>
   </data>
   <data name="GameServer_Bilibili" xml:space="preserve">
     <value>哔哩哔哩</value>
@@ -195,16 +207,16 @@
   <data name="GachaType_LightConeCollaborationWarp" xml:space="preserve">
     <value>光锥联动跃迁</value>
   </data>
-  <data name="GachaType_StandardOde" xml:space="preserve">
-    <value>常驻颂愿</value>
-  </data>
-  <data name="GachaType_EventOde" xml:space="preserve">
-    <value>活动颂愿</value>
-  </data>
   <data name="GachaType_ExclusiveRescreening" xml:space="preserve">
     <value>独家重映</value>
   </data>
   <data name="GachaType_WEngineReverberation" xml:space="preserve">
     <value>音擎回响</value>
+  </data>
+  <data name="GachaType_StandardOde" xml:space="preserve">
+    <value>常驻颂愿</value>
+  </data>
+  <data name="GachaType_EventOde" xml:space="preserve">
+    <value>活动颂愿</value>
   </data>
 </root>
