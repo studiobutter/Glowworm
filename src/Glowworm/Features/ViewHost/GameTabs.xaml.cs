@@ -122,25 +122,21 @@ public sealed partial class GameTabs : UserControl
         }
     }
 
-    private void Button_SwitchRegion_Loaded(object sender, RoutedEventArgs e)
+    private void MenuFlyout_Regions_Opening(object sender, object e)
     {
-        if (sender is DropDownButton btn && btn.DataContext is GameTabItem item)
+        if (sender is MenuFlyout flyout && flyout.Target?.DataContext is GameTabItem item)
         {
-            var flyout = btn.Flyout as MenuFlyout;
-            if (flyout != null)
+            flyout.Items.Clear();
+            foreach (var region in item.Regions)
             {
-                flyout.Items.Clear();
-                foreach (var region in item.Regions)
+                if (string.IsNullOrWhiteSpace(GameRegistryHelper.GetGameInstallPath(region))) continue;
+                var menuitem = new MenuFlyoutItem
                 {
-                    if (string.IsNullOrWhiteSpace(GameRegistryHelper.GetGameInstallPath(region))) continue;
-                    var menuitem = new MenuFlyoutItem
-                    {
-                        Text = region.ToGameServerName(),
-                        Tag = region
-                    };
-                    menuitem.Click += MenuFlyoutItem_Click;
-                    flyout.Items.Add(menuitem);
-                }
+                    Text = region.ToGameServerName(),
+                    Tag = region
+                };
+                menuitem.Click += MenuFlyoutItem_Click;
+                flyout.Items.Add(menuitem);
             }
         }
     }

@@ -33,10 +33,9 @@
                                                 Padding="-8,0,6,0" 
                                                 BorderThickness="0"
                                                 Background="Transparent"
-                                                HorizontalAlignment="Left"
-                                                Loaded="Button_SwitchRegion_Loaded">
+                                                HorizontalAlignment="Left">
                                     <DropDownButton.Flyout>
-                                        <MenuFlyout x:Name="MenuFlyout_Regions" Placement="Bottom">
+                                        <MenuFlyout x:Name="MenuFlyout_Regions" Placement="Bottom" Opening="MenuFlyout_Regions_Opening">
                                         </MenuFlyout>
                                     </DropDownButton.Flyout>
                                 </DropDownButton>

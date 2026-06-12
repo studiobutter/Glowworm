@@ -31,13 +31,13 @@ internal partial class GameFeatureConfig
         GameFeatureConfig config = gameId.GameBiz.Value switch
         {
             GameBiz.hk4e_cn => hk4e_cn,
-            GameBiz.hk4e_global => hk4e_global,
+            GameBiz.hk4e_global or GameBiz.hk4e_google or GameBiz.hk4e_epic => hk4e_global,
             GameBiz.hk4e_bilibili => hk4e_bilibili,
             GameBiz.hkrpg_cn => hkrpg_cn,
-            GameBiz.hkrpg_global => hkrpg_global,
+            GameBiz.hkrpg_global or GameBiz.hkrpg_epic => hkrpg_global,
             GameBiz.hkrpg_bilibili => hkrpg_bilibili,
             GameBiz.nap_cn => nap_cn,
-            GameBiz.nap_global => nap_global,
+            GameBiz.nap_global or GameBiz.nap_epic => nap_global,
             GameBiz.nap_bilibili => nap_bilibili,
             _ => Default,
         };
