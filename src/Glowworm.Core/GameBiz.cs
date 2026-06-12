@@ -137,9 +137,9 @@ public record struct GameBiz
         "cn" => CoreLang.GameServer_ChinaServer,
         "global" => CoreLang.GameServer_GlobalServer,
         "bilibili" => CoreLang.GameServer_Bilibili,
-        "google" => "Google Play",
-        "epic" => "Epic Games",
-        "cloud" => "Cloud",
+        "google" => CoreLang.GameServer_GPlay,
+        "epic" => CoreLang.GameServer_Epic,
+        "cloud" => CoreLang.GameServer_Cloud,
         _ => Value switch
         {
             clgm_cn or nap_cloud_cn => CoreLang.GameServer_ChinaCloud,

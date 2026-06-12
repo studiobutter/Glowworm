@@ -162,6 +162,15 @@
   <data name="GameServer_GlobalServer" xml:space="preserve">
     <value>Global Server</value>
   </data>
+  <data name="GameServer_Steam" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="GameServer_Epic" xml:space="preserve">
+    <value>Epic Games</value>
+  </data>
+  <data name="GameServer_GPlay" xml:space="preserve">
+    <value>Google Play</value>
+  </data>
   <data name="GachaType_ChronicledWish" xml:space="preserve">
     <value>Chronicled Wish</value>
   </data>
@@ -173,6 +182,9 @@
   </data>
   <data name="GameServer_GlobalCloud" xml:space="preserve">
     <value>Global Cloud Server</value>
+  </data>
+  <data name="GameServer_Cloud" xml:space="preserve">
+    <value>Cloud</value>
   </data>
   <data name="GameServer_Bilibili" xml:space="preserve">
     <value>BiliBili</value>
@@ -195,16 +207,16 @@
   <data name="GachaType_LightConeCollaborationWarp" xml:space="preserve">
     <value>Light Cone Collaboration Warp</value>
   </data>
-  <data name="GachaType_StandardOde" xml:space="preserve">
-    <value>Standard Ode</value>
-  </data>
-  <data name="GachaType_EventOde" xml:space="preserve">
-    <value>Event Ode</value>
-  </data>
   <data name="GachaType_ExclusiveRescreening" xml:space="preserve">
     <value>Exclusive Rescreening</value>
   </data>
   <data name="GachaType_WEngineReverberation" xml:space="preserve">
     <value>W-Engine Reverberation</value>
+  </data>
+  <data name="GachaType_StandardOde" xml:space="preserve">
+    <value>Standard Ode</value>
+  </data>
+  <data name="GachaType_EventOde" xml:space="preserve">
+    <value>Event Ode</value>
   </data>
 </root>

@@ -162,6 +162,15 @@
   <data name="GameServer_GlobalServer" xml:space="preserve">
     <value>グローバルサーバー</value>
   </data>
+  <data name="GameServer_Steam" xml:space="preserve">
+    <value>Steamストア</value>
+  </data>
+  <data name="GameServer_Epic" xml:space="preserve">
+    <value>Epic Gamesストア</value>
+  </data>
+  <data name="GameServer_GPlay" xml:space="preserve">
+    <value>Google Play ゲーム</value>
+  </data>
   <data name="GachaType_ChronicledWish" xml:space="preserve">
     <value>集録祈願</value>
   </data>
@@ -173,6 +182,9 @@
   </data>
   <data name="GameServer_GlobalCloud" xml:space="preserve">
     <value>クラウド版（グローバル）</value>
+  </data>
+  <data name="GameServer_Cloud" xml:space="preserve">
+    <value>クラウドゲーム</value>
   </data>
   <data name="GameServer_Bilibili" xml:space="preserve">
     <value>ビリビリ</value>
@@ -195,16 +207,16 @@
   <data name="GachaType_LightConeCollaborationWarp" xml:space="preserve">
     <value>キャラクター光円錐コラボ跳躍</value>
   </data>
-  <data name="GachaType_StandardOde" xml:space="preserve">
-    <value>通常星願</value>
-  </data>
-  <data name="GachaType_EventOde" xml:space="preserve">
-    <value>イベント星願</value>
-  </data>
   <data name="GachaType_ExclusiveRescreening" xml:space="preserve">
     <value>独占再上映</value>
   </data>
   <data name="GachaType_WEngineReverberation" xml:space="preserve">
     <value>音動機再奏</value>
+  </data>
+  <data name="GachaType_StandardOde" xml:space="preserve">
+    <value>通常星願</value>
+  </data>
+  <data name="GachaType_EventOde" xml:space="preserve">
+    <value>イベント星願</value>
   </data>
 </root>
