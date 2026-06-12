@@ -28,6 +28,26 @@ internal partial class GameFeatureConfig
         {
             return None;
         }
+
+        if (gameId.GameBiz.IsCloudGame())
+        {
+            var cloudConfig = new GameFeatureConfig
+            {
+                SupportedPages = [nameof(GachaLogPage)]
+            };
+
+            if (GameRegistryHelper.IsCloudGameInstalled(gameId.GameBiz))
+            {
+                cloudConfig.SupportedPages.Add(nameof(ScreenshotPage));
+                if (gameId.GameBiz.ToGame() == GameBiz.hk4e)
+                {
+                    cloudConfig.SupportedPages.Add(nameof(GenshinBeyondGachaPage));
+                }
+            }
+
+            return cloudConfig;
+        }
+
         GameFeatureConfig config = gameId.GameBiz.Value switch
         {
             GameBiz.hk4e_cn => hk4e_cn,

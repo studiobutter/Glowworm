@@ -49,20 +49,20 @@ public sealed partial class GachaLogPage : PageBase
     {
         base.OnNavigatedTo(e);
         GachaTypeText = GachaLogService.GetGachaLogText(CurrentGameBiz);
-        if (CurrentGameBiz.Game == GameBiz.hk4e)
+        if (CurrentGameBiz.ToGame().Value == GameBiz.hk4e)
         {
             EnableGenshinGachaItemStats = true;
             _gachaLogService = AppConfig.GetService<GenshinGachaService>();
             Image_Emoji.Source = new BitmapImage(AppConfig.EmojiPaimon);
         }
-        if (CurrentGameBiz.Game == GameBiz.hkrpg)
+        if (CurrentGameBiz.ToGame().Value == GameBiz.hkrpg)
         {
             EnableStarRailGachaItemStats = true;
             _gachaLogService = AppConfig.GetService<StarRailGachaService>();
             Image_Emoji.Source = new BitmapImage(AppConfig.EmojiPom);
             MenuFlyoutItem_CloudGame.Visibility = Visibility.Collapsed;
         }
-        if (CurrentGameBiz.Game == GameBiz.nap)
+        if (CurrentGameBiz.ToGame().Value == GameBiz.nap)
         {
             EnableZZZGachaItemStats = true;
             IsZZZGachaStatsCardVisible = true;
@@ -71,7 +71,22 @@ public sealed partial class GachaLogPage : PageBase
             MenuFlyoutItem_CloudGameWeb.Visibility = Visibility.Collapsed;
             Button_Import.Visibility = Visibility.Collapsed;
         }
-        if (CurrentGameBiz.IsGlobalServer())
+
+        if (CurrentGameBiz.IsBilibiliServer)
+        {
+            MenuFlyoutItem_CloudGameWeb.Visibility = Visibility.Collapsed;
+        }
+
+        if (CurrentGameBiz.IsCloudGame())
+        {
+            MenuFlyoutItem_WebCache1.Visibility = Visibility.Collapsed;
+            MenuFlyoutItem_WebCache2.Visibility = Visibility.Collapsed;
+            if (!GameRegistryHelper.IsCloudGameInstalled(CurrentGameBiz))
+            {
+                MenuFlyoutItem_CloudGame.Visibility = Visibility.Collapsed;
+            }
+        }
+        else if (CurrentGameBiz.IsGlobalServer())
         {
             MenuFlyoutItem_CloudGameWeb.Visibility = Visibility.Collapsed;
         }
@@ -420,6 +435,43 @@ public sealed partial class GachaLogPage : PageBase
     {
         try
         {
+            if (param == null || param == "all")
+            {
+                if (CurrentGameBiz.IsCloudGame())
+                {
+                    if (CurrentGameBiz.ToGame().Value == GameBiz.hkrpg)
+                    {
+                        OpenCloudGameWindow();
+                        return;
+                    }
+                    else if (CurrentGameBiz.ToGame().Value == GameBiz.nap)
+                    {
+                        await UpdateGachaLogFromCloudGameAsync(param);
+                        return;
+                    }
+                    else if (CurrentGameBiz.ToGame().Value == GameBiz.hk4e)
+                    {
+                        if (GameRegistryHelper.IsCloudGameInstalled(CurrentGameBiz))
+                        {
+                            await UpdateGachaLogFromCloudGameAsync(param);
+                            return;
+                        }
+                        else
+                        {
+                            if (!CurrentGameBiz.IsGlobalServer())
+                            {
+                                OpenCloudGameWindow();
+                            }
+                            else
+                            {
+                                InAppToast.MainWindow?.Warning(null, Lang.GachaLogPage_GameNotInstalled);
+                            }
+                            return;
+                        }
+                    }
+                }
+            }
+
             string? url = null;
             if (param is "cache")
             {
@@ -593,19 +645,19 @@ public sealed partial class GachaLogPage : PageBase
 
 
     [RelayCommand]
-    private async Task UpdateGachaLogFromCloudGameAsync()
+    private async Task UpdateGachaLogFromCloudGameAsync(string? param = null)
     {
         try
         {
             string? url = null;
-            if (CurrentGameBiz.Game == GameBiz.hk4e)
+            if (CurrentGameBiz.ToGame().Value == GameBiz.hk4e)
             {
                 string company = CurrentGameBiz.IsGlobalServer() ? "HoYoverse" : "miHoYo";
                 string logPath = Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), company, "GenshinImpactCloudGame", "config", "logs", "MiHoYoSDK.log");
                 string pattern = CurrentGameBiz.IsGlobalServer() ? "\"url\":\"https://gs.hoyoverse.com/" : "\"url\":\"https://webstatic.mihoyo.com/hk4e/event/e20190909gacha-v3/";
                 url = GetLastMatchingUrl(logPath, pattern);
             }
-            else if (CurrentGameBiz.Game == GameBiz.nap)
+            else if (CurrentGameBiz.ToGame().Value == GameBiz.nap)
             {
                 string company = CurrentGameBiz.IsGlobalServer() ? "HoYoverse" : "miHoYo";
                 string logPath = Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), company, "ZenlessZoneZeroCloud", "config", "logs", "MiHoYoSDK.log");
@@ -620,7 +672,7 @@ public sealed partial class GachaLogPage : PageBase
                 return;
             }
 
-            await UpdateGachaLogInternalAsync(url, false);
+            await UpdateGachaLogInternalAsync(url, param == "all");
         }
         catch (Exception ex)
         {

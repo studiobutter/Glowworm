@@ -56,6 +56,18 @@ public static partial class AppConfig
         set => SetValue(value);
     }
 
+    public static bool HideGenshinCloudChina
+    {
+        get => GetValue(!GameRegistryHelper.IsCloudGameInstalled(GameBiz.clgm_cn));
+        set => SetValue(value);
+    }
+
+    public static bool HideStarRailCloudChina
+    {
+        get => GetValue(true); // Default to hiding Web Cloud
+        set => SetValue(value);
+    }
+
     public static string? GachaLanguage
     {
         get => GetValue<string>();
@@ -404,7 +416,7 @@ public static partial class AppConfig
 
     public static void SetLastRegionOfGame(GameBiz biz)
     {
-        SetValue(biz.Value, $"LastRegion_{biz.Game}");
+        SetValue(biz.Value, $"LastRegion_{biz.ToGame().Value}");
     }
 
     #endregion

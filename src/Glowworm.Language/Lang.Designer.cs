@@ -728,6 +728,33 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Game Management.
+        /// </summary>
+        public static string FileSettingPage_GameMgnt {
+            get {
+                return ResourceManager.GetString("FileSettingPage_GameMgnt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hide Cloud Games.
+        /// </summary>
+        public static string FileSettingPage_HideCloudGames {
+            get {
+                return ResourceManager.GetString("FileSettingPage_HideCloudGames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This will Hide Cloud Games that has a Web-based function. This function only works for Honkai: Star Rail - Cloud Web and Genshin Impact - Cloud Web (if the launcher isn&apos;t installed).
+        /// </summary>
+        public static string FileSettingPage_HideCloudGamesDesc {
+            get {
+                return ResourceManager.GetString("FileSettingPage_HideCloudGamesDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Image.
         /// </summary>
         public static string FileSettingPage_Image {

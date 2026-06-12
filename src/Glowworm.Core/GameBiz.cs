@@ -38,6 +38,9 @@ public record struct GameBiz
     public const string hkrpg_global = "hkrpg_global";
     public const string hkrpg_bilibili = "hkrpg_bilibili";
     public const string hkrpg_epic = "hkrpg_epic";
+    public const string hkrpg_cloud = "hkrpg_cloud";
+    public const string hkrpg_cloud_cn = "hkrpg_cloud_cn";
+    public const string hkrpg_cloud_global = "hkrpg_cloud_global";
 
 
     public const string nap = "nap";
@@ -67,6 +70,9 @@ public record struct GameBiz
         hkrpg_global,
         hkrpg_bilibili,
         hkrpg_epic,
+        hkrpg_cloud,
+        hkrpg_cloud_cn,
+        hkrpg_cloud_global,
         nap_cn,
         nap_global,
         nap_bilibili,
@@ -98,27 +104,29 @@ public record struct GameBiz
     {
         hk4e_cn or hk4e_global or hk4e_bilibili or hk4e_google or hk4e_epic => true,
         clgm_cn or clgm_global => true,
-        hkrpg_cn or hkrpg_global or hkrpg_bilibili or hkrpg_epic => true,
+        hkrpg_cn or hkrpg_global or hkrpg_bilibili or hkrpg_epic or hkrpg_cloud or hkrpg_cloud_cn or hkrpg_cloud_global => true,
         nap_cn or nap_global or nap_bilibili or nap_epic or nap_cloud or nap_cloud_cn or nap_cloud_global => true,
         _ => false,
     };
 
 
-    public bool IsChinaServer() => Server is "cn" || Value is clgm_cn or nap_cloud_cn;
+    public bool IsChinaServer() => Server is "cn" || Value is clgm_cn or nap_cloud_cn or hkrpg_cloud_cn;
 
 
-    public bool IsGlobalServer() => Server is "global" || Value is clgm_global or nap_cloud_global;
+    public bool IsGlobalServer() => Server is "global" || Value is clgm_global or nap_cloud_global or hkrpg_cloud_global;
 
 
     public bool IsBilibili() => Server is "bilibili";
 
     public bool IsBilibiliServer => Server is "bilibili";
 
+    public bool IsCloudGame() => Value.Contains("cloud") || Value.Contains("clgm");
 
 
     public GameBiz ToGame() => Game switch
     {
         "clgm" => hk4e,
+        "hkrpg_cloud" => hkrpg,
         _ => Game,
     };
 
@@ -132,20 +140,20 @@ public record struct GameBiz
     };
 
 
-    public string ToGameServerName() => Server switch
+    public string ToGameServerName() => Value switch
     {
-        "cn" => CoreLang.GameServer_ChinaServer,
-        "global" => CoreLang.GameServer_GlobalServer,
-        "bilibili" => CoreLang.GameServer_Bilibili,
-        "google" => CoreLang.GameServer_GPlay,
-        "epic" => CoreLang.GameServer_Epic,
-        "cloud" => CoreLang.GameServer_Cloud,
-        _ => Value switch
+        clgm_cn or nap_cloud_cn or hkrpg_cloud_cn => CoreLang.GameServer_ChinaCloud,
+        clgm_global or nap_cloud_global or hkrpg_cloud_global => CoreLang.GameServer_GlobalCloud,
+        _ => Server switch
         {
-            clgm_cn or nap_cloud_cn => CoreLang.GameServer_ChinaCloud,
-            clgm_global or nap_cloud_global => CoreLang.GameServer_GlobalCloud,
+            "cn" => CoreLang.GameServer_ChinaServer,
+            "global" => CoreLang.GameServer_GlobalServer,
+            "bilibili" => CoreLang.GameServer_Bilibili,
+            "google" => CoreLang.GameServer_GPlay,
+            "epic" => CoreLang.GameServer_Epic,
+            "cloud" => CoreLang.GameServer_Cloud,
             _ => "",
-        },
+        }
     };
 
 

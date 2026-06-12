@@ -9,9 +9,7 @@ public class ScreenshotFolder
 
     public bool InGame { get; set; }
 
-    public bool IsCloudGame { get; set; }
-
-    public bool CanRemove => !(InGame || Default || IsCloudGame);
+    public bool CanRemove => !(InGame || Default);
 
 
     public ScreenshotFolder(string folder)

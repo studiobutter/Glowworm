@@ -259,6 +259,9 @@
   <data name="ScreenshotPage_GameScreenshot" xml:space="preserve">
     <value>스크린샷</value>
   </data>
+  <data name="ImageViewWindow2_Auto" xml:space="preserve">
+    <value>자동</value>
+  </data>
   <data name="SettingPage_Log" xml:space="preserve">
     <value>로그</value>
   </data>
@@ -948,9 +951,6 @@
   </data>
   <data name="HotkeySetting_SingleKeyShortcutsTips" xml:space="preserve">
     <value>단일 키 (F1-F12) 를 단축키로 설정시, Glowworm 를 관리자 권한으로 실행해야 합니다.</value>
-  </data>
-  <data name="ImageViewWindow2_Auto" xml:space="preserve">
-    <value>자동</value>
   </data>
   <data name="SettingPage_ImageManagement" xml:space="preserve">
     <value>이미지 관리</value>

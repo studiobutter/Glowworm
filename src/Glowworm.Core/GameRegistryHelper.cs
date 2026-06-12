@@ -54,4 +54,17 @@ public static class GameRegistryHelper
     }
 
 
-}
+    public static bool IsCloudGameInstalled(GameBiz biz)
+    {
+        var localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+        return biz.Value switch
+        {
+            GameBiz.clgm_cn => Directory.Exists(Path.Join(localAppData, "miHoYo", "GenshinImpactCloudGame")),
+            GameBiz.clgm_global => Directory.Exists(Path.Join(localAppData, "HoYoverse", "GenshinImpactCloudGame")),
+            GameBiz.nap_cloud_cn => Directory.Exists(Path.Join(localAppData, "miHoYo", "ZenlessZoneZeroCloud")),
+            GameBiz.nap_cloud_global => Directory.Exists(Path.Join(localAppData, "HoYoverse", "ZenlessZoneZeroCloud")),
+            GameBiz.hkrpg_cloud_cn or GameBiz.hkrpg_cloud_global => false, // Web only
+            _ => false,
+        };
+    }
+    }

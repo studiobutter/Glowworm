@@ -259,6 +259,9 @@
   <data name="ScreenshotPage_GameScreenshot" xml:space="preserve">
     <value>遊戲截圖</value>
   </data>
+  <data name="ImageViewWindow2_Auto" xml:space="preserve">
+    <value>汽车</value>
+  </data>
   <data name="SettingPage_Log" xml:space="preserve">
     <value>日誌</value>
   </data>
@@ -948,9 +951,6 @@
   </data>
   <data name="HotkeySetting_SingleKeyShortcutsTips" xml:space="preserve">
     <value>如果註冊單鍵快捷鍵 (F1-F12)，需要以管理員權限運行 Glowworm，否則在遊戲中快捷鍵無法生效。</value>
-  </data>
-  <data name="ImageViewWindow2_Auto" xml:space="preserve">
-    <value>汽车</value>
   </data>
   <data name="SettingPage_ImageManagement" xml:space="preserve">
     <value>影像管理</value>

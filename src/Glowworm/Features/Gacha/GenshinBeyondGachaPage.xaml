@@ -65,11 +65,11 @@
                 <SplitButton.Flyout>
                     <MenuFlyout>
                         <!--  ?? ??? URL  -->
-                        <MenuFlyoutItem Command="{x:Bind UpdateGachaLogCommand}"
+                        <MenuFlyoutItem x:Name="MenuFlyoutItem_WebCache1" Command="{x:Bind UpdateGachaLogCommand}"
                                         CommandParameter="cache"
                                         Text="{x:Bind lang:Lang.GachaLogPage_UpdateSavedURL}" />
                         <!--  ?? ??  -->
-                        <MenuFlyoutItem Command="{x:Bind UpdateGachaLogCommand}"
+                        <MenuFlyoutItem x:Name="MenuFlyoutItem_WebCache2" Command="{x:Bind UpdateGachaLogCommand}"
                                         CommandParameter="all"
                                         Text="{x:Bind lang:Lang.GachaLogPage_UpdateAll}" />
                         <!--  ?? URL  -->

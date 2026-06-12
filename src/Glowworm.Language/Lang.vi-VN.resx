@@ -259,6 +259,9 @@
   <data name="ScreenshotPage_GameScreenshot" xml:space="preserve">
     <value>Chụp ảnh màn hình</value>
   </data>
+  <data name="ImageViewWindow2_Auto" xml:space="preserve">
+    <value>Tự Động</value>
+  </data>
   <data name="SettingPage_Log" xml:space="preserve">
     <value>Nhật ký</value>
   </data>
@@ -948,9 +951,6 @@
   </data>
   <data name="HotkeySetting_SingleKeyShortcutsTips" xml:space="preserve">
     <value>Khi đặt phím tắt một phím (F1-F12), hãy khởi chạy Glowworm dưới quyền admin, và nếu không thể phím tắt có thể bị vô hiệu trong game.</value>
-  </data>
-  <data name="ImageViewWindow2_Auto" xml:space="preserve">
-    <value>Tự Động</value>
   </data>
   <data name="SettingPage_ImageManagement" xml:space="preserve">
     <value>Quản lý Hình Ảnh</value>

@@ -123,6 +123,11 @@ public sealed partial class ScreenshotPage : PageBase
             ScreenshotGroups = null!;
 
             (string? defaultFolder, string? inGameFolder) = await GetGameScreenshotPathAsync();
+            if (CurrentGameBiz.IsCloudGame())
+            {
+                inGameFolder = await GetCloudGameScreenshotPathAsync();
+            }
+
             if (defaultFolder is not null)
             {
                 string folder = Path.GetFullPath(defaultFolder);
@@ -131,18 +136,6 @@ public sealed partial class ScreenshotPage : PageBase
                     var watcher = CreateFileSystemWatcher(folder);
                     _watchers.Add(watcher);
                     _folders.Add(new(folder) { Default = true });
-                }
-            }
-
-            string? cloudFolder = await GetCloudGameScreenshotPathAsync();
-            if (cloudFolder is not null)
-            {
-                string folder = Path.GetFullPath(cloudFolder);
-                if (_folders.FirstOrDefault(x => x.Folder == folder) is null)
-                {
-                    var watcher = CreateFileSystemWatcher(folder);
-                    _watchers.Add(watcher);
-                    _folders.Add(new(folder) { IsCloudGame = true });
                 }
             }
             if (inGameFolder is not null)
@@ -212,14 +205,14 @@ public sealed partial class ScreenshotPage : PageBase
         try
         {
             string? backupFolder = null, screenshotFolder = null;
-            string? name = CurrentGameBiz.Game switch
+            string? name = CurrentGameBiz.ToGame().Value switch
             {
                 GameBiz.hk4e => "GenshinImpact",
                 GameBiz.hkrpg => "StarRail",
                 GameBiz.nap => "ZZZ",
                 _ => null,
             };
-            string? relativePath = CurrentGameBiz.Game switch
+            string? relativePath = CurrentGameBiz.ToGame().Value switch
             {
                 GameBiz.hk4e => "ScreenShot",
                 GameBiz.hkrpg => @"StarRail_Data\ScreenShots",
@@ -259,7 +252,7 @@ public sealed partial class ScreenshotPage : PageBase
     {
         try
         {
-            if (CurrentGameBiz.Game == GameBiz.hk4e)
+            if (CurrentGameBiz.ToGame().Value == GameBiz.hk4e)
             {
                 string company = CurrentGameBiz.IsGlobalServer() ? "HoYoverse" : "miHoYo";
                 string configPath = Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), company, "GenshinImpactCloudGame", "config", "config.ini");
@@ -284,7 +277,7 @@ public sealed partial class ScreenshotPage : PageBase
                     return defaultFolder;
                 }
             }
-            else if (CurrentGameBiz.Game == GameBiz.nap)
+            else if (CurrentGameBiz.ToGame().Value == GameBiz.nap)
             {
                 string subKey = CurrentGameBiz.IsGlobalServer() ? "ZenlessZoneZeroCloudGlobal" : "ZenlessZoneZeroCloud";
                 string regPath = $@"Software\Microsoft\Windows\CurrentVersion\Uninstall\{subKey}";
