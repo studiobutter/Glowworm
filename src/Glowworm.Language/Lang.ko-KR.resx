@@ -954,13 +954,19 @@
   <data name="HotkeySetting_SingleKeyShortcutsTips" xml:space="preserve">
     <value>단일 키 (F1-F12) 를 단축키로 설정시, Glowworm 를 관리자 권한으로 실행해야 합니다.</value>
   </data>
-  <data name="ImageViewWindow2_Auto" xml:space="preserve">
-    <value>Auto</value>
-  </data>
   <data name="SettingPage_ImageManagement" xml:space="preserve">
     <value>Image Management</value>
   </data>
   <data name="ScreenshotSetting_BeyondProfileLocationDesc" xml:space="preserve">
     <value>Miliastra Wonderland Profile Pictures will be back up to the following folder</value>
+  </data>
+  <data name="FileSettingPage_GameMgnt" xml:space="preserve">
+    <value>Game Management</value>
+  </data>
+  <data name="FileSettingPage_HideCloudGamesDesc" xml:space="preserve">
+    <value>This will Hide Cloud Games that has a Web-based function. This function only works for Honkai: Star Rail - Cloud Web and Genshin Impact - Cloud Web (if the launcher isn't installed)</value>
+  </data>
+  <data name="FileSettingPage_HideCloudGames" xml:space="preserve">
+    <value>Hide Cloud Games</value>
   </data>
 </root>
