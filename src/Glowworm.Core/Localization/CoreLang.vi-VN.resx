@@ -162,6 +162,15 @@
   <data name="GameServer_GlobalServer" xml:space="preserve">
     <value>Máy chủ Toàn Cầu</value>
   </data>
+  <data name="GameServer_Steam" xml:space="preserve">
+    <value>Steam</value>
+  </data>
+  <data name="GameServer_Epic" xml:space="preserve">
+    <value>Epic Games</value>
+  </data>
+  <data name="GameServer_GPlay" xml:space="preserve">
+    <value>Google Play</value>
+  </data>
   <data name="GachaType_ChronicledWish" xml:space="preserve">
     <value>Sử ký cầu nguyện</value>
   </data>
@@ -173,6 +182,9 @@
   </data>
   <data name="GameServer_GlobalCloud" xml:space="preserve">
     <value>Máy chủ đám mây Quốc Tế</value>
+  </data>
+  <data name="GameServer_Cloud" xml:space="preserve">
+    <value>Cloud</value>
   </data>
   <data name="GameServer_Bilibili" xml:space="preserve">
     <value>BiliBili</value>
@@ -195,16 +207,16 @@
   <data name="GachaType_LightConeCollaborationWarp" xml:space="preserve">
     <value>Bước Nhảy Nón Ánh Sáng Hợp Tác</value>
   </data>
-  <data name="GachaType_StandardOde" xml:space="preserve">
-    <value>Ca Tụng Thường</value>
-  </data>
-  <data name="GachaType_EventOde" xml:space="preserve">
-    <value>Ca Tụng Sự Kiện</value>
-  </data>
   <data name="GachaType_ExclusiveRescreening" xml:space="preserve">
     <value>Độc Quyền Phát Lại</value>
   </data>
   <data name="GachaType_WEngineReverberation" xml:space="preserve">
     <value>W-Engine Vang Vọng</value>
+  </data>
+  <data name="GachaType_StandardOde" xml:space="preserve">
+    <value>Ca Tụng Thường</value>
+  </data>
+  <data name="GachaType_EventOde" xml:space="preserve">
+    <value>Ca Tụng Sự Kiện</value>
   </data>
 </root>
