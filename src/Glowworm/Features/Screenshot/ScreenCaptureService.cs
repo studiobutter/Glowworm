@@ -624,6 +624,41 @@ internal class ScreenCaptureService
     }
 
 
+#if DEBUG
+    public static async Task CaptureAppWindowAsync(nint hwnd)
+    {
+        try
+        {
+            var cts = new CancellationTokenSource(TimeSpan.FromSeconds(3));
+            using var frame = await ScreenCaptureHelper.CaptureWindowAsync(hwnd, DirectXPixelFormat.R8G8B8A8UIntNormalized, cts.Token).ConfigureAwait(false);
+            using var canvasBitmap = CanvasBitmap.CreateFromDirect3D11Surface(CanvasDevice.GetSharedDevice(), frame.Surface, 96);
+            bool clip = TryClipClient(hwnd, frame.ContentSize, out Rect clientRect);
+            if (!clip)
+            {
+                clientRect = new Rect(0, 0, frame.ContentSize.Width, frame.ContentSize.Height);
+            }
+            using var renderTarget = new CanvasRenderTarget(CanvasDevice.GetSharedDevice(), (float)clientRect.Width, (float)clientRect.Height, 96, DirectXPixelFormat.R8G8B8A8UIntNormalized, CanvasAlphaMode.Premultiplied);
+            using (var ds = renderTarget.CreateDrawingSession())
+            {
+                ds.Clear(Colors.Transparent);
+                ds.DrawImage(canvasBitmap, 0, 0, clientRect);
+            }
+            string folder = Path.Combine(AppConfig.UserDataFolder, "DebugScreenshots");
+            Directory.CreateDirectory(folder);
+            string filePath = Path.Combine(folder, $"Glowworm_{DateTime.Now:yyyyMMdd_HHmmss}.png");
+            using var ms = new MemoryStream();
+            await renderTarget.SaveAsync(ms.AsRandomAccessStream(), CanvasBitmapFileFormat.Png).AsTask().ConfigureAwait(false);
+            using var fs = File.Create(filePath);
+            ms.Position = 0;
+            await ms.CopyToAsync(fs).ConfigureAwait(false);
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo { FileName = folder, UseShellExecute = true });
+        }
+        catch (Exception ex)
+        {
+            Instance._logger.LogError(ex, "Failed to capture debug screenshot");
+        }
+    }
+#endif
 
 
 }

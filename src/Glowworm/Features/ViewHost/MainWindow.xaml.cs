@@ -122,6 +122,12 @@ public sealed partial class MainWindow : WindowEx
     private void Content_KeyDown(object sender, Microsoft.UI.Xaml.Input.KeyRoutedEventArgs e)
     {
         // Removed Escape key closing the app
+#if DEBUG
+        if (e.Key == Windows.System.VirtualKey.F12)
+        {
+            _ = ScreenCaptureService.CaptureAppWindowAsync(WindowHandle);
+        }
+#endif
     }
 
 
