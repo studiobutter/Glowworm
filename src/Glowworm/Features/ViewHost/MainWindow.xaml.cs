@@ -173,6 +173,15 @@ public sealed partial class MainWindow : WindowEx
             else if (wParam == 0x8)
             {
                 // WTS_SESSION_UNLOCK 
+                SetIcon();
+            }
+        }
+        else if (uMsg == (uint)User32.WindowMessage.WM_POWERBROADCAST)
+        {
+            if (wParam == 0x0007 || wParam == 0x0012)
+            {
+                // PBT_APMRESUMESUSPEND or PBT_APMRESUMEAUTOMATIC
+                SetIcon();
             }
         }
         else if (uMsg == (uint)User32.WindowMessage.WM_DEVICECHANGE)
