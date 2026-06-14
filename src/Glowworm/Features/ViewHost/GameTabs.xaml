@@ -55,17 +55,18 @@
                 <FontIcon Glyph="&#xE72C;" FontSize="14" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
             </Button>
             
-            <FontIcon Glyph="&#xE946;" FontSize="14" Foreground="{ThemeResource TextFillColorSecondaryBrush}">
-                <ToolTipService.ToolTip>
-                    <ToolTip>
-                        <StackPanel Spacing="4" MaxWidth="280">
+            <Button Background="Transparent" BorderThickness="0" Padding="8">
+                <FontIcon Glyph="&#xE946;" FontSize="14" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                <Button.Flyout>
+                    <Flyout Placement="Bottom">
+                        <StackPanel Spacing="4" MaxWidth="280" Padding="6">
                             <TextBlock Text="{x:Bind lang:Lang.MainPage_Tips}" FontWeight="SemiBold" />
                             <TextBlock Text="{x:Bind lang:Lang.MainPage_HowToSwitchGameRegion}" FontWeight="SemiBold" />
                             <TextBlock Text="{x:Bind lang:Lang.MainPage_ClickTheRightMouseButtonOnTheGameIconOnTheLeft}" TextWrapping="Wrap" />
                         </StackPanel>
-                    </ToolTip>
-                </ToolTipService.ToolTip>
-            </FontIcon>
+                    </Flyout>
+                </Button.Flyout>
+            </Button>
         </StackPanel>
     </Grid>
 </UserControl>
