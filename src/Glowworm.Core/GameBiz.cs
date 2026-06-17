@@ -115,7 +115,7 @@ public record struct GameBiz
     public bool IsChinaServer() => Server is "cn" || Value is clgm_cn or nap_cloud_cn or hkrpg_cloud_cn;
 
 
-    public bool IsGlobalServer() => Server is "global" || Value is clgm_global or nap_cloud_global or hkrpg_cloud_global;
+    public bool IsGlobalServer() => Server is "global" or "google" or "epic" or "steam" || Value is clgm_global or nap_cloud_global or hkrpg_cloud_global;
 
 
     public bool IsBilibili() => Server is "bilibili";

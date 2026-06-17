@@ -120,7 +120,7 @@ public abstract class GachaLogClient
             GameBiz.hk4e_cn or GameBiz.hk4e_bilibili => Path.Join(installPath, WEB_CACHE_PATH_YS_CN),
             GameBiz.hk4e_global or GameBiz.hk4e_google or GameBiz.hk4e_epic => Path.Join(installPath, WEB_CACHE_PATH_YS_OS),
             GameBiz.hkrpg_cn or GameBiz.hkrpg_global or GameBiz.hkrpg_bilibili or GameBiz.hkrpg_epic => Path.Join(installPath, WEB_CACHE_SR_PATH),
-            GameBiz.nap_cn or GameBiz.nap_global or GameBiz.nap_bilibili or GameBiz.nap_epic => Path.Join(installPath, WEB_CACHE_ZZZ_PATH),
+            GameBiz.nap_cn or GameBiz.nap_global or GameBiz.nap_bilibili or GameBiz.nap_epic or GameBiz.nap_steam => Path.Join(installPath, WEB_CACHE_ZZZ_PATH),
             _ => throw new ArgumentOutOfRangeException($"Unknown region {gameBiz}"),
         };
         DateTime lastWriteTime = DateTime.MinValue;
@@ -133,7 +133,7 @@ public abstract class GachaLogClient
             GameBiz.hk4e_cn or GameBiz.hk4e_bilibili => @"YuanShen_Data\webCaches",
             GameBiz.hk4e_global or GameBiz.hk4e_google or GameBiz.hk4e_epic => @"GenshinImpact_Data\webCaches",
             GameBiz.hkrpg_cn or GameBiz.hkrpg_global or GameBiz.hkrpg_bilibili or GameBiz.hkrpg_epic => @"StarRail_Data\webCaches",
-            GameBiz.nap_cn or GameBiz.nap_global or GameBiz.nap_bilibili or GameBiz.nap_epic => @"ZenlessZoneZero_Data\webCaches",
+            GameBiz.nap_cn or GameBiz.nap_global or GameBiz.nap_bilibili or GameBiz.nap_epic or GameBiz.nap_steam => @"ZenlessZoneZero_Data\webCaches",
             _ => throw new ArgumentOutOfRangeException($"Unknown region {gameBiz}"),
         };
         string webCache = Path.Join(installPath, prefix);
@@ -167,7 +167,7 @@ public abstract class GachaLogClient
             GameBiz.hkrpg_cn or GameBiz.hkrpg_bilibili => SPAN_WEB_PREFIX_SR_CN,
             GameBiz.hkrpg_global or GameBiz.hkrpg_epic => SPAN_WEB_PREFIX_SR_OS,
             GameBiz.nap_cn or GameBiz.nap_bilibili => SPAN_WEB_PREFIX_ZZZ_CN,
-            GameBiz.nap_global or GameBiz.nap_epic => SPAN_WEB_PREFIX_ZZZ_OS,
+            GameBiz.nap_global or GameBiz.nap_epic or GameBiz.nap_steam => SPAN_WEB_PREFIX_ZZZ_OS,
             _ => throw new ArgumentOutOfRangeException($"Unknown region {gameBiz}"),
         };
     }
