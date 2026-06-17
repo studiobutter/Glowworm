@@ -34,6 +34,7 @@ public static class GameRegistryHelper
             GameBiz.nap_global => GetValue(GameRegistry.GamePath_nap_global, GameRegistry.GameInstallPath),
             GameBiz.nap_bilibili => GetValue(GameRegistry.GamePath_nap_cn_bilibili, GameRegistry.GameInstallPath),
             GameBiz.nap_epic => GetValue(GameRegistry.GamePath_nap_global_epic, GameRegistry.GameInstallPath),
+            GameBiz.nap_steam => GetValue(GameRegistry.GamePath_nap_global_steam, GameRegistry.GameInstallPath),
             _ => null,
         };
 

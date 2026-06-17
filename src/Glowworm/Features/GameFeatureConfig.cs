@@ -57,7 +57,7 @@ internal partial class GameFeatureConfig
             GameBiz.hkrpg_global or GameBiz.hkrpg_epic => hkrpg_global,
             GameBiz.hkrpg_bilibili => hkrpg_bilibili,
             GameBiz.nap_cn => nap_cn,
-            GameBiz.nap_global or GameBiz.nap_epic => nap_global,
+            GameBiz.nap_global or GameBiz.nap_epic or GameBiz.nap_steam => nap_global,
             GameBiz.nap_bilibili => nap_bilibili,
             _ => Default,
         };

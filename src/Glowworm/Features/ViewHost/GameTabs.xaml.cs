@@ -79,7 +79,7 @@ public sealed partial class GameTabs : UserControl
         { 
             Game = GameBiz.nap, 
             Icon = "ms-appx:///Assets/icon_zzz.ico",
-            Regions = new List<GameBiz> { GameBiz.nap_cn, GameBiz.nap_global, GameBiz.nap_bilibili, GameBiz.nap_epic, GameBiz.nap_cloud_cn, GameBiz.nap_cloud_global },
+            Regions = new List<GameBiz> { GameBiz.nap_cn, GameBiz.nap_global, GameBiz.nap_bilibili, GameBiz.nap_epic, GameBiz.nap_steam, GameBiz.nap_cloud_cn, GameBiz.nap_cloud_global },
             SelectedRegion = AppConfig.GetLastRegionOfGame(GameBiz.nap) != GameBiz.None ? AppConfig.GetLastRegionOfGame(GameBiz.nap) : GameBiz.nap_cn
         });
     }

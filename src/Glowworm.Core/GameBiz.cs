@@ -1,4 +1,4 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 
 namespace Glowworm.Core;
 
@@ -48,6 +48,7 @@ public record struct GameBiz
     public const string nap_global = "nap_global";
     public const string nap_bilibili = "nap_bilibili";
     public const string nap_epic = "nap_epic";
+    public const string nap_steam = "nap_steam";
     public const string nap_cloud = "nap_cloud";
     public const string nap_cloud_cn = "nap_cloud_cn";
     public const string nap_cloud_global = "nap_cloud_global";
@@ -77,6 +78,7 @@ public record struct GameBiz
         nap_global,
         nap_bilibili,
         nap_epic,
+        nap_steam,
         nap_cloud,
         nap_cloud_cn,
         nap_cloud_global,
@@ -105,7 +107,7 @@ public record struct GameBiz
         hk4e_cn or hk4e_global or hk4e_bilibili or hk4e_google or hk4e_epic => true,
         clgm_cn or clgm_global => true,
         hkrpg_cn or hkrpg_global or hkrpg_bilibili or hkrpg_epic or hkrpg_cloud or hkrpg_cloud_cn or hkrpg_cloud_global => true,
-        nap_cn or nap_global or nap_bilibili or nap_epic or nap_cloud or nap_cloud_cn or nap_cloud_global => true,
+        nap_cn or nap_global or nap_bilibili or nap_epic or nap_steam or nap_cloud or nap_cloud_cn or nap_cloud_global => true,
         _ => false,
     };
 
@@ -152,6 +154,7 @@ public record struct GameBiz
             "google" => CoreLang.GameServer_GPlay,
             "epic" => CoreLang.GameServer_Epic,
             "cloud" => CoreLang.GameServer_Cloud,
+            "steam" => CoreLang.GameServer_Steam,
             _ => "",
         }
     };
@@ -165,17 +168,9 @@ public record struct GameBiz
         hkrpg_cn or hkrpg_bilibili => GameRegistry.GamePath_hkrpg_cn,
         hkrpg_global or hkrpg_epic => GameRegistry.GamePath_hkrpg_global,
         nap_cn or nap_bilibili => GameRegistry.GamePath_nap_cn,
-        nap_global or nap_epic => GameRegistry.GamePath_nap_global,
+        nap_global or nap_epic or nap_steam => GameRegistry.GamePath_nap_global,
         _ => "HKEY_CURRENT_USER",
     };
 
 
-
-
-
 }
-
-
-
-
-
