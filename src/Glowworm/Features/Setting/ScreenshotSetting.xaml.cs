@@ -36,6 +36,7 @@ public sealed partial class ScreenshotSetting : PageBase
         InitializeComponent();
         InitializeHotkeyInput();
         InitializeScreenshotFolder();
+        InitializeBeyondProfilePicturesFolder();
     }
 
 
@@ -168,6 +169,30 @@ public sealed partial class ScreenshotSetting : PageBase
     }
 
 
+    public string BeyondProfilePicturesFolder { get; set => SetProperty(ref field, value); }
+
+    private void InitializeBeyondProfilePicturesFolder()
+    {
+        try
+        {
+            string? folder = AppConfig.BeyondProfilePicturesBackupFolder;
+            if (string.IsNullOrWhiteSpace(folder))
+            {
+                folder = Path.Combine(AppConfig.UserDataFolder, "BeyondProfilePictures");
+            }
+            if (!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+            }
+            BeyondProfilePicturesFolder = folder;
+            AppConfig.BeyondProfilePicturesBackupFolder = folder;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to initialize beyond profile pictures folder");
+        }
+    }
+
     [RelayCommand]
     private async Task ChangeScreenshotFolder()
     {
@@ -186,7 +211,6 @@ public sealed partial class ScreenshotSetting : PageBase
         }
     }
 
-
     [RelayCommand]
     private async Task OpenScreenshotFolder()
     {
@@ -195,6 +219,37 @@ public sealed partial class ScreenshotSetting : PageBase
             if (Directory.Exists(ScreenshotFolder))
             {
                 await Launcher.LaunchFolderPathAsync(ScreenshotFolder);
+            }
+        }
+        catch { }
+    }
+
+    [RelayCommand]
+    private async Task ChangeBeyondProfilePicturesFolder()
+    {
+        try
+        {
+            string? folder = await FileDialogHelper.PickFolderAsync(this.XamlRoot);
+            if (Directory.Exists(folder))
+            {
+                BeyondProfilePicturesFolder = folder;
+                AppConfig.BeyondProfilePicturesBackupFolder = folder;
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to change beyond profile pictures folder");
+        }
+    }
+
+    [RelayCommand]
+    private async Task OpenBeyondProfilePicturesFolder()
+    {
+        try
+        {
+            if (Directory.Exists(BeyondProfilePicturesFolder))
+            {
+                await Launcher.LaunchFolderPathAsync(BeyondProfilePicturesFolder);
             }
         }
         catch { }

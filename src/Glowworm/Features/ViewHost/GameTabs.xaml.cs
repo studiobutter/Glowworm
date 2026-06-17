@@ -65,21 +65,21 @@ public sealed partial class GameTabs : UserControl
         { 
             Game = GameBiz.hk4e, 
             Icon = "ms-appx:///Assets/icon_ys.ico",
-            Regions = new List<GameBiz> { GameBiz.hk4e_cn, GameBiz.hk4e_global, GameBiz.hk4e_bilibili, GameBiz.hk4e_google, GameBiz.hk4e_epic },
+            Regions = new List<GameBiz> { GameBiz.hk4e_cn, GameBiz.hk4e_global, GameBiz.hk4e_bilibili, GameBiz.hk4e_google, GameBiz.hk4e_epic, GameBiz.clgm_cn, GameBiz.clgm_global },
             SelectedRegion = AppConfig.GetLastRegionOfGame(GameBiz.hk4e) != GameBiz.None ? AppConfig.GetLastRegionOfGame(GameBiz.hk4e) : GameBiz.hk4e_cn
         });
         GameList.Add(new GameTabItem 
         { 
             Game = GameBiz.hkrpg, 
             Icon = "ms-appx:///Assets/icon_sr.ico",
-            Regions = new List<GameBiz> { GameBiz.hkrpg_cn, GameBiz.hkrpg_global, GameBiz.hkrpg_bilibili, GameBiz.hkrpg_epic },
+            Regions = new List<GameBiz> { GameBiz.hkrpg_cn, GameBiz.hkrpg_global, GameBiz.hkrpg_bilibili, GameBiz.hkrpg_epic, GameBiz.hkrpg_cloud_cn },
             SelectedRegion = AppConfig.GetLastRegionOfGame(GameBiz.hkrpg) != GameBiz.None ? AppConfig.GetLastRegionOfGame(GameBiz.hkrpg) : GameBiz.hkrpg_cn
         });
         GameList.Add(new GameTabItem 
         { 
             Game = GameBiz.nap, 
             Icon = "ms-appx:///Assets/icon_zzz.ico",
-            Regions = new List<GameBiz> { GameBiz.nap_cn, GameBiz.nap_global, GameBiz.nap_bilibili, GameBiz.nap_epic },
+            Regions = new List<GameBiz> { GameBiz.nap_cn, GameBiz.nap_global, GameBiz.nap_bilibili, GameBiz.nap_epic, GameBiz.nap_steam, GameBiz.nap_cloud_cn, GameBiz.nap_cloud_global },
             SelectedRegion = AppConfig.GetLastRegionOfGame(GameBiz.nap) != GameBiz.None ? AppConfig.GetLastRegionOfGame(GameBiz.nap) : GameBiz.nap_cn
         });
     }
@@ -122,17 +122,43 @@ public sealed partial class GameTabs : UserControl
         }
     }
 
-    private void Button_SwitchRegion_Loaded(object sender, RoutedEventArgs e)
+    private void MenuFlyout_Regions_Opening(object sender, object e)
     {
-        if (sender is DropDownButton btn && btn.DataContext is GameTabItem item)
+        if (sender is MenuFlyout flyout && flyout.Target?.DataContext is GameTabItem item)
         {
-            var flyout = btn.Flyout as MenuFlyout;
-            if (flyout != null)
+            flyout.Items.Clear();
+            foreach (var region in item.Regions)
             {
-                flyout.Items.Clear();
-                foreach (var region in item.Regions)
+                if (region.IsCloudGame())
                 {
-                    if (string.IsNullOrWhiteSpace(GameRegistryHelper.GetGameInstallPath(region))) continue;
+                    bool shouldShow = false;
+                    if (region == GameBiz.clgm_cn)
+                    {
+                        shouldShow = !(AppConfig.HideGenshinCloudChina && !GameRegistryHelper.IsCloudGameInstalled(region));
+                    }
+                    else if (region == GameBiz.hkrpg_cloud_cn)
+                    {
+                        shouldShow = !AppConfig.HideStarRailCloudChina;
+                    }
+                    else
+                    {
+                        // Global Cloud games and ZZZ Cloud games must ALWAYS be hidden if their PC clients are not installed
+                        shouldShow = GameRegistryHelper.IsCloudGameInstalled(region);
+                    }
+
+                    if (shouldShow)    
+                    {
+                        var menuitem = new MenuFlyoutItem
+                        {
+                            Text = region.ToGameServerName(),
+                            Tag = region
+                        };
+                        menuitem.Click += MenuFlyoutItem_Click;
+                        flyout.Items.Add(menuitem);
+                    }
+                }
+                else if (!string.IsNullOrWhiteSpace(GameRegistryHelper.GetGameInstallPath(region)))
+                {
                     var menuitem = new MenuFlyoutItem
                     {
                         Text = region.ToGameServerName(),

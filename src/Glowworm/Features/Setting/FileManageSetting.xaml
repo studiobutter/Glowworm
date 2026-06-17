@@ -13,7 +13,51 @@
 
     <ScrollViewer>
         <StackPanel>
+            <TextBlock FontSize="20" Text="{x:Bind lang:Lang.FileSettingPage_GameMgnt}" />
 
+            <TextBlock Margin="0,16,0,0" FontSize="16" Text="{x:Bind lang:Lang.FileSettingPage_HideCloudGames}" />
+
+            <TextBlock Margin="0,12,0,0"
+            Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+            Text="{x:Bind lang:Lang.FileSettingPage_HideCloudGamesDesc}"
+            TextWrapping="Wrap" />
+            
+            <StackPanel Orientation="Horizontal" Spacing="16" Margin="0,8,0,0">
+                <ToggleSwitch IsOn="{x:Bind HideGenshinCloudChina, Mode=TwoWay}">
+                    <ToggleSwitch.Header>
+                        <TextBlock>
+                            <Run Text="{x:Bind GenshinImpactText}" />
+                            <Run Text=" - " />
+                            <Run Text="{x:Bind ChinaCloudText}" />
+                        </TextBlock>
+                    </ToggleSwitch.Header>
+                </ToggleSwitch>
+                <ToggleSwitch IsOn="{x:Bind HideStarRailCloudChina, Mode=TwoWay}">
+                    <ToggleSwitch.Header>
+                        <TextBlock>
+                            <Run Text="{x:Bind HonkaiStarRailText}" />
+                            <Run Text=" - " />
+                            <Run Text="{x:Bind ChinaCloudText}" />
+                        </TextBlock>
+                    </ToggleSwitch.Header>
+                </ToggleSwitch>
+            </StackPanel>
+            
+            <!--  Rescan Game Directories  -->
+            <Button Height="40"
+            Margin="0,32,0,0"
+            Padding="16,0,16,0"
+            BorderThickness="0"
+            Command="{x:Bind RescanGameDirectoriesCommand}"
+            CornerRadius="8,20,20,8"
+            Style="{ThemeResource AccentButtonStyle}">
+                <StackPanel Orientation="Horizontal" Spacing="8">
+                    <FontIcon Glyph="&#xE72C;" />
+                    <TextBlock Text="{x:Bind lang:Lang.SettingPage_RescanGameDirectories}" />
+                </StackPanel>
+            </Button>
+
+            <MenuFlyoutSeparator Margin="0,20,0,0" />
 
             <!--  ???????  -->
             <TextBlock FontSize="20" Text="{x:Bind lang:Lang.FileSettingPage_DataFolder}" />
@@ -67,21 +111,6 @@
                     </Grid>
                 </Button>
             </Grid>
-
-            <!--  Rescan Game Directories  -->
-            <Button Height="40"
-                    Margin="0,8,0,0"
-                    Padding="16,0,16,0"
-                    BorderThickness="0"
-                    Command="{x:Bind RescanGameDirectoriesCommand}"
-                    CornerRadius="8,20,20,8"
-                    Style="{ThemeResource AccentButtonStyle}">
-                <StackPanel Orientation="Horizontal" Spacing="8">
-                    <FontIcon Glyph="&#xE72C;" />
-                    <TextBlock Text="{x:Bind lang:Lang.SettingPage_RescanGameDirectories}" />
-                </StackPanel>
-            </Button>
-
 
             <!--  ?????  -->
             <StackPanel Margin="0,8,0,0"

@@ -313,6 +313,24 @@ namespace Glowworm.Core.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cloud.
+        /// </summary>
+        public static string GameServer_Cloud {
+            get {
+                return ResourceManager.GetString("GameServer_Cloud", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Epic Games.
+        /// </summary>
+        public static string GameServer_Epic {
+            get {
+                return ResourceManager.GetString("GameServer_Epic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Global Cloud Server.
         /// </summary>
         public static string GameServer_GlobalCloud {
@@ -327,6 +345,24 @@ namespace Glowworm.Core.Localization {
         public static string GameServer_GlobalServer {
             get {
                 return ResourceManager.GetString("GameServer_GlobalServer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Google Play.
+        /// </summary>
+        public static string GameServer_GPlay {
+            get {
+                return ResourceManager.GetString("GameServer_GPlay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Steam.
+        /// </summary>
+        public static string GameServer_Steam {
+            get {
+                return ResourceManager.GetString("GameServer_Steam", resourceCulture);
             }
         }
     }

@@ -31,8 +31,18 @@ public sealed partial class BeyondProfilePicturePage : PageBase
     {
         this.InitializeComponent();
         Image_Emoji.Source = new BitmapImage(AppConfig.EmojiPaimon);
-        _backupFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Glowworm", "BeyondProfilePictures");
-        Directory.CreateDirectory(_backupFolder);
+        string? cfg = AppConfig.BeyondProfilePicturesBackupFolder;
+        if (string.IsNullOrWhiteSpace(cfg))
+        {
+            _backupFolder = Path.Combine(AppConfig.UserDataFolder, "BeyondProfilePictures");
+            Directory.CreateDirectory(_backupFolder);
+            AppConfig.BeyondProfilePicturesBackupFolder = _backupFolder;
+        }
+        else
+        {
+            _backupFolder = cfg;
+            Directory.CreateDirectory(_backupFolder);
+        }
     }
 
     protected override async void OnLoaded()

@@ -1498,9 +1498,17 @@ public sealed partial class ImageViewWindow2 : Window
     {
         if (string.IsNullOrWhiteSpace(iconPath))
         {
-            nint hInstance = Kernel32.GetModuleHandle(null).DangerousGetHandle();
-            nint hIcon = User32.LoadIcon(hInstance, "#32512").DangerousGetHandle();
-            AppWindow.SetIcon(Win32Interop.GetIconIdFromIcon(hIcon));
+            iconPath = System.IO.Path.Combine(AppContext.BaseDirectory, "logo.ico");
+            if (System.IO.File.Exists(iconPath))
+            {
+                AppWindow.SetIcon(iconPath);
+            }
+            else
+            {
+                nint hInstance = Kernel32.GetModuleHandle(null).DangerousGetHandle();
+                nint hIcon = User32.LoadIcon(hInstance, "#32512").DangerousGetHandle();
+                AppWindow.SetIcon(Win32Interop.GetIconIdFromIcon(hIcon));
+            }
         }
         else
         {

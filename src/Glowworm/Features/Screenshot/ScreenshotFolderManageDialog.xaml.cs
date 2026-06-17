@@ -48,20 +48,6 @@ public sealed partial class ScreenshotFolderManageDialog : ContentDialog
     public bool FolderChanged { get; set; }
 
 
-    public string? CloudFolder
-    {
-        get => field;
-        set
-        {
-            if (SetProperty(ref field, value))
-            {
-                OnPropertyChanged(nameof(CloudFolderVisibility));
-            }
-        }
-    }
-
-    public Visibility CloudFolderVisibility => string.IsNullOrEmpty(CloudFolder) ? Visibility.Collapsed : Visibility.Visible;
-
     public bool CanSave { get; set => SetProperty(ref field, value); }
 
 
@@ -74,14 +60,7 @@ public sealed partial class ScreenshotFolderManageDialog : ContentDialog
             {
                 foreach (var item in Folders)
                 {
-                    if (item.IsCloudGame)
-                    {
-                        CloudFolder = item.Folder;
-                    }
-                    else
-                    {
-                        ScreenshotFolders.Add(item);
-                    }
+                    ScreenshotFolders.Add(item);
                 }
             }
         }
@@ -219,75 +198,6 @@ public sealed partial class ScreenshotFolderManageDialog : ContentDialog
     }
 
 
-
-
-    private async void Button_OpenCloudFolder_Click(object sender, RoutedEventArgs e)
-    {
-        try
-        {
-            if (!string.IsNullOrEmpty(CloudFolder) && Directory.Exists(CloudFolder))
-            {
-                await Launcher.LaunchFolderPathAsync(CloudFolder);
-            }
-        }
-        catch { }
-    }
-
-    private async void Button_BackupCloudFolder_Click(object sender, RoutedEventArgs e)
-    {
-        if (sender is Button button)
-        {
-            button.IsEnabled = false;
-            try
-            {
-                TextBlock_BackupResult.Visibility = Visibility.Collapsed;
-                if (!string.IsNullOrEmpty(CloudFolder) && Directory.Exists(CloudFolder))
-                {
-                    if (ScreenshotFolders?.FirstOrDefault(x => x.Default) is ScreenshotFolder screenshotFolder)
-                    {
-                        string backupFolder = screenshotFolder.Folder;
-                        Directory.CreateDirectory(backupFolder);
-                        StackPanel_BackingUp.Visibility = Visibility.Visible;
-                        int count = await Task.Run(() =>
-                        {
-
-                            int count = 0;
-                            var files = Directory.GetFiles(CloudFolder);
-                            foreach (var item in files)
-                            {
-                                var target = Path.Combine(backupFolder, Path.GetFileName(item));
-                                if (!File.Exists(target))
-                                {
-                                    File.Copy(item, target);
-                                    count++;
-                                }
-                            }
-                            return count;
-                        });
-                        StackPanel_BackingUp.Visibility = Visibility.Collapsed;
-                        TextBlock_BackupResult.Visibility = Visibility.Visible;
-                        TextBlock_BackupResult.Text = string.Format(Lang.ScreenshotPage_BackedUpNewScreenshots, count);
-                        return;
-                    }
-                }
-                _logger.LogWarning("Game exe name of {GameBiz} is null, cannot backup screenshots.", CurrentGameId.GameBiz);
-                TextBlock_BackupResult.Visibility = Visibility.Visible;
-                TextBlock_BackupResult.Text = Lang.ScreenshotFolderManageDialog_FailedToBackupScreenshots;
-                return;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Failed to backup cloud screenshots.");
-                TextBlock_BackupResult.Visibility = Visibility.Visible;
-                TextBlock_BackupResult.Text = Lang.ScreenshotFolderManageDialog_FailedToBackupScreenshots;
-            }
-            finally
-            {
-                StackPanel_BackingUp.Visibility = Visibility.Collapsed;
-                button.IsEnabled = true;
-            }
-        }
-    }
 
 
     [RelayCommand]

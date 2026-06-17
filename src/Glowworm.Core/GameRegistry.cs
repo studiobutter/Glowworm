@@ -25,6 +25,8 @@ public class GameRegistry
     public const string GamePath_hkrpg_global_epic = @"HKEY_CURRENT_USER\Software\Cognosphere\HYP\standalone\1_3\hkrpg_global\gGoJxKOusQ\hkrpg_global";
     public const string GamePath_nap_global_epic = @"HKEY_CURRENT_USER\Software\Cognosphere\HYP\standalone\1_3\nap_global\0hUu4SbmhI\nap_global";
 
+    public const string GamePath_nap_global_steam = @"HKEY_CURRENT_USER\Software\Cognosphere\HYP\standalone\1_5\nap_global\FpjStNkPwp\nap_global";
+
     // Standalone - China (BiliBili)
     public const string GamePath_hk4e_cn_bilibili = @"HKEY_CURRENT_USER\Software\miHoYo\HYP\standalone\14_0\hk4e_cn\umfgRO5gh5\hk4e_cn";
     public const string GamePath_hkrpg_cn_bilibili = @"HKEY_CURRENT_USER\Software\miHoYo\HYP\standalone\14_0\hkrpg_cn\6P5gHMNyK3\hkrpg_cn";

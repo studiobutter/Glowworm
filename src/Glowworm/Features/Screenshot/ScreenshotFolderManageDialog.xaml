@@ -40,43 +40,6 @@
                    Text="{x:Bind lang:Lang.ScreenshotFolderManageDialog_ImagesFromTheFollowingFoldersWillBeDisplayedInTheGallery}"
                    TextWrapping="Wrap" />
 
-        <StackPanel Grid.Row="1" Margin="24,0,24,12" Visibility="{x:Bind CloudFolderVisibility}">
-            <TextBlock Margin="0,0,0,8" Foreground="{ThemeResource TextFillColorSecondaryBrush}" Text="{x:Bind lang:Lang.CloudGameButton_CloudGame}" />
-            <Grid ColumnSpacing="4">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition Width="32" />
-                    <ColumnDefinition Width="32" />
-                </Grid.ColumnDefinitions>
-                <TextBlock VerticalAlignment="Center"
-                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                           Text="{x:Bind CloudFolder}"
-                           TextWrapping="Wrap" />
-                <Button Grid.Column="1"
-                        Width="32"
-                        Height="32"
-                        Padding="0"
-                        Click="Button_OpenCloudFolder_Click"
-                        Style="{ThemeResource DateTimePickerFlyoutButtonStyle}"
-                        ToolTipService.ToolTip="{x:Bind lang:Lang.Common_Open}">
-                    <FontIcon FontSize="16"
-                              Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                              Glyph="&#xE8A7;" />
-                </Button>
-                <Button Grid.Column="2"
-                        Width="32"
-                        Height="32"
-                        Padding="0"
-                        Click="Button_BackupCloudFolder_Click"
-                        Style="{ThemeResource DateTimePickerFlyoutButtonStyle}"
-                        ToolTipService.ToolTip="{x:Bind lang:Lang.ScreenshotPage_BackupScreenshots}">
-                    <FontIcon FontSize="16"
-                              Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                              Glyph="&#xF413;" />
-                </Button>
-            </Grid>
-        </StackPanel>
-
 
         <MenuFlyoutSeparator Grid.Row="2" Margin="24,0,24,0" />
 

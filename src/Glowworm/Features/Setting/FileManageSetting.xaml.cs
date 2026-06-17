@@ -28,7 +28,35 @@ public sealed partial class FileManageSetting : PageBase
         this.InitializeComponent();
     }
 
+    public string GenshinImpactText => Core.Localization.CoreLang.Game_GenshinImpact;
+    public string HonkaiStarRailText => Core.Localization.CoreLang.Game_HonkaiStarRail;
+    public string ChinaCloudText => Core.Localization.CoreLang.GameServer_ChinaCloud;
 
+    public bool HideGenshinCloudChina
+    {
+        get => AppConfig.HideGenshinCloudChina;
+        set
+        {
+            if (AppConfig.HideGenshinCloudChina != value)
+            {
+                AppConfig.HideGenshinCloudChina = value;
+                OnPropertyChanged(nameof(HideGenshinCloudChina));
+            }
+        }
+    }
+
+    public bool HideStarRailCloudChina
+    {
+        get => AppConfig.HideStarRailCloudChina;
+        set
+        {
+            if (AppConfig.HideStarRailCloudChina != value)
+            {
+                AppConfig.HideStarRailCloudChina = value;
+                OnPropertyChanged(nameof(HideStarRailCloudChina));
+            }
+        }
+    }
 
     protected override void OnLoaded()
     {

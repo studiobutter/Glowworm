@@ -41,36 +41,51 @@
                       VerticalAlignment="Center"
                       ItemsSource="{x:Bind UidList}"
                       SelectedItem="{x:Bind SelectUid, Mode=TwoWay}" />
-            <!--  Update  -->
-            <SplitButton Height="32" Command="{x:Bind UpdateGachaLogCommand}">
-                <StackPanel Orientation="Horizontal" Spacing="8">
-                    <FontIcon Margin="0,2,0,0"
-                              FontSize="14"
-                              Glyph="&#xE72C;" />
-                    <!--  ????  -->
-                    <TextBlock Text="{x:Bind lang:Lang.GachaLogPage_UpdateRecords}" />
-                </StackPanel>
-                <SplitButton.Flyout>
-                    <MenuFlyout>
-                        <!--  ?? ??? URL  -->
-                        <MenuFlyoutItem Command="{x:Bind UpdateGachaLogCommand}"
-                                        CommandParameter="cache"
-                                        Text="{x:Bind lang:Lang.GachaLogPage_UpdateSavedURL}" />
-                        <!--  ?? ??  -->
-                        <MenuFlyoutItem Command="{x:Bind UpdateGachaLogCommand}"
-                                        CommandParameter="all"
-                                        Text="{x:Bind lang:Lang.GachaLogPage_UpdateAll}" />
-                        <!--  ?? URL  -->
-                        <MenuFlyoutItem Command="{x:Bind InputUrlCommand}" Text="{x:Bind lang:Lang.GachaLogPage_InputURL}" />
-                        <MenuFlyoutItem x:Name="MenuFlyoutItem_CloudGame"
-                                        Command="{x:Bind UpdateGachaLogFromCloudGameCommand}"
-                                        Text="{x:Bind lang:Lang.GachaLogPage_ViaCloudGame}" />
-                        <MenuFlyoutItem x:Name="MenuFlyoutItem_CloudGameWeb"
-                                        Command="{x:Bind OpenCloudGameWindowCommand}"
-                                        Text="{x:Bind lang:Lang.GachaLogPage_ViaCloudGameWeb}" />
-                    </MenuFlyout>
-                </SplitButton.Flyout>
-            </SplitButton>
+            <!--  Update: split into two buttons so Tab will focus primary (left) then secondary (right) -->
+            <Grid Height="32">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="40" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0"
+                        Height="32"
+                        Command="{x:Bind UpdateGachaLogCommand}"
+                        CornerRadius="8,0,0,8">
+                    <StackPanel Orientation="Horizontal" Spacing="8">
+                        <FontIcon Margin="0,2,0,0"
+                                  FontSize="14"
+                                  Glyph="&#xE72C;" />
+                        <TextBlock Text="{x:Bind lang:Lang.GachaLogPage_UpdateRecords}" />
+                    </StackPanel>
+                </Button>
+                <Button Grid.Column="1"
+                        Height="32"
+                        Width="40"
+                        CornerRadius="0,8,8,0"
+                        HorizontalAlignment="Right">
+                    <FontIcon FontSize="12" Glyph="&#xE70D;" />
+                    <Button.Flyout>
+                    <MenuFlyout Placement="Bottom">
+                            <!--  ?? ??? URL  -->
+                            <MenuFlyoutItem x:Name="MenuFlyoutItem_WebCache1" Command="{x:Bind UpdateGachaLogCommand}"
+                                            CommandParameter="cache"
+                                            Text="{x:Bind lang:Lang.GachaLogPage_UpdateSavedURL}" />
+                            <!--  ?? ??  -->
+                            <MenuFlyoutItem x:Name="MenuFlyoutItem_WebCache2" Command="{x:Bind UpdateGachaLogCommand}"
+                                            CommandParameter="all"
+                                            Text="{x:Bind lang:Lang.GachaLogPage_UpdateAll}" />
+                            <!--  ?? URL  -->
+                            <MenuFlyoutItem Command="{x:Bind InputUrlCommand}" Text="{x:Bind lang:Lang.GachaLogPage_InputURL}" />
+                            <MenuFlyoutItem x:Name="MenuFlyoutItem_CloudGame"
+                                            Command="{x:Bind UpdateGachaLogFromCloudGameCommand}"
+                                            Text="{x:Bind lang:Lang.GachaLogPage_ViaCloudGame}" />
+                            <MenuFlyoutItem x:Name="MenuFlyoutItem_CloudGameWeb"
+                                            Command="{x:Bind OpenCloudGameWindowCommand}"
+                                            Text="{x:Bind lang:Lang.GachaLogPage_ViaCloudGameWeb}" />
+                        </MenuFlyout>
+                    </Button.Flyout>
+                </Button>
+            </Grid>
             <!--  Setting  -->
             <Button>
                 <StackPanel Orientation="Horizontal" Spacing="8">

@@ -56,7 +56,21 @@ public sealed partial class GenshinBeyondGachaPage : PageBase
     protected override void OnNavigatedTo(NavigationEventArgs e)
     {
         base.OnNavigatedTo(e);
-        if (CurrentGameBiz.IsGlobalServer())
+        if (CurrentGameBiz.IsCloudGame())
+        {
+            MenuFlyoutItem_WebCache1.Visibility = Visibility.Collapsed;
+            MenuFlyoutItem_WebCache2.Visibility = Visibility.Collapsed;
+            if (!GameRegistryHelper.IsCloudGameInstalled(CurrentGameBiz))
+            {
+                MenuFlyoutItem_CloudGame.Visibility = Visibility.Collapsed;
+            }
+        }
+        else if (CurrentGameBiz.IsGlobalServer())
+        {
+            MenuFlyoutItem_CloudGameWeb.Visibility = Visibility.Collapsed;
+        }
+
+        if (CurrentGameBiz.IsBilibiliServer)
         {
             MenuFlyoutItem_CloudGameWeb.Visibility = Visibility.Collapsed;
         }
@@ -170,6 +184,31 @@ public sealed partial class GenshinBeyondGachaPage : PageBase
         try
         {
             await UpdateGachaInfoAsync();
+
+            if (param == null || param == "all")
+            {
+                if (CurrentGameBiz.IsCloudGame())
+                {
+                    if (GameRegistryHelper.IsCloudGameInstalled(CurrentGameBiz))
+                    {
+                        await UpdateGachaLogFromCloudGameAsync(param);
+                        return;
+                    }
+                    else
+                    {
+                        if (!CurrentGameBiz.IsGlobalServer())
+                        {
+                            OpenCloudGameWindow();
+                        }
+                        else
+                        {
+                            InAppToast.MainWindow?.Warning(null, Lang.GachaLogPage_GameNotInstalled);
+                        }
+                        return;
+                    }
+                }
+            }
+
             string? url = null;
             if (param is "cache")
             {
@@ -550,7 +589,7 @@ public sealed partial class GenshinBeyondGachaPage : PageBase
 
 
     [RelayCommand]
-    private async Task UpdateGachaLogFromCloudGameAsync()
+    private async Task UpdateGachaLogFromCloudGameAsync(string? param = null)
     {
         try
         {
@@ -566,7 +605,7 @@ public sealed partial class GenshinBeyondGachaPage : PageBase
                 return;
             }
 
-            await UpdateGachaLogInternalAsync(url, false);
+            await UpdateGachaLogInternalAsync(url, param == "all");
         }
         catch (Exception ex)
         {

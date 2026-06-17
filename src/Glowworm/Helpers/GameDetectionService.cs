@@ -84,6 +84,10 @@ public static class GameDetectionService
         {
             list.Add(GameRegistry.GamePath_nap_global_epic);
         }
+        else if (biz == GameBiz.nap_steam)
+        {
+            list.Add(GameRegistry.GamePath_nap_global_steam);
+        }
         else if (biz == GameBiz.nap_bilibili)
         {
             list.Add(GameRegistry.GamePath_nap_cn_bilibili);

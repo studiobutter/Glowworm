@@ -59,7 +59,7 @@
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <!--  ??  -->
-                <NavigationViewItem Content="{x:Bind lang:Lang.MainPage_GameScreenshot}" Tag="ScreenshotSetting">
+                <NavigationViewItem Content="{x:Bind lang:Lang.SettingPage_ImageManagement}" Tag="ScreenshotSetting">
                     <NavigationViewItem.Icon>
                         <FontIcon Glyph="&#xE91B;" />
                     </NavigationViewItem.Icon>

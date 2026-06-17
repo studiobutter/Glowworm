@@ -728,6 +728,33 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Game Management.
+        /// </summary>
+        public static string FileSettingPage_GameMgnt {
+            get {
+                return ResourceManager.GetString("FileSettingPage_GameMgnt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hide Cloud Games.
+        /// </summary>
+        public static string FileSettingPage_HideCloudGames {
+            get {
+                return ResourceManager.GetString("FileSettingPage_HideCloudGames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This will Hide Cloud Games that has a Web-based function. This function only works for Honkai: Star Rail - Cloud Web and Genshin Impact - Cloud Web (if the launcher isn&apos;t installed).
+        /// </summary>
+        public static string FileSettingPage_HideCloudGamesDesc {
+            get {
+                return ResourceManager.GetString("FileSettingPage_HideCloudGamesDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Image.
         /// </summary>
         public static string FileSettingPage_Image {
@@ -1908,6 +1935,15 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Miliastra Wonderland Profile Pictures will be back up to the following folder.
+        /// </summary>
+        public static string ScreenshotSetting_BeyondProfileLocationDesc {
+            get {
+                return ResourceManager.GetString("ScreenshotSetting_BeyondProfileLocationDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Clear Thumbnail Cache.
         /// </summary>
         public static string ScreenshotSetting_ClearThumbnailCache {
@@ -2144,6 +2180,15 @@ namespace Glowworm.Language {
         public static string SettingPage_General {
             get {
                 return ResourceManager.GetString("SettingPage_General", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image Management.
+        /// </summary>
+        public static string SettingPage_ImageManagement {
+            get {
+                return ResourceManager.GetString("SettingPage_ImageManagement", resourceCulture);
             }
         }
         
