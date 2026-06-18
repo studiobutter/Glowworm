@@ -210,7 +210,7 @@
                 </TextBlock>
             </StackPanel>
             <!--  ????  -->
-            <StackPanel Margin="0,12,0,0"
+            <StackPanel Margin="0,12,0,12"
                         Orientation="Horizontal"
                         Spacing="16">
                 <Button Height="40"
