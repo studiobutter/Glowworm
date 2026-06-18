@@ -59,46 +59,46 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
           <xsd:element name="metadata">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
               </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
             <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="data">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
             <xsd:complexType>
               <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
             </xsd:complexType>
           </xsd:element>
         </xsd:choice>
@@ -402,6 +402,7 @@
   </data>
   <data name="SettingPage_CDNTips" xml:space="preserve">
     <value>一部の地域のユーザーは、ネットワークの異常が発生する場合があります。この問題はCDNを変更する事で解決ができます。</value>
+    <comment>For Metadata and such, Keep</comment>
   </data>
   <data name="Common_Exit" xml:space="preserve">
     <value>終了</value>
@@ -495,6 +496,7 @@
   </data>
   <data name="GameBizSelector_AutoSearch" xml:space="preserve">
     <value>自動検索</value>
+    <comment>Kept for future use</comment>
   </data>
   <data name="GachaLogService_SignalSearchRecords" xml:space="preserve">
     <value>変調の記録</value>
@@ -953,9 +955,33 @@
     <value>シングルキーショートカット(F1-F12)を登録する場合は、Glowwormを管理者権限で実行する必要があります。そうでなければ、ショートカットがゲームで動作しない場合があります。</value>
   </data>
   <data name="SettingPage_ImageManagement" xml:space="preserve">
-    <value>画像管理</value>
+    <value>Image Management</value>
   </data>
   <data name="ScreenshotSetting_BeyondProfileLocationDesc" xml:space="preserve">
-    <value>星々の幻境のプロフィール写真は、以下のフォルダに復元されます。</value>
+    <value>Miliastra Wonderland Profile Pictures will be back up to the following folder</value>
+  </data>
+  <data name="FileSettingPage_GameMgnt" xml:space="preserve">
+    <value>Game Management</value>
+  </data>
+  <data name="FileSettingPage_HideCloudGamesDesc" xml:space="preserve">
+    <value>This will Hide Cloud Games that has a Web-based function. This function only works for Honkai: Star Rail - Cloud Web and Genshin Impact - Cloud Web (if the launcher isn't installed)</value>
+  </data>
+  <data name="FileSettingPage_HideCloudGames" xml:space="preserve">
+    <value>Hide Cloud Games</value>
+  </data>
+  <data name="FileSettingPage_BackupSettings" xml:space="preserve">
+    <value>Backup Settings</value>
+  </data>
+  <data name="FileSettingPage_BackupDesc" xml:space="preserve">
+    <value>Choose where backups are stored and configure auto-backup behavior</value>
+  </data>
+  <data name="FileSettingPage_BackupSelectDir" xml:space="preserve">
+    <value>Select Backup Folder</value>
+  </data>
+  <data name="FileSettingPage_BackupAfterRecord" xml:space="preserve">
+    <value>Backup after any Data Record function (i.e: Gacha Record Updating)</value>
+  </data>
+  <data name="FileSettingPage_AutoBackupUIGF" xml:space="preserve">
+    <value>[UIGF]: Backup and Sync Gacha Record after updating</value>
   </data>
 </root>
