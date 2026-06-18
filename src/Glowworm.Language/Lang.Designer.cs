@@ -683,6 +683,51 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [UIGF]: Backup and Sync Gacha Record after updating.
+        /// </summary>
+        public static string FileSettingPage_AutoBackupUIGF {
+            get {
+                return ResourceManager.GetString("FileSettingPage_AutoBackupUIGF", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup after any Data Record function (i.e: Gacha Record Updating).
+        /// </summary>
+        public static string FileSettingPage_BackupAfterRecord {
+            get {
+                return ResourceManager.GetString("FileSettingPage_BackupAfterRecord", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose where backups are stored and configure auto-backup behavior.
+        /// </summary>
+        public static string FileSettingPage_BackupDesc {
+            get {
+                return ResourceManager.GetString("FileSettingPage_BackupDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select Backup Folder.
+        /// </summary>
+        public static string FileSettingPage_BackupSelectDir {
+            get {
+                return ResourceManager.GetString("FileSettingPage_BackupSelectDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup Settings.
+        /// </summary>
+        public static string FileSettingPage_BackupSettings {
+            get {
+                return ResourceManager.GetString("FileSettingPage_BackupSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Browser.
         /// </summary>
         public static string FileSettingPage_Browser {

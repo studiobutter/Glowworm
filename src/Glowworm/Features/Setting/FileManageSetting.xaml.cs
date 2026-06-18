@@ -58,6 +58,97 @@ public sealed partial class FileManageSetting : PageBase
         }
     }
 
+    public string BackupFolderDisplay => AppConfig.BackupFolder ?? AppConfig.UserDataFolder ?? "";
+
+    public bool AutoBackupGachaRecord
+    {
+        get => AppConfig.AutoBackupGachaRecord;
+        set
+        {
+            if (AppConfig.AutoBackupGachaRecord != value)
+            {
+                AppConfig.AutoBackupGachaRecord = value;
+                OnPropertyChanged(nameof(AutoBackupGachaRecord));
+            }
+        }
+    }
+
+    public bool AutoBackupGachaRecordUIGF
+    {
+        get => AppConfig.AutoBackupGachaRecordUIGF;
+        set
+        {
+            if (AppConfig.AutoBackupGachaRecordUIGF != value)
+            {
+                AppConfig.AutoBackupGachaRecordUIGF = value;
+                OnPropertyChanged(nameof(AutoBackupGachaRecordUIGF));
+                if (value)
+                {
+                    _ = RunInitialUIGFExportAsync();
+                }
+            }
+        }
+    }
+
+    private async Task RunInitialUIGFExportAsync()
+    {
+        try
+        {
+            var uigfService = AppConfig.GetService<Glowworm.Features.Gacha.UIGF.UIGFGachaService>();
+            var archives = uigfService.GetLocalGachaArchives();
+            string backupFolder = AppConfig.BackupFolder ?? Path.Combine(AppConfig.UserDataFolder, "DatabaseBackup");
+            Directory.CreateDirectory(backupFolder);
+
+            foreach (var archive in archives)
+            {
+                string fileName = $"Glowworm_UIGF_{archive.Game.Value}_{archive.Uid}.json";
+                string filePath = Path.Combine(backupFolder, fileName);
+                await uigfService.ExportUIGF4Async(filePath, archive);
+            }
+            InAppToast.MainWindow?.Success("Initial UIGF Export", "Successfully exported gacha logs to backup folder.");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Initial UIGF export failed.");
+            InAppToast.MainWindow?.Error("Initial UIGF Export Failed", ex.Message);
+        }
+    }
+
+    [RelayCommand]
+    private async Task ChangeBackupFolderAsync()
+    {
+        try
+        {
+            var path = await FileDialogHelper.PickFolderAsync(this.XamlRoot.GetWindowHandle());
+            if (!string.IsNullOrWhiteSpace(path))
+            {
+                AppConfig.BackupFolder = path;
+                OnPropertyChanged(nameof(BackupFolderDisplay));
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Change backup folder");
+        }
+    }
+
+    [RelayCommand]
+    private async Task OpenBackupFolderAsync()
+    {
+        try
+        {
+            var folder = BackupFolderDisplay;
+            if (Directory.Exists(folder))
+            {
+                await Launcher.LaunchUriAsync(new Uri(folder));
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Open backup folder");
+        }
+    }
+
     protected override void OnLoaded()
     {
         GetLastBackupTime();
@@ -258,8 +349,15 @@ public sealed partial class FileManageSetting : PageBase
         {
             if (DatabaseService.TryGetValue("LastBackupDatabase", out string? file, out DateTime time))
             {
-                file = Path.Join(AppConfig.UserDataFolder, "DatabaseBackup", file);
-                if (File.Exists(file))
+                string backupFolder = AppConfig.BackupFolder ?? Path.Combine(AppConfig.UserDataFolder, "DatabaseBackup");
+                string fileTryNew = Path.Join(backupFolder, file);
+                string fileTryOld = Path.Join(AppConfig.UserDataFolder, "DatabaseBackup", file);
+                
+                if (File.Exists(fileTryNew))
+                {
+                    LastDatabaseBackupTime = $"{""}  {time:yyyy-MM-dd HH:mm:ss}";
+                }
+                else if (File.Exists(fileTryOld))
                 {
                     LastDatabaseBackupTime = $"{""}  {time:yyyy-MM-dd HH:mm:ss}";
                 }
@@ -279,22 +377,19 @@ public sealed partial class FileManageSetting : PageBase
     {
         try
         {
-            if (Directory.Exists(AppConfig.UserDataFolder))
+            string backupFolder = AppConfig.BackupFolder ?? Path.Combine(AppConfig.UserDataFolder, "DatabaseBackup");
+            Directory.CreateDirectory(backupFolder);
+            DateTime time = DateTime.Now;
+            await Task.Run(() =>
             {
-                var folder = Path.Combine(AppConfig.UserDataFolder, "DatabaseBackup");
-                Directory.CreateDirectory(folder);
-                DateTime time = DateTime.Now;
-                await Task.Run(() =>
-                {
-                    string file = Path.Combine(folder, $"GlowwormDatabase_{time:yyyyMMdd_HHmmss}.db");
-                    string archive = Path.ChangeExtension(file, ".7z");
-                    DatabaseService.BackupDatabase(file);
-                    new SharpSevenZipCompressor().CompressFiles(archive, file);
-                    DatabaseService.SetValue("LastBackupDatabase", Path.GetFileName(archive), time);
-                    File.Delete(file);
-                });
-                LastDatabaseBackupTime = $"{""}  {time:yyyy-MM-dd HH:mm:ss}";
-            }
+                string file = Path.Combine(backupFolder, $"GlowwormDatabase_{time:yyyyMMdd_HHmmss}.db");
+                string archive = Path.ChangeExtension(file, ".7z");
+                DatabaseService.BackupDatabase(file);
+                new SharpSevenZipCompressor().CompressFiles(archive, file);
+                DatabaseService.SetValue("LastBackupDatabase", Path.GetFileName(archive), time);
+                File.Delete(file);
+            });
+            LastDatabaseBackupTime = $"{""}  {time:yyyy-MM-dd HH:mm:ss}";
         }
         catch (Exception ex)
         {
@@ -312,11 +407,20 @@ public sealed partial class FileManageSetting : PageBase
         {
             if (DatabaseService.TryGetValue("LastBackupDatabase", out string? file, out DateTime time))
             {
-                file = Path.Join(AppConfig.UserDataFolder, "DatabaseBackup", file);
-                if (File.Exists(file))
+                string backupFolder = AppConfig.BackupFolder ?? Path.Combine(AppConfig.UserDataFolder, "DatabaseBackup");
+                string fileTryNew = Path.Join(backupFolder, file);
+                string fileTryOld = Path.Join(AppConfig.UserDataFolder, "DatabaseBackup", file);
+
+                string foundFile = null;
+                if (File.Exists(fileTryNew))
+                    foundFile = fileTryNew;
+                else if (File.Exists(fileTryOld))
+                    foundFile = fileTryOld;
+
+                if (foundFile != null)
                 {
-                    var item = await StorageFile.GetFileFromPathAsync(file);
-                    var folder = await StorageFolder.GetFolderFromPathAsync(Path.GetDirectoryName(file));
+                    var item = await StorageFile.GetFileFromPathAsync(foundFile);
+                    var folder = await StorageFolder.GetFolderFromPathAsync(Path.GetDirectoryName(foundFile));
                     var options = new FolderLauncherOptions
                     {
                         ItemsToSelect = { item }

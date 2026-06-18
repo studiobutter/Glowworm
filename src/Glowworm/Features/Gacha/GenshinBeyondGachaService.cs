@@ -120,6 +120,42 @@ internal class GenshinBeyondGachaService
             var newCount = dapper.QueryFirstOrDefault<int>($"SELECT COUNT(*) FROM {GachaTableName} WHERE Uid = @Uid;", new { Uid = uid });
             // Got {0} record(s), added {1} record(s).
             progress?.Report(string.Format(Lang.GachaLogService_GetGachaResult, list.Count, newCount - oldCount));
+
+            if (AppConfig.AutoBackupGachaRecord)
+            {
+                _ = Task.Run(async () =>
+                {
+                    try
+                    {
+                        string backupFolder = AppConfig.BackupFolder ?? Path.Combine(AppConfig.UserDataFolder!, "DatabaseBackup");
+                        Directory.CreateDirectory(backupFolder);
+
+                        if (AppConfig.AutoBackupGachaRecordUIGF)
+                        {
+                            var uigfService = AppConfig.GetService<Glowworm.Features.Gacha.UIGF.UIGFGachaService>();
+                            var archives = uigfService.GetLocalGachaArchives().Where(a => a.Uid == uid && a.Game == GameBiz.hk4e).ToList();
+                            if (archives.Count > 0)
+                            {
+                                string fileName = $"Glowworm_UIGF_{GameBiz.hk4e}_{uid}.json";
+                                string filePath = Path.Combine(backupFolder, fileName);
+                                await uigfService.ExportUIGF4Async(filePath, archives.ToArray());
+                            }
+                        }
+                        else
+                        {
+                            string dbFile = Path.Combine(backupFolder, $"GlowwormDatabase_AutoBackup_{DateTime.Now:yyyyMMdd_HHmmss}.db");
+                            string archive = Path.ChangeExtension(dbFile, ".7z");
+                            DatabaseService.BackupDatabase(dbFile);
+                            new SharpSevenZip.SharpSevenZipCompressor().CompressFiles(archive, dbFile);
+                            System.IO.File.Delete(dbFile);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.LogError(ex, "Auto Backup Gacha Record failed.");
+                    }
+                });
+            }
         }
         return uid;
     }

@@ -969,4 +969,19 @@
   <data name="FileSettingPage_HideCloudGames" xml:space="preserve">
     <value>Hide Cloud Games</value>
   </data>
+  <data name="FileSettingPage_BackupSettings" xml:space="preserve">
+    <value>Backup Settings</value>
+  </data>
+  <data name="FileSettingPage_BackupDesc" xml:space="preserve">
+    <value>Choose where backups are stored and configure auto-backup behavior</value>
+  </data>
+  <data name="FileSettingPage_BackupSelectDir" xml:space="preserve">
+    <value>Select Backup Folder</value>
+  </data>
+  <data name="FileSettingPage_BackupAfterRecord" xml:space="preserve">
+    <value>Backup after any Data Record function (i.e: Gacha Record Updating)</value>
+  </data>
+  <data name="FileSettingPage_AutoBackupUIGF" xml:space="preserve">
+    <value>[UIGF]: Backup and Sync Gacha Record after updating</value>
+  </data>
 </root>

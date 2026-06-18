@@ -133,6 +133,24 @@ public static partial class AppConfig
         set => SetValue(value);
     }
 
+    public static string? BackupFolder
+    {
+        get => GetValue<string>();
+        set => SetValue(value);
+    }
+
+    public static bool AutoBackupGachaRecord
+    {
+        get => GetValue<bool>();
+        set => SetValue(value);
+    }
+
+    public static bool AutoBackupGachaRecordUIGF
+    {
+        get => GetValue<bool>();
+        set => SetValue(value);
+    }
+
     /// <summary>
     /// 固定待选择的游戏区服图标
     /// </summary>

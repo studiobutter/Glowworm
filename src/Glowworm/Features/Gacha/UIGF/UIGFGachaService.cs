@@ -291,6 +291,13 @@ internal class UIGFGachaService
                     LastItemTime = last.Time,
                     LastItemTimeOffest = last.Time,
                 };
+                
+                var ugcArchive = uigf4Obj.hk4eUgcGachaArchives?.FirstOrDefault(x => x.Uid == item.Uid);
+                if (ugcArchive != null && ugcArchive.List.Count > 0)
+                {
+                    archive.hk4eUgcList = ugcArchive.List;
+                }
+                
                 list.Add(archive);
             }
         }
