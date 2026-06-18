@@ -385,137 +385,6 @@ internal static class DatabaseService
             Value TEXT
         );
 
-        CREATE TABLE IF NOT EXISTS GameRecordUser
-        (
-            Uid       INTEGER NOT NULL,
-            IsHoyolab INTEGER NOT NULL,
-            Nickname  TEXT,
-            Avatar    TEXT,
-            Introduce TEXT,
-            Gender    INTEGER NOT NULL,
-            AvatarUrl TEXT,
-            Pendant   TEXT,
-            Cookie    TEXT,
-            PRIMARY KEY (Uid, IsHoyolab)
-        );
-
-        CREATE TABLE IF NOT EXISTS GameRecordRole
-        (
-            Uid        INTEGER NOT NULL,
-            GameBiz    TEXT    NOT NULL,
-            Nickname   TEXT,
-            Level      INTEGER NOT NULL,
-            Region     TEXT    NOT NULL,
-            RegionName TEXT,
-            Cookie     TEXT,
-            PRIMARY KEY (Uid, GameBiz)
-        );
-        CREATE INDEX IF NOT EXISTS IX_GameRecordRole_GameBiz ON GameRecordRole (GameBiz);
-
-        CREATE TABLE IF NOT EXISTS SpiralAbyssInfo
-        (
-            Uid              INTEGER NOT NULL,
-            ScheduleId       INTEGER NOT NULL,
-            StartTime        TEXT    NOT NULL,
-            EndTime          TEXT    NOT NULL,
-            TotalBattleCount INTEGER NOT NULL,
-            TotalWinCount    INTEGER NOT NULL,
-            MaxFloor         TEXT,
-            TotalStar        INTEGER NOT NULL,
-            Value            TEXT    NOT NULL,
-            PRIMARY KEY (Uid, ScheduleId)
-        );
-        CREATE INDEX IF NOT EXISTS IX_SpiralAbyssInfo_ScheduleId ON SpiralAbyssInfo (ScheduleId);
-
-        CREATE TABLE IF NOT EXISTS TravelersDiaryMonthData
-        (
-            Uid                   INTEGER NOT NULL,
-            Year                  INTEGER NOT NULL,
-            Month                 INTEGER NOT NULL,
-            CurrentPrimogems      INTEGER NOT NULL,
-            CurrentMora           INTEGER NOT NULL,
-            LastPrimogems         INTEGER NOT NULL,
-            LastMora              INTEGER NOT NULL,
-            CurrentPrimogemsLevel INTEGER NOT NULL,
-            PrimogemsChangeRate   INTEGER NOT NULL,
-            MoraChangeRate        INTEGER NOT NULL,
-            PrimogemsGroupBy      TEXT    NOT NULL,
-            PRIMARY KEY (Uid, Year, Month)
-        );
-
-        CREATE TABLE IF NOT EXISTS TravelersDiaryAwardItem
-        (
-            Id         INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-            Uid        INTEGER NOT NULL,
-            Year       INTEGER NOT NULL,
-            Month      INTEGER NOT NULL,
-            Type       INTEGER NOT NULL,
-            ActionId   INTEGER NOT NULL,
-            ActionName TEXT,
-            Time       TEXT    NOT NULL,
-            Number     INTEGER NOT NULL
-        );
-        CREATE INDEX IF NOT EXISTS IX_TravelersDiaryAwardItem_Uid_Year_Month ON TravelersDiaryAwardItem (Uid, Year, Month);
-        CREATE INDEX IF NOT EXISTS IX_TravelersDiaryAwardItem_Type ON TravelersDiaryAwardItem (Type);
-        CREATE INDEX IF NOT EXISTS IX_TravelersDiaryAwardItem_Time ON TravelersDiaryAwardItem (Time);
-
-        CREATE TABLE IF NOT EXISTS ForgottenHallInfo
-        (
-            Uid        INTEGER NOT NULL,
-            ScheduleId INTEGER NOT NULL,
-            BeginTime  TEXT    NOT NULL,
-            EndTime    TEXT    NOT NULL,
-            StarNum    INTEGER NOT NULL,
-            MaxFloor   TEXT,
-            BattleNum  INTEGER NOT NULL,
-            HasData    INTEGER NOT NULL,
-            Value      TEXT    NOT NULL,
-            PRIMARY KEY (Uid, ScheduleId)
-        );
-        CREATE INDEX IF NOT EXISTS IX_ForgottenHallInfo_ScheduleId ON ForgottenHallInfo (ScheduleId);
-
-        CREATE TABLE IF NOT EXISTS SimulatedUniverseRecord
-        (
-            Uid           INTEGER NOT NULL,
-            ScheduleId    INTEGER NOT NULL,
-            FinishCount   INTEGER NOT NULL,
-            ScheduleBegin TEXT    NOT NULL,
-            ScheduleEnd   TEXT    NOT NULL,
-            HasData       INTEGER NOT NULL,
-            Value         TEXT    NOT NULL,
-            PRIMARY KEY (Uid, ScheduleId)
-        );
-        CREATE INDEX IF NOT EXISTS IX_SimulatedUniverseRecord_ScheduleId ON SimulatedUniverseRecord (ScheduleId);
-
-        CREATE TABLE IF NOT EXISTS TrailblazeCalendarMonthData
-        (
-            Uid              INTEGER NOT NULL,
-            Month            TEXT    NOT NULL,
-            CurrentHcoin     INTEGER NOT NULL,
-            CurrentRailsPass INTEGER NOT NULL,
-            LastHcoin        INTEGER NOT NULL,
-            LastRailsPass    INTEGER NOT NULL,
-            HcoinRate        INTEGER NOT NULL,
-            RailsRate        INTEGER NOT NULL,
-            GroupBy          TEXT    NOT NULL,
-            PRIMARY KEY (Uid, Month)
-        );
-
-        CREATE TABLE IF NOT EXISTS TrailblazeCalendarDetailItem
-        (
-            Id         INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-            Uid        INTEGER NOT NULL,
-            Month      TEXT    NOT NULL,
-            Type       INTEGER NOT NULL,
-            Action     TEXT    NOT NULL,
-            ActionName TEXT    NOT NULL,
-            Time       TEXT    NOT NULL,
-            Number     INTEGER NOT NULL
-        );
-        CREATE INDEX IF NOT EXISTS IX_TrailblazeCalendarDetailItem_Uid_Month ON TrailblazeCalendarDetailItem (Uid, Month);
-        CREATE INDEX IF NOT EXISTS IX_TrailblazeCalendarDetailItem_Type ON TrailblazeCalendarDetailItem (Type);
-        CREATE INDEX IF NOT EXISTS IX_TrailblazeCalendarDetailItem_Time ON TrailblazeCalendarDetailItem (Time);
-
         PRAGMA USER_VERSION = 4;
         COMMIT TRANSACTION;
         """;
@@ -567,68 +436,12 @@ internal static class DatabaseService
     private const string Sql_v7 = """
         BEGIN TRANSACTION;
 
-        CREATE TABLE IF NOT EXISTS GenshinQueryItem
-        (
-            Uid      INTEGER NOT NULL,
-            Id       INTEGER NOT NULL,
-            AddNum   INTEGER NOT NULL,
-            Reason   TEXT,
-            DateTime TEXT,
-            Type     INTEGER NOT NULL,
-            Icon     TEXT,
-            Level    INTEGER NOT NULL,
-            Quality  INTEGER NOT NULL,
-            Name     TEXT,
-            PRIMARY KEY (Uid, Id)
-        );
-        CREATE INDEX IF NOT EXISTS IX_GenshinQueryItem_Id ON GenshinQueryItem (Id);
-        CREATE INDEX IF NOT EXISTS IX_GenshinQueryItem_AddNum ON GenshinQueryItem (AddNum);
-        CREATE INDEX IF NOT EXISTS IX_GenshinQueryItem_Reason ON GenshinQueryItem (Reason);
-        CREATE INDEX IF NOT EXISTS IX_GenshinQueryItem_DateTime ON GenshinQueryItem (DateTime);
-        CREATE INDEX IF NOT EXISTS IX_GenshinQueryItem_Type ON GenshinQueryItem (Type);
-
-        CREATE TABLE IF NOT EXISTS StarRailQueryItem
-        (
-            Id              INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-            Uid             INTEGER NOT NULL,
-            Type            INTEGER NOT NULL,
-            Action          TEXT,
-            AddNum          INTEGER NOT NULL,
-            Time            TEXT,
-            RelicName       TEXT,
-            RelicLevel      INTEGER NOT NULL,
-            RelicRarity     INTEGER NOT NULL,
-            EquipmentName   TEXT,
-            EquipmentLevel  INTEGER NOT NULL,
-            EquipmentRarity INTEGER NOT NULL
-        );
-        CREATE INDEX IF NOT EXISTS IX_StarRailQueryItem_Uid ON StarRailQueryItem (Uid);
-        CREATE INDEX IF NOT EXISTS IX_StarRailQueryItem_Type ON StarRailQueryItem (Type);
-        CREATE INDEX IF NOT EXISTS IX_StarRailQueryItem_Action ON StarRailQueryItem (Action);
-        CREATE INDEX IF NOT EXISTS IX_StarRailQueryItem_AddNum ON StarRailQueryItem (AddNum);
-        CREATE INDEX IF NOT EXISTS IX_StarRailQueryItem_Time ON StarRailQueryItem (Time);
-
         PRAGMA USER_VERSION = 7;
         COMMIT TRANSACTION;
         """;
 
     private const string Sql_v8 = """
         BEGIN TRANSACTION;
-
-        CREATE TABLE IF NOT EXISTS PureFictionInfo
-        (
-            Uid        INTEGER NOT NULL,
-            ScheduleId INTEGER NOT NULL,
-            BeginTime  TEXT    NOT NULL,
-            EndTime    TEXT    NOT NULL,
-            StarNum    INTEGER NOT NULL,
-            MaxFloor   TEXT,
-            BattleNum  INTEGER NOT NULL,
-            HasData    INTEGER NOT NULL,
-            Value      TEXT    NOT NULL,
-            PRIMARY KEY (Uid, ScheduleId)
-        );
-        CREATE INDEX IF NOT EXISTS IX_PureFictionInfo_ScheduleId ON PureFictionInfo (ScheduleId);
 
         PRAGMA USER_VERSION = 8;
         COMMIT TRANSACTION;
@@ -655,23 +468,6 @@ internal static class DatabaseService
         CREATE INDEX IF NOT EXISTS IX_ZZZGachaItem_RankType ON ZZZGachaItem (RankType);
         CREATE INDEX IF NOT EXISTS IX_ZZZGachaItem_GachaType ON ZZZGachaItem (GachaType);
 
-        CREATE TABLE IF NOT EXISTS ApocalypticShadowInfo
-        (
-            Uid           INTEGER NOT NULL,
-            ScheduleId    INTEGER NOT NULL,
-            BeginTime     TEXT    NOT NULL,
-            EndTime       TEXT    NOT NULL,
-            UpperBossIcon TEXT    NOT NULL,
-            LowerBossIcon TEXT    NOT NULL,
-            StarNum       INTEGER NOT NULL,
-            MaxFloor      TEXT,
-            BattleNum     INTEGER NOT NULL,
-            HasData       INTEGER NOT NULL,
-            Value         TEXT    NOT NULL,
-            PRIMARY KEY (Uid, ScheduleId)
-        );
-        CREATE INDEX IF NOT EXISTS IX_ApocalypticShadowInfo_ScheduleId ON ApocalypticShadowInfo (ScheduleId);
-
         PRAGMA USER_VERSION = 9;
         COMMIT TRANSACTION;
         """;
@@ -679,76 +475,12 @@ internal static class DatabaseService
     private const string Sql_v10 = """
         BEGIN TRANSACTION;
 
-        CREATE TABLE IF NOT EXISTS ZZZQueryItem
-        (
-            Id           INTEGER NOT NULL,
-            Uid          INTEGER NOT NULL,
-            Type         INTEGER NOT NULL,
-            Reason       TEXT,
-            AddNum       INTEGER NOT NULL,
-            DateTime     TEXT,
-            EquipName    TEXT,
-            EquipRarity  INTEGER NOT NULL,
-            EquipLevel   INTEGER NOT NULL,
-            WeaponName   TEXT,
-            WeaponRarity INTEGER NOT NULL,
-            WeaponLevel  INTEGER NOT NULL,
-            ClientIp     TEXT,
-            ActionName   TEXT,
-            CardType     INTEGER NOT NULL,
-            ItemName     TEXT,
-            PRIMARY KEY (Uid, Id)
-        );
-        CREATE INDEX IF NOT EXISTS IX_ZZZQueryItem_Id ON ZZZQueryItem (Id);
-        CREATE INDEX IF NOT EXISTS IX_ZZZQueryItem_Type ON ZZZQueryItem (Type);
-        CREATE INDEX IF NOT EXISTS IX_ZZZQueryItem_Reason ON ZZZQueryItem (Reason);
-        CREATE INDEX IF NOT EXISTS IX_ZZZQueryItem_AddNum ON ZZZQueryItem (AddNum);
-        CREATE INDEX IF NOT EXISTS IX_ZZZQueryItem_DateTime ON ZZZQueryItem (DateTime);
-
-        CREATE TABLE IF NOT EXISTS ImaginariumTheaterInfo
-        (
-            Uid          INTEGER NOT NULL,
-            ScheduleId   INTEGER NOT NULL,
-            StartTime    TEXT,
-            EndTime      TEXT,
-            DifficultyId INTEGER NOT NULL,
-            MaxRoundId   INTEGER NOT NULL,
-            Heraldry     INTEGER NOT NULL,
-            MedalNum     INTEGER NOT NULL,
-            Value        TEXT,
-            PRIMARY KEY (Uid, ScheduleId)
-        );
-        CREATE INDEX IF NOT EXISTS IX_ImaginariumTheaterInfo_ScheduleId ON ImaginariumTheaterInfo (ScheduleId);
-
         PRAGMA USER_VERSION = 10;
         COMMIT TRANSACTION;
         """;
 
     private const string Sql_v11 = """
         BEGIN TRANSACTION;
-
-        CREATE TABLE IF NOT EXISTS InterKnotReportSummary
-        (
-            Uid       INTEGER NOT NULL,
-            DataMonth TEXT    NOT NULL,
-            Value     TEXT,
-            PRIMARY KEY (Uid, DataMonth)
-        );
-
-        CREATE TABLE IF NOT EXISTS InterKnotReportDetailItem
-        (
-            Uid       INTEGER NOT NULL,
-            Id        INTEGER NOT NULL,
-            DataMonth TEXT    NOT NULL,
-            DataType  TEXT    NOT NULL,
-            Action    TEXT    NOT NULL,
-            Time      TEXT    NOT NULL,
-            Number       INTEGER NOT NULL,
-            PRIMARY KEY (Uid, Id)
-        );
-        CREATE INDEX IF NOT EXISTS IX_InterKnotReportDetailItem_DataMonth ON InterKnotReportDetailItem (DataMonth);
-        CREATE INDEX IF NOT EXISTS IX_InterKnotReportDetailItem_DataType ON InterKnotReportDetailItem (DataType);
-        CREATE INDEX IF NOT EXISTS IX_InterKnotReportDetailItem_Time ON InterKnotReportDetailItem (Time);
 
         PRAGMA USER_VERSION = 11;
         COMMIT TRANSACTION;
@@ -793,8 +525,6 @@ internal static class DatabaseService
             PRIMARY KEY (GameBiz, Uid)
         );
 
-        ALTER TABLE GameRecordRole ADD COLUMN HeadIcon TEXT;
-
         PRAGMA USER_VERSION = 12;
         COMMIT TRANSACTION;
         """;
@@ -833,55 +563,12 @@ internal static class DatabaseService
     private const string Sql_v14 = """
         BEGIN TRANSACTION;
 
-        CREATE TABLE IF NOT EXISTS ShiyuDefenseInfo
-        (
-            Uid            INTEGER NOT NULL,
-            ScheduleId     INTEGER NOT NULL,
-            BeginTime      TEXT    NOT NULL,
-            EndTime        TEXT    NOT NULL,
-            HasData        INTEGER NOT NULL,
-            MaxRating      Text,
-            MaxRatingTimes INTEGER NOT NULL,
-            MaxLayer       INTEGER NOT NULL,
-            Value          TEXT,
-            PRIMARY KEY (Uid, ScheduleId)
-        );
-        CREATE INDEX IF NOT EXISTS IX_ShiyuDefenseInfo_ScheduleId ON ShiyuDefenseInfo (ScheduleId);
-
-        CREATE TABLE IF NOT EXISTS DeadlyAssaultInfo
-        (
-            Uid            INTEGER NOT NULL,
-            ZoneId         INTEGER NOT NULL,
-            StartTime      TEXT    NOT NULL,
-            EndTime        TEXT    NOT NULL,
-            HasData        INTEGER NOT NULL,
-            RankPercent    INTEGER NOT NULL,
-            TotalScore     INTEGER NOT NULL,
-            TotalStar      INTEGER NOT NULL,
-            Value          TEXT,
-            PRIMARY KEY (Uid, ZoneId)
-        );
-        CREATE INDEX IF NOT EXISTS IX_DeadlyAssaultInfo_ZoneId ON DeadlyAssaultInfo (ZoneId);
-
         PRAGMA USER_VERSION = 14;
         COMMIT TRANSACTION;
         """;
 
     private const string Sql_v15 = """
         BEGIN TRANSACTION;
-
-        CREATE TABLE IF NOT EXISTS StygianOnslaughtInfo
-        (
-            Uid           INTEGER NOT NULL,
-            ScheduleId    INTEGER NOT NULL,
-            StartDateTime TEXT    NOT NULL,
-            EndDateTime   TEXT    NOT NULL,
-            Difficulty    INTEGER NOT NULL,
-            Second        INTEGER NOT NULL,
-            Value         TEXT,
-            PRIMARY KEY (Uid, ScheduleId)
-        );
-        CREATE INDEX IF NOT EXISTS IX_StygianOnslaughtInfo_ScheduleId ON StygianOnslaughtInfo (ScheduleId);
 
         PRAGMA USER_VERSION = 15;
         COMMIT TRANSACTION;
@@ -908,24 +595,6 @@ internal static class DatabaseService
         CREATE INDEX IF NOT EXISTS IX_GenshinBeyondGachaItem_Id ON GenshinBeyondGachaItem (Id);
         CREATE INDEX IF NOT EXISTS IX_GenshinBeyondGachaItem_OpGachaType ON GenshinBeyondGachaItem (OpGachaType);
 
-        ALTER TABLE ImaginariumTheaterInfo RENAME TO GenshinImaginariumTheaterInfo;
-        ALTER TABLE SpiralAbyssInfo RENAME TO GenshinSpiralAbyssInfo;
-        ALTER TABLE StygianOnslaughtInfo RENAME TO GenshinStygianOnslaughtInfo;
-        ALTER TABLE TravelersDiaryAwardItem RENAME TO GenshinTravelersDiaryAwardItem;
-        ALTER TABLE TravelersDiaryMonthData RENAME TO GenshinTravelersDiaryMonthData;
-
-        ALTER TABLE ApocalypticShadowInfo RENAME TO StarRailApocalypticShadowInfo;
-        ALTER TABLE ForgottenHallInfo RENAME TO StarRailForgottenHallInfo;
-        ALTER TABLE PureFictionInfo RENAME TO StarRailPureFictionInfo;
-        ALTER TABLE SimulatedUniverseRecord RENAME TO StarRailSimulatedUniverseRecord;
-        ALTER TABLE TrailblazeCalendarMonthData RENAME TO StarRailTrailblazeCalendarMonthData;
-        ALTER TABLE TrailblazeCalendarDetailItem RENAME TO StarRailTrailblazeCalendarDetailItem;
-
-        ALTER TABLE DeadlyAssaultInfo RENAME TO ZZZDeadlyAssaultInfo;
-        ALTER TABLE InterKnotReportSummary RENAME TO ZZZInterKnotReportSummary;
-        ALTER TABLE InterKnotReportDetailItem RENAME TO ZZZInterKnotReportDetailItem;
-        ALTER TABLE ShiyuDefenseInfo RENAME TO ZZZShiyuDefenseInfo;
-
         PRAGMA USER_VERSION = 16;
         COMMIT TRANSACTION;
         """;
@@ -949,62 +618,6 @@ internal static class DatabaseService
     private const string Sql_v18 = """
         BEGIN TRANSACTION;
 
-        CREATE TABLE GenshinQueryItem_dg_tmp
-        (
-            Uid      INTEGER NOT NULL,
-            Id       INTEGER NOT NULL,
-            AddNum   INTEGER NOT NULL,
-            Reason   TEXT,
-            DateTime TEXT,
-            Type     INTEGER NOT NULL,
-            Icon     TEXT,
-            Level    INTEGER NOT NULL,
-            Quality  INTEGER NOT NULL,
-            Name     TEXT,
-            PRIMARY KEY (Uid, Id, Type)
-        );
-        INSERT INTO GenshinQueryItem_dg_tmp(Uid, Id, AddNum, Reason, DateTime, Type, Icon, Level, Quality, Name)
-        SELECT Uid, Id, AddNum, Reason, DateTime, Type, Icon, Level, Quality, Name FROM GenshinQueryItem;
-        DROP TABLE GenshinQueryItem;
-        ALTER TABLE GenshinQueryItem_dg_tmp RENAME TO GenshinQueryItem;
-        CREATE INDEX IX_GenshinQueryItem_AddNum ON GenshinQueryItem (AddNum);
-        CREATE INDEX IX_GenshinQueryItem_DateTime ON GenshinQueryItem (DateTime);
-        CREATE INDEX IX_GenshinQueryItem_Id ON GenshinQueryItem (Id);
-        CREATE INDEX IX_GenshinQueryItem_Reason ON GenshinQueryItem (Reason);
-        CREATE INDEX IX_GenshinQueryItem_Type ON GenshinQueryItem (Type);
-
-        CREATE TABLE ZZZShiyuDefenseInfo_dg_tmp
-        (
-            Uid            INTEGER           NOT NULL,
-            ScheduleId     INTEGER           NOT NULL,
-            BeginTime      TEXT              NOT NULL,
-            EndTime        INTEGER           NOT NULL,
-            Version        TEXT,
-            HasData        INTEGER           NOT NULL,
-            MaxRating      TEXT,
-            MaxRatingTimes INTEGER DEFAULT 0 NOT NULL,
-            MaxLayer       INTEGER DEFAULT 0 NOT NULL,
-            V2Score        INTEGER DEFAULT 0 NOT NULL,
-            Value          TEXT,
-            PRIMARY KEY (Uid, ScheduleId)
-        );
-        INSERT INTO ZZZShiyuDefenseInfo_dg_tmp(Uid, ScheduleId, BeginTime, EndTime, Version, HasData, MaxRating, MaxRatingTimes, MaxLayer, Value)
-        SELECT Uid, ScheduleId, BeginTime, EndTime, 'v1', HasData, MaxRating, MaxRatingTimes, MaxLayer, Value FROM ZZZShiyuDefenseInfo;
-        DROP TABLE ZZZShiyuDefenseInfo;
-        ALTER TABLE ZZZShiyuDefenseInfo_dg_tmp RENAME TO ZZZShiyuDefenseInfo;
-
-        CREATE TABLE IF NOT EXISTS StarRailChallengePeakData
-        (
-            Uid         INTEGER NOT NULL,
-            GroupId     INTEGER NOT NULL,
-            GameVersion TEXT    NOT NULL,
-            BossStars   INTEGER NOT NULL DEFAULT 0,
-            MobStars    INTEGER NOT NULL DEFAULT 0,
-            BossIcon    TEXT,
-            Value       TEXT,
-            PRIMARY KEY (Uid, GroupId)
-        );
-
         PRAGMA USER_VERSION = 18;
         COMMIT TRANSACTION;
         """;
@@ -1023,6 +636,21 @@ internal static class DatabaseService
 
         DROP TABLE IF EXISTS GameRecordUser;
         DROP TABLE IF EXISTS GameRecordRole;
+        DROP TABLE IF EXISTS ImaginariumTheaterInfo;
+        DROP TABLE IF EXISTS SpiralAbyssInfo;
+        DROP TABLE IF EXISTS StygianOnslaughtInfo;
+        DROP TABLE IF EXISTS TravelersDiaryAwardItem;
+        DROP TABLE IF EXISTS TravelersDiaryMonthData;
+        DROP TABLE IF EXISTS ApocalypticShadowInfo;
+        DROP TABLE IF EXISTS ForgottenHallInfo;
+        DROP TABLE IF EXISTS PureFictionInfo;
+        DROP TABLE IF EXISTS SimulatedUniverseRecord;
+        DROP TABLE IF EXISTS TrailblazeCalendarMonthData;
+        DROP TABLE IF EXISTS TrailblazeCalendarDetailItem;
+        DROP TABLE IF EXISTS DeadlyAssaultInfo;
+        DROP TABLE IF EXISTS InterKnotReportSummary;
+        DROP TABLE IF EXISTS InterKnotReportDetailItem;
+        DROP TABLE IF EXISTS ShiyuDefenseInfo;
         DROP TABLE IF EXISTS GenshinSpiralAbyssInfo;
         DROP TABLE IF EXISTS GenshinTravelersDiaryMonthData;
         DROP TABLE IF EXISTS GenshinTravelersDiaryAwardItem;
