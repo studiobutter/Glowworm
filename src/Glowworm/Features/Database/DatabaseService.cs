@@ -253,7 +253,9 @@ internal static class DatabaseService
         Sql_v15,
         Sql_v16,
         Sql_v17,
-        Sql_v18
+        Sql_v18,
+        Sql_v19,
+        Sql_v20
     ];
 
 
@@ -1013,6 +1015,35 @@ internal static class DatabaseService
         DROP TABLE IF EXISTS GameAccount;
 
         PRAGMA USER_VERSION = 19;
+        COMMIT TRANSACTION;
+        """;
+
+    private const string Sql_v20 = """
+        BEGIN TRANSACTION;
+
+        DROP TABLE IF EXISTS GameRecordUser;
+        DROP TABLE IF EXISTS GameRecordRole;
+        DROP TABLE IF EXISTS GenshinSpiralAbyssInfo;
+        DROP TABLE IF EXISTS GenshinTravelersDiaryMonthData;
+        DROP TABLE IF EXISTS GenshinTravelersDiaryAwardItem;
+        DROP TABLE IF EXISTS StarRailForgottenHallInfo;
+        DROP TABLE IF EXISTS StarRailSimulatedUniverseRecord;
+        DROP TABLE IF EXISTS StarRailTrailblazeCalendarMonthData;
+        DROP TABLE IF EXISTS StarRailTrailblazeCalendarDetailItem;
+        DROP TABLE IF EXISTS StarRailPureFictionInfo;
+        DROP TABLE IF EXISTS StarRailApocalypticShadowInfo;
+        DROP TABLE IF EXISTS ZZZInterKnotReportSummary;
+        DROP TABLE IF EXISTS ZZZInterKnotReportDetailItem;
+        DROP TABLE IF EXISTS ZZZShiyuDefenseInfo;
+        DROP TABLE IF EXISTS ZZZDeadlyAssaultInfo;
+        DROP TABLE IF EXISTS GenshinStygianOnslaughtInfo;
+        DROP TABLE IF EXISTS StarRailChallengePeakData;
+        DROP TABLE IF EXISTS GenshinImaginariumTheaterInfo;
+        DROP TABLE IF EXISTS GenshinQueryItem;
+        DROP TABLE IF EXISTS StarRailQueryItem;
+        DROP TABLE IF EXISTS ZZZQueryItem;
+
+        PRAGMA USER_VERSION = 20;
         COMMIT TRANSACTION;
         """;
 
