@@ -1,4 +1,4 @@
-﻿using Dapper;
+using Dapper;
 using Microsoft.Extensions.Logging;
 using MiniExcelLibs;
 using Glowworm.Core;
@@ -157,11 +157,41 @@ internal abstract class GachaLogService
 
             if (AppConfig.AutoBackupGachaRecord)
             {
+                string backupFolder = AppConfig.BackupFolder ?? Path.Combine(AppConfig.UserDataFolder!, "DatabaseBackup");
+                bool isNetworkPath = AppConfig.IsNetworkPath(backupFolder);
+
+                if (isNetworkPath)
+                {
+                    // Pre-check: probe network reachability off the UI thread to avoid freezing
+                    bool accessible = false;
+                    try
+                    {
+                        accessible = await Task.Run(() => Directory.Exists(backupFolder));
+                    }
+                    catch
+                    {
+                    }
+
+                    // Persist result so the Settings page can read it without re-probing
+                    AppConfig.NetworkDriveAvailableCache = accessible;
+
+                    if (!accessible)
+                    {
+                        AppConfig.AutoBackupGachaRecord = false;
+                        Glowworm.Helpers.InAppToast.MainWindow?.Error("Network Backup Disabled", Lang.NetworkBackup_Disabled);
+                        return uid;
+                    }
+                }
+
+                // Show "Backing up..." toast for the duration of the network write
+                var pendingToast = isNetworkPath
+                    ? Glowworm.Helpers.InAppToast.MainWindow?.Pending(Lang.NetworkBackup_Pending)
+                    : null;
+
                 _ = Task.Run(async () =>
                 {
                     try
                     {
-                        string backupFolder = AppConfig.BackupFolder ?? Path.Combine(AppConfig.UserDataFolder!, "DatabaseBackup");
                         Directory.CreateDirectory(backupFolder);
 
                         if (AppConfig.AutoBackupGachaRecordUIGF)
@@ -173,6 +203,15 @@ internal abstract class GachaLogService
                                 string fileName = $"Glowworm_UIGF_{CurrentGameBiz.ToGame().Value}_{uid}.json";
                                 string filePath = Path.Combine(backupFolder, fileName);
                                 await uigfService.ExportUIGF4Async(filePath, archives.ToArray());
+                                Glowworm.Helpers.InAppToast.MainWindow?.ClosePending(pendingToast);
+                                if (isNetworkPath)
+                                {
+                                    Glowworm.Helpers.InAppToast.MainWindow?.Success(Lang.NetworkBackup_SuccessTitle, string.Format(Lang.NetworkBackup_SuccessMessage, backupFolder));
+                                }
+                            }
+                            else
+                            {
+                                Glowworm.Helpers.InAppToast.MainWindow?.ClosePending(pendingToast);
                             }
                         }
                         else
@@ -182,11 +221,23 @@ internal abstract class GachaLogService
                             DatabaseService.BackupDatabase(dbFile);
                             new SharpSevenZip.SharpSevenZipCompressor().CompressFiles(archive, dbFile);
                             System.IO.File.Delete(dbFile);
+                            Glowworm.Helpers.InAppToast.MainWindow?.ClosePending(pendingToast);
+                            if (isNetworkPath)
+                            {
+                                Glowworm.Helpers.InAppToast.MainWindow?.Success(Lang.NetworkBackup_SuccessTitle, string.Format(Lang.NetworkBackup_SuccessMessage, backupFolder));
+                            }
                         }
                     }
                     catch (Exception ex)
                     {
+                        Glowworm.Helpers.InAppToast.MainWindow?.ClosePending(pendingToast);
                         _logger.LogError(ex, "Auto Backup Gacha Record failed.");
+                        if (isNetworkPath)
+                        {
+                            AppConfig.AutoBackupGachaRecord = false;
+                            AppConfig.NetworkDriveAvailableCache = false;
+                            Glowworm.Helpers.InAppToast.MainWindow?.Error("Network Backup Disabled", Lang.NetworkBackup_Disabled);
+                        }
                     }
                 });
             }

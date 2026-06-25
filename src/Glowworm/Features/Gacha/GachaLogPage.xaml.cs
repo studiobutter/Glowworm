@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.Extensions.Logging;
@@ -355,6 +355,11 @@ public sealed partial class GachaLogPage : PageBase
         var list = ListView_GachaBanners.SelectedItems.Cast<GachaBanner>().ToList();
         if (list.Count == 0)
         {
+            // GachaBanners can be null during OnUnloaded teardown; bail out safely
+            if (GachaBanners is null)
+            {
+                return;
+            }
             list = GachaBanners;
         }
         foreach (var item in list)

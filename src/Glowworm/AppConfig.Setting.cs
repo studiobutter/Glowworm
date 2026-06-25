@@ -1,4 +1,4 @@
-﻿using Dapper;
+using Dapper;
 using Glowworm.Core;
 using Glowworm.Features.Database;
 using Glowworm.Features.ViewHost;
@@ -149,6 +149,48 @@ public static partial class AppConfig
     {
         get => GetValue<bool>();
         set => SetValue(value);
+    }
+
+    public static bool IsNetworkPath(string? path)
+    {
+        if (string.IsNullOrWhiteSpace(path)) return false;
+        if (path!.StartsWith(@"\\")) return true;
+        try
+        {
+            string? root = System.IO.Path.GetPathRoot(path);
+            if (string.IsNullOrEmpty(root)) return false;
+            var drive = new System.IO.DriveInfo(root);
+            return drive.DriveType == System.IO.DriveType.Network;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// In-memory cache of the last known network drive reachability for the backup folder.
+    /// Shared across all services so the settings page can display status instantly
+    /// without an additional blocking probe on every navigation.
+    /// null = unknown (not yet probed), true = reachable, false = unreachable.
+    /// </summary>
+    public static bool? NetworkDriveAvailableCache { get; set; }
+
+    public static bool IsCloudSyncPath(string? path)
+    {
+        if (string.IsNullOrWhiteSpace(path)) return false;
+
+        string normalized = path.Replace('/', '\\');
+        var segments = normalized.Split(new[] { '\\' }, StringSplitOptions.RemoveEmptyEntries);
+        if (segments.Length == 0)
+        {
+            return false;
+        }
+
+        return segments.Any(segment =>
+            segment.Equals("OneDrive", StringComparison.OrdinalIgnoreCase)
+            || segment.Equals("iCloudDrive", StringComparison.OrdinalIgnoreCase)
+            || segment.Equals("BaiduSyncdisk", StringComparison.OrdinalIgnoreCase));
     }
 
     /// <summary>

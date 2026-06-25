@@ -959,4 +959,19 @@
   <data name="ScreenshotSetting_BeyondProfileLocationDesc" xml:space="preserve">
     <value>千星奇域个人资料图片将恢复到以下文件夹</value>
   </data>
+  <data name="FileSettingPage_BackupNetworkWarn" xml:space="preserve">
+    <value>警告：备份位置位于网络驱动器。请确保连接稳定。</value>
+  </data>
+  <data name="NetworkBackup_Disabled" xml:space="preserve">
+    <value>网络备份位置不可用。自动备份已禁用。</value>
+  </data>
+  <data name="NetworkBackup_SuccessTitle" xml:space="preserve">
+    <value>网络驱动器已更新</value>
+  </data>
+  <data name="NetworkBackup_SuccessMessage" xml:space="preserve">
+    <value>备份文件已成功写入：{0}</value>
+  </data>
+  <data name="NetworkBackup_Pending" xml:space="preserve">
+    <value>正在备份...</value>
+  </data>
 </root>

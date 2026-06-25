@@ -50,7 +50,7 @@
 
             <!--  Rescan Game Directories  -->
             <Button Height="40"
-                    Margin="0,32,0,0"
+                    Margin="0,12,0,0"
                     Padding="16,0,16,0"
                     BorderThickness="0"
                     Command="{x:Bind RescanGameDirectoriesCommand}"
@@ -165,7 +165,7 @@
                 <Button Grid.Column="1"
                         Height="40"
                         Margin="16,0,0,0"
-                        Padding="20,0,20,1"
+                        Padding="20,0,20,0"
                         BorderThickness="0"
                         Command="{x:Bind OpenBackupFolderCommand}"
                         CornerRadius="20">
@@ -206,6 +206,23 @@
                         <TextBlock Text="{x:Bind lang:Lang.SettingPage_BackupDatabase}"/>
                     </StackPanel>
                 </Button>
+                <Button Grid.Column="2"
+                        Height="40"
+                        Margin="0,0,0,0"
+                        Padding="12,0,16,0"
+                        BorderThickness="0"
+                        Command="{x:Bind RefreshBackupFolderNetworkStatusCommand}"
+                        CornerRadius="20,20,20,20"
+                        Visibility="{x:Bind ShowBackupFolderNetworkRefreshButton, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}"
+                        Style="{ThemeResource AccentButtonStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <FontIcon Margin="8,0,0,0"
+                                  FontSize="16"
+                                  Glyph="&#xE72C;"/>
+                        <TextBlock Margin="6,0,0,0"
+                                   Text="{x:Bind lang:Lang.Common_Refresh}"/>
+                    </StackPanel>
+                </Button>
                 <ProgressRing Width="28"
                               Height="28"
                               IsIndeterminate="{x:Bind BackupDatabaseCommand.IsRunning}"
@@ -216,7 +233,8 @@
                         Command="{x:Bind OpenLastBackupDatabaseCommand}"
                         CornerRadius="20"
                         Visibility="{x:Bind LastDatabaseBackupTime, Converter={StaticResource ObjectToVisibilityConverter}}">
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal"
+                                Spacing="8">
                         <TextBlock VerticalAlignment="Center"
                                    Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                                    Text="{x:Bind LastDatabaseBackupTime}"/>
@@ -234,6 +252,17 @@
                     <TextBlock Text="{x:Bind lang:Lang.FileSettingPage_BackupAfterRecord}"/>
                 </ToggleSwitch.Header>
             </ToggleSwitch>
+
+            <TextBlock Margin="0,4,0,0"
+                       Foreground="{ThemeResource SystemFillColorCriticalBrush}"
+                       Visibility="{x:Bind IsBackupFolderNetworkDrive, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}"
+                       Text="{x:Bind lang:Lang.FileSettingPage_BackupNetworkWarn}"
+                       TextWrapping="Wrap"/>
+            <TextBlock Margin="0,4,0,0"
+                       Foreground="{ThemeResource SystemFillColorCriticalBrush}"
+                       Visibility="{x:Bind IsBackupFolderCloudDrive, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}"
+                       Text="{x:Bind lang:Lang.FileSettingPage_BackupCloudWarn}"
+                       TextWrapping="Wrap"/>
 
             <CheckBox Margin="0,4,0,0"
                       IsEnabled="{x:Bind AutoBackupGachaRecord, Mode=OneWay}"

@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Input;
 using Microsoft.Extensions.Logging;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.Windows.AppLifecycle;
@@ -21,7 +21,6 @@ public sealed partial class FileManageSetting : PageBase
 {
 
     private readonly ILogger<FileManageSetting> _logger = AppConfig.GetLogger<FileManageSetting>();
-
 
     public FileManageSetting()
     {
@@ -58,7 +57,42 @@ public sealed partial class FileManageSetting : PageBase
         }
     }
 
-    public string BackupFolderDisplay => AppConfig.BackupFolder ?? AppConfig.UserDataFolder ?? "";
+    public string BackupFolderPath => AppConfig.BackupFolder ?? AppConfig.UserDataFolder ?? "";
+
+    public string BackupFolderDisplay
+    {
+        get
+        {
+            string display = BackupFolderPath;
+            if (IsBackupFolderNetworkDrive && _backupFolderNetworkAvailable == false)
+            {
+                display += " [Unreachable]";
+            }
+            return display;
+        }
+    }
+
+    public bool IsBackupFolderNetworkDrive
+    {
+        get
+        {
+            return AppConfig.IsNetworkPath(BackupFolderPath);
+        }
+    }
+
+    public bool IsBackupFolderCloudDrive
+    {
+        get
+        {
+            return AppConfig.IsCloudSyncPath(BackupFolderPath);
+        }
+    }
+
+    public bool IsBackupFolderNetworkDriveUnavailable => IsBackupFolderNetworkDrive && _backupFolderNetworkAvailable == false;
+
+    public bool ShowBackupFolderNetworkRefreshButton => IsBackupFolderNetworkDrive;
+
+    private bool? _backupFolderNetworkAvailable;
 
     public bool AutoBackupGachaRecord
     {
@@ -123,7 +157,8 @@ public sealed partial class FileManageSetting : PageBase
             if (!string.IsNullOrWhiteSpace(path))
             {
                 AppConfig.BackupFolder = path;
-                OnPropertyChanged(nameof(BackupFolderDisplay));
+                _backupFolderNetworkAvailable = null;
+                NotifyBackupFolderChanged();
             }
         }
         catch (Exception ex)
@@ -132,13 +167,25 @@ public sealed partial class FileManageSetting : PageBase
         }
     }
 
+    private void NotifyBackupFolderChanged()
+    {
+        OnPropertyChanged(nameof(BackupFolderPath));
+        OnPropertyChanged(nameof(BackupFolderDisplay));
+        OnPropertyChanged(nameof(IsBackupFolderNetworkDrive));
+        OnPropertyChanged(nameof(IsBackupFolderCloudDrive));
+        OnPropertyChanged(nameof(IsBackupFolderNetworkDriveUnavailable));
+        OnPropertyChanged(nameof(ShowBackupFolderNetworkRefreshButton));
+    }
+
     [RelayCommand]
     private async Task OpenBackupFolderAsync()
     {
         try
         {
-            var folder = BackupFolderDisplay;
-            if (Directory.Exists(folder))
+            var folder = BackupFolderPath;
+            // Wrap Directory.Exists off UI thread — network paths can block otherwise
+            bool exists = await Task.Run(() => Directory.Exists(folder));
+            if (exists)
             {
                 await Launcher.LaunchUriAsync(new Uri(folder));
             }
@@ -151,10 +198,44 @@ public sealed partial class FileManageSetting : PageBase
 
     protected override void OnLoaded()
     {
-        GetLastBackupTime();
+        _ = LoadLastBackupTimeAsync();
         _ = UpdateCacheSizeAsync();
+        _ = RefreshBackupFolderNetworkStatusAsync();
     }
 
+    [RelayCommand]
+    private async Task RefreshBackupFolderNetworkStatusAsync()
+    {
+        string path = BackupFolderPath;
+        if (!AppConfig.IsNetworkPath(path))
+        {
+            _backupFolderNetworkAvailable = null;
+            AppConfig.NetworkDriveAvailableCache = null;
+            NotifyBackupFolderChanged();
+            return;
+        }
+
+        // Pre-seed from shared cache so the UI shows a known state immediately
+        // while the async probe runs in the background
+        if (_backupFolderNetworkAvailable == null && AppConfig.NetworkDriveAvailableCache.HasValue)
+        {
+            _backupFolderNetworkAvailable = AppConfig.NetworkDriveAvailableCache;
+            NotifyBackupFolderChanged();
+        }
+
+        bool accessible = false;
+        try
+        {
+            accessible = await Task.Run(() => Directory.Exists(path));
+        }
+        catch
+        {
+        }
+
+        _backupFolderNetworkAvailable = accessible;
+        AppConfig.NetworkDriveAvailableCache = accessible;
+        NotifyBackupFolderChanged();
+    }
 
 
 
@@ -343,7 +424,7 @@ public sealed partial class FileManageSetting : PageBase
     public string LastDatabaseBackupTime { get; set => SetProperty(ref field, value); }
 
 
-    private void GetLastBackupTime()
+    private async Task LoadLastBackupTimeAsync()
     {
         try
         {
@@ -352,18 +433,24 @@ public sealed partial class FileManageSetting : PageBase
                 string backupFolder = AppConfig.BackupFolder ?? Path.Combine(AppConfig.UserDataFolder, "DatabaseBackup");
                 string fileTryNew = Path.Join(backupFolder, file);
                 string fileTryOld = Path.Join(AppConfig.UserDataFolder, "DatabaseBackup", file);
-                
-                if (File.Exists(fileTryNew))
-                {
-                    LastDatabaseBackupTime = $"{""}  {time:yyyy-MM-dd HH:mm:ss}";
-                }
-                else if (File.Exists(fileTryOld))
+
+                // Wrap File.Exists off the UI thread — paths may be on a slow/unreachable network drive
+                bool existsNew = await Task.Run(() => File.Exists(fileTryNew));
+                if (existsNew)
                 {
                     LastDatabaseBackupTime = $"{""}  {time:yyyy-MM-dd HH:mm:ss}";
                 }
                 else
                 {
-                    _logger.LogWarning("Last backup database file not found: {file}", file);
+                    bool existsOld = await Task.Run(() => File.Exists(fileTryOld));
+                    if (existsOld)
+                    {
+                        LastDatabaseBackupTime = $"{""}  {time:yyyy-MM-dd HH:mm:ss}";
+                    }
+                    else
+                    {
+                        _logger.LogWarning("Last backup database file not found: {file}", file);
+                    }
                 }
             }
         }
@@ -375,13 +462,44 @@ public sealed partial class FileManageSetting : PageBase
     [RelayCommand]
     private async Task BackupDatabaseAsync()
     {
+        string backupFolder = AppConfig.BackupFolder ?? Path.Combine(AppConfig.UserDataFolder, "DatabaseBackup");
+        bool isNetworkPath = AppConfig.IsNetworkPath(backupFolder);
+        Microsoft.UI.Xaml.Controls.InfoBar? pendingToast = null;
         try
         {
-            string backupFolder = AppConfig.BackupFolder ?? Path.Combine(AppConfig.UserDataFolder, "DatabaseBackup");
-            Directory.CreateDirectory(backupFolder);
+            if (isNetworkPath)
+            {
+                // Pre-check: probe network reachability off the UI thread to avoid freezing
+                bool accessible = false;
+                try
+                {
+                    accessible = await Task.Run(() => Directory.Exists(backupFolder));
+                }
+                catch { }
+
+                // Update shared cache so other pages/services know the current status
+                AppConfig.NetworkDriveAvailableCache = accessible;
+
+                if (!accessible)
+                {
+                    _backupFolderNetworkAvailable = false;
+                    NotifyBackupFolderChanged();
+                    InAppToast.MainWindow?.Error("Network Backup Disabled", Lang.NetworkBackup_Disabled, 5000);
+                    if (AutoBackupGachaRecord)
+                    {
+                        AutoBackupGachaRecord = false;
+                    }
+                    return;
+                }
+
+                // Show "Backing up..." toast for the duration of the network write
+                pendingToast = InAppToast.MainWindow?.Pending(Lang.NetworkBackup_Pending);
+            }
+
             DateTime time = DateTime.Now;
             await Task.Run(() =>
             {
+                Directory.CreateDirectory(backupFolder);
                 string file = Path.Combine(backupFolder, $"GlowwormDatabase_{time:yyyyMMdd_HHmmss}.db");
                 string archive = Path.ChangeExtension(file, ".7z");
                 DatabaseService.BackupDatabase(file);
@@ -389,12 +507,29 @@ public sealed partial class FileManageSetting : PageBase
                 DatabaseService.SetValue("LastBackupDatabase", Path.GetFileName(archive), time);
                 File.Delete(file);
             });
+
+            InAppToast.MainWindow?.ClosePending(pendingToast);
+            _backupFolderNetworkAvailable = true;
+            AppConfig.NetworkDriveAvailableCache = true;
+            NotifyBackupFolderChanged();
             LastDatabaseBackupTime = $"{""}  {time:yyyy-MM-dd HH:mm:ss}";
+
+            if (isNetworkPath)
+            {
+                InAppToast.MainWindow?.Success(Lang.NetworkBackup_SuccessTitle, string.Format(Lang.NetworkBackup_SuccessMessage, backupFolder), 5000);
+            }
         }
         catch (Exception ex)
         {
+            InAppToast.MainWindow?.ClosePending(pendingToast);
             _logger.LogError(ex, "Backup database");
             LastDatabaseBackupTime = ex.Message;
+            if (isNetworkPath)
+            {
+                _backupFolderNetworkAvailable = false;
+                NotifyBackupFolderChanged();
+                InAppToast.MainWindow?.Error("Network Backup Failed", ex.Message, 5000);
+            }
         }
     }
 

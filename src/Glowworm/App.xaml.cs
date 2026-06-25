@@ -1,4 +1,4 @@
-﻿using Microsoft.UI.Dispatching;
+using Microsoft.UI.Dispatching;
 using Microsoft.UI.Xaml;
 using Microsoft.Windows.AppLifecycle;
 using Glowworm.Core;
@@ -90,6 +90,36 @@ public partial class App : Application
         if (AppConfig.RunInSystemTray)
         {
             InitializeTrayIcon(m_MainWindow.WindowHandle);
+        }
+
+        if (AppConfig.AutoBackupGachaRecord)
+        {
+            string backupFolder = AppConfig.BackupFolder ?? Path.Combine(AppConfig.UserDataFolder!, "DatabaseBackup");
+            if (AppConfig.IsNetworkPath(backupFolder))
+            {
+                bool isAccessible = false;
+                try
+                {
+                    if (Directory.Exists(backupFolder))
+                    {
+                        isAccessible = true;
+                    }
+                }
+                catch { }
+
+                // Persist result for the Settings page to read without re-probing
+                AppConfig.NetworkDriveAvailableCache = isAccessible;
+
+                if (!isAccessible)
+                {
+                    AppConfig.AutoBackupGachaRecord = false;
+                    _uiDispatcherQueue.TryEnqueue(async () =>
+                    {
+                        await Task.Delay(1000);
+                        Glowworm.Helpers.InAppToast.MainWindow?.Error("Network Backup Disabled", Glowworm.Language.Lang.NetworkBackup_Disabled, 5000);
+                    });
+                }
+            }
         }
     }
 

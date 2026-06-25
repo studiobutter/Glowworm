@@ -1,4 +1,4 @@
-﻿using Microsoft.UI.Dispatching;
+using Microsoft.UI.Dispatching;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
@@ -150,6 +150,51 @@ public class InAppToast : Behavior<StackPanel>
     {
         AddInfoBar(InfoBarSeverity.Warning, title, message, duration);
     }
+
+
+
+    /// <summary>
+    /// Shows a persistent informational toast with no auto-dismiss.
+    /// The caller is responsible for closing it by setting <see cref="InfoBar.IsOpen"/> = false
+    /// when the pending operation completes.
+    /// </summary>
+    /// <returns>The <see cref="InfoBar"/> that was shown, or null if the toast system is unavailable.</returns>
+    public InfoBar? Pending(string? title, string? message = null)
+    {
+        InfoBar? infoBar = null;
+        // Must run synchronously on UI thread so the caller gets the reference immediately
+        DispatcherQueue.TryEnqueue(() =>
+        {
+            infoBar = new InfoBar
+            {
+                Title = title,
+                Message = message,
+                Severity = InfoBarSeverity.Informational,
+                IsOpen = true,
+                IsClosable = false,
+                Background = Application.Current.Resources["CustomAcrylicBrush"] as Brush,
+            };
+            AssociatedObject.Children.Add(infoBar);
+        });
+        return infoBar;
+    }
+
+
+
+    /// <summary>
+    /// Closes a pending toast returned by <see cref="Pending"/>.
+    /// Safe to call from any thread.
+    /// </summary>
+    public void ClosePending(InfoBar? infoBar)
+    {
+        if (infoBar is null) return;
+        DispatcherQueue.TryEnqueue(() =>
+        {
+            try { infoBar.IsOpen = false; } catch { }
+        });
+    }
+
+
 
 
 
