@@ -985,4 +985,22 @@
   <data name="FileSettingPage_AutoBackupUIGF" xml:space="preserve">
     <value>[UIGF]: Backup and Sync Gacha Record after updating</value>
   </data>
+  <data name="FileSettingPage_BackupNetworkWarn" xml:space="preserve">
+    <value>Warning: Backup Location is on a Network Drive. Ensure connection is stable.</value>
+  </data>
+  <data name="NetworkBackup_Disabled" xml:space="preserve">
+    <value>Network Backup Location inaccessible. If enabled, Auto-backup has been disabled.</value>
+  </data>
+  <data name="FileSettingPage_BackupCloudWarn" xml:space="preserve">
+    <value>Warning: If the service is not enabled, backups will still be saved but not synced until service is enabled.</value>
+  </data>
+  <data name="NetworkBackup_SuccessTitle" xml:space="preserve">
+    <value>Network Drive Updated</value>
+  </data>
+  <data name="NetworkBackup_SuccessMessage" xml:space="preserve">
+    <value>Backup file successfully written to: {0}</value>
+  </data>
+  <data name="NetworkBackup_Pending" xml:space="preserve">
+    <value>Backing up...</value>
+  </data>
 </root>
