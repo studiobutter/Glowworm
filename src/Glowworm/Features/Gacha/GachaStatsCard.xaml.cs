@@ -1,4 +1,4 @@
-﻿using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using System.Linq;
 
@@ -120,6 +120,20 @@ public sealed partial class GachaStatsCard : UserControl
         TextBlock_GachaTypeText.FontSize = 16;
     }
 
+    private void Segmented_GachaItemList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (Pivot_GachaItemList != null && Segmented_GachaItemList != null)
+        {
+            try
+            {
+                if (Pivot_GachaItemList.IsLoaded)
+                {
+                    Pivot_GachaItemList.SelectedIndex = Segmented_GachaItemList.SelectedIndex;
+                }
+            }
+            catch { }
+        }
+    }
 }
 
 

@@ -665,4 +665,34 @@ public sealed partial class GenshinBeyondGachaPage : PageBase
     }
 
 
+    private void Segmented_GachaItemList1000_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (Pivot_GachaItemList1000 != null && Segmented_GachaItemList1000 != null)
+        {
+            try
+            {
+                if (Pivot_GachaItemList1000.IsLoaded)
+                {
+                    Pivot_GachaItemList1000.SelectedIndex = Segmented_GachaItemList1000.SelectedIndex;
+                }
+            }
+            catch { }
+        }
+    }
+
+    private void Segmented_GachaItemList2000_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (Pivot_GachaItemList2000 != null && Segmented_GachaItemList2000 != null)
+        {
+            try
+            {
+                if (Pivot_GachaItemList2000.IsLoaded)
+                {
+                    Pivot_GachaItemList2000.SelectedIndex = Segmented_GachaItemList2000.SelectedIndex;
+                }
+            }
+            catch { }
+        }
+    }
+
 }

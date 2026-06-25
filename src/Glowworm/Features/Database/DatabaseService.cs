@@ -1,4 +1,4 @@
-﻿using Dapper;
+using Dapper;
 using Microsoft.Data.Sqlite;
 using SharpSevenZip;
 using System;
@@ -27,6 +27,7 @@ internal static class DatabaseService
 
     static DatabaseService()
     {
+        SQLitePCL.raw.SetProvider(new SQLitePCL.SQLite3Provider_e_sqlite3());
         SqlMapper.AddTypeHandler(new DapperSqlMapper.DateTimeOffsetHandler());
         SqlMapper.AddTypeHandler(new DapperSqlMapper.StringListHandler());
         SqlMapper.AddTypeHandler(new DapperSqlMapper.GameBizHandler());

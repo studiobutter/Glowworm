@@ -127,24 +127,54 @@ public partial class App : Application
     {
         _uiDispatcherQueue.TryEnqueue(() =>
         {
-            if (_hTrayIcon == IntPtr.Zero)
+            try
             {
-                _hTrayIcon = LoadImage(IntPtr.Zero, Path.Combine(AppContext.BaseDirectory, "logo.ico"), IMAGE_ICON, 0, 0, LR_LOADFROMFILE | LR_DEFAULTSIZE);
-            }
-            var nid = new NOTIFYICONDATA
-            {
-                cbSize = (uint)Marshal.SizeOf<NOTIFYICONDATA>(),
-                hWnd = hwnd,
-                uID = TrayIconId,
-                uFlags = NIF_MESSAGE | NIF_ICON | NIF_TIP,
-                uCallbackMessage = TrayIconCallbackMessage,
-                hIcon = _hTrayIcon,
-                szTip = "Glowworm",
-            };
+                if (_hTrayIcon == IntPtr.Zero)
+                {
+                    string iconPath = Path.Combine(AppContext.BaseDirectory, "logo.ico");
+                    if (!File.Exists(iconPath))
+                    {
+                        System.Diagnostics.Debug.WriteLine($"Tray icon file not found: {iconPath}");
+                        return;
+                    }
+                    _hTrayIcon = LoadImage(IntPtr.Zero, iconPath, IMAGE_ICON, 0, 0, LR_LOADFROMFILE | LR_DEFAULTSIZE);
+                    if (_hTrayIcon == IntPtr.Zero)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"Failed to load tray icon. Last error: {Marshal.GetLastWin32Error()}");
+                        return;
+                    }
+                }
 
-            _trayIconAdded = Shell_NotifyIcon(NIM_ADD, ref nid);
-            nid.uTimeoutOrVersion = 4;
-            Shell_NotifyIcon(NIM_SETVERSION, ref nid);
+                if (hwnd == IntPtr.Zero)
+                {
+                    System.Diagnostics.Debug.WriteLine("Invalid window handle for tray icon");
+                    return;
+                }
+
+                var nid = new NOTIFYICONDATA
+                {
+                    cbSize = (uint)Marshal.SizeOf<NOTIFYICONDATA>(),
+                    hWnd = hwnd,
+                    uID = TrayIconId,
+                    uFlags = NIF_MESSAGE | NIF_ICON | NIF_TIP,
+                    uCallbackMessage = TrayIconCallbackMessage,
+                    hIcon = _hTrayIcon,
+                    szTip = "Glowworm",
+                };
+
+                _trayIconAdded = Shell_NotifyIcon(NIM_ADD, ref nid);
+                if (!_trayIconAdded)
+                {
+                    System.Diagnostics.Debug.WriteLine($"Failed to add tray icon. Last error: {Marshal.GetLastWin32Error()}");
+                    return;
+                }
+                nid.uTimeoutOrVersion = 4;
+                Shell_NotifyIcon(NIM_SETVERSION, ref nid);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Exception initializing tray icon: {ex.Message}");
+            }
         });
     }
 
@@ -225,19 +255,33 @@ public partial class App : Application
 
     private void RemoveTrayIcon()
     {
-        if (!_trayIconAdded || m_MainWindow is null)
+        try
         {
-            return;
-        }
+            if (!_trayIconAdded || m_MainWindow is null)
+            {
+                return;
+            }
 
-        var nid = new NOTIFYICONDATA
+            if (m_MainWindow.WindowHandle == IntPtr.Zero)
+            {
+                _trayIconAdded = false;
+                return;
+            }
+
+            var nid = new NOTIFYICONDATA
+            {
+                cbSize = (uint)Marshal.SizeOf<NOTIFYICONDATA>(),
+                hWnd = m_MainWindow.WindowHandle,
+                uID = TrayIconId,
+            };
+            Shell_NotifyIcon(NIM_DELETE, ref nid);
+            _trayIconAdded = false;
+        }
+        catch (Exception ex)
         {
-            cbSize = (uint)Marshal.SizeOf<NOTIFYICONDATA>(),
-            hWnd = m_MainWindow.WindowHandle,
-            uID = TrayIconId,
-        };
-        Shell_NotifyIcon(NIM_DELETE, ref nid);
-        _trayIconAdded = false;
+            System.Diagnostics.Debug.WriteLine($"Exception removing tray icon: {ex.Message}");
+            _trayIconAdded = false;
+        }
     }
 
     [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode, EntryPoint = "LoadIconW")]

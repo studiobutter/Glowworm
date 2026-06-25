@@ -25,19 +25,6 @@
 		<CETCompat>false</CETCompat>
 	</PropertyGroup>
 
-	<!--
-		Vulnerability Suppressions
-		~~~~~~~~~~~~~~~~~~~~~~~~~~
-		GHSA-2m69-gcr7-jv3q / CVE-2025-6965: SQLitePCLRaw.lib.e_sqlite3 bundles a vulnerable SQLite < 3.50.2.
-		As of 2026-06-26, NO patched version of SQLitePCLRaw.lib.e_sqlite3 exists on NuGet (latest is still 2.1.11).
-		This package is a transitive dependency of Microsoft.Data.Sqlite and cannot be upgraded independently.
-		TODO: Remove this suppression once SQLitePCLRaw.lib.e_sqlite3 >= 2.1.12 (or whatever fixes CVE-2025-6965)
-		      is released and Microsoft.Data.Sqlite pulls it in. Track: https://github.com/ericsink/SQLitePCL.raw
-	-->
-	<ItemGroup>
-		<NuGetAuditSuppress Include="https://github.com/advisories/GHSA-2m69-gcr7-jv3q" />
-	</ItemGroup>
-
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
 		<PackageReference Include="CommunityToolkit.WinUI.Behaviors" Version="8.2.251219" />
@@ -47,7 +34,8 @@
 		<PackageReference Include="ComputeSharp.D2D1.WinUI" Version="3.2.0" />
 		<PackageReference Include="Dapper" Version="2.1.79" />
 		<PackageReference Include="Markdig" Version="1.3.2" />
-		<PackageReference Include="Microsoft.Data.Sqlite" Version="10.0.9" />
+		<PackageReference Include="Microsoft.Data.Sqlite.Core" Version="10.0.9" />
+		<PackageReference Include="SQLitePCLRaw.provider.e_sqlite3" Version="3.0.3" />
 		<PackageReference Include="Microsoft.Extensions.Http" Version="10.0.9" />
 		<PackageReference Include="Microsoft.Graphics.Win2D" Version="1.4.0" ExcludeAssets="all" />
 		<PackageReference Include="Microsoft.Web.WebView2" Version="1.0.4022.49" />
@@ -59,6 +47,7 @@
 		<PackageReference Include="Scighost.WinUI" Version="0.1.0" />
 		<PackageReference Include="Serilog.Extensions.Logging" Version="10.0.0" />
 		<PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
+		<PackageReference Include="SourceGear.sqlite3" Version="3.50.4.5" />
 		<PackageReference Include="Starward.Codec" Version="0.5.2" />
 		<PackageReference Include="Starward.NativeLib" Version="0.3.1" />
 		<PackageReference Include="Starward.Win2D" Version="1.3.2-release.1" />
