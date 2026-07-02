@@ -149,7 +149,12 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0"
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0"
+                        Grid.Column="0"
                         Height="40"
                         Padding="16,0,16,0"
                         BorderThickness="0"
@@ -162,9 +167,10 @@
                         <TextBlock Text="{x:Bind lang:Lang.FileSettingPage_BackupSelectDir}"/>
                     </StackPanel>
                 </Button>
-                <Button Grid.Column="1"
+                <Button Grid.Row="0"
+                        Grid.Column="1"
                         Height="40"
-                        Margin="16,0,0,0"
+                        Margin="0,0,0,0"
                         Padding="20,0,20,0"
                         BorderThickness="0"
                         Command="{x:Bind OpenBackupFolderCommand}"
@@ -188,6 +194,25 @@
                                   Glyph="&#xE8A7;"/>
                     </Grid>
                 </Button>
+                <Button Grid.Row="1"
+                        Grid.Column="0"
+                        Height="40"
+                        Margin="0,12,0,0"
+                        Padding="12,0,16,0"
+                        BorderThickness="0"
+                        HorizontalAlignment="Left"
+                        Command="{x:Bind RefreshBackupFolderNetworkStatusCommand}"
+                        CornerRadius="8,20,20,8"
+                        Visibility="{x:Bind ShowBackupFolderNetworkRefreshButton, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}"
+                        Style="{ThemeResource AccentButtonStyle}">
+                    <StackPanel Orientation="Horizontal">
+                        <FontIcon Margin="8,0,0,0"
+                                  FontSize="16"
+                                  Glyph="&#xE72C;"/>
+                        <TextBlock Margin="6,0,0,0"
+                                   Text="{x:Bind lang:Lang.FileSettingPage_RefreshNetDir}"/>
+                    </StackPanel>
+                </Button>
             </Grid>
             <!--  ?????  -->
             <StackPanel Margin="0,8,0,0"
@@ -204,23 +229,6 @@
                                 Spacing="8">
                         <FontIcon Glyph="&#xF413;"/>
                         <TextBlock Text="{x:Bind lang:Lang.SettingPage_BackupDatabase}"/>
-                    </StackPanel>
-                </Button>
-                <Button Grid.Column="2"
-                        Height="40"
-                        Margin="0,0,0,0"
-                        Padding="12,0,16,0"
-                        BorderThickness="0"
-                        Command="{x:Bind RefreshBackupFolderNetworkStatusCommand}"
-                        CornerRadius="20,20,20,20"
-                        Visibility="{x:Bind ShowBackupFolderNetworkRefreshButton, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}"
-                        Style="{ThemeResource AccentButtonStyle}">
-                    <StackPanel Orientation="Horizontal">
-                        <FontIcon Margin="8,0,0,0"
-                                  FontSize="16"
-                                  Glyph="&#xE72C;"/>
-                        <TextBlock Margin="6,0,0,0"
-                                   Text="{x:Bind lang:Lang.Common_Refresh}"/>
                     </StackPanel>
                 </Button>
                 <ProgressRing Width="28"

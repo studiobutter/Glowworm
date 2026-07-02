@@ -1002,4 +1002,7 @@
   <data name="NetworkBackup_Pending" xml:space="preserve">
     <value>Backing up...</value>
   </data>
+  <data name="FileSettingPage_RefreshNetDir" xml:space="preserve">
+    <value>Refresh Network Folder</value>
+  </data>
 </root>
