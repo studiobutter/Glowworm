@@ -47,14 +47,36 @@ public class ZZZGachaClient : GachaLogClient
             }
             else
             {
-                match = Regex.Match(gachaUrl, @"(https://public-operation-common[!-z]+)");
+                // Match game-specific nap endpoint (preferred) — extract auth params and use it directly
+                match = Regex.Match(gachaUrl, @"(https://public-operation-nap[!-z]+)");
                 if (match.Success)
                 {
                     gachaUrl = match.Groups[1].Value.Split('#')[0];
                 }
                 else
                 {
-                    throw new ArgumentException(CoreLang.Gacha_CannotParseTheWishRecordURL);
+                    // Legacy generic common endpoint — redirect to the nap game-specific endpoint
+                    match = Regex.Match(gachaUrl, @"(https://public-operation-common[!-z]+)");
+                    if (match.Success)
+                    {
+                        var commonUrl = match.Groups[1].Value.Split('#')[0];
+                        // Determine region from the URL and switch to the nap-specific endpoint
+                        var queryStart = commonUrl.IndexOf('?');
+                        var queryPart = queryStart >= 0 ? commonUrl.Substring(queryStart) : string.Empty;
+                        // Detect China vs global from domain
+                        if (commonUrl.Contains("mihoyo.com"))
+                        {
+                            gachaUrl = API_PREFIX_ZZZ_CN + queryPart;
+                        }
+                        else
+                        {
+                            gachaUrl = API_PREFIX_ZZZ_OS + queryPart;
+                        }
+                    }
+                    else
+                    {
+                        throw new ArgumentException(CoreLang.Gacha_CannotParseTheWishRecordURL);
+                    }
                 }
             }
         }
@@ -77,7 +99,7 @@ public class ZZZGachaClient : GachaLogClient
         var prefix = GetGachaUrlPrefix(gachaUrl);
         foreach (var gachaType in QueryGachaTypes)
         {
-            var param = new GachaLogQuery(gachaType, 1, 5, 0);
+            var param = new GachaLogQuery(gachaType, 1, 1, 0);
             var list = await GetGachaLogByQueryAsync<ZZZGachaItem>(prefix, param);
             if (list.Count != 0)
             {
@@ -135,14 +157,14 @@ public class ZZZGachaClient : GachaLogClient
 
     protected override async Task<List<T>> GetGachaLogByTypeAsync<T>(string prefix, IGachaType gachaType, long endId = 0, IProgress<(IGachaType GachaType, int Page)>? progress = null, CancellationToken cancellationToken = default)
     {
-        var param = new GachaLogQuery(gachaType, 1, 5, 0);
+        var param = new GachaLogQuery(gachaType, 1, 20, 0);
         var result = new List<T>();
         while (true)
         {
             progress?.Report((gachaType, param.Page));
             var list = await GetGachaLogByQueryAsync<T>(prefix, param, cancellationToken);
             result.AddRange(list);
-            if (list.Count == 5 && list.Last().Id > endId)
+            if (list.Count == 20 && list.Last().Id > endId)
             {
                 param.Page++;
                 param.EndId = list.Last().Id;

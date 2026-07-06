@@ -1,4 +1,4 @@
-﻿using System.Net;
+using System.Net;
 using System.Net.Http.Json;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -12,8 +12,8 @@ public class GenshinBeyondGachaClient
     private const string WEB_CACHE_PATH_YS_CN = @"YuanShen_Data\webCaches\Cache\Cache_Data\data_2";
     private const string WEB_CACHE_PATH_YS_OS = @"GenshinImpact_Data\webCaches\Cache\Cache_Data\data_2";
 
-    private static ReadOnlySpan<byte> SPAN_WEB_PREFIX_YS_CN => "https://webstatic.mihoyo.com/hk4e/event/e20250716gacha/index.html"u8;
-    private static ReadOnlySpan<byte> SPAN_WEB_PREFIX_YS_OS => "https://gs.hoyoverse.com/genshin/event/e20250716gacha/index.html"u8;
+    private static ReadOnlySpan<byte> SPAN_WEB_PREFIX_YS_CN => "https://webstatic.mihoyo.com/hk4e/event/e20250716gacha"u8;
+    private static ReadOnlySpan<byte> SPAN_WEB_PREFIX_YS_OS => "https://gs.hoyoverse.com/genshin/event/e20250716gacha"u8;
 
     private const string API_PREFIX_YS_CN = "https://public-operation-hk4e.mihoyo.com/gacha_info/api/getBeyondGachaLog";
     private const string API_PREFIX_YS_OS = "https://public-operation-hk4e-sg.hoyoverse.com/gacha_info/api/getBeyondGachaLog";
@@ -61,14 +61,14 @@ public class GenshinBeyondGachaClient
 
     protected async Task<List<GenshinBeyondGachaItem>> GetGachaLogByTypeAsync(string prefix, int gachaType, long endId = 0, IProgress<(int GachaType, int Page)>? progress = null, CancellationToken cancellationToken = default)
     {
-        var param = new BeyondGachaLogQuery(gachaType, 1, 5, 0);
+        var param = new BeyondGachaLogQuery(gachaType, 1, 20, 0);
         var result = new List<GenshinBeyondGachaItem>();
         while (true)
         {
             progress?.Report((gachaType, param.Page));
             var list = await GetGachaLogByQueryAsync(prefix, param, cancellationToken);
             result.AddRange(list);
-            if (list.Count == 5 && list.Last().Id > endId)
+            if (list.Count == 20 && list.Last().Id > endId)
             {
                 param.Page++;
                 param.EndId = list.Last().Id;
@@ -129,10 +129,10 @@ public class GenshinBeyondGachaClient
         if (match.Success)
         {
             gachaUrl = match.Groups[1].Value;
-            gachaUrl = Regex.Replace(gachaUrl, @"&gacha_type=\d", "");
-            gachaUrl = Regex.Replace(gachaUrl, @"&page=\d", "");
-            gachaUrl = Regex.Replace(gachaUrl, @"&size=\d", "");
-            gachaUrl = Regex.Replace(gachaUrl, @"&end_id=\d", "");
+            gachaUrl = Regex.Replace(gachaUrl, @"&gacha_type=\d+", "");
+            gachaUrl = Regex.Replace(gachaUrl, @"&page=\d+", "");
+            gachaUrl = Regex.Replace(gachaUrl, @"&size=\d+", "");
+            gachaUrl = Regex.Replace(gachaUrl, @"&end_id=\d+", "");
             if (!string.IsNullOrWhiteSpace(lang))
             {
                 gachaUrl = Regex.Replace(gachaUrl, @"&lang=[^&]+", $"&lang={LanguageUtil.FilterLanguage(lang)}");

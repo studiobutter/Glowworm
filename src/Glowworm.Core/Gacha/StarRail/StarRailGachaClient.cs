@@ -1,4 +1,4 @@
-﻿using System.Text.RegularExpressions;
+using System.Text.RegularExpressions;
 
 namespace Glowworm.Core.Gacha.StarRail;
 
@@ -50,10 +50,10 @@ public class StarRailGachaClient : GachaLogClient
         if (match.Success)
         {
             gachaUrl = match.Groups[1].Value;
-            gachaUrl = Regex.Replace(gachaUrl, @"&gacha_type=\d", "");
-            gachaUrl = Regex.Replace(gachaUrl, @"&page=\d", "");
-            gachaUrl = Regex.Replace(gachaUrl, @"&size=\d", "");
-            gachaUrl = Regex.Replace(gachaUrl, @"&end_id=\d", "");
+            gachaUrl = Regex.Replace(gachaUrl, @"&gacha_type=\d+", "");
+            gachaUrl = Regex.Replace(gachaUrl, @"&page=\d+", "");
+            gachaUrl = Regex.Replace(gachaUrl, @"&size=\d+", "");
+            gachaUrl = Regex.Replace(gachaUrl, @"&end_id=\d+", "");
             if (!string.IsNullOrWhiteSpace(lang))
             {
                 gachaUrl = Regex.Replace(gachaUrl, @"&lang=[^&]+", $"&lang={LanguageUtil.FilterLanguage(lang)}");
