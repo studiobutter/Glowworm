@@ -1,4 +1,4 @@
-﻿using Glowworm.Core;
+using Glowworm.Core;
 using Glowworm.Core.Gacha.Genshin;
 using Glowworm.Core.Gacha.StarRail;
 using Glowworm.Core.Gacha.ZZZ;
@@ -396,6 +396,24 @@ public class GachaNoUp
             Name = "??",
             NoUpTimes = [(new DateTime(2024, 7, 1), DateTime.MaxValue)],
         });
+        nap2.Items.Add(1071, new GachaNoUpItem
+        {
+            Id = 1071,
+            Name = "???",
+            NoUpTimes = [(new DateTime(2026, 7, 28, 18, 00, 00), DateTime.MaxValue)],
+        });
+        nap2.Items.Add(1221, new GachaNoUpItem
+        {
+            Id = 1221,
+            Name = "?",
+            NoUpTimes = [(new DateTime(2026, 7, 28, 18, 00, 00), DateTime.MaxValue)],
+        });
+        nap2.Items.Add(1241, new GachaNoUpItem
+        {
+            Id = 1241,
+            Name = "??",
+            NoUpTimes = [(new DateTime(2026, 7, 28, 18, 00, 00), DateTime.MaxValue)],
+        });
         Dictionary.Add("nap2", nap2);
         Dictionary.Add("nap102", nap2);
 
@@ -435,6 +453,24 @@ public class GachaNoUp
             Id = 14121,
             Name = "????",
             NoUpTimes = [(new DateTime(2024, 7, 1), DateTime.MaxValue)],
+        });
+        nap3.Items.Add(14107, new GachaNoUpItem
+        {
+            Id = 14107,
+            Name = "????",
+            NoUpTimes = [(new DateTime(2026, 7, 28, 18, 00, 00), DateTime.MaxValue)],
+        });
+        nap3.Items.Add(14122, new GachaNoUpItem
+        {
+            Id = 14122,
+            Name = "????",
+            NoUpTimes = [(new DateTime(2026, 7, 28, 18, 00, 00), DateTime.MaxValue)],
+        });
+        nap3.Items.Add(14124, new GachaNoUpItem
+        {
+            Id = 14124,
+            Name = "????",
+            NoUpTimes = [(new DateTime(2026, 7, 28, 18, 00, 00), DateTime.MaxValue)],
         });
         Dictionary.Add("nap3", nap3);
         Dictionary.Add("nap103", nap3);

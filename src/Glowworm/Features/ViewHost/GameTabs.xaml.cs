@@ -60,33 +60,38 @@ public sealed partial class GameTabs : UserControl
 
     private void InitializeGameList()
     {
+        var currentGame = AppConfig.CurrentGameBiz.ToGame().Value;
         GameList.Clear();
         GameList.Add(new GameTabItem 
         { 
             Game = GameBiz.hk4e, 
             Icon = "ms-appx:///Assets/icon_ys.ico",
             Regions = new List<GameBiz> { GameBiz.hk4e_cn, GameBiz.hk4e_global, GameBiz.hk4e_bilibili, GameBiz.hk4e_google, GameBiz.hk4e_epic, GameBiz.clgm_cn, GameBiz.clgm_global },
-            SelectedRegion = AppConfig.GetLastRegionOfGame(GameBiz.hk4e) != GameBiz.None ? AppConfig.GetLastRegionOfGame(GameBiz.hk4e) : GameBiz.hk4e_cn
+            SelectedRegion = AppConfig.GetLastRegionOfGame(GameBiz.hk4e) != GameBiz.None ? AppConfig.GetLastRegionOfGame(GameBiz.hk4e) : GameBiz.hk4e_cn,
+            IsSelected = currentGame == GameBiz.hk4e
         });
         GameList.Add(new GameTabItem 
         { 
             Game = GameBiz.hkrpg, 
             Icon = "ms-appx:///Assets/icon_sr.ico",
             Regions = new List<GameBiz> { GameBiz.hkrpg_cn, GameBiz.hkrpg_global, GameBiz.hkrpg_bilibili, GameBiz.hkrpg_epic, GameBiz.hkrpg_cloud_cn },
-            SelectedRegion = AppConfig.GetLastRegionOfGame(GameBiz.hkrpg) != GameBiz.None ? AppConfig.GetLastRegionOfGame(GameBiz.hkrpg) : GameBiz.hkrpg_cn
+            SelectedRegion = AppConfig.GetLastRegionOfGame(GameBiz.hkrpg) != GameBiz.None ? AppConfig.GetLastRegionOfGame(GameBiz.hkrpg) : GameBiz.hkrpg_cn,
+            IsSelected = currentGame == GameBiz.hkrpg
         });
         GameList.Add(new GameTabItem 
         { 
             Game = GameBiz.nap, 
             Icon = "ms-appx:///Assets/icon_zzz.ico",
             Regions = new List<GameBiz> { GameBiz.nap_cn, GameBiz.nap_global, GameBiz.nap_bilibili, GameBiz.nap_epic, GameBiz.nap_steam, GameBiz.nap_cloud_cn, GameBiz.nap_cloud_global },
-            SelectedRegion = AppConfig.GetLastRegionOfGame(GameBiz.nap) != GameBiz.None ? AppConfig.GetLastRegionOfGame(GameBiz.nap) : GameBiz.nap_cn
+            SelectedRegion = AppConfig.GetLastRegionOfGame(GameBiz.nap) != GameBiz.None ? AppConfig.GetLastRegionOfGame(GameBiz.nap) : GameBiz.nap_cn,
+            IsSelected = currentGame == GameBiz.nap
         });
     }
 
     private void OnCurrentGameChanged(GameBiz newBiz)
     {
-        // Update selected region names for all items when current game changes
+        var newGame = newBiz.ToGame().Value;
+        // Update selected region names and selection indicator for all items when current game changes
         foreach (var item in GameList)
         {
             var last = AppConfig.GetLastRegionOfGame(item.Game);
@@ -94,6 +99,7 @@ public sealed partial class GameTabs : UserControl
             {
                 item.SelectedRegion = last;
             }
+            item.IsSelected = item.Game == newGame;
         }
         this.Bindings.Update();
     }
@@ -193,6 +199,7 @@ public class GameTabItem : INotifyPropertyChanged
     public event PropertyChangedEventHandler? PropertyChanged;
 
     private GameBiz _selectedRegion;
+    private bool _isSelected;
 
     public string Name => new GameBiz(Game).ToGameName();
     public string Game { get; set; }
@@ -209,6 +216,19 @@ public class GameTabItem : INotifyPropertyChanged
                 _selectedRegion = value;
                 OnPropertyChanged(nameof(SelectedRegion));
                 OnPropertyChanged(nameof(SelectedRegionName));
+            }
+        }
+    }
+
+    public bool IsSelected
+    {
+        get => _isSelected;
+        set
+        {
+            if (_isSelected != value)
+            {
+                _isSelected = value;
+                OnPropertyChanged(nameof(IsSelected));
             }
         }
     }

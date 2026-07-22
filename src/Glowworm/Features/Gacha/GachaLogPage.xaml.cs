@@ -867,7 +867,7 @@ public sealed partial class GachaLogPage : PageBase
     {
         try
         {
-            var installPath = (string?)null; // GameLauncherService.GetGameInstallPath(CurrentGameId);
+            var installPath = AppConfig.GetGameInstallPathRemovable(CurrentGameBiz) ?? GameRegistryHelper.GetGameInstallPath(CurrentGameBiz);
             if (Directory.Exists(installPath))
             {
                 var path = GachaLogClient.GetGachaCacheFilePath(CurrentGameBiz, installPath);

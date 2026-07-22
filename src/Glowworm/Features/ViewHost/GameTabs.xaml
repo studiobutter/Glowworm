@@ -17,30 +17,38 @@
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate x:DataType="local:GameTabItem">
-                        <Button Click="Button_GameTab_Click" 
-                                Padding="12,0,8,0" 
-                                Height="32" 
-                                VerticalAlignment="Center"
-                                HorizontalAlignment="Left"
-                                HorizontalContentAlignment="Left"
-                                Style="{ThemeResource DefaultButtonStyle}">
-                            <StackPanel Orientation="Horizontal" Spacing="12">
-                                <Image Source="{x:Bind Icon}" Width="16" Height="16"/>
-                                <TextBlock Text="{x:Bind SelectedRegionName, Mode=OneWay}" VerticalAlignment="Center"/>
-                                <DropDownButton x:Name="Button_SwitchRegion" 
-                                                Width="24" 
-                                                Height="24" 
-                                                Padding="-8,0,6,0" 
-                                                BorderThickness="0"
-                                                Background="Transparent"
-                                                HorizontalAlignment="Left">
-                                    <DropDownButton.Flyout>
-                                        <MenuFlyout x:Name="MenuFlyout_Regions" Placement="Bottom" Opening="MenuFlyout_Regions_Opening">
-                                        </MenuFlyout>
-                                    </DropDownButton.Flyout>
-                                </DropDownButton>
-                            </StackPanel>
-                        </Button>
+                        <StackPanel Orientation="Vertical" Spacing="0" VerticalAlignment="Center">
+                            <Button Click="Button_GameTab_Click" 
+                                    Padding="12,0,8,0" 
+                                    Height="32" 
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Left"
+                                    HorizontalContentAlignment="Left"
+                                    Style="{ThemeResource DefaultButtonStyle}">
+                                <StackPanel Orientation="Horizontal" Spacing="12">
+                                    <Image Source="{x:Bind Icon}" Width="16" Height="16"/>
+                                    <TextBlock Text="{x:Bind SelectedRegionName, Mode=OneWay}" VerticalAlignment="Center"/>
+                                    <DropDownButton x:Name="Button_SwitchRegion" 
+                                                    Width="24" 
+                                                    Height="24" 
+                                                    Padding="-8,0,6,0" 
+                                                    BorderThickness="0"
+                                                    Background="Transparent"
+                                                    HorizontalAlignment="Left">
+                                        <DropDownButton.Flyout>
+                                            <MenuFlyout x:Name="MenuFlyout_Regions" Placement="Bottom" Opening="MenuFlyout_Regions_Opening">
+                                            </MenuFlyout>
+                                        </DropDownButton.Flyout>
+                                    </DropDownButton>
+                                </StackPanel>
+                            </Button>
+                            <Border Height="2" 
+                                    Margin="8,2,8,0" 
+                                    CornerRadius="1"
+                                    Background="{ThemeResource AccentFillColorDefaultBrush}"
+                                    Visibility="{x:Bind IsSelected, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}"
+                                    Opacity="0.9"/>
+                        </StackPanel>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
