@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -170,6 +170,9 @@
   </data>
   <data name="GameServer_GPlay" xml:space="preserve">
     <value>Google Play 遊戲</value>
+  </data>
+  <data name="GameServer_Xbox" xml:space="preserve">
+    <value>Xbox</value>
   </data>
   <data name="GachaType_ChronicledWish" xml:space="preserve">
     <value>集錄祈願</value>

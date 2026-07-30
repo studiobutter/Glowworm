@@ -8,7 +8,15 @@ public static class GameRegistryHelper
 
     public static string? GetGameInstallPath(GameBiz biz)
     {
-        string? path = GetGameInstallPathFromRegistry(biz);
+        string? path;
+        if (biz.Value == GameBiz.nap_xbox)
+        {
+            path = XboxGameDetector.GetZZZXboxInstallPath();
+        }
+        else
+        {
+            path = GetGameInstallPathFromRegistry(biz);
+        }
         if (string.IsNullOrWhiteSpace(path) || !Directory.Exists(path))
         {
             return null;

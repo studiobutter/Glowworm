@@ -52,6 +52,7 @@ public record struct GameBiz
     public const string nap_cloud = "nap_cloud";
     public const string nap_cloud_cn = "nap_cloud_cn";
     public const string nap_cloud_global = "nap_cloud_global";
+    public const string nap_xbox = "nap_xbox";
 
 
     public const string None = "";
@@ -82,6 +83,7 @@ public record struct GameBiz
         nap_cloud,
         nap_cloud_cn,
         nap_cloud_global,
+        nap_xbox,
     }.AsReadOnly();
 
 
@@ -107,7 +109,7 @@ public record struct GameBiz
         hk4e_cn or hk4e_global or hk4e_bilibili or hk4e_google or hk4e_epic => true,
         clgm_cn or clgm_global => true,
         hkrpg_cn or hkrpg_global or hkrpg_bilibili or hkrpg_epic or hkrpg_cloud or hkrpg_cloud_cn or hkrpg_cloud_global => true,
-        nap_cn or nap_global or nap_bilibili or nap_epic or nap_steam or nap_cloud or nap_cloud_cn or nap_cloud_global => true,
+        nap_cn or nap_global or nap_bilibili or nap_epic or nap_steam or nap_xbox or nap_cloud or nap_cloud_cn or nap_cloud_global => true,
         _ => false,
     };
 
@@ -115,7 +117,7 @@ public record struct GameBiz
     public bool IsChinaServer() => Server is "cn" || Value is clgm_cn or nap_cloud_cn or hkrpg_cloud_cn;
 
 
-    public bool IsGlobalServer() => Server is "global" or "google" or "epic" or "steam" || Value is clgm_global or nap_cloud_global or hkrpg_cloud_global;
+    public bool IsGlobalServer() => Server is "global" or "google" or "epic" or "steam" or "xbox" || Value is clgm_global or nap_cloud_global or hkrpg_cloud_global;
 
 
     public bool IsBilibili() => Server is "bilibili";
@@ -155,6 +157,7 @@ public record struct GameBiz
             "epic" => CoreLang.GameServer_Epic,
             "cloud" => CoreLang.GameServer_Cloud,
             "steam" => CoreLang.GameServer_Steam,
+            "xbox" => CoreLang.GameServer_Xbox,
             _ => "",
         }
     };
@@ -169,6 +172,7 @@ public record struct GameBiz
         hkrpg_global or hkrpg_epic => GameRegistry.GamePath_hkrpg_global,
         nap_cn or nap_bilibili => GameRegistry.GamePath_nap_cn,
         nap_global or nap_epic or nap_steam => GameRegistry.GamePath_nap_global,
+        nap_xbox => "HKEY_CURRENT_USER",  // No registry — uses .GamingRoot detection
         _ => "HKEY_CURRENT_USER",
     };
 

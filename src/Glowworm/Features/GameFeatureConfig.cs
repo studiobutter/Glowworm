@@ -1,4 +1,4 @@
-﻿using Glowworm.Core;
+using Glowworm.Core;
 using Glowworm.Features.Gacha;
 using Glowworm.Features.Screenshot;
 using System.Collections.Generic;
@@ -58,6 +58,7 @@ internal partial class GameFeatureConfig
             GameBiz.hkrpg_bilibili => hkrpg_bilibili,
             GameBiz.nap_cn => nap_cn,
             GameBiz.nap_global or GameBiz.nap_epic or GameBiz.nap_steam => nap_global,
+            GameBiz.nap_xbox => nap_xbox,
             GameBiz.nap_bilibili => nap_bilibili,
             _ => Default,
         };
@@ -173,6 +174,16 @@ internal partial class GameFeatureConfig
         ],
     };
 
+
+
+    private static readonly GameFeatureConfig nap_xbox = new()
+    {
+        SupportedPages =
+        [
+            nameof(ScreenshotPage),
+            nameof(GachaLogPage),
+        ],
+    };
 
 
 }
