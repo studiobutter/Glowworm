@@ -998,7 +998,7 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Clear URL Cache Files.
+        ///   Looks up a localized string similar to Clear Cache Folder.
         /// </summary>
         public static string GachaLogPage_ClearURLCacheFiles {
             get {
@@ -1156,6 +1156,15 @@ namespace Glowworm.Language {
         public static string GachaLogPage_PleaseOpenTheGachaRecordsPageInGameAndTryAgain {
             get {
                 return ResourceManager.GetString("GachaLogPage_PleaseOpenTheGachaRecordsPageInGameAndTryAgain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restart game after deleting the Cache Folder.
+        /// </summary>
+        public static string GachaLogPage_RestartAfterClearCache {
+            get {
+                return ResourceManager.GetString("GachaLogPage_RestartAfterClearCache", resourceCulture);
             }
         }
         

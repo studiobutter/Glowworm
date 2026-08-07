@@ -43,7 +43,10 @@ public sealed partial class GachaLogPage : PageBase
         this.InitializeComponent();
     }
 
-
+    public Visibility InverseCloudGameVisibility(GameBiz gameBiz)
+    {
+        return gameBiz.IsCloudGame() ? Visibility.Collapsed : Visibility.Visible;
+    }
 
     protected override void OnNavigatedTo(NavigationEventArgs e)
     {
@@ -870,15 +873,15 @@ public sealed partial class GachaLogPage : PageBase
             var installPath = AppConfig.GetGameInstallPathRemovable(CurrentGameBiz) ?? GameRegistryHelper.GetGameInstallPath(CurrentGameBiz);
             if (Directory.Exists(installPath))
             {
-                var path = GachaLogClient.GetGachaCacheFilePath(CurrentGameBiz, installPath);
-                if (File.Exists(path))
+                var webCachesDir = GachaLogClient.GetWebCachesDirectory(CurrentGameBiz, installPath);
+                if (Directory.Exists(webCachesDir))
                 {
-                    var file = await StorageFile.GetFileFromPathAsync(path);
-                    if (file != null)
+                    var folder = await StorageFolder.GetFolderFromPathAsync(webCachesDir);
+                    if (folder != null)
                     {
                         var option = new FolderLauncherOptions();
-                        option.ItemsToSelect.Add(file);
-                        await Launcher.LaunchFolderAsync(await file.GetParentAsync(), option);
+                        option.ItemsToSelect.Add(folder);
+                        await Launcher.LaunchFolderAsync(await folder.GetParentAsync(), option);
                     }
                 }
             }

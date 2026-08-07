@@ -178,6 +178,17 @@ public class GenshinBeyondGachaClient
 
 
 
+    public static string GetWebCachesDirectory(GameBiz gameBiz, string? installPath)
+    {
+        string prefix = gameBiz.Value switch
+        {
+            GameBiz.hk4e_cn or GameBiz.hk4e_bilibili => @"YuanShen_Data\webCaches",
+            GameBiz.hk4e_global or GameBiz.hk4e_google or GameBiz.hk4e_epic => @"GenshinImpact_Data\webCaches",
+            _ => throw new ArgumentOutOfRangeException($"Unknown region {gameBiz}"),
+        };
+        return Path.Join(installPath, prefix);
+    }
+
     public static string GetGachaCacheFilePath(GameBiz gameBiz, string? installPath)
     {
         string file = gameBiz.Value switch
@@ -191,13 +202,7 @@ public class GenshinBeyondGachaClient
         {
             lastWriteTime = File.GetLastWriteTime(file);
         }
-        string prefix = gameBiz.Value switch
-        {
-            GameBiz.hk4e_cn or GameBiz.hk4e_bilibili => @"YuanShen_Data\webCaches",
-            GameBiz.hk4e_global or GameBiz.hk4e_google or GameBiz.hk4e_epic => @"GenshinImpact_Data\webCaches",
-            _ => throw new ArgumentOutOfRangeException($"Unknown region {gameBiz}"),
-        };
-        string webCache = Path.Join(installPath, prefix);
+        string webCache = GetWebCachesDirectory(gameBiz, installPath);
         if (Directory.Exists(webCache))
         {
             foreach (var item in Directory.GetDirectories(webCache))
