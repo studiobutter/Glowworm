@@ -23,7 +23,7 @@
                    VerticalAlignment="Center"
                    Foreground="{ThemeResource TextFillColorSecondaryBrush}">
             <Run Text="Gacha Records Import / Export" />
-            <Run Text="(UIGF v4.0)" />
+            <Run Text="(UIGF v4.2a)" />
         </TextBlock>
 
 
