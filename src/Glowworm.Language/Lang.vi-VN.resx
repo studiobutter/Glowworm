@@ -160,7 +160,7 @@
     <value>Khóa xác thục hết hạn luôn xẩy ra?</value>
   </data>
   <data name="GachaLogPage_ClearURLCacheFiles" xml:space="preserve">
-    <value>Dọn tập tin URL rác</value>
+    <value>Clear Cache Folder</value>
   </data>
   <data name="GachaLogPage_ExportAs" xml:space="preserve">
     <value>Xuất dưới dạng</value>
@@ -1004,5 +1004,8 @@
   </data>
   <data name="FileSettingPage_RefreshNetDir" xml:space="preserve">
     <value>Refresh Network Folder</value>
+  </data>
+  <data name="GachaLogPage_RestartAfterClearCache" xml:space="preserve">
+    <value>Restart game after deleting the Cache Folder</value>
   </data>
 </root>
