@@ -178,6 +178,11 @@ public sealed partial class GenshinBeyondGachaPage : PageBase
 
 
 
+    public Visibility InverseCloudGameVisibility(GameBiz gameBiz)
+    {
+        return gameBiz.IsCloudGame() ? Visibility.Collapsed : Visibility.Visible;
+    }
+
     [RelayCommand]
     private async Task UpdateGachaLogAsync(string? param = null)
     {
@@ -544,18 +549,18 @@ public sealed partial class GenshinBeyondGachaPage : PageBase
     {
         try
         {
-            var installPath = GameRegistryHelper.GetGameInstallPath(AppConfig.CurrentGameBiz);
+            var installPath = AppConfig.GetGameInstallPathRemovable(CurrentGameBiz) ?? GameRegistryHelper.GetGameInstallPath(CurrentGameBiz);
             if (Directory.Exists(installPath))
             {
-                var path = GenshinBeyondGachaClient.GetGachaCacheFilePath(CurrentGameBiz, installPath);
-                if (File.Exists(path))
+                var webCachesDir = GenshinBeyondGachaClient.GetWebCachesDirectory(CurrentGameBiz, installPath);
+                if (Directory.Exists(webCachesDir))
                 {
-                    var file = await StorageFile.GetFileFromPathAsync(path);
-                    if (file != null)
+                    var folder = await StorageFolder.GetFolderFromPathAsync(webCachesDir);
+                    if (folder != null)
                     {
                         var option = new FolderLauncherOptions();
-                        option.ItemsToSelect.Add(file);
-                        await Launcher.LaunchFolderAsync(await file.GetParentAsync(), option);
+                        option.ItemsToSelect.Add(folder);
+                        await Launcher.LaunchFolderAsync(await folder.GetParentAsync(), option);
                     }
                 }
             }

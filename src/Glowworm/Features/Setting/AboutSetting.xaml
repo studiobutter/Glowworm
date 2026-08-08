@@ -25,7 +25,11 @@
                        FontSize="24"
                        FontWeight="Bold"
                        Text="{x:Bind lang:Lang.Common_Glowworm}" />
-            <TextBlock Margin="0,4,0,0" Text="{x:Bind lang:Lang.AboutSettingPage_Description}" />
+            <TextBlock Margin="0,8,0,0" 
+                       TextWrapping="Wrap"
+                       HorizontalAlignment="Left"
+                       MaxWidth="800"
+                       Text="{x:Bind lang:Lang.AboutSettingPage_Description}" />
 
 
             <!--  ????  -->

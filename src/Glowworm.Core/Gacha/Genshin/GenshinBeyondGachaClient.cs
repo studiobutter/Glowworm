@@ -61,14 +61,14 @@ public class GenshinBeyondGachaClient
 
     protected async Task<List<GenshinBeyondGachaItem>> GetGachaLogByTypeAsync(string prefix, int gachaType, long endId = 0, IProgress<(int GachaType, int Page)>? progress = null, CancellationToken cancellationToken = default)
     {
-        var param = new BeyondGachaLogQuery(gachaType, 1, 20, 0);
+        var param = new BeyondGachaLogQuery(gachaType, 1, 5, 0);
         var result = new List<GenshinBeyondGachaItem>();
         while (true)
         {
             progress?.Report((gachaType, param.Page));
             var list = await GetGachaLogByQueryAsync(prefix, param, cancellationToken);
             result.AddRange(list);
-            if (list.Count == 20 && list.Last().Id > endId)
+            if (list.Count == 5 && list.Last().Id > endId)
             {
                 param.Page++;
                 param.EndId = list.Last().Id;

@@ -276,14 +276,14 @@ internal class GenshinBeyondGachaService
         stats.List_4.Insert(0, new GenshinBeyondGachaItemEx
         {
             OpGachaType = 1000,
-            ItemName = "",
+            ItemName = Lang.GachaStatsCard_Pity,
             Pity = stats.Pity_4,
             Time = list.Last().Time,
         });
         stats.List_3.Insert(0, new GenshinBeyondGachaItemEx
         {
             OpGachaType = 1000,
-            ItemName = "",
+            ItemName = Lang.GachaStatsCard_Pity,
             Pity = stats.Pity_3,
             Time = list.Last().Time,
         });
@@ -357,14 +357,14 @@ internal class GenshinBeyondGachaService
         stats.List_5.Insert(0, new GenshinBeyondGachaItemEx
         {
             OpGachaType = 2000,
-            ItemName = "",
+            ItemName = Lang.GachaStatsCard_Pity,
             Pity = stats.Pity_5,
             Time = list.Last().Time,
         });
         stats.List_4.Insert(0, new GenshinBeyondGachaItemEx
         {
             OpGachaType = 2000,
-            ItemName = "",
+            ItemName = Lang.GachaStatsCard_Pity,
             Pity = stats.Pity_4,
             Time = list.Last().Time,
         });

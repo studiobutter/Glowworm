@@ -124,16 +124,22 @@
                             </Button>
 
                             <!--  ???? Authkey Timeout  -->
-                            <TextBlock Margin="0,8,0,0"
-                                       Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                                       Text="{x:Bind lang:Lang.GachaLogPage_AuthkeyTimeoutAlwaysOccurs}" />
-                            <Button Command="{x:Bind DeleteGachaCacheFileCommand}">
-                                <StackPanel Orientation="Horizontal" Spacing="8">
-                                    <FontIcon FontSize="16" Glyph="&#xEA99;" />
-                                    <!--  ?? URL ????  -->
-                                    <TextBlock Text="{x:Bind lang:Lang.GachaLogPage_ClearURLCacheFiles}" />
-                                </StackPanel>
-                            </Button>
+                            <StackPanel Visibility="{x:Bind InverseCloudGameVisibility(CurrentGameBiz), Mode=OneWay}">
+                                <TextBlock Margin="0,8,0,4"
+                                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                           Text="{x:Bind lang:Lang.GachaLogPage_AuthkeyTimeoutAlwaysOccurs}" />
+                                <TextBlock Margin="0,0,0,8"
+                                           Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                           Text="{x:Bind lang:Lang.GachaLogPage_RestartAfterClearCache}"
+                                           FontSize="12" />
+                                <Button Command="{x:Bind DeleteGachaCacheFileCommand}">
+                                    <StackPanel Orientation="Horizontal" Spacing="8">
+                                        <FontIcon FontSize="16" Glyph="&#xEA99;" />
+                                        <!--  ?? URL ????  -->
+                                        <TextBlock Text="{x:Bind lang:Lang.GachaLogPage_ClearURLCacheFiles}" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
 
                             <!--  ??  -->
                             <StackPanel Margin="0,4,0,0"
