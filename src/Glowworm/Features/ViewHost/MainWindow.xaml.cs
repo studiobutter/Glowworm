@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
@@ -77,7 +77,20 @@ public sealed partial class MainWindow : WindowEx
         POINT point;
         GetCursorPos(out point);
         DisplayArea display = DisplayArea.GetFromPoint(new PointInt32(point.X, point.Y), DisplayAreaFallback.Nearest);
+
+        // After a hibernation/resolution change the cursor position may be outside the new
+        // monitor layout. Fall back to the primary display when the resolved area looks invalid.
+        if (display.WorkArea.Width <= 0 || display.WorkArea.Height <= 0)
+        {
+            display = DisplayArea.Primary;
+        }
+
         double scale = UIScale;
+        // Guard against an unusable DPI value (e.g. window not yet fully initialised on resume).
+        if (scale <= 0)
+        {
+            scale = 1.0;
+        }
         int w = (int)((width * scale) ?? AppWindow.Size.Width);
         int h = (int)((height * scale) ?? AppWindow.Size.Height);
         int x = display.WorkArea.X + (display.WorkArea.Width - w) / 2;
@@ -89,10 +102,15 @@ public sealed partial class MainWindow : WindowEx
 
     public override void Show()
     {
-        double uiScale = UIScale;
-        if (Math.Abs(AppWindow.Size.Width - 1200 * uiScale) > 10 || Math.Abs(AppWindow.Size.Height - 676 * uiScale) > 10)
+        try
         {
+            // After hibernation/resume, monitor configuration (resolution, DPI) may have changed.
+            // Always reposition to avoid stale size/position values computed at the old DPI.
             CenterInScreen(1200, 676);
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"CenterInScreen failed: {ex.Message}");
         }
         base.Show();
     }
@@ -184,6 +202,19 @@ public sealed partial class MainWindow : WindowEx
                 SetIcon();
             }
         }
+        else if (uMsg == 0x02E0) // WM_DPICHANGED
+        {
+            // Update drag rect to match new DPI so the title bar remains draggable.
+            // UIScale re-reads GetDpiForWindow which is already updated at this point.
+            try
+            {
+                SetDragRectangles(new RectInt32(0, 0, 100000, (int)(48 * UIScale)));
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"WM_DPICHANGED drag rect update failed: {ex.Message}");
+            }
+        }
         else if (uMsg == (uint)User32.WindowMessage.WM_DEVICECHANGE)
         {
             // ??????/??
@@ -250,6 +281,12 @@ public sealed partial class MainWindow : WindowEx
                 // ??
                 ScreenCaptureService.Capture();
             }
+        }
+        // "TaskbarCreated" is broadcast by the shell whenever Explorer (re)starts.
+        // We must re-add the tray icon because Explorer wipes all notification area icons on crash.
+        else if (uMsg != 0 && App.Current is App app && uMsg == app.TaskbarCreatedMessage)
+        {
+            app.RespawnTrayIcon();
         }
         return base.WindowSubclassProc(hWnd, uMsg, wParam, lParam, uIdSubclass, dwRefData);
     }

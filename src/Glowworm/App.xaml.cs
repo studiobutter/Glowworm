@@ -31,6 +31,9 @@ public partial class App : Application
     private const uint TrayIconId = 1;
     private const uint TrayIconCallbackMessage = (uint)User32.WindowMessage.WM_APP + 1u;
 
+    // Registered at runtime — value differs per Windows session
+    private uint _taskbarCreatedMessage;
+
     public bool IsExiting => _isExiting;
 
     public static new App Current => (App)Application.Current;
@@ -170,6 +173,12 @@ public partial class App : Application
                 }
                 nid.uTimeoutOrVersion = 4;
                 Shell_NotifyIcon(NIM_SETVERSION, ref nid);
+
+                // Register for "TaskbarCreated" so we can re-add the icon when Explorer restarts
+                if (_taskbarCreatedMessage == 0)
+                {
+                    _taskbarCreatedMessage = RegisterWindowMessage("TaskbarCreated");
+                }
             }
             catch (Exception ex)
             {
@@ -190,6 +199,25 @@ public partial class App : Application
         m_MainWindow ??= new MainWindow();
         m_MainWindow.Activate();
         m_MainWindow.Show();
+    }
+
+
+    public uint TaskbarCreatedMessage => _taskbarCreatedMessage;
+
+
+    /// <summary>
+    /// Called when the shell broadcasts "TaskbarCreated" (i.e., Explorer crashed and restarted).
+    /// Forces a full NIM_ADD so the icon reappears without duplicates.
+    /// </summary>
+    public void RespawnTrayIcon()
+    {
+        if (!AppConfig.RunInSystemTray || m_MainWindow is null)
+        {
+            return;
+        }
+        // Mark as gone (Explorer wiped it) then re-add.
+        _trayIconAdded = false;
+        InitializeTrayIcon(m_MainWindow.WindowHandle);
     }
 
 
@@ -296,6 +324,9 @@ public partial class App : Application
     [DllImport("shell32.dll", SetLastError = true, CharSet = CharSet.Unicode, EntryPoint = "Shell_NotifyIconW")]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static extern bool Shell_NotifyIcon(uint dwMessage, ref NOTIFYICONDATA lpData);
+
+    [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Unicode, EntryPoint = "RegisterWindowMessageW")]
+    private static extern uint RegisterWindowMessage(string lpString);
 
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     private struct NOTIFYICONDATA
