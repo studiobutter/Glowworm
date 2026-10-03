@@ -1,4 +1,4 @@
-﻿using Dapper;
+using Dapper;
 using Microsoft.Extensions.Logging;
 using MiniExcelLibs;
 using Glowworm.Core;
@@ -212,11 +212,25 @@ internal class ZZZGachaService : GachaLogService
         using var dapper = DatabaseService.CreateConnection();
         var list = dapper.Query<ZZZGachaItem>($"SELECT * FROM {GachaTableName} WHERE Uid = @uid ORDER BY Id;", new { uid }).ToList();
         var uigfObj = new UIGF4File();
+        var uidStr = uid.ToString();
+        // ZZZ API always reports region_time_zone as 0, but times are in server-local time.
+        // Derive the correct UTC offset from the UID's server region prefix.
+        int timezone = uidStr.Length == 8
+            ? 8 // Mainland China
+            : uidStr[..2] switch
+            {
+                "10" => -4, // America
+                "13" => 8,  // Asia
+                "15" => 1,  // Europe
+                "17" => 8,  // CHT (TW, HK, MO)
+                _ => 8,     // Fallback
+            };
         var archive = new UIGF4GachaArchive<ZZZGachaItem>
         {
             Uid = uid,
             List = list,
             Lang = list.LastOrDefault()?.Lang ?? "",
+            Timezone = timezone,
         };
         uigfObj.napGachaArchives = new List<UIGF4GachaArchive<ZZZGachaItem>> { archive };
         

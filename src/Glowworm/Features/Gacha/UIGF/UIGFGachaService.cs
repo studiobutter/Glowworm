@@ -1,4 +1,4 @@
-﻿using Dapper;
+using Dapper;
 using Microsoft.Extensions.Logging;
 using Glowworm.Core;
 using Glowworm.Core.Gacha;
@@ -28,6 +28,33 @@ internal class UIGFGachaService
     }
 
 
+
+
+    /// <summary>
+    /// Returns the correct UTC offset (in hours) for a ZZZ UID's server region.
+    /// ZZZ reports region_time_zone as 0 in the API and UIGF exports, but times are
+    /// actually in server-local time. The correct offsets are:
+    ///   CN (8-digit UID): +8 | America (10xxxxxxxx): -4 | Asia (13xxxxxxxx): +8
+    ///   EU (15xxxxxxxx): +1  | CHT/TW/HK/MO (17xxxxxxxx): +8
+    /// </summary>
+    private static int GetZZZTimezone(long uid)
+    {
+        var uidStr = uid.ToString();
+        // Mainland China: 8-digit UID
+        if (uidStr.Length == 8)
+        {
+            return 8;
+        }
+        // Global servers identified by the first two digits
+        return uidStr[..2] switch
+        {
+            "10" => -4,  // America
+            "13" => 8,   // Asia
+            "15" => 1,   // Europe
+            "17" => 8,   // CHT (TW, HK, MO)
+            _ => 8,      // Fallback to UTC+8
+        };
+    }
 
 
     #region Export
@@ -254,6 +281,9 @@ internal class UIGFGachaService
             Uid = uid,
             List = list.ToList(),
             Lang = list.LastOrDefault()?.Lang ?? "",
+            // ZZZ API always reports region_time_zone as 0, but times are in server-local time.
+            // Derive the correct UTC offset from the UID's server region prefix.
+            Timezone = GetZZZTimezone(uid),
         };
         return archive;
     }
@@ -337,6 +367,9 @@ internal class UIGFGachaService
                     LastItemName = last.Name,
                     LastItemTime = last.Time,
                     LastItemTimeOffest = last.Time,
+                    // ZZZ times in list[] are already in server-local time — no offset is needed.
+                    // Timezone stays 0 so that ImportForZZZ's AddHours(0) is a no-op.
+                    Timezone = 0,
                 };
                 list.Add(archive);
             }
@@ -435,7 +468,7 @@ internal class UIGFGachaService
             {
                 throw new UIGF4ImportException(archive.Game, archive.Uid, string.Format(Lang.UIGFGachaService_UidMismatchDetectedExpected0ButFound1, archive.Uid, clone.Uid));
             }
-            clone.Time = item.Time.AddHours(archive.Timezone);
+            // Time is already in server-local time — no offset calculation.
             list.Add(clone);
         }
         using var dapper = DatabaseService.CreateConnection();
@@ -491,7 +524,7 @@ internal class UIGFGachaService
             {
                 throw new UIGF4ImportException(archive.Game, archive.Uid, string.Format(Lang.UIGFGachaService_UidMismatchDetectedExpected0ButFound1, archive.Uid, clone.Uid));
             }
-            clone.Time = item.Time.AddHours(archive.Timezone);
+            // Time is already in server-local time — no offset calculation.
             list.Add(clone);
         }
         using var dapper = DatabaseService.CreateConnection();
@@ -551,7 +584,7 @@ internal class UIGFGachaService
             {
                 throw new UIGF4ImportException(archive.Game, archive.Uid, string.Format(Lang.UIGFGachaService_UidMismatchDetectedExpected0ButFound1, archive.Uid, clone.Uid));
             }
-            clone.Time = item.Time.AddHours(archive.Timezone);
+            // Time is already in server-local time — no offset calculation.
             list.Add(clone);
         }
         using var dapper = DatabaseService.CreateConnection();
@@ -607,7 +640,7 @@ internal class UIGFGachaService
             {
                 throw new UIGF4ImportException(archive.Game, archive.Uid, string.Format(Lang.UIGFGachaService_UidMismatchDetectedExpected0ButFound1, archive.Uid, clone.Uid));
             }
-            clone.Time = item.Time.AddHours(archive.Timezone);
+            // Time is already in server-local time — no offset calculation.
             list.Add(clone);
         }
         using var dapper = DatabaseService.CreateConnection();

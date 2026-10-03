@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using Glowworm.Core;
 using Glowworm.Core.Gacha.Genshin;
 using Glowworm.Core.Gacha.StarRail;
@@ -36,16 +36,7 @@ public class GachaUidArchiveDisplay : ObservableObject
     public List<ZZZGachaItem>? napList { get; set; }
 
 
-    public int Timezone
-    {
-        get; set
-        {
-            if (SetProperty(ref field, value))
-            {
-                LastItemTimeOffest = LastItemTime.AddHours(value);
-            }
-        }
-    }
+    public int Timezone { get; set => SetProperty(ref field, value); }
 
 
     public DateTime LastItemTimeOffest { get; set => SetProperty(ref field, value); }
