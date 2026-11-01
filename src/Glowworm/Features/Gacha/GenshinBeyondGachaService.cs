@@ -409,9 +409,9 @@ internal class GenshinBeyondGachaService
 
 
 
-    public async Task UpdateGachaInfoAsync(string? lang = null, CancellationToken cancellationToken = default)
+    public async Task UpdateGachaInfoAsync(GameBiz gameBiz, string? lang = null, CancellationToken cancellationToken = default)
     {
-        var data = await _client.GetGenshinBeyondGachaInfoAsync(lang, cancellationToken);
+        var data = await _client.GetGenshinBeyondGachaInfoAsync(gameBiz, lang, cancellationToken);
         using var dapper = DatabaseService.CreateConnection();
         using var t = dapper.BeginTransaction();
         const string insertSql = """INSERT OR REPLACE INTO GenshinBeyondGachaInfo (Id, Name, Rank, Icon) VALUES (@Id, @Name, @Rank, @Icon);""";
@@ -421,9 +421,9 @@ internal class GenshinBeyondGachaService
 
 
 
-    public virtual async Task<(string Language, int Count)> ChangeGachaItemNameAsync(string lang, CancellationToken cancellationToken = default)
+    public virtual async Task<(string Language, int Count)> ChangeGachaItemNameAsync(GameBiz gameBiz, string lang, CancellationToken cancellationToken = default)
     {
-        await UpdateGachaInfoAsync(lang, cancellationToken);
+        await UpdateGachaInfoAsync(gameBiz, lang, cancellationToken);
         using var dapper = DatabaseService.CreateConnection();
         int count = dapper.Execute("""
             INSERT OR REPLACE INTO GenshinBeyondGachaItem(Uid, Id, Region, OpGachaType, ScheduleId, ItemType, ItemId, ItemName, RankType, IsUp, Time)
@@ -584,6 +584,5 @@ public partial class GenshinBeyondGachaPityProgressBackgroundBrushConverter : IV
         throw new NotImplementedException();
     }
 }
-
 
 

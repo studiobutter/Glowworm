@@ -168,7 +168,7 @@ public sealed partial class GenshinBeyondGachaPage : PageBase
     {
         try
         {
-            await _gachaLogService.UpdateGachaInfoAsync();
+            await _gachaLogService.UpdateGachaInfoAsync(CurrentGameBiz);
         }
         catch (Exception ex)
         {
@@ -391,12 +391,17 @@ public sealed partial class GenshinBeyondGachaPage : PageBase
         get;
         set
         {
-            if (SetProperty(ref field, value))
+            var normalizedLanguage = string.IsNullOrWhiteSpace(value)
+                ? value
+                : GenshinBeyondGachaClient.GetMetadataLanguageCode(value);
+            if (SetProperty(ref field, normalizedLanguage))
             {
-                AppConfig.GachaLanguage = value;
+                AppConfig.GachaLanguage = normalizedLanguage;
             }
         }
-    } = AppConfig.GachaLanguage;
+    } = string.IsNullOrWhiteSpace(AppConfig.GachaLanguage)
+        ? AppConfig.GachaLanguage
+        : GenshinBeyondGachaClient.GetMetadataLanguageCode(AppConfig.GachaLanguage);
 
 
 
@@ -432,7 +437,7 @@ public sealed partial class GenshinBeyondGachaPage : PageBase
         try
         {
             string lang = string.IsNullOrWhiteSpace(GachaLanguage) ? System.Globalization.CultureInfo.CurrentUICulture.Name : GachaLanguage;
-            (lang, int count) = await _gachaLogService.ChangeGachaItemNameAsync(lang);
+            (lang, int count) = await _gachaLogService.ChangeGachaItemNameAsync(CurrentGameBiz, lang);
             InAppToast.MainWindow?.Success(null, string.Format(Lang.GachaLogPage_0GachaItemsHaveBeenChangedToLanguage1, count, lang), 5000);
             UpdateGachaTypeStats(SelectUid);
         }

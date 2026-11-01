@@ -93,14 +93,14 @@ public class GenshinBeyondGachaClient
             gachaUrl = API_PREFIX_YS_CN + auth;
             if (!string.IsNullOrWhiteSpace(lang))
             {
-                gachaUrl = Regex.Replace(gachaUrl, @"&lang=[^&]+", $"&lang={LanguageUtil.FilterLanguage(lang)}");
+                gachaUrl = Regex.Replace(gachaUrl, @"&lang=[^&]+", $"&lang={LanguageUtil.FilterLanguage(GetGachaApiLanguage(lang))}");
             }
             else
             {
                 lang = Regex.Match(gachaUrl, @"&lang=([^&]+)").Groups[1].Value;
                 if (!string.IsNullOrWhiteSpace(lang))
                 {
-                    gachaUrl = Regex.Replace(gachaUrl, @"&lang=([^&]+)", $"&lang={LanguageUtil.FilterLanguage(lang)}");
+                    gachaUrl = Regex.Replace(gachaUrl, @"&lang=([^&]+)", $"&lang={LanguageUtil.FilterLanguage(GetGachaApiLanguage(lang))}");
                 }
             }
             return gachaUrl;
@@ -113,14 +113,14 @@ public class GenshinBeyondGachaClient
             gachaUrl = API_PREFIX_YS_OS + auth;
             if (!string.IsNullOrWhiteSpace(lang))
             {
-                gachaUrl = Regex.Replace(gachaUrl, @"&lang=[^&]+", $"&lang={LanguageUtil.FilterLanguage(lang)}");
+                gachaUrl = Regex.Replace(gachaUrl, @"&lang=[^&]+", $"&lang={LanguageUtil.FilterLanguage(GetGachaApiLanguage(lang))}");
             }
             else
             {
                 lang = Regex.Match(gachaUrl, @"&lang=([^&]+)").Groups[1].Value;
                 if (!string.IsNullOrWhiteSpace(lang))
                 {
-                    gachaUrl = Regex.Replace(gachaUrl, @"&lang=([^&]+)", $"&lang={LanguageUtil.FilterLanguage(lang)}");
+                    gachaUrl = Regex.Replace(gachaUrl, @"&lang=([^&]+)", $"&lang={LanguageUtil.FilterLanguage(GetGachaApiLanguage(lang))}");
                 }
             }
             return gachaUrl;
@@ -135,7 +135,7 @@ public class GenshinBeyondGachaClient
             gachaUrl = Regex.Replace(gachaUrl, @"&end_id=\d+", "");
             if (!string.IsNullOrWhiteSpace(lang))
             {
-                gachaUrl = Regex.Replace(gachaUrl, @"&lang=[^&]+", $"&lang={LanguageUtil.FilterLanguage(lang)}");
+                gachaUrl = Regex.Replace(gachaUrl, @"&lang=[^&]+", $"&lang={LanguageUtil.FilterLanguage(GetGachaApiLanguage(lang))}");
             }
             return gachaUrl;
         }
@@ -266,101 +266,92 @@ public class GenshinBeyondGachaClient
 
 
 
-    public async Task<List<GenshinBeyondGachaInfo>> GetGenshinBeyondGachaInfoAsync(string? lang = null, CancellationToken cancellationToken = default)
+    public async Task<List<GenshinBeyondGachaInfo>> GetGenshinBeyondGachaInfoAsync(GameBiz gameBiz, string? lang = null, CancellationToken cancellationToken = default)
     {
-        try
+        lang = GetMetadataLanguageCode(lang ?? System.Globalization.CultureInfo.CurrentUICulture.Name);
+        string metadataUrl = gameBiz.IsChinaServer() || gameBiz.IsBilibiliServer
+            ? $"https://raw.gitcode.com/JWJUN233233/Snap.Metadata/raw/main/Genshin/{lang}/BeyondItem.json"
+            : $"https://raw.githubusercontent.com/SnapHutaoRemasteringProject/Snap.Metadata/refs/heads/main/Genshin/{lang}/BeyondItem.json";
+
+        var metadata = await _httpClient.GetFromJsonAsync<List<BeyondItemMetadata>>(metadataUrl, cancellationToken);
+        if (metadata is null)
         {
-            lang = LanguageUtil.FilterLanguage(lang ?? System.Globalization.CultureInfo.CurrentUICulture.Name).ToLower();
-            string standardDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Glowworm", "beyond", "standard");
-            string limitedDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Glowworm", "beyond", "limited");
-            Directory.CreateDirectory(standardDir);
-            Directory.CreateDirectory(limitedDir);
-            string standardSavePath = Path.Combine(standardDir, $"{lang}.json");
-            string limitedSavePath = Path.Combine(limitedDir, $"{lang}.json");
+            throw new InvalidDataException("Beyond item metadata response was empty.");
+        }
 
-            var result = new List<GenshinBeyondGachaInfo>();
-            
-            try
+        var result = new List<GenshinBeyondGachaInfo>(metadata.Count);
+        foreach (var item in metadata)
+        {
+            if (item.Id <= 0 || string.IsNullOrWhiteSpace(item.Name))
             {
-                string standardUrl = $"https://ugc.studiobutter.io.vn/beyond/standard/{lang}.json";
-                string limitedUrl = $"https://ugc.studiobutter.io.vn/beyond/limited/{lang}.json";
-
-                var standard = await _httpClient.GetFromJsonAsync<System.Text.Json.Nodes.JsonObject>(standardUrl, cancellationToken);
-                var limited = await _httpClient.GetFromJsonAsync<System.Text.Json.Nodes.JsonObject>(limitedUrl, cancellationToken);
-
-                var standardResult = new List<GenshinBeyondGachaInfo>();
-                if (standard != null)
-                {
-                    foreach (var item in standard)
-                    {
-                        var info = new GenshinBeyondGachaInfo
-                        {
-                            Id = int.Parse(item.Key),
-                            Name = item.Value?["name"]?.ToString(),
-                            Rank = item.Value?["rank"]?.GetValue<int>() ?? 0,
-                            Icon = $"https://ugc.studiobutter.io.vn/assets/{item.Value?["icon"]?.ToString()}.png"
-                        };
-                        standardResult.Add(info);
-                        result.Add(info);
-                    }
-                    string standardJsonString = System.Text.Json.JsonSerializer.Serialize(standardResult);
-                    await File.WriteAllTextAsync(standardSavePath, standardJsonString, cancellationToken);
-                }
-
-                var limitedResult = new List<GenshinBeyondGachaInfo>();
-                if (limited != null)
-                {
-                    foreach (var item in limited)
-                    {
-                        var info = new GenshinBeyondGachaInfo
-                        {
-                            Id = int.Parse(item.Key),
-                            Name = item.Value?["name"]?.ToString(),
-                            Rank = item.Value?["rank"]?.GetValue<int>() ?? 0,
-                            Icon = $"https://ugc.studiobutter.io.vn/assets/{item.Value?["icon"]?.ToString()}.png"
-                        };
-                        limitedResult.Add(info);
-                        result.Add(info);
-                    }
-                    string limitedJsonString = System.Text.Json.JsonSerializer.Serialize(limitedResult);
-                    await File.WriteAllTextAsync(limitedSavePath, limitedJsonString, cancellationToken);
-                }
-            }
-            catch
-            {
-                // Fallback to local cache if download fails
-                if (File.Exists(standardSavePath))
-                {
-                    string standardJsonString = await File.ReadAllTextAsync(standardSavePath, cancellationToken);
-                    var cachedStandard = System.Text.Json.JsonSerializer.Deserialize<List<GenshinBeyondGachaInfo>>(standardJsonString);
-                    if (cachedStandard != null)
-                    {
-                        result.AddRange(cachedStandard);
-                    }
-                }
-                
-                if (File.Exists(limitedSavePath))
-                {
-                    string limitedJsonString = await File.ReadAllTextAsync(limitedSavePath, cancellationToken);
-                    var cachedLimited = System.Text.Json.JsonSerializer.Deserialize<List<GenshinBeyondGachaInfo>>(limitedJsonString);
-                    if (cachedLimited != null)
-                    {
-                        result.AddRange(cachedLimited);
-                    }
-                }
+                continue;
             }
 
-            return result;
+            result.Add(new GenshinBeyondGachaInfo
+            {
+                Id = item.Id,
+                Name = item.Name,
+                Rank = item.RankLevel,
+                Icon = string.IsNullOrWhiteSpace(item.Icon)
+                    ? string.Empty
+                    : $"https://static.nanoka.cc/assets/gi/{Uri.EscapeDataString(item.Icon)}.webp"
+            });
         }
-        catch
-        {
-            return new List<GenshinBeyondGachaInfo>();
-        }
+
+        return result;
     }
 
 
+    public static string GetMetadataLanguageCode(string? lang)
+    {
+        if (string.IsNullOrWhiteSpace(lang))
+        {
+            return "EN";
+        }
 
+        var parts = lang.Replace('_', '-').Split('-', 2, StringSplitOptions.RemoveEmptyEntries);
+        var languageCode = parts[0].ToUpperInvariant();
+        if (languageCode == "ZH")
+        {
+            var regionCode = parts.Length > 1 ? parts[1].ToUpperInvariant() : "";
+            return regionCode is "TW" or "HK" or "MO" or "HANT" ? "CHT" : "CHS";
+        }
+
+        return languageCode switch
+        {
+            "CHT" or "CHS" or "DE" or "EN" or "ES" or "FR" or "ID" or "IT" or "JP" or "KR" or "PT" or "RU" or "TH" or "TR" or "VI" => languageCode,
+            _ => "EN"
+        };
+    }
+
+
+    private static string GetGachaApiLanguage(string lang)
+    {
+        return GetMetadataLanguageCode(lang) switch
+        {
+            "CHT" => "zh-tw",
+            "CHS" => "zh-cn",
+            "EN" => "en-us",
+            "VI" => "vi-vn",
+            "JP" => "ja-jp",
+            "KR" => "ko-kr",
+            var languageCode => languageCode
+        };
+    }
+
+
+    private sealed class BeyondItemMetadata
+    {
+        public BeyondItemMetadata()
+        {
+        }
+
+        public int Id { get; set; }
+
+        public string? Name { get; set; }
+
+        public string? Icon { get; set; }
+
+        public int RankLevel { get; set; }
+    }
 }
-
-
-

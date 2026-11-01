@@ -1061,7 +1061,7 @@ namespace Glowworm.Language {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Specify the language of gacha records, such as en-us..
+        ///   Looks up a localized string similar to Specify the language of gacha records, such as en-us or en..
         /// </summary>
         public static string GachaLogPage_GachaLanguageDesc {
             get {

@@ -359,7 +359,7 @@
     <value>Release Page</value>
   </data>
   <data name="GachaLogPage_GachaLanguageDesc" xml:space="preserve">
-    <value>Specify the language of gacha records, such as en-us.</value>
+    <value>Specify the language of gacha records, such as en-us or en.</value>
     <comment>Replace en-us with the target language when translating</comment>
   </data>
   <data name="SettingPage_Language" xml:space="preserve">
