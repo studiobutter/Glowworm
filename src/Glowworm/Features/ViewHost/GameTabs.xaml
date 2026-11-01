@@ -7,64 +7,299 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d">
 
-    <Grid Height="48" Canvas.ZIndex="100">
-        <StackPanel Orientation="Horizontal" Spacing="8">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="GameTabActiveBackground" Color="#F9F9F9" />
+                    <SolidColorBrush x:Key="GameTabActiveBorder" Color="#0F000000" />
+                    <SolidColorBrush x:Key="GameTabInactiveHover" Color="#09000000" />
+                    <SolidColorBrush x:Key="GameTabInactivePressed" Color="#12000000" />
+                    <SolidColorBrush x:Key="GameTabBaseline" Color="#0F000000" />
+                    <SolidColorBrush x:Key="GameTabDivider" Color="#14000000" />
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="GameTabActiveBackground" Color="#2A2A2A" />
+                    <SolidColorBrush x:Key="GameTabActiveBorder" Color="#1FFFFFFF" />
+                    <SolidColorBrush x:Key="GameTabInactiveHover" Color="#0FFFFFFF" />
+                    <SolidColorBrush x:Key="GameTabInactivePressed" Color="#18FFFFFF" />
+                    <SolidColorBrush x:Key="GameTabBaseline" Color="#18FFFFFF" />
+                    <SolidColorBrush x:Key="GameTabDivider" Color="#18FFFFFF" />
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+
+            <!-- Tab Body Button Style (Left clickable portion of tab) -->
+            <Style x:Key="TabBodyButtonStyle" TargetType="Button">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Foreground" Value="{ThemeResource TextFillColorPrimaryBrush}" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="Padding" Value="8,0,4,0" />
+                <Setter Property="HorizontalAlignment" Value="Stretch" />
+                <Setter Property="VerticalAlignment" Value="Stretch" />
+                <Setter Property="HorizontalContentAlignment" Value="Left" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="CornerRadius" Value="7,0,0,0" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid x:Name="RootGrid" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
+                                <ContentPresenter x:Name="ContentPresenter"
+                                                  Content="{TemplateBinding Content}"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                  Padding="{TemplateBinding Padding}"
+                                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Inactive Tab Body Button Style -->
+            <Style x:Key="InactiveTabBodyButtonStyle" TargetType="Button">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Foreground" Value="{ThemeResource TextFillColorSecondaryBrush}" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="Padding" Value="8,0,4,0" />
+                <Setter Property="HorizontalAlignment" Value="Stretch" />
+                <Setter Property="VerticalAlignment" Value="Stretch" />
+                <Setter Property="HorizontalContentAlignment" Value="Left" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="CornerRadius" Value="7,0,0,0" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid x:Name="RootGrid" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
+                                <ContentPresenter x:Name="ContentPresenter"
+                                                  Content="{TemplateBinding Content}"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                  Padding="{TemplateBinding Padding}"
+                                                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Chevron / Dropdown Button Style -->
+            <Style x:Key="TabChevronButtonStyle" TargetType="Button">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Width" Value="24" />
+                <Setter Property="Height" Value="24" />
+                <Setter Property="CornerRadius" Value="4" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Margin" Value="0,0,4,0" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid x:Name="RootGrid" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal" />
+                                        <VisualState x:Name="PointerOver">
+                                            <VisualState.Setters>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource GameTabInactiveHover}" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource GameTabInactivePressed}" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled" />
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <ContentPresenter x:Name="ContentPresenter"
+                                                  Content="{TemplateBinding Content}"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                  HorizontalContentAlignment="Center"
+                                                  VerticalContentAlignment="Center" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Title Bar Utility Button Style (Refresh & Tips) -->
+            <Style x:Key="TitleBarUtilityButtonStyle" TargetType="Button">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="Width" Value="32" />
+                <Setter Property="Height" Value="32" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="CornerRadius" Value="4" />
+                <Setter Property="HorizontalAlignment" Value="Center" />
+                <Setter Property="VerticalAlignment" Value="Center" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid x:Name="RootGrid" Background="{TemplateBinding Background}" CornerRadius="{TemplateBinding CornerRadius}">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal" />
+                                        <VisualState x:Name="PointerOver">
+                                            <VisualState.Setters>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource GameTabInactiveHover}" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Target="RootGrid.Background" Value="{ThemeResource GameTabInactivePressed}" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled" />
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <ContentPresenter x:Name="ContentPresenter"
+                                                  Content="{TemplateBinding Content}"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                  HorizontalContentAlignment="Center"
+                                                  VerticalContentAlignment="Center" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Height="44" Canvas.ZIndex="100">
+        <!-- 1px Bottom Baseline running across the entire tab strip -->
+        <Border Height="1" VerticalAlignment="Bottom" Background="{ThemeResource GameTabBaseline}" Margin="10,0,10,0" />
+
+        <!-- Tabs aligned to bottom of the 48px title bar -->
+        <StackPanel x:Name="StackPanel_Tabs" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="12,0,0,0">
             <ItemsControl x:Name="ItemsControl_GameTabs" ItemsSource="{x:Bind GameList}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,0,0"/>
+                        <StackPanel Orientation="Horizontal" Spacing="0" />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate x:DataType="local:GameTabItem">
-                        <StackPanel Orientation="Vertical" Spacing="0" VerticalAlignment="Center">
-                            <Button Click="Button_GameTab_Click" 
-                                    Padding="12,0,8,0" 
-                                    Height="32" 
-                                    VerticalAlignment="Center"
-                                    HorizontalAlignment="Left"
-                                    HorizontalContentAlignment="Left"
-                                    Style="{ThemeResource DefaultButtonStyle}">
-                                <StackPanel Orientation="Horizontal" Spacing="12">
-                                    <Image Source="{x:Bind Icon}" Width="16" Height="16"/>
-                                    <TextBlock Text="{x:Bind SelectedRegionName, Mode=OneWay}" VerticalAlignment="Center"/>
-                                    <DropDownButton x:Name="Button_SwitchRegion" 
-                                                    Width="24" 
-                                                    Height="24" 
-                                                    Padding="-8,0,6,0" 
-                                                    BorderThickness="0"
-                                                    Background="Transparent"
-                                                    HorizontalAlignment="Left">
-                                        <DropDownButton.Flyout>
-                                            <MenuFlyout x:Name="MenuFlyout_Regions" Placement="Bottom" Opening="MenuFlyout_Regions_Opening">
-                                            </MenuFlyout>
-                                        </DropDownButton.Flyout>
-                                    </DropDownButton>
-                                </StackPanel>
-                            </Button>
-                            <Border Height="2" 
-                                    Margin="8,2,8,0" 
-                                    CornerRadius="1"
-                                    Background="{ThemeResource AccentFillColorDefaultBrush}"
-                                    Visibility="{x:Bind IsSelected, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}"
-                                    Opacity="0.9"/>
-                        </StackPanel>
+                        <Grid Width="200" Height="34" VerticalAlignment="Bottom">
+                            <!-- Right-click context flyout to switch server region -->
+                            <Grid.ContextFlyout>
+                                <MenuFlyout Opening="MenuFlyout_Regions_Opening" />
+                            </Grid.ContextFlyout>
+
+                            <!-- ACTIVE TAB -->
+                            <Border Visibility="{x:Bind IsSelected, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}"
+                                    Background="{ThemeResource GameTabActiveBackground}"
+                                    BorderBrush="{ThemeResource GameTabActiveBorder}"
+                                    BorderThickness="1,1,1,0"
+                                    CornerRadius="10,10,0,0"
+                                    Height="35"
+                                    Margin="0,0,0,0"
+                                    VerticalAlignment="Bottom"
+                                    Canvas.ZIndex="2">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Clickable Tab Body -->
+                                    <Button Grid.Column="0"
+                                            Click="Button_GameTab_Click"
+                                            Style="{StaticResource TabBodyButtonStyle}"
+                                            ToolTipService.ToolTip="{x:Bind Name}">
+                                        <StackPanel Orientation="Horizontal" Spacing="10">
+                                            <Image Source="{x:Bind Icon}" Width="16" Height="16" VerticalAlignment="Center" />
+                                            <TextBlock Text="{x:Bind SelectedRegionName, Mode=OneWay}"
+                                                       FontWeight="SemiBold"
+                                                       FontSize="13"
+                                                       Foreground="{ThemeResource TextFillColorPrimaryBrush}"
+                                                       VerticalAlignment="Center"
+                                                       TextTrimming="CharacterEllipsis" />
+                                        </StackPanel>
+                                    </Button>
+
+                                    <!-- Dropdown Chevron Button -->
+                                    <Button Grid.Column="1"
+                                            x:Name="Button_SwitchRegionActive"
+                                            Style="{StaticResource TabChevronButtonStyle}"
+                                            ToolTipService.ToolTip="{x:Bind SelectedRegionName, Mode=OneWay}">
+                                        <Button.Flyout>
+                                            <MenuFlyout Placement="Bottom" Opening="MenuFlyout_Regions_Opening" />
+                                        </Button.Flyout>
+                                        <FontIcon Glyph="&#xE70D;" FontSize="10" Foreground="{ThemeResource TextFillColorPrimaryBrush}" />
+                                    </Button>
+                                </Grid>
+                            </Border>
+
+                            <!-- INACTIVE TAB -->
+                            <Border Visibility="{x:Bind IsSelected, Mode=OneWay, Converter={StaticResource BoolToVisibilityReversedConverter}}"
+                                    Background="Transparent"
+                                    CornerRadius="7,7,0,0"
+                                    Height="34"
+                                    Margin="0,0,0,0"
+                                    VerticalAlignment="Bottom"
+                                    PointerEntered="Tab_PointerEntered"
+                                    PointerExited="Tab_PointerExited">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Inactive Tab Body -->
+                                    <Button Grid.Column="0"
+                                            Click="Button_GameTab_Click"
+                                            Style="{StaticResource InactiveTabBodyButtonStyle}"
+                                            ToolTipService.ToolTip="{x:Bind Name}">
+                                        <StackPanel Orientation="Horizontal" Spacing="8">
+                                            <Image Source="{x:Bind Icon}" Width="16" Height="16" VerticalAlignment="Center" Opacity="0.8" />
+                                            <TextBlock Text="{x:Bind SelectedRegionName, Mode=OneWay}"
+                                                       FontWeight="Normal"
+                                                       FontSize="13"
+                                                       Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                                       VerticalAlignment="Center"
+                                                       TextTrimming="CharacterEllipsis" />
+                                        </StackPanel>
+                                    </Button>
+
+                                    <!-- Inactive Dropdown Chevron Button -->
+                                    <Button Grid.Column="1"
+                                            x:Name="Button_SwitchRegionInactive"
+                                            Style="{StaticResource TabChevronButtonStyle}"
+                                            ToolTipService.ToolTip="{x:Bind SelectedRegionName, Mode=OneWay}">
+                                        <Button.Flyout>
+                                            <MenuFlyout Placement="Bottom" Opening="MenuFlyout_Regions_Opening" />
+                                        </Button.Flyout>
+                                        <FontIcon Glyph="&#xE70D;" FontSize="10" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                                    </Button>
+
+                                    <!-- Inactive Tab Divider (16px vertical line) -->
+                                    <Border Grid.Column="2"
+                                            Width="1"
+                                            Height="16"
+                                            VerticalAlignment="Center"
+                                            Background="{ThemeResource GameTabDivider}" />
+                                </Grid>
+                            </Border>
+                        </Grid>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </StackPanel>
 
-        <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,148,0">
+        <!-- Right Side Utility Controls (Refresh & Tips) -->
+        <StackPanel x:Name="StackPanel_RightControls" Orientation="Horizontal" Spacing="4" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,148,0">
             <Button Command="{x:Bind RescanGameDirectoriesCommand}"
                     ToolTipService.ToolTip="{x:Bind lang:Lang.Common_Refresh}"
-                    Background="Transparent"
-                    BorderThickness="0"
-                    Padding="8">
-                <FontIcon Glyph="&#xE72C;" FontSize="14" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                    Style="{StaticResource TitleBarUtilityButtonStyle}">
+                <FontIcon Glyph="&#xE72C;" FontSize="13" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
             </Button>
             
-            <Button Background="Transparent" BorderThickness="0" Padding="8">
-                <FontIcon Glyph="&#xE946;" FontSize="14" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+            <Button Style="{StaticResource TitleBarUtilityButtonStyle}"
+                    ToolTipService.ToolTip="{x:Bind lang:Lang.MainPage_Tips}">
+                <FontIcon Glyph="&#xE946;" FontSize="13" Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
                 <Button.Flyout>
                     <Flyout Placement="Bottom">
                         <StackPanel Spacing="4" MaxWidth="280" Padding="6">

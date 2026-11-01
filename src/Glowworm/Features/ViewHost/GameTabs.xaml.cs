@@ -20,13 +20,22 @@ public sealed partial class GameTabs : UserControl
 {
     public ObservableCollection<GameTabItem> GameList { get; } = new();
 
+    public FrameworkElement? TabsContainer => StackPanel_Tabs;
+    public FrameworkElement? RightControlsContainer => StackPanel_RightControls;
+
     public GameTabs()
     {
         this.InitializeComponent();
         InitializeGameList();
+        this.Loaded += (_, _) => MainWindow.Current?.UpdateTitleBarDragRectangles();
+        this.SizeChanged += (_, _) => MainWindow.Current?.UpdateTitleBarDragRectangles();
+
         WeakReferenceMessenger.Default.Register<LanguageChangedMessage>(this, (_, _) =>
         {
             InitializeGameList();
+        this.Loaded += (_, _) => MainWindow.Current?.UpdateTitleBarDragRectangles();
+        this.SizeChanged += (_, _) => MainWindow.Current?.UpdateTitleBarDragRectangles();
+
             this.Bindings.Update();
         });
         WeakReferenceMessenger.Default.Register<GameChangedMessage>(this, (_, msg) =>
@@ -125,6 +134,25 @@ public sealed partial class GameTabs : UserControl
                     SwitchToGame(item.Regions.First());
                 }
             }
+        }
+    }
+
+    private void Tab_PointerEntered(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
+    {
+        if (sender is Border border)
+        {
+            if (Resources.TryGetValue("GameTabInactiveHover", out var brush) && brush is Microsoft.UI.Xaml.Media.Brush b)
+            {
+                border.Background = b;
+            }
+        }
+    }
+
+    private void Tab_PointerExited(object sender, Microsoft.UI.Xaml.Input.PointerRoutedEventArgs e)
+    {
+        if (sender is Border border)
+        {
+            border.Background = new Microsoft.UI.Xaml.Media.SolidColorBrush(Microsoft.UI.Colors.Transparent);
         }
     }
 

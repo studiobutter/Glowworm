@@ -10,6 +10,7 @@ using Glowworm.Features.Setting;
 using Glowworm.Frameworks;
 using Glowworm.Helpers;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
@@ -54,7 +55,14 @@ public sealed partial class MainWindow : WindowEx
         Content.KeyDown += Content_KeyDown;
         CenterInScreen(1200, 676);
         AdaptTitleBarButtonColorToActuallTheme();
-        SetDragRectangles(new RectInt32(0, 0, 100000, (int)(48 * UIScale)));
+        AppWindow.Changed += (s, e) =>
+        {
+            if (e.DidSizeChange)
+            {
+                UpdateTitleBarDragRectangles();
+            }
+        };
+        UpdateTitleBarDragRectangles();
         SetIcon();
         WTSRegisterSessionNotification(WindowHandle, 0);
         if (AppWindow.Presenter is OverlappedPresenter presenter)
@@ -96,6 +104,64 @@ public sealed partial class MainWindow : WindowEx
         int x = display.WorkArea.X + (display.WorkArea.Width - w) / 2;
         int y = display.WorkArea.Y + (display.WorkArea.Height - h) / 2;
         AppWindow.MoveAndResize(new RectInt32(x, y, w, h));
+    }
+
+
+
+    public void UpdateTitleBarDragRectangles()
+    {
+        if (!AppWindowTitleBar.IsCustomizationSupported() || AppWindow.TitleBar.ExtendsContentIntoTitleBar != true)
+        {
+            return;
+        }
+
+        try
+        {
+            double scale = UIScale;
+            if (scale <= 0)
+            {
+                scale = 1.0;
+            }
+
+            int windowWidth = AppWindow.Size.Width;
+            int titleBarHeight = (int)(48 * scale);
+
+            // Determine tabs right edge in logical pixels:
+            // Tabs start at 12px margin. Default fallback: 12 + 3 tabs * 200px + 12 buffer = 624
+            double tabsLogicalRight = 624;
+            if (MainContentHost?.FindName("GameTabs_Main") is GameTabs gameTabs &&
+                gameTabs.TabsContainer is FrameworkElement tabsPanel &&
+                tabsPanel.ActualWidth > 0)
+            {
+                tabsLogicalRight = tabsPanel.Margin.Left + tabsPanel.ActualWidth + 12;
+            }
+
+            // Determine right controls width in logical pixels:
+            // 148px caption buttons + ~72px utility buttons + 8px buffer = 228
+            double rightExcludedLogical = 228;
+            if (MainContentHost?.FindName("GameTabs_Main") is GameTabs tabs &&
+                tabs.RightControlsContainer is FrameworkElement rightPanel &&
+                rightPanel.ActualWidth > 0)
+            {
+                rightExcludedLogical = rightPanel.ActualWidth + 148 + 8;
+            }
+
+            int dragStartX = (int)(tabsLogicalRight * scale);
+            int dragEndX = windowWidth - (int)(rightExcludedLogical * scale);
+            int dragWidth = dragEndX - dragStartX;
+
+            var dragRects = new List<RectInt32>();
+            if (dragWidth > 0)
+            {
+                dragRects.Add(new RectInt32(dragStartX, 0, dragWidth, titleBarHeight));
+            }
+
+            SetDragRectangles(dragRects.ToArray());
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"UpdateTitleBarDragRectangles failed: {ex.Message}");
+        }
     }
 
 
@@ -208,7 +274,7 @@ public sealed partial class MainWindow : WindowEx
             // UIScale re-reads GetDpiForWindow which is already updated at this point.
             try
             {
-                SetDragRectangles(new RectInt32(0, 0, 100000, (int)(48 * UIScale)));
+                UpdateTitleBarDragRectangles();
             }
             catch (Exception ex)
             {
