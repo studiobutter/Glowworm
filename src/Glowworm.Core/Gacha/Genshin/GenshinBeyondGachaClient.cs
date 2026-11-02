@@ -93,14 +93,14 @@ public class GenshinBeyondGachaClient
             gachaUrl = API_PREFIX_YS_CN + auth;
             if (!string.IsNullOrWhiteSpace(lang))
             {
-                gachaUrl = Regex.Replace(gachaUrl, @"&lang=[^&]+", $"&lang={LanguageUtil.FilterLanguage(GetGachaApiLanguage(lang))}");
+                gachaUrl = Regex.Replace(gachaUrl, @"&lang=[^&]+", $"&lang={GenshinBeyondGachaMetadata.GetGachaApiLanguage(lang)}");
             }
             else
             {
                 lang = Regex.Match(gachaUrl, @"&lang=([^&]+)").Groups[1].Value;
                 if (!string.IsNullOrWhiteSpace(lang))
                 {
-                    gachaUrl = Regex.Replace(gachaUrl, @"&lang=([^&]+)", $"&lang={LanguageUtil.FilterLanguage(GetGachaApiLanguage(lang))}");
+                    gachaUrl = Regex.Replace(gachaUrl, @"&lang=([^&]+)", $"&lang={GenshinBeyondGachaMetadata.GetGachaApiLanguage(lang)}");
                 }
             }
             return gachaUrl;
@@ -113,14 +113,14 @@ public class GenshinBeyondGachaClient
             gachaUrl = API_PREFIX_YS_OS + auth;
             if (!string.IsNullOrWhiteSpace(lang))
             {
-                gachaUrl = Regex.Replace(gachaUrl, @"&lang=[^&]+", $"&lang={LanguageUtil.FilterLanguage(GetGachaApiLanguage(lang))}");
+                gachaUrl = Regex.Replace(gachaUrl, @"&lang=[^&]+", $"&lang={GenshinBeyondGachaMetadata.GetGachaApiLanguage(lang)}");
             }
             else
             {
                 lang = Regex.Match(gachaUrl, @"&lang=([^&]+)").Groups[1].Value;
                 if (!string.IsNullOrWhiteSpace(lang))
                 {
-                    gachaUrl = Regex.Replace(gachaUrl, @"&lang=([^&]+)", $"&lang={LanguageUtil.FilterLanguage(GetGachaApiLanguage(lang))}");
+                    gachaUrl = Regex.Replace(gachaUrl, @"&lang=([^&]+)", $"&lang={GenshinBeyondGachaMetadata.GetGachaApiLanguage(lang)}");
                 }
             }
             return gachaUrl;
@@ -135,7 +135,7 @@ public class GenshinBeyondGachaClient
             gachaUrl = Regex.Replace(gachaUrl, @"&end_id=\d+", "");
             if (!string.IsNullOrWhiteSpace(lang))
             {
-                gachaUrl = Regex.Replace(gachaUrl, @"&lang=[^&]+", $"&lang={LanguageUtil.FilterLanguage(GetGachaApiLanguage(lang))}");
+                gachaUrl = Regex.Replace(gachaUrl, @"&lang=[^&]+", $"&lang={GenshinBeyondGachaMetadata.GetGachaApiLanguage(lang)}");
             }
             return gachaUrl;
         }
@@ -268,10 +268,9 @@ public class GenshinBeyondGachaClient
 
     public async Task<List<GenshinBeyondGachaInfo>> GetGenshinBeyondGachaInfoAsync(GameBiz gameBiz, string? lang = null, CancellationToken cancellationToken = default)
     {
-        lang = GetMetadataLanguageCode(lang ?? System.Globalization.CultureInfo.CurrentUICulture.Name);
-        string metadataUrl = gameBiz.IsChinaServer() || gameBiz.IsBilibiliServer
-            ? $"https://raw.gitcode.com/JWJUN233233/Snap.Metadata/raw/main/Genshin/{lang}/BeyondItem.json"
-            : $"https://raw.githubusercontent.com/SnapHutaoRemasteringProject/Snap.Metadata/refs/heads/main/Genshin/{lang}/BeyondItem.json";
+        string metadataUrl = GenshinBeyondGachaMetadata.GetMetadataUrl(
+            gameBiz,
+            lang ?? System.Globalization.CultureInfo.CurrentUICulture.Name);
 
         var metadata = await _httpClient.GetFromJsonAsync<List<BeyondItemMetadata>>(metadataUrl, cancellationToken);
         if (metadata is null)
@@ -299,44 +298,6 @@ public class GenshinBeyondGachaClient
         }
 
         return result;
-    }
-
-
-    public static string GetMetadataLanguageCode(string? lang)
-    {
-        if (string.IsNullOrWhiteSpace(lang))
-        {
-            return "EN";
-        }
-
-        var parts = lang.Replace('_', '-').Split('-', 2, StringSplitOptions.RemoveEmptyEntries);
-        var languageCode = parts[0].ToUpperInvariant();
-        if (languageCode == "ZH")
-        {
-            var regionCode = parts.Length > 1 ? parts[1].ToUpperInvariant() : "";
-            return regionCode is "TW" or "HK" or "MO" or "HANT" ? "CHT" : "CHS";
-        }
-
-        return languageCode switch
-        {
-            "CHT" or "CHS" or "DE" or "EN" or "ES" or "FR" or "ID" or "IT" or "JP" or "KR" or "PT" or "RU" or "TH" or "TR" or "VI" => languageCode,
-            _ => "EN"
-        };
-    }
-
-
-    private static string GetGachaApiLanguage(string lang)
-    {
-        return GetMetadataLanguageCode(lang) switch
-        {
-            "CHT" => "zh-tw",
-            "CHS" => "zh-cn",
-            "EN" => "en-us",
-            "VI" => "vi-vn",
-            "JP" => "ja-jp",
-            "KR" => "ko-kr",
-            var languageCode => languageCode
-        };
     }
 
 

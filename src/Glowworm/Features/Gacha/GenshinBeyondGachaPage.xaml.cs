@@ -391,17 +391,12 @@ public sealed partial class GenshinBeyondGachaPage : PageBase
         get;
         set
         {
-            var normalizedLanguage = string.IsNullOrWhiteSpace(value)
-                ? value
-                : GenshinBeyondGachaClient.GetMetadataLanguageCode(value);
-            if (SetProperty(ref field, normalizedLanguage))
+            if (SetProperty(ref field, value))
             {
-                AppConfig.GachaLanguage = normalizedLanguage;
+                AppConfig.GachaLanguage = value;
             }
         }
-    } = string.IsNullOrWhiteSpace(AppConfig.GachaLanguage)
-        ? AppConfig.GachaLanguage
-        : GenshinBeyondGachaClient.GetMetadataLanguageCode(AppConfig.GachaLanguage);
+    } = AppConfig.GachaLanguage;
 
 
 
