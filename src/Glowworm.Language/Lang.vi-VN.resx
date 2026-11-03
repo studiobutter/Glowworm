@@ -359,7 +359,7 @@
     <value>Trang phát hành</value>
   </data>
   <data name="GachaLogPage_GachaLanguageDesc" xml:space="preserve">
-    <value>Chỉ dịnh ngôn ngử của bản ghi gacha, chẳng hạn như vi-vn.</value>
+    <value>Specify the language of gacha records, such as en-us or en.</value>
     <comment>Replace en-us with the target language when translating</comment>
   </data>
   <data name="SettingPage_Language" xml:space="preserve">
