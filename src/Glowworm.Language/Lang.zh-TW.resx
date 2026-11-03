@@ -359,7 +359,7 @@
     <value>發布頁面</value>
   </data>
   <data name="GachaLogPage_GachaLanguageDesc" xml:space="preserve">
-    <value>指定抽卡記錄的語言，比如 zh-tw 。</value>
+    <value>Specify the language of gacha records, such as en-us or en.</value>
     <comment>Replace en-us with the target language when translating</comment>
   </data>
   <data name="SettingPage_Language" xml:space="preserve">
