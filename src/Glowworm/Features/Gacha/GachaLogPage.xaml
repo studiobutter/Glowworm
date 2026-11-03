@@ -321,7 +321,7 @@
                           ScrollViewer.HorizontalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollMode="Auto">
                 <Grid x:Name="Grid_GachaStats"
-                      Margin="20,0,20,16"
+                      Margin="20,4,20,16"
                       Background="Transparent">
                     <ItemsControl x:Name="ItemsControl_GachaStats"
                                   x:Load="{x:Bind IsZZZGachaStatsCardVisible, Converter={StaticResource BoolReversedConverter}}"

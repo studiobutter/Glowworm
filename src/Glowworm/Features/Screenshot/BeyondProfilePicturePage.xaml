@@ -51,7 +51,7 @@
 
         <ItemsView x:Name="ItemsView_Images"
                    Grid.Row="1"
-                   Padding="24,0,0,12"
+                   Padding="24,4,0,12"
                    IsItemInvokedEnabled="True"
                    ItemInvoked="ItemsView_Images_ItemInvoked"
                    ItemsSource="{x:Bind ProfilePictures}"

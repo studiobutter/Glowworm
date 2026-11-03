@@ -252,7 +252,7 @@
                           ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                           ScrollViewer.HorizontalScrollMode="Disabled">
                 <Grid x:Name="Grid_GachaStats"
-                      Margin="20,0,20,16"
+                      Margin="20,4,20,16"
                       ColumnSpacing="12">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
