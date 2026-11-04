@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<UserControl x:Class="Glowworm.Features.Announcement.AnnouncementCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="using:Glowworm.Features.Announcement"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:DefaultBindMode="OneWay"
+             mc:Ignorable="d">
+
+    <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+            BorderThickness="1"
+            CornerRadius="8">
+        <Grid>
+            <Border Background="{ThemeResource SystemFillColorCautionBackgroundBrush}"
+                    CornerRadius="7"
+                    Visibility="{x:Bind WarningBackgroundVisibility, Mode=OneTime}" />
+            <Border Background="{ThemeResource SystemFillColorCriticalBackgroundBrush}"
+                    CornerRadius="7"
+                    Visibility="{x:Bind CriticalBackgroundVisibility, Mode=OneTime}" />
+
+            <Grid Padding="12,10" ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <FontIcon Grid.Column="0"
+                          Margin="0,2,0,0"
+                          VerticalAlignment="Top"
+                          FontSize="16"
+                          Foreground="{x:Bind SeverityColor, Mode=OneTime}"
+                          Glyph="{x:Bind SeverityIcon, Mode=OneTime}" />
+
+                <StackPanel Grid.Column="1" Spacing="4">
+                    <TextBlock FontSize="13"
+                               FontWeight="SemiBold"
+                               Text="{x:Bind Item.Title, Mode=OneTime}"
+                               TextTrimming="CharacterEllipsis"
+                               TextWrapping="NoWrap" />
+                    <TextBlock FontSize="12"
+                               Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                               Text="{x:Bind Item.Content, Mode=OneTime}"
+                               TextWrapping="Wrap" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+
+</UserControl>

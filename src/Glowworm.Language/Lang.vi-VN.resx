@@ -235,6 +235,18 @@
   <data name="Common_Refresh" xml:space="preserve">
     <value>Làm mới</value>
   </data>
+  <data name="Announcement_Title" xml:space="preserve">
+    <value>Thông báo</value>
+  </data>
+  <data name="Announcement_Empty" xml:space="preserve">
+    <value>Không có thông báo</value>
+  </data>
+  <data name="Announcement_LastUpdated" xml:space="preserve">
+    <value>Cập nhật lần cuối: {0}</value>
+  </data>
+  <data name="Announcement_LoadFailed" xml:space="preserve">
+    <value>Không thể tải thông báo. Hãy kiểm tra kết nối và thử lại.</value>
+  </data>
   <data name="Common_Save" xml:space="preserve">
     <value>Lưu</value>
   </data>

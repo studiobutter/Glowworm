@@ -235,6 +235,18 @@
   <data name="Common_Refresh" xml:space="preserve">
     <value>刷新</value>
   </data>
+  <data name="Announcement_Title" xml:space="preserve">
+    <value>公告</value>
+  </data>
+  <data name="Announcement_Empty" xml:space="preserve">
+    <value>暂无公告</value>
+  </data>
+  <data name="Announcement_LastUpdated" xml:space="preserve">
+    <value>上次更新：{0}</value>
+  </data>
+  <data name="Announcement_LoadFailed" xml:space="preserve">
+    <value>无法加载公告。请检查网络连接后重试。</value>
+  </data>
   <data name="Common_Save" xml:space="preserve">
     <value>保存</value>
   </data>

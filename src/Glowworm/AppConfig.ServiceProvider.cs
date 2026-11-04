@@ -5,6 +5,7 @@ using Serilog;
 using Glowworm.Core.Gacha.Genshin;
 using Glowworm.Core.Gacha.StarRail;
 using Glowworm.Core.Gacha.ZZZ;
+using Glowworm.Features.Announcement;
 using Glowworm.Features.Database;
 using Glowworm.Features.Gacha;
 using Glowworm.Features.Gacha.UIGF;
@@ -63,6 +64,8 @@ public static partial class AppConfig
             sc.AddSingleton<GenshinBeyondGachaService>();
 
             sc.AddSingleton<UpdateService>();
+
+            sc.AddSingleton<AnnouncementService>();
 
             sc.AddSingleton<ScreenCaptureService>();
 

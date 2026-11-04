@@ -3,6 +3,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ann="using:Glowworm.Features.Announcement"
              xmlns:lang="using:Glowworm.Language"
              xmlns:local="using:Glowworm.Features.ViewHost"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -99,11 +100,29 @@
 
         </NavigationView>
 
+        <Border x:Name="Border_AnnouncementDismissLayer"
+                Grid.Row="1"
+                Canvas.ZIndex="199"
+                Background="Transparent"
+                Tapped="Border_AnnouncementDismissLayer_Tapped"
+                Visibility="Collapsed" />
+
+        <!-- Announcement panel overlay — slides in from the right, sits above content, below tab row -->
+        <Border x:Name="Border_AnnouncementOverlay"
+                Grid.Row="1"
+                Width="300"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Stretch"
+                Canvas.ZIndex="200"
+                RenderTransformOrigin="1,0"
+                Visibility="Collapsed">
+            <Border.RenderTransform>
+                <TranslateTransform x:Name="AnnouncementPanelTranslate" X="300" />
+            </Border.RenderTransform>
+            <ann:AnnouncementPanel x:Name="AnnouncementPanelControl" />
+        </Border>
 
 
     </Grid>
 
 </UserControl>
-
-
-

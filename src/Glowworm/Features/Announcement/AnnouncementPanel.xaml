@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<UserControl x:Class="Glowworm.Features.Announcement.AnnouncementPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:lang="using:Glowworm.Language"
+             xmlns:local="using:Glowworm.Features.Announcement"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:DefaultBindMode="OneWay"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="AnnPanelBackground" Color="#F9F9F9" Opacity="0.98" />
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="AnnPanelBackground" Color="#252525" Opacity="0.98" />
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <!-- Panel root: rounded top-left only, matching Figma spec -->
+    <Border Background="{ThemeResource AnnPanelBackground}"
+            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+            BorderThickness="1,1,0,0"
+            CornerRadius="12,0,0,0">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Grid Grid.Row="0" Padding="16,16,16,8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                           VerticalAlignment="Center"
+                           FontSize="16"
+                           FontWeight="SemiBold"
+                           Text="{x:Bind lang:Lang.Announcement_Title, Mode=OneTime}" />
+
+                <!-- Refresh button -->
+                <Button Grid.Column="1"
+                        Width="28"
+                        Height="28"
+                        Padding="0"
+                        Click="Button_Refresh_Click"
+                        Style="{ThemeResource DateTimePickerFlyoutButtonStyle}"
+                        ToolTipService.ToolTip="{x:Bind lang:Lang.Common_Refresh, Mode=OneTime}">
+                    <FontIcon FontSize="13" Glyph="&#xE72C;" />
+                </Button>
+            </Grid>
+
+            <!-- Divider -->
+            <Border Grid.Row="0"
+                    Height="1"
+                    Margin="0,52,0,0"
+                    VerticalAlignment="Bottom"
+                    Background="{ThemeResource DividerStrokeColorDefaultBrush}" />
+
+            <!-- Content: list or empty / loading state -->
+            <ScrollViewer Grid.Row="1"
+                          Padding="8,8,8,0"
+                          VerticalScrollBarVisibility="Auto">
+
+                <StackPanel Spacing="8">
+
+                    <!-- Loading indicator -->
+                    <ProgressRing x:Name="ProgressRing_Loading"
+                                  Width="32"
+                                  Height="32"
+                                  Margin="0,32,0,0"
+                                  HorizontalAlignment="Center"
+                                  IsActive="{x:Bind IsLoading}"
+                                  Visibility="{x:Bind IsLoading, Converter={StaticResource BoolToVisibilityConverter}}" />
+
+                    <!-- Empty state -->
+                    <StackPanel x:Name="StackPanel_Empty"
+                                Margin="0,32,0,0"
+                                HorizontalAlignment="Center"
+                                Spacing="8"
+                                Visibility="{x:Bind ShowEmptyState}">
+                        <FontIcon FontSize="32"
+                                  Foreground="{ThemeResource TextFillColorTertiaryBrush}"
+                                  Glyph="&#xEA8F;" />
+                        <TextBlock HorizontalAlignment="Center"
+                                   Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                   Text="{x:Bind EmptyStateText}"
+                                   TextWrapping="WrapWholeWords" />
+                    </StackPanel>
+
+                    <!-- Announcement items -->
+                    <ItemsControl x:Name="ItemsControl_Announcements" ItemsSource="{x:Bind Announcements}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate x:DataType="local:AnnouncementItem">
+                                <local:AnnouncementCard Margin="0,0,0,0" Item="{x:Bind Mode=OneTime}" />
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                </StackPanel>
+            </ScrollViewer>
+
+            <!-- Footer -->
+            <StackPanel Grid.Row="2">
+                <Border Height="1" Background="{ThemeResource DividerStrokeColorDefaultBrush}" />
+                <TextBlock Margin="12,6,12,8"
+                           HorizontalAlignment="Center"
+                           FontSize="11"
+                           Foreground="{ThemeResource TextFillColorTertiaryBrush}"
+                           Text="{x:Bind LastUpdatedText}"
+                           TextTrimming="CharacterEllipsis" />
+            </StackPanel>
+        </Grid>
+    </Border>
+
+</UserControl>

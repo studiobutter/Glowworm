@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.Extensions.Logging;
 using Microsoft.UI.Xaml;
@@ -6,6 +6,7 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media.Animation;
 using NuGet.Versioning;
 using Glowworm.Core;
+using Glowworm.Features.Announcement;
 using Glowworm.Features.Gacha;
 using Glowworm.Features.Screenshot;
 using Glowworm.Features.Setting;
@@ -121,7 +122,6 @@ public sealed partial class MainView : UserControl
 
 
 
-
     private void UpdateNavigationView()
     {
         NavigationViewItem_Screenshot.Visibility = CurrentGameFeatureConfig.SupportedPages.Contains(nameof(ScreenshotPage)).ToVisibility();
@@ -204,6 +204,86 @@ public sealed partial class MainView : UserControl
     }
 
 
+
+
+    #endregion
+
+
+
+
+    #region Announcement Panel
+
+
+    private bool _announcementPanelOpen;
+
+
+    /// <summary>
+    /// Toggles the announcement side panel open/closed with a slide animation.
+    /// Called from <see cref="GameTabs"/> via the bell button.
+    /// </summary>
+    public async Task<bool> ToggleAnnouncementPanelAsync()
+    {
+        _announcementPanelOpen = !_announcementPanelOpen;
+
+        if (_announcementPanelOpen)
+        {
+            Border_AnnouncementDismissLayer.Visibility = Visibility.Visible;
+
+            // Make visible before animating in
+            Border_AnnouncementOverlay.Visibility = Visibility.Visible;
+
+            // Refresh notifications lazily (only if cache is stale)
+            _ = AnnouncementPanelControl.RefreshAsync(forceRefresh: false);
+
+            // Animate slide-in (X: 300 → 0)
+            var storyboard = new Storyboard();
+            var slideIn = new DoubleAnimation
+            {
+                From = 300,
+                To = 0,
+                Duration = new Duration(TimeSpan.FromMilliseconds(250)),
+                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseOut },
+            };
+            Storyboard.SetTarget(slideIn, AnnouncementPanelTranslate);
+            Storyboard.SetTargetProperty(slideIn, "X");
+            storyboard.Children.Add(slideIn);
+            storyboard.Begin();
+        }
+        else
+        {
+            // Animate slide-out (X: 0 → 300), then collapse
+            var tcs = new TaskCompletionSource();
+            var storyboard = new Storyboard();
+            var slideOut = new DoubleAnimation
+            {
+                From = 0,
+                To = 300,
+                Duration = new Duration(TimeSpan.FromMilliseconds(200)),
+                EasingFunction = new CubicEase { EasingMode = EasingMode.EaseIn },
+            };
+            Storyboard.SetTarget(slideOut, AnnouncementPanelTranslate);
+            Storyboard.SetTargetProperty(slideOut, "X");
+            storyboard.Children.Add(slideOut);
+            storyboard.Completed += (_, _) =>
+            {
+                Border_AnnouncementOverlay.Visibility = Visibility.Collapsed;
+                Border_AnnouncementDismissLayer.Visibility = Visibility.Collapsed;
+                tcs.TrySetResult();
+            };
+            storyboard.Begin();
+            await tcs.Task;
+        }
+
+        return _announcementPanelOpen;
+    }
+
+    private async void Border_AnnouncementDismissLayer_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e)
+    {
+        if (_announcementPanelOpen)
+        {
+            await ToggleAnnouncementPanelAsync();
+        }
+    }
 
 
     #endregion
@@ -308,7 +388,5 @@ file static class BoolToVisibilityExtension
     }
 
 }
-
-
 
 

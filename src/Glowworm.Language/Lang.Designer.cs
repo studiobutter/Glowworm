@@ -95,6 +95,42 @@ namespace Glowworm.Language {
                 return ResourceManager.GetString("AppConfig_AnUnknownIssueOccurredDuringInitialization", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to No announcements.
+        /// </summary>
+        public static string Announcement_Empty {
+            get {
+                return ResourceManager.GetString("Announcement_Empty", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Couldn't load announcements. Check your connection and try again.
+        /// </summary>
+        public static string Announcement_LoadFailed {
+            get {
+                return ResourceManager.GetString("Announcement_LoadFailed", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Last updated {0}.
+        /// </summary>
+        public static string Announcement_LastUpdated {
+            get {
+                return ResourceManager.GetString("Announcement_LastUpdated", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Announcements.
+        /// </summary>
+        public static string Announcement_Title {
+            get {
+                return ResourceManager.GetString("Announcement_Title", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Animation effects.

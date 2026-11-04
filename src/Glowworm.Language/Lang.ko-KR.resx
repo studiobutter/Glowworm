@@ -235,6 +235,18 @@
   <data name="Common_Refresh" xml:space="preserve">
     <value>새로고침</value>
   </data>
+  <data name="Announcement_Title" xml:space="preserve">
+    <value>공지</value>
+  </data>
+  <data name="Announcement_Empty" xml:space="preserve">
+    <value>공지사항이 없습니다</value>
+  </data>
+  <data name="Announcement_LastUpdated" xml:space="preserve">
+    <value>마지막 업데이트: {0}</value>
+  </data>
+  <data name="Announcement_LoadFailed" xml:space="preserve">
+    <value>공지사항을 불러오지 못했습니다. 연결을 확인하고 다시 시도하세요.</value>
+  </data>
   <data name="Common_Save" xml:space="preserve">
     <value>저장</value>
   </data>

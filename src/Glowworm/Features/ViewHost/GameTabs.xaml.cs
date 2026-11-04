@@ -1,5 +1,6 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
+using CommunityToolkit.WinUI;
 using Glowworm.Core;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using CommunityToolkit.Mvvm.Messaging;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.Extensions.Logging;
+using Glowworm.Features.Announcement;
 using Glowworm.Features.Database;
 using Glowworm.Features.Setting;
 using Glowworm.Helpers;
@@ -42,6 +44,9 @@ public sealed partial class GameTabs : UserControl
         {
             OnCurrentGameChanged(msg.NewBiz);
         });
+
+        // Kick off badge check after a short delay so the UI is fully loaded
+        this.Loaded += async (_, _) => await RefreshNotificationBadgeAsync();
     }
 
     [RelayCommand]
@@ -220,6 +225,53 @@ public sealed partial class GameTabs : UserControl
             SwitchToGame(biz);
         }
     }
+
+
+    #region Notification Bell
+
+
+    /// <summary>
+    /// Fetches announcements in the background and shows the badge dot if any exist.
+    /// </summary>
+    private async System.Threading.Tasks.Task RefreshNotificationBadgeAsync()
+    {
+        try
+        {
+            var service = AppConfig.GetService<AnnouncementService>();
+            var items = await service.GetAnnouncementsAsync(forceRefresh: false);
+            Ellipse_NotifBadge.Visibility = items.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
+        }
+        catch (Exception ex)
+        {
+            AppConfig.GetLogger<GameTabs>().LogError(ex, "Failed to refresh notification badge");
+        }
+    }
+
+
+    private async void Button_Notifications_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            // Find the MainView ancestor and delegate panel toggle to it
+            if (this.FindAscendant<MainView>() is MainView mainView)
+            {
+                bool isOpen = await mainView.ToggleAnnouncementPanelAsync();
+
+                // Hide badge once panel is opened (user has seen the notifications)
+                if (isOpen)
+                {
+                    Ellipse_NotifBadge.Visibility = Visibility.Collapsed;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            AppConfig.GetLogger<GameTabs>().LogError(ex, "Toggle notification panel");
+        }
+    }
+
+
+    #endregion
 }
 
 public class GameTabItem : INotifyPropertyChanged
