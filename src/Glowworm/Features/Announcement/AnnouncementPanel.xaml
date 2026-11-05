@@ -102,7 +102,9 @@
                     <ItemsControl x:Name="ItemsControl_Announcements" ItemsSource="{x:Bind Announcements}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate x:DataType="local:AnnouncementItem">
-                                <local:AnnouncementCard Margin="0,0,0,0" Item="{x:Bind Mode=OneTime}" />
+                                <local:AnnouncementCard Margin="0,0,0,0"
+                                                        DismissRequested="AnnouncementCard_DismissRequested"
+                                                        Item="{x:Bind Mode=OneTime}" />
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>

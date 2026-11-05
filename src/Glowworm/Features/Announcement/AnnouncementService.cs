@@ -1,7 +1,9 @@
+using Dapper;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading;
@@ -18,6 +20,7 @@ public class AnnouncementService
 
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly ILogger<AnnouncementService> _logger;
+    private readonly object _stateLock = new();
 
     private List<AnnouncementItem>? _cachedItems;
     private string? _cachedLang;
@@ -79,6 +82,68 @@ public class AnnouncementService
         finally
         {
             _fetchLock.Release();
+        }
+    }
+
+
+    public HashSet<int> GetReadAnnouncementIds()
+    {
+        using var connection = AppConfig.CreateDatabaseConnection();
+        return connection.Query<int>("SELECT AnnouncementId FROM AnnouncementState WHERE IsRead = 1;").ToHashSet();
+    }
+
+
+    public HashSet<int> GetDismissedAnnouncementIds()
+    {
+        using var connection = AppConfig.CreateDatabaseConnection();
+        return connection.Query<int>("SELECT AnnouncementId FROM AnnouncementState WHERE IsDismissed = 1;").ToHashSet();
+    }
+
+
+    public bool HasUnreadAnnouncements(IEnumerable<AnnouncementItem> announcements)
+    {
+        var readIds = GetReadAnnouncementIds();
+        return announcements.Any(item => !readIds.Contains(item.Id));
+    }
+
+
+    public void MarkAnnouncementsAsRead(IEnumerable<int> announcementIds)
+    {
+        var ids = announcementIds.Distinct().ToArray();
+        if (ids.Length == 0)
+        {
+            return;
+        }
+
+        lock (_stateLock)
+        {
+            using var connection = AppConfig.CreateDatabaseConnection();
+            using var transaction = connection.BeginTransaction();
+            connection.Execute(
+                """
+                INSERT INTO AnnouncementState (AnnouncementId, IsRead)
+                VALUES (@Id, 1)
+                ON CONFLICT (AnnouncementId) DO UPDATE SET IsRead = 1;
+                """,
+                ids.Select(id => new { Id = id }),
+                transaction);
+            transaction.Commit();
+        }
+    }
+
+
+    public void DismissAnnouncement(int announcementId)
+    {
+        lock (_stateLock)
+        {
+            using var connection = AppConfig.CreateDatabaseConnection();
+            connection.Execute(
+                """
+                INSERT INTO AnnouncementState (AnnouncementId, IsRead, IsDismissed)
+                VALUES (@announcementId, 1, 1)
+                ON CONFLICT (AnnouncementId) DO UPDATE SET IsRead = 1, IsDismissed = 1;
+                """,
+                new { announcementId });
         }
     }
 

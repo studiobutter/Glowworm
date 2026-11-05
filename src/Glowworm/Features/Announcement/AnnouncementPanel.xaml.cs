@@ -6,6 +6,7 @@ using Microsoft.UI.Xaml.Controls;
 using Glowworm.Features.Setting;
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Glowworm.Features.Announcement;
@@ -53,8 +54,9 @@ public sealed partial class AnnouncementPanel : UserControl
             ShowEmptyState = Visibility.Collapsed;
             EmptyStateText = Lang.Announcement_Empty;
             var items = await _service.GetAnnouncementsAsync(forceRefresh);
+            var dismissedIds = _service.GetDismissedAnnouncementIds();
             Announcements.Clear();
-            foreach (var item in items)
+            foreach (var item in items.Where(item => !dismissedIds.Contains(item.Id)))
             {
                 Announcements.Add(item);
             }
@@ -77,5 +79,39 @@ public sealed partial class AnnouncementPanel : UserControl
     private async void Button_Refresh_Click(object sender, RoutedEventArgs e)
     {
         await RefreshAsync(forceRefresh: true);
+        try
+        {
+            MarkVisibleAnnouncementsAsRead();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to mark visible announcements as read");
+        }
+    }
+
+
+    public void MarkVisibleAnnouncementsAsRead()
+    {
+        _service.MarkAnnouncementsAsRead(Announcements.Select(item => item.Id));
+    }
+
+
+    private void AnnouncementCard_DismissRequested(object sender, EventArgs e)
+    {
+        if (sender is not AnnouncementCard { Item: { } item })
+        {
+            return;
+        }
+
+        try
+        {
+            _service.DismissAnnouncement(item.Id);
+            Announcements.Remove(item);
+            ShowEmptyState = Announcements.Count == 0 ? Visibility.Visible : Visibility.Collapsed;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to dismiss announcement {AnnouncementId}", item.Id);
+        }
     }
 }

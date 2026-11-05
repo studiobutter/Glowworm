@@ -233,13 +233,13 @@ public sealed partial class GameTabs : UserControl
     /// <summary>
     /// Fetches announcements in the background and shows the badge dot if any exist.
     /// </summary>
-    private async System.Threading.Tasks.Task RefreshNotificationBadgeAsync()
+    public async System.Threading.Tasks.Task RefreshNotificationBadgeAsync()
     {
         try
         {
             var service = AppConfig.GetService<AnnouncementService>();
             var items = await service.GetAnnouncementsAsync(forceRefresh: false);
-            Ellipse_NotifBadge.Visibility = items.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
+            Ellipse_NotifBadge.Visibility = service.HasUnreadAnnouncements(items) ? Visibility.Visible : Visibility.Collapsed;
         }
         catch (Exception ex)
         {
@@ -257,7 +257,6 @@ public sealed partial class GameTabs : UserControl
             {
                 bool isOpen = await mainView.ToggleAnnouncementPanelAsync();
 
-                // Hide badge once panel is opened (user has seen the notifications)
                 if (isOpen)
                 {
                     Ellipse_NotifBadge.Visibility = Visibility.Collapsed;

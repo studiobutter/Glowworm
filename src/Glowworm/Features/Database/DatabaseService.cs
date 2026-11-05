@@ -256,7 +256,8 @@ internal static class DatabaseService
         Sql_v17,
         Sql_v18,
         Sql_v19,
-        Sql_v20
+        Sql_v20,
+        Sql_v21
     ];
 
 
@@ -676,11 +677,24 @@ internal static class DatabaseService
         COMMIT TRANSACTION;
         """;
 
+    private const string Sql_v21 = """
+        BEGIN TRANSACTION;
+
+        CREATE TABLE IF NOT EXISTS AnnouncementState
+        (
+            AnnouncementId INTEGER NOT NULL PRIMARY KEY,
+            IsRead          INTEGER NOT NULL DEFAULT 0,
+            IsDismissed     INTEGER NOT NULL DEFAULT 0
+        );
+
+        PRAGMA USER_VERSION = 21;
+        COMMIT TRANSACTION;
+        """;
+
     #endregion
 
 
 
 }
-
 
 

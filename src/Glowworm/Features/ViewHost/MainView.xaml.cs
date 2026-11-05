@@ -232,8 +232,8 @@ public sealed partial class MainView : UserControl
             // Make visible before animating in
             Border_AnnouncementOverlay.Visibility = Visibility.Visible;
 
-            // Refresh notifications lazily (only if cache is stale)
-            _ = AnnouncementPanelControl.RefreshAsync(forceRefresh: false);
+            // Refresh notifications lazily (only if cache is stale).
+            var refreshTask = AnnouncementPanelControl.RefreshAsync(forceRefresh: false);
 
             // Animate slide-in (X: 300 → 0)
             var storyboard = new Storyboard();
@@ -248,6 +248,10 @@ public sealed partial class MainView : UserControl
             Storyboard.SetTargetProperty(slideIn, "X");
             storyboard.Children.Add(slideIn);
             storyboard.Begin();
+
+            await refreshTask;
+            AnnouncementPanelControl.MarkVisibleAnnouncementsAsRead();
+            await GameTabs_Main.RefreshNotificationBadgeAsync();
         }
         else
         {
@@ -388,5 +392,3 @@ file static class BoolToVisibilityExtension
     }
 
 }
-
-

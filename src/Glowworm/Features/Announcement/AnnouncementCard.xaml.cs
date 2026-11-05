@@ -2,6 +2,7 @@ using Microsoft.UI;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
+using System;
 
 namespace Glowworm.Features.Announcement;
 
@@ -24,6 +25,8 @@ public sealed partial class AnnouncementCard : UserControl
     public Visibility WarningBackgroundVisibility { get; private set; } = Visibility.Collapsed;
 
     public Visibility CriticalBackgroundVisibility { get; private set; } = Visibility.Collapsed;
+
+    public event EventHandler? DismissRequested;
 
 
     public AnnouncementCard()
@@ -52,5 +55,11 @@ public sealed partial class AnnouncementCard : UserControl
             card.CriticalBackgroundVisibility = item.Severity == 3 ? Visibility.Visible : Visibility.Collapsed;
             card.Bindings.Update();
         }
+    }
+
+
+    private void Button_Dismiss_Click(object sender, RoutedEventArgs e)
+    {
+        DismissRequested?.Invoke(this, EventArgs.Empty);
     }
 }
